@@ -10,7 +10,7 @@
 - Nhằm xây dựng một trình phát nhạc và video trên hệ điều hành Windows.
 - Giao diện đẹp, thân thiện.
 - Dễ dàng sử dụng, phù hợp với mọi lứa tuổi.
-### Đôi tượng hướng đến
+### Đối tượng hướng đến
 Bất kì ai và bất kì lứa tuổi nào đang sử dụng máy tính với hệ điều hành Windows.
 ### Công cụ
 - IDE: Visual Studio 2019
