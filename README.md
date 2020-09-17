@@ -16,7 +16,7 @@ Bất kì ai và bất kì lứa tuổi nào đang sử dụng máy tính với 
 - IDE: Visual Studio 2019
 - Ngôn ngữ lập trình: C# (Farmework .NET)
 - Flatform: 64bit (x64)
-- GUI: Windows Forms
+- GUI: Windows Forms 
 *Đang chờ cập nhật...*
 ### Tính năng 
 *Đang chờ cập nhật...*
