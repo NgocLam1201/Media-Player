@@ -19,4 +19,16 @@ Bất kì ai và bất kì lứa tuổi nào đang sử dụng máy tính với 
 - GUI: Windows Forms
 > *Đang chờ cập nhật*
 ### Tính năng 
+- Chơi được một số định dạng nhạc và video phổ biến (mp3, wav, mp4, etc.)
+- Một số chức năng chơi nhạc và video cơ bản như trộn, lặp, dừng, phát, tăng giảm âm lượng etc.
+- Hiển thị thông tin của bài nhạc và video (ca sĩ, album, cover, thể loại, lyrics …)
+- Màn hình now-playing.
+- Thêm, xóa nhạc hoặc video
+- Tạo playlist
+- Phát nhạc và video trong một thư mục chỉ định và liệt kê các bài hát, video có trong thư mục đó.
+- Sắp xếp các bài nhạc, video (Theo tên, ca sĩ, album, năm phát hành …).
+- Hiển thị lịch sử phát.
+- Tạo tính liên thông giữa các thông tin của bài hát (Cùng ca sĩ, cùng album,…).
+- Tìm kiếm thông tin bài nhạc, video theo tên, ca sĩ,..
+- Chuyển đổi ngôn ngữ (tiếng Anh, tiếng Việt).
 > *Đang chờ cập nhật...*
