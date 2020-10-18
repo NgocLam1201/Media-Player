@@ -81,6 +81,12 @@
     <Compile Include="Form_My_Music.Designer.cs">
       <DependentUpon>Form_My_Music.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_My_Video.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_My_Video.Designer.cs">
+      <DependentUpon>Form_My_Video.cs</DependentUpon>
+    </Compile>
     <Compile Include="form_Rename_pl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_My_Music.resx">
       <DependentUpon>Form_My_Music.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_My_Video.resx">
+      <DependentUpon>Form_My_Video.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_Rename_pl.resx">
       <DependentUpon>form_Rename_pl.cs</DependentUpon>

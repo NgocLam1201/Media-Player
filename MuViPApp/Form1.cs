@@ -124,6 +124,7 @@ namespace MuViPApp
             if (btn_Liked.selected == false && btn_Playlist.selected == false && btn_NowPlaying.selected == false && btn_History.selected == false && btn_Help.selected == false && btn_Exit.selected == false)
             {
                 btn_My_Video.selected = true;
+                btn_My_Video_Click(sender, e);
             }
         }
 
@@ -144,6 +145,11 @@ namespace MuViPApp
         private void btn_My_Music_Click(object sender, EventArgs e)
         {
             openChildForm(new Form_My_Music());
+        }
+
+        private void btn_My_Video_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form_My_Video());
         }
     }
 }

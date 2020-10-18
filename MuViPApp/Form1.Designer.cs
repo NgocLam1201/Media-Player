@@ -899,6 +899,7 @@
             this.btn_My_Video.Textcolor = System.Drawing.Color.White;
             this.btn_My_Video.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_My_Video.Visible = false;
+            this.btn_My_Video.Click += new System.EventHandler(this.btn_My_Video_Click);
             // 
             // Form_Muvip
             // 
