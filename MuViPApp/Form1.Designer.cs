@@ -359,7 +359,7 @@
             // 
             this.pn_Childform.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
             this.pn_Childform.Controls.Add(this.pictureBox2);
-            this.pn_Childform.Cursor = System.Windows.Forms.Cursors.SizeNESW;
+            this.pn_Childform.Cursor = System.Windows.Forms.Cursors.Default;
             this.pn_Childform.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn_Childform.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pn_Childform.Location = new System.Drawing.Point(189, 40);
@@ -540,6 +540,7 @@
             this.btn_My_Music.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_My_Music.Textcolor = System.Drawing.Color.Transparent;
             this.btn_My_Music.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_My_Music.Click += new System.EventHandler(this.btn_My_Music_Click);
             // 
             // btn_Add
             // 

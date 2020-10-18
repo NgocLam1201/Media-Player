@@ -138,5 +138,10 @@ namespace MuViPApp
             Form form_Music_Npl = new Form_Music_Nowpl();
             openChildForm(form_Music_Npl);
         }
+
+        private void btn_My_Music_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form_My_Music());
+        }
     }
 }
