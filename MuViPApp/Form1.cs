@@ -102,7 +102,16 @@ namespace MuViPApp
 
         private void btn_Music_Click(object sender, EventArgs e)
         {
-            btn_Music.selected = true;
+            if (btn_My_Music.Visible == false)
+            {
+                btn_Music.selected = true;
+                btn_Video.selected = false;
+                btn_My_Music.Visible = true;
+                btn_My_Video.Visible = false;
+            }
+            
+            
+        
         }
         
         private void btn_AddPl_Click(object sender, EventArgs e)
@@ -116,7 +125,21 @@ namespace MuViPApp
         private void btn_NowPlaying_Click(object sender, EventArgs e)
         {
             Form form_Music_Npl = new Form_Music_Nowpl();
-            form_Music_Npl.ShowDialog();
+            openChildForm(form_Music_Npl);
         }
+
+       
+        private void btn_Video_Click_1(object sender, EventArgs e)
+        {
+            if (btn_My_Video.Visible == false)
+            {
+                btn_Music.selected = false;
+                btn_Video.selected = true;
+                btn_My_Video.Visible = true;
+                btn_My_Music.Visible = false;
+            }
+        }
+
+       
     }
 }
