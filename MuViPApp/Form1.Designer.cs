@@ -62,8 +62,8 @@
             this.btn_Playlist = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_NowPlaying = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_History = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.Help = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.Exit = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_Help = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_Exit = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Menuside = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_AddPl = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -96,7 +96,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(189, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(643, 40);
+            this.panel1.Size = new System.Drawing.Size(722, 40);
             this.panel1.TabIndex = 7;
             // 
             // Login
@@ -118,7 +118,7 @@
             this.Login.IdleFillColor = System.Drawing.Color.White;
             this.Login.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
             this.Login.IdleLineColor = System.Drawing.Color.White;
-            this.Login.Location = new System.Drawing.Point(514, 5);
+            this.Login.Location = new System.Drawing.Point(554, 5);
             this.Login.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(88, 30);
@@ -133,7 +133,7 @@
             this.Search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Search.ForeColor = System.Drawing.Color.White;
             this.Search.Icon = ((System.Drawing.Image)(resources.GetObject("Search.Icon")));
-            this.Search.Location = new System.Drawing.Point(163, 9);
+            this.Search.Location = new System.Drawing.Point(203, 9);
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(247, 24);
             this.Search.TabIndex = 3;
@@ -157,9 +157,9 @@
             this.panel_Player.Controls.Add(this.play);
             this.panel_Player.Controls.Add(this.pictureBox3);
             this.panel_Player.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_Player.Location = new System.Drawing.Point(189, 411);
+            this.panel_Player.Location = new System.Drawing.Point(189, 503);
             this.panel_Player.Name = "panel_Player";
-            this.panel_Player.Size = new System.Drawing.Size(643, 100);
+            this.panel_Player.Size = new System.Drawing.Size(722, 100);
             this.panel_Player.TabIndex = 10;
             // 
             // bunifuImageButton8
@@ -168,7 +168,7 @@
             this.bunifuImageButton8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
             this.bunifuImageButton8.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton8.Image")));
             this.bunifuImageButton8.ImageActive = null;
-            this.bunifuImageButton8.Location = new System.Drawing.Point(384, 23);
+            this.bunifuImageButton8.Location = new System.Drawing.Point(424, 23);
             this.bunifuImageButton8.Name = "bunifuImageButton8";
             this.bunifuImageButton8.Size = new System.Drawing.Size(26, 32);
             this.bunifuImageButton8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -182,7 +182,7 @@
             this.btn_Music_Pause.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
             this.btn_Music_Pause.Image = ((System.Drawing.Image)(resources.GetObject("btn_Music_Pause.Image")));
             this.btn_Music_Pause.ImageActive = null;
-            this.btn_Music_Pause.Location = new System.Drawing.Point(278, 27);
+            this.btn_Music_Pause.Location = new System.Drawing.Point(318, 27);
             this.btn_Music_Pause.Name = "btn_Music_Pause";
             this.btn_Music_Pause.Size = new System.Drawing.Size(19, 27);
             this.btn_Music_Pause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -198,7 +198,7 @@
             this.bunifuImageButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
             this.bunifuImageButton6.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton6.Image")));
             this.bunifuImageButton6.ImageActive = null;
-            this.bunifuImageButton6.Location = new System.Drawing.Point(234, 27);
+            this.bunifuImageButton6.Location = new System.Drawing.Point(274, 27);
             this.bunifuImageButton6.Name = "bunifuImageButton6";
             this.bunifuImageButton6.Size = new System.Drawing.Size(27, 26);
             this.bunifuImageButton6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -212,7 +212,7 @@
             this.bunifuImageButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
             this.bunifuImageButton5.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton5.Image")));
             this.bunifuImageButton5.ImageActive = null;
-            this.bunifuImageButton5.Location = new System.Drawing.Point(312, 24);
+            this.bunifuImageButton5.Location = new System.Drawing.Point(352, 24);
             this.bunifuImageButton5.Name = "bunifuImageButton5";
             this.bunifuImageButton5.Size = new System.Drawing.Size(23, 32);
             this.bunifuImageButton5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -226,7 +226,7 @@
             this.bunifuImageButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
             this.bunifuImageButton4.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton4.Image")));
             this.bunifuImageButton4.ImageActive = null;
-            this.bunifuImageButton4.Location = new System.Drawing.Point(345, 24);
+            this.bunifuImageButton4.Location = new System.Drawing.Point(385, 24);
             this.bunifuImageButton4.Name = "bunifuImageButton4";
             this.bunifuImageButton4.Size = new System.Drawing.Size(25, 32);
             this.bunifuImageButton4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -240,7 +240,7 @@
             this.btn_Music_Play.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
             this.btn_Music_Play.Image = ((System.Drawing.Image)(resources.GetObject("btn_Music_Play.Image")));
             this.btn_Music_Play.ImageActive = null;
-            this.btn_Music_Play.Location = new System.Drawing.Point(273, 27);
+            this.btn_Music_Play.Location = new System.Drawing.Point(313, 27);
             this.btn_Music_Play.Name = "btn_Music_Play";
             this.btn_Music_Play.Size = new System.Drawing.Size(28, 26);
             this.btn_Music_Play.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -255,7 +255,7 @@
             this.bunifuImageButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
             this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
             this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(465, 23);
+            this.bunifuImageButton2.Location = new System.Drawing.Point(505, 23);
             this.bunifuImageButton2.Name = "bunifuImageButton2";
             this.bunifuImageButton2.Size = new System.Drawing.Size(22, 32);
             this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -269,7 +269,7 @@
             this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
             this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(425, 24);
+            this.bunifuImageButton1.Location = new System.Drawing.Point(465, 24);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
             this.bunifuImageButton1.Size = new System.Drawing.Size(22, 32);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -284,7 +284,7 @@
             this.RestTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.RestTime.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RestTime.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.RestTime.Location = new System.Drawing.Point(589, 70);
+            this.RestTime.Location = new System.Drawing.Point(629, 70);
             this.RestTime.Name = "RestTime";
             this.RestTime.Size = new System.Drawing.Size(29, 18);
             this.RestTime.TabIndex = 5;
@@ -297,7 +297,7 @@
             this.BeginTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.BeginTime.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BeginTime.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.BeginTime.Location = new System.Drawing.Point(75, 70);
+            this.BeginTime.Location = new System.Drawing.Point(115, 70);
             this.BeginTime.Name = "BeginTime";
             this.BeginTime.Size = new System.Drawing.Size(29, 18);
             this.BeginTime.TabIndex = 4;
@@ -310,7 +310,7 @@
             this.Artist.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Artist.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Artist.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.Artist.Location = new System.Drawing.Point(84, 28);
+            this.Artist.Location = new System.Drawing.Point(124, 28);
             this.Artist.Name = "Artist";
             this.Artist.Size = new System.Drawing.Size(41, 18);
             this.Artist.TabIndex = 3;
@@ -323,7 +323,7 @@
             this.NameMedia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NameMedia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameMedia.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.NameMedia.Location = new System.Drawing.Point(79, 7);
+            this.NameMedia.Location = new System.Drawing.Point(119, 7);
             this.NameMedia.Multiline = true;
             this.NameMedia.Name = "NameMedia";
             this.NameMedia.Size = new System.Drawing.Size(100, 20);
@@ -337,7 +337,7 @@
             this.play.BackgroudColor = System.Drawing.Color.DarkGray;
             this.play.BorderRadius = 50;
             this.play.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(42)))), ((int)(((byte)(254)))));
-            this.play.Location = new System.Drawing.Point(110, 68);
+            this.play.Location = new System.Drawing.Point(150, 68);
             this.play.MaximumValue = 100;
             this.play.Name = "play";
             this.play.Size = new System.Drawing.Size(472, 30);
@@ -348,7 +348,7 @@
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(7, 8);
+            this.pictureBox3.Location = new System.Drawing.Point(47, 8);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(65, 62);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -365,14 +365,14 @@
             this.pn_Childform.Location = new System.Drawing.Point(189, 40);
             this.pn_Childform.Name = "pn_Childform";
             this.pn_Childform.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.pn_Childform.Size = new System.Drawing.Size(643, 371);
+            this.pn_Childform.Size = new System.Drawing.Size(722, 463);
             this.pn_Childform.TabIndex = 11;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(142, 6);
+            this.pictureBox2.Location = new System.Drawing.Point(182, 52);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(400, 400);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -385,7 +385,7 @@
             this.panel_Music_Playlist.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Music_Playlist.Location = new System.Drawing.Point(0, 323);
             this.panel_Music_Playlist.Name = "panel_Music_Playlist";
-            this.panel_Music_Playlist.Size = new System.Drawing.Size(172, 86);
+            this.panel_Music_Playlist.Size = new System.Drawing.Size(189, 86);
             this.panel_Music_Playlist.TabIndex = 10;
             // 
             // Logo
@@ -395,7 +395,7 @@
             this.Logo.Dock = System.Windows.Forms.DockStyle.Top;
             this.Logo.Location = new System.Drawing.Point(0, 0);
             this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(172, 84);
+            this.Logo.Size = new System.Drawing.Size(189, 84);
             this.Logo.TabIndex = 1;
             // 
             // title
@@ -403,12 +403,12 @@
             this.title.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.title.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.title.Enabled = false;
-            this.title.Font = new System.Drawing.Font("Sifonn", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.title.HideSelection = false;
             this.title.Location = new System.Drawing.Point(78, 33);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(76, 28);
+            this.title.Size = new System.Drawing.Size(76, 24);
             this.title.TabIndex = 0;
             this.title.Text = "MuViP";
             // 
@@ -429,7 +429,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 84);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(172, 37);
+            this.panel3.Size = new System.Drawing.Size(189, 37);
             this.panel3.TabIndex = 6;
             // 
             // btn_Video
@@ -461,13 +461,13 @@
             this.btn_Video.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_Video.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.btn_Video.selected = false;
-            this.btn_Video.Size = new System.Drawing.Size(84, 37);
+            this.btn_Video.Size = new System.Drawing.Size(101, 37);
             this.btn_Video.TabIndex = 9;
             this.btn_Video.Text = "Video";
             this.btn_Video.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_Video.Textcolor = System.Drawing.Color.White;
             this.btn_Video.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Video.Click += new System.EventHandler(this.btn_Video_Click_1);
+            this.btn_Video.Click += new System.EventHandler(this.btn_Video_Click);
             // 
             // btn_Music
             // 
@@ -534,7 +534,7 @@
             this.btn_My_Music.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btn_My_Music.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_My_Music.selected = false;
-            this.btn_My_Music.Size = new System.Drawing.Size(172, 41);
+            this.btn_My_Music.Size = new System.Drawing.Size(189, 41);
             this.btn_My_Music.TabIndex = 10;
             this.btn_My_Music.Text = "My Music";
             this.btn_My_Music.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -570,7 +570,7 @@
             this.btn_Add.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btn_Add.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_Add.selected = false;
-            this.btn_Add.Size = new System.Drawing.Size(172, 40);
+            this.btn_Add.Size = new System.Drawing.Size(189, 40);
             this.btn_Add.TabIndex = 3;
             this.btn_Add.Text = "Add";
             this.btn_Add.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -608,7 +608,7 @@
             this.btn_Liked.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btn_Liked.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_Liked.selected = false;
-            this.btn_Liked.Size = new System.Drawing.Size(172, 40);
+            this.btn_Liked.Size = new System.Drawing.Size(189, 40);
             this.btn_Liked.TabIndex = 4;
             this.btn_Liked.Text = "Liked";
             this.btn_Liked.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -680,7 +680,7 @@
             this.btn_NowPlaying.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btn_NowPlaying.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_NowPlaying.selected = false;
-            this.btn_NowPlaying.Size = new System.Drawing.Size(172, 37);
+            this.btn_NowPlaying.Size = new System.Drawing.Size(189, 37);
             this.btn_NowPlaying.TabIndex = 4;
             this.btn_NowPlaying.Text = "Now Playing";
             this.btn_NowPlaying.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -716,83 +716,83 @@
             this.btn_History.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btn_History.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_History.selected = false;
-            this.btn_History.Size = new System.Drawing.Size(172, 40);
+            this.btn_History.Size = new System.Drawing.Size(189, 40);
             this.btn_History.TabIndex = 5;
             this.btn_History.Text = "History";
             this.btn_History.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_History.Textcolor = System.Drawing.Color.White;
             this.btn_History.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // Help
+            // btn_Help
             // 
-            this.Help.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.Help.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Help.BorderRadius = 0;
-            this.Help.ButtonText = "Help";
-            this.Help.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Help.DisabledColor = System.Drawing.Color.Gray;
-            this.Help.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Help.Iconcolor = System.Drawing.Color.Transparent;
-            this.Help.Iconimage = ((System.Drawing.Image)(resources.GetObject("Help.Iconimage")));
-            this.Help.Iconimage_right = null;
-            this.Help.Iconimage_right_Selected = null;
-            this.Help.Iconimage_Selected = null;
-            this.Help.IconMarginLeft = 30;
-            this.Help.IconMarginRight = 0;
-            this.Help.IconRightVisible = true;
-            this.Help.IconRightZoom = 0D;
-            this.Help.IconVisible = true;
-            this.Help.IconZoom = 60D;
-            this.Help.IsTab = true;
-            this.Help.Location = new System.Drawing.Point(0, 486);
-            this.Help.Name = "Help";
-            this.Help.Normalcolor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Help.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.Help.OnHoverTextColor = System.Drawing.Color.White;
-            this.Help.selected = false;
-            this.Help.Size = new System.Drawing.Size(172, 43);
-            this.Help.TabIndex = 9;
-            this.Help.Text = "Help";
-            this.Help.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Help.Textcolor = System.Drawing.Color.White;
-            this.Help.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Help.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_Help.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Help.BorderRadius = 0;
+            this.btn_Help.ButtonText = "Help";
+            this.btn_Help.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Help.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_Help.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Help.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_Help.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_Help.Iconimage")));
+            this.btn_Help.Iconimage_right = null;
+            this.btn_Help.Iconimage_right_Selected = null;
+            this.btn_Help.Iconimage_Selected = null;
+            this.btn_Help.IconMarginLeft = 30;
+            this.btn_Help.IconMarginRight = 0;
+            this.btn_Help.IconRightVisible = true;
+            this.btn_Help.IconRightZoom = 0D;
+            this.btn_Help.IconVisible = true;
+            this.btn_Help.IconZoom = 60D;
+            this.btn_Help.IsTab = true;
+            this.btn_Help.Location = new System.Drawing.Point(0, 486);
+            this.btn_Help.Name = "btn_Help";
+            this.btn_Help.Normalcolor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Help.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_Help.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_Help.selected = false;
+            this.btn_Help.Size = new System.Drawing.Size(189, 43);
+            this.btn_Help.TabIndex = 9;
+            this.btn_Help.Text = "Help";
+            this.btn_Help.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Help.Textcolor = System.Drawing.Color.White;
+            this.btn_Help.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // Exit
+            // btn_Exit
             // 
-            this.Exit.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.Exit.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Exit.BorderRadius = 0;
-            this.Exit.ButtonText = "Exit";
-            this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Exit.DisabledColor = System.Drawing.Color.Gray;
-            this.Exit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Exit.Iconcolor = System.Drawing.Color.Transparent;
-            this.Exit.Iconimage = ((System.Drawing.Image)(resources.GetObject("Exit.Iconimage")));
-            this.Exit.Iconimage_right = null;
-            this.Exit.Iconimage_right_Selected = null;
-            this.Exit.Iconimage_Selected = null;
-            this.Exit.IconMarginLeft = 33;
-            this.Exit.IconMarginRight = 0;
-            this.Exit.IconRightVisible = true;
-            this.Exit.IconRightZoom = 0D;
-            this.Exit.IconVisible = true;
-            this.Exit.IconZoom = 60D;
-            this.Exit.IsTab = true;
-            this.Exit.Location = new System.Drawing.Point(0, 529);
-            this.Exit.Name = "Exit";
-            this.Exit.Normalcolor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Exit.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.Exit.OnHoverTextColor = System.Drawing.Color.White;
-            this.Exit.selected = false;
-            this.Exit.Size = new System.Drawing.Size(172, 37);
-            this.Exit.TabIndex = 8;
-            this.Exit.Text = "Exit";
-            this.Exit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Exit.Textcolor = System.Drawing.Color.White;
-            this.Exit.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Exit.Click += new System.EventHandler(this.Exit_Click_1);
+            this.btn_Exit.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_Exit.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Exit.BorderRadius = 0;
+            this.btn_Exit.ButtonText = "Exit";
+            this.btn_Exit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Exit.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_Exit.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Exit.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_Exit.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_Exit.Iconimage")));
+            this.btn_Exit.Iconimage_right = null;
+            this.btn_Exit.Iconimage_right_Selected = null;
+            this.btn_Exit.Iconimage_Selected = null;
+            this.btn_Exit.IconMarginLeft = 33;
+            this.btn_Exit.IconMarginRight = 0;
+            this.btn_Exit.IconRightVisible = true;
+            this.btn_Exit.IconRightZoom = 0D;
+            this.btn_Exit.IconVisible = true;
+            this.btn_Exit.IconZoom = 60D;
+            this.btn_Exit.IsTab = true;
+            this.btn_Exit.Location = new System.Drawing.Point(0, 529);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Normalcolor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Exit.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_Exit.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_Exit.selected = false;
+            this.btn_Exit.Size = new System.Drawing.Size(189, 37);
+            this.btn_Exit.TabIndex = 8;
+            this.btn_Exit.Text = "Exit";
+            this.btn_Exit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Exit.Textcolor = System.Drawing.Color.White;
+            this.btn_Exit.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Exit.Click += new System.EventHandler(this.Exit_Click_1);
             // 
             // Menuside
             // 
@@ -800,8 +800,8 @@
             this.Menuside.AutoScrollMargin = new System.Drawing.Size(1, 1);
             this.Menuside.AutoScrollMinSize = new System.Drawing.Size(1, 1);
             this.Menuside.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Menuside.Controls.Add(this.Exit);
-            this.Menuside.Controls.Add(this.Help);
+            this.Menuside.Controls.Add(this.btn_Exit);
+            this.Menuside.Controls.Add(this.btn_Help);
             this.Menuside.Controls.Add(this.btn_History);
             this.Menuside.Controls.Add(this.btn_NowPlaying);
             this.Menuside.Controls.Add(this.panel_Music_Playlist);
@@ -815,7 +815,7 @@
             this.Menuside.Dock = System.Windows.Forms.DockStyle.Left;
             this.Menuside.Location = new System.Drawing.Point(0, 0);
             this.Menuside.Name = "Menuside";
-            this.Menuside.Size = new System.Drawing.Size(189, 511);
+            this.Menuside.Size = new System.Drawing.Size(189, 603);
             this.Menuside.TabIndex = 14;
             // 
             // panel2
@@ -825,7 +825,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 282);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(172, 41);
+            this.panel2.Size = new System.Drawing.Size(189, 41);
             this.panel2.TabIndex = 11;
             // 
             // btn_AddPl
@@ -856,7 +856,7 @@
             this.btn_AddPl.OnHovercolor = System.Drawing.Color.Silver;
             this.btn_AddPl.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_AddPl.selected = false;
-            this.btn_AddPl.Size = new System.Drawing.Size(18, 41);
+            this.btn_AddPl.Size = new System.Drawing.Size(35, 41);
             this.btn_AddPl.TabIndex = 11;
             this.btn_AddPl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_AddPl.Textcolor = System.Drawing.Color.White;
@@ -884,14 +884,14 @@
             this.btn_My_Video.IconRightZoom = 0D;
             this.btn_My_Video.IconVisible = true;
             this.btn_My_Video.IconZoom = 70D;
-            this.btn_My_Video.IsTab = false;
+            this.btn_My_Video.IsTab = true;
             this.btn_My_Video.Location = new System.Drawing.Point(0, 162);
             this.btn_My_Video.Name = "btn_My_Video";
             this.btn_My_Video.Normalcolor = System.Drawing.Color.Transparent;
             this.btn_My_Video.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btn_My_Video.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_My_Video.selected = false;
-            this.btn_My_Video.Size = new System.Drawing.Size(172, 40);
+            this.btn_My_Video.Size = new System.Drawing.Size(189, 40);
             this.btn_My_Video.TabIndex = 12;
             this.btn_My_Video.Text = "My Video";
             this.btn_My_Video.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -904,7 +904,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(832, 511);
+            this.ClientSize = new System.Drawing.Size(911, 603);
             this.Controls.Add(this.pn_Childform);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_Player);
@@ -974,8 +974,8 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_Playlist;
         private Bunifu.Framework.UI.BunifuFlatButton btn_NowPlaying;
         private Bunifu.Framework.UI.BunifuFlatButton btn_History;
-        private Bunifu.Framework.UI.BunifuFlatButton Help;
-        private Bunifu.Framework.UI.BunifuFlatButton Exit;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_Help;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_Exit;
         private System.Windows.Forms.Panel Menuside;
         private System.Windows.Forms.Panel panel_Music_Playlist;
         private Bunifu.Framework.UI.BunifuSlider play;

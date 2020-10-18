@@ -102,18 +102,29 @@ namespace MuViPApp
 
         private void btn_Music_Click(object sender, EventArgs e)
         {
-            if (btn_My_Music.Visible == false)
+            btn_My_Music.Visible = true;
+            btn_My_Video.Visible = false;
+            
+            // select my music first
+
+            if (btn_Liked.selected==false && btn_Playlist.selected==false && btn_NowPlaying.selected==false && btn_History.selected==false && btn_Help.selected==false && btn_Exit.selected==false)
             {
-                btn_Music.selected = true;
-                btn_Video.selected = false;
-                btn_My_Music.Visible = true;
-                btn_My_Video.Visible = false;
+                btn_My_Music.selected = true;
             }
-            
-            
-        
         }
-        
+
+        private void btn_Video_Click(object sender, EventArgs e)
+        {
+            btn_My_Video.Visible = true;
+            btn_My_Music.Visible = false;
+
+            //
+            if (btn_Liked.selected == false && btn_Playlist.selected == false && btn_NowPlaying.selected == false && btn_History.selected == false && btn_Help.selected == false && btn_Exit.selected == false)
+            {
+                btn_My_Video.selected = true;
+            }
+        }
+
         private void btn_AddPl_Click(object sender, EventArgs e)
         {
             form_Music_NewPlaylist form_Playlist = new form_Music_NewPlaylist(this);
@@ -127,19 +138,5 @@ namespace MuViPApp
             Form form_Music_Npl = new Form_Music_Nowpl();
             openChildForm(form_Music_Npl);
         }
-
-       
-        private void btn_Video_Click_1(object sender, EventArgs e)
-        {
-            if (btn_My_Video.Visible == false)
-            {
-                btn_Music.selected = false;
-                btn_Video.selected = true;
-                btn_My_Video.Visible = true;
-                btn_My_Music.Visible = false;
-            }
-        }
-
-       
     }
 }
