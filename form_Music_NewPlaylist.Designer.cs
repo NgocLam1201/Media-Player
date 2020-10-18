@@ -51,7 +51,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(99, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(95, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(110, 120);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -91,7 +91,7 @@
             this.btn_Ok.IconVisible = true;
             this.btn_Ok.IconZoom = 90D;
             this.btn_Ok.IsTab = false;
-            this.btn_Ok.Location = new System.Drawing.Point(120, 223);
+            this.btn_Ok.Location = new System.Drawing.Point(119, 223);
             this.btn_Ok.Name = "btn_Ok";
             this.btn_Ok.Normalcolor = System.Drawing.Color.DarkOrchid;
             this.btn_Ok.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -153,10 +153,11 @@
             this.lb_Notice.AutoSize = true;
             this.lb_Notice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Notice.ForeColor = System.Drawing.Color.White;
-            this.lb_Notice.Location = new System.Drawing.Point(96, 197);
+            this.lb_Notice.Location = new System.Drawing.Point(88, 199);
             this.lb_Notice.Name = "lb_Notice";
             this.lb_Notice.Size = new System.Drawing.Size(0, 15);
             this.lb_Notice.TabIndex = 8;
+            this.lb_Notice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // form_Music_NewPlaylist
             // 
@@ -171,7 +172,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tb_Name);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Location = new System.Drawing.Point(189, 0);
+            this.Location = new System.Drawing.Point(189, 40);
             this.Name = "form_Music_NewPlaylist";
             this.Text = "form_Music_NewPlaylist";
             this.Load += new System.EventHandler(this.form_Music_NewPlaylist_Load);

@@ -27,13 +27,16 @@ namespace MuViPApp
             else
             {
 
-                Form nf = new form_Music_Playlist(tb_Name.Text);
+                form_Music_Playlist nf = new form_Music_Playlist(tb_Name.Text);
                 parent.openChildForm(nf);
-
-                this.Hide();
+                this.Close();
             }
         }
-
+        public void OpenForm(Form parent)
+        {          
+            //this.StartPosition = FormStartPosition.CenterParent;
+            //this.ShowDialog();
+        }
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();

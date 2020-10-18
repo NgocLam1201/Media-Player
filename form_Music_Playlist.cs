@@ -23,31 +23,8 @@ namespace MuViPApp
 
         private void btn_Rename_Click(object sender, EventArgs e)
         {
-           // lb_NamePl.Text.;
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tb_GotoCollection_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void text_Addsong_TextChanged(object sender, EventArgs e)
-        {
+            form_Rename_pl form_Rename = new form_Rename_pl();
+            form_Rename.Show(this); 
 
         }
     }

@@ -79,7 +79,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(643, 99);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
@@ -260,12 +259,11 @@
             this.text_Addsong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.text_Addsong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_Addsong.ForeColor = System.Drawing.SystemColors.Info;
-            this.text_Addsong.Location = new System.Drawing.Point(59, 218);
+            this.text_Addsong.Location = new System.Drawing.Point(59, 189);
             this.text_Addsong.Name = "text_Addsong";
             this.text_Addsong.Size = new System.Drawing.Size(172, 14);
             this.text_Addsong.TabIndex = 3;
             this.text_Addsong.Text = "Add song from my collection";
-            this.text_Addsong.TextChanged += new System.EventHandler(this.text_Addsong_TextChanged);
             // 
             // tb_GotoCollection
             // 
@@ -273,30 +271,28 @@
             this.tb_GotoCollection.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_GotoCollection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_GotoCollection.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.tb_GotoCollection.Location = new System.Drawing.Point(59, 233);
+            this.tb_GotoCollection.Location = new System.Drawing.Point(59, 204);
             this.tb_GotoCollection.Name = "tb_GotoCollection";
             this.tb_GotoCollection.Size = new System.Drawing.Size(93, 14);
             this.tb_GotoCollection.TabIndex = 4;
             this.tb_GotoCollection.Text = "Go to collection";
-            this.tb_GotoCollection.TextChanged += new System.EventHandler(this.tb_GotoCollection_TextChanged);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(19, 218);
+            this.pictureBox2.Location = new System.Drawing.Point(19, 189);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(34, 29);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(15, 178);
+            this.label2.Location = new System.Drawing.Point(15, 149);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(278, 23);
             this.label2.TabIndex = 6;
