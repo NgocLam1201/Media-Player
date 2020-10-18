@@ -724,6 +724,7 @@
             this.btn_History.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_History.Textcolor = System.Drawing.Color.White;
             this.btn_History.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_History.Click += new System.EventHandler(this.btn_History_Click);
             // 
             // btn_Help
             // 

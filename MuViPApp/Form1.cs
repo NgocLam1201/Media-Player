@@ -169,5 +169,17 @@ namespace MuViPApp
                 openChildForm(new Form_Liked_Video());
             }
         }
+
+        private void btn_History_Click(object sender, EventArgs e)
+        {
+            if (btn_Music.selected == true)
+            {
+                openChildForm(new Form_History_Music());
+            }
+            if (btn_Video.selected == true)
+            {
+                openChildForm(new Form_History_Video());
+            }
+        }
     }
 }

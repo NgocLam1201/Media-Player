@@ -32,7 +32,7 @@
             this.btn_My_Music_Play_all = new Bunifu.Framework.UI.BunifuFlatButton();
             this.lb_Liked_Music = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lv_Liked_My_Music = new System.Windows.Forms.ListView();
+            this.lv_Liked_Music = new System.Windows.Forms.ListView();
             this.Name_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Artist_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Album_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -105,31 +105,31 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.lv_Liked_My_Music);
+            this.panel1.Controls.Add(this.lv_Liked_Music);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 133);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 317);
             this.panel1.TabIndex = 2;
             // 
-            // lv_Liked_My_Music
+            // lv_Liked_Music
             // 
-            this.lv_Liked_My_Music.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
-            this.lv_Liked_My_Music.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lv_Liked_My_Music.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lv_Liked_Music.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
+            this.lv_Liked_Music.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lv_Liked_Music.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Name_Music,
             this.Artist_Music,
             this.Album_Music,
             this.Genre_Music,
             this.Date_Added_Music});
-            this.lv_Liked_My_Music.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lv_Liked_My_Music.HideSelection = false;
-            this.lv_Liked_My_Music.Location = new System.Drawing.Point(0, 0);
-            this.lv_Liked_My_Music.Name = "lv_Liked_My_Music";
-            this.lv_Liked_My_Music.Size = new System.Drawing.Size(800, 317);
-            this.lv_Liked_My_Music.TabIndex = 1;
-            this.lv_Liked_My_Music.UseCompatibleStateImageBehavior = false;
-            this.lv_Liked_My_Music.View = System.Windows.Forms.View.Details;
+            this.lv_Liked_Music.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lv_Liked_Music.HideSelection = false;
+            this.lv_Liked_Music.Location = new System.Drawing.Point(0, 0);
+            this.lv_Liked_Music.Name = "lv_Liked_Music";
+            this.lv_Liked_Music.Size = new System.Drawing.Size(800, 317);
+            this.lv_Liked_Music.TabIndex = 1;
+            this.lv_Liked_Music.UseCompatibleStateImageBehavior = false;
+            this.lv_Liked_Music.View = System.Windows.Forms.View.Details;
             // 
             // Name_Music
             // 
@@ -190,7 +190,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_My_Music_Play_all;
         private System.Windows.Forms.Label lb_Liked_Music;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListView lv_Liked_My_Music;
+        private System.Windows.Forms.ListView lv_Liked_Music;
         private System.Windows.Forms.ColumnHeader Name_Music;
         private System.Windows.Forms.ColumnHeader Artist_Music;
         private System.Windows.Forms.ColumnHeader Album_Music;
