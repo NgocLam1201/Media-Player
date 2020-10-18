@@ -56,7 +56,7 @@ namespace MuViPApp
 
        
 
-        private void Exit_Click_1(object sender, EventArgs e)
+        private void Exit_Click(object sender, EventArgs e)
         {
             //activeForm.Close();
             DialogResult mess = MessageBox.Show
@@ -65,7 +65,7 @@ namespace MuViPApp
                 Application.Exit();
         }
 
-        private void btn_Add_Click_1(object sender, EventArgs e)
+        private void btn_Add_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog()
             {
@@ -94,7 +94,7 @@ namespace MuViPApp
             }
         }
 
-        private void btn_Playlist_Click_1(object sender, EventArgs e)
+        private void btn_Playlist_Click(object sender, EventArgs e)
         {
             if (panel_Music_Playlist.Visible == false) panel_Music_Playlist.Visible = true;
             else panel_Music_Playlist.Visible = false;
@@ -119,7 +119,8 @@ namespace MuViPApp
             btn_My_Video.Visible = true;
             btn_My_Music.Visible = false;
 
-            //
+            // select my video first
+
             if (btn_Liked.selected == false && btn_Playlist.selected == false && btn_NowPlaying.selected == false && btn_History.selected == false && btn_Help.selected == false && btn_Exit.selected == false)
             {
                 btn_My_Video.selected = true;

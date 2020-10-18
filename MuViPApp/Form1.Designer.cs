@@ -577,7 +577,7 @@
             this.btn_Add.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_Add.Textcolor = System.Drawing.Color.White;
             this.btn_Add.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click_1);
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // btn_Liked
             // 
@@ -651,7 +651,7 @@
             this.btn_Playlist.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Playlist.Textcolor = System.Drawing.Color.White;
             this.btn_Playlist.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Playlist.Click += new System.EventHandler(this.btn_Playlist_Click_1);
+            this.btn_Playlist.Click += new System.EventHandler(this.btn_Playlist_Click);
             // 
             // btn_NowPlaying
             // 
@@ -793,7 +793,7 @@
             this.btn_Exit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_Exit.Textcolor = System.Drawing.Color.White;
             this.btn_Exit.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Exit.Click += new System.EventHandler(this.Exit_Click_1);
+            this.btn_Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // Menuside
             // 
