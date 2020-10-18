@@ -615,6 +615,7 @@
             this.btn_Liked.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_Liked.Textcolor = System.Drawing.Color.White;
             this.btn_Liked.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Liked.Click += new System.EventHandler(this.btn_Liked_Click);
             // 
             // btn_Playlist
             // 

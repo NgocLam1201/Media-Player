@@ -151,5 +151,13 @@ namespace MuViPApp
         {
             openChildForm(new Form_My_Video());
         }
+
+        private void btn_Liked_Click(object sender, EventArgs e)
+        {
+            if (btn_Music.selected==true)
+            {
+                openChildForm(new Form_Liked_Music());
+            }
+        }
     }
 }
