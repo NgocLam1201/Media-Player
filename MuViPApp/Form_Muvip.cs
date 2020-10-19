@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace MuViPApp
 {
@@ -17,6 +18,9 @@ namespace MuViPApp
         {
             InitializeComponent();
             panel_Music_Playlist.Visible = false;
+            btn_Music.selected = true;
+            btn_My_Music.selected = true;
+            //openChildForm(new Form_My_Music());
         }
   
         private Form activeForm = null;
@@ -58,17 +62,17 @@ namespace MuViPApp
 
         private void Exit_Click(object sender, EventArgs e)
         {
-            //activeForm.Close();
+            btn_Playlist.selected = false;
             DialogResult mess = MessageBox.Show
              ("Are you sure you want to exit?", "Error", MessageBoxButtons.OKCancel);
             if (mess == DialogResult.OK)
                 Application.Exit();
         }
-
-        private void btn_Add_Click(object sender, EventArgs e)
+        private void Music_File_Dialog()
         {
-            OpenFileDialog ofd = new OpenFileDialog()
+            OpenFileDialog ofd_music = new OpenFileDialog()
             {
+
                 InitialDirectory = @"Music\",
                 Title = "Add MP3 Files",
 
@@ -83,59 +87,117 @@ namespace MuViPApp
                 ReadOnlyChecked = true,
                 ShowReadOnly = true
             };
-            using (ofd)
+            using (ofd_music)
             {
 
-                if (ofd.ShowDialog() == DialogResult.OK)
+                if (ofd_music.ShowDialog() == DialogResult.OK)
                 {
-                    mp3Player.open(ofd.FileName);
+                    mp3Player.open(ofd_music.FileName);
 
                 }
             }
         }
+        private void Video_File_Dialog()
+        {
+            OpenFileDialog ofd_video = new OpenFileDialog()
+            {
+
+                InitialDirectory = @"Video\",
+                Title = "Add MP4 Files",
+
+                CheckFileExists = true,
+                CheckPathExists = true,
+
+                DefaultExt = "mp4",
+                Filter = "Mp4 Files| *.mp4;  *.vid",
+                FilterIndex = 2,
+                RestoreDirectory = true,
+
+                ReadOnlyChecked = true,
+                ShowReadOnly = true
+            };
+            using (ofd_video)
+            {
+
+                if (ofd_video.ShowDialog() == DialogResult.OK)
+                {
+                    mp3Player.open(ofd_video.FileName);
+
+                }
+            }
+        }
+        private void btn_Add_Click(object sender, EventArgs e)
+        {
+            
+            btn_Playlist.selected = false;
+            if (btn_Music.selected == true)
+            {
+                Music_File_Dialog();
+            }
+            if (btn_Video.selected == true)
+            {
+                Video_File_Dialog();
+            }
+            
+        }
 
         private void btn_Playlist_Click(object sender, EventArgs e)
         {
-            if (panel_Music_Playlist.Visible == false) panel_Music_Playlist.Visible = true;
+            panel_Player.Visible = true;
+            if (panel_Music_Playlist.Visible == false) 
+                panel_Music_Playlist.Visible = true;
             else panel_Music_Playlist.Visible = false;
-            form_Music_AllPlaylist form_Allpl = new form_Music_AllPlaylist();
-            openChildForm(form_Allpl);
+            btn_My_Music.selected = false;
+            btn_Liked.selected = false;
+            btn_NowPlaying.selected = false;
+            btn_History.selected = false;
+            btn_Help.selected = false;
+            btn_Exit.selected = false;
+            if (btn_Music.selected == true)
+            {
+                openChildForm(new form_Music_AllPlaylist());
+            }
+            if (btn_Video.selected == true)
+            {
+                openChildForm(new form_Video_AllPlaylist());
+            }
         }
 
         private void btn_Music_Click(object sender, EventArgs e)
         {
             btn_My_Music.Visible = true;
             btn_My_Video.Visible = false;
-
             btn_My_Music.selected = true;
+
+            btn_Add.selected = false;
             btn_Liked.selected = false;
             btn_Playlist.selected = false;
             btn_NowPlaying.selected = false;
             btn_History.selected = false;
             btn_Help.selected = false;
             btn_Exit.selected = false;
-
-            btn_My_Music_Click(sender, e);
+            openChildForm(new Form_My_Music());
         }
 
         private void btn_Video_Click(object sender, EventArgs e)
         {
             btn_My_Video.Visible = true;
             btn_My_Music.Visible = false;
-
             btn_My_Video.selected = true;
+
+            btn_Add.selected = false; 
             btn_Liked.selected = false;
             btn_Playlist.selected = false;
             btn_NowPlaying.selected = false;
             btn_History.selected = false;
             btn_Help.selected = false;
             btn_Exit.selected = false;
-
-            btn_My_Video_Click(sender, e);
+            openChildForm(new Form_My_Video());
         }
 
         private void btn_AddPl_Click(object sender, EventArgs e)
         {
+            
             form_Music_NewPlaylist form_Playlist = new form_Music_NewPlaylist(this);
             Point p = new Point(this.Width / 2 - form_Playlist.Width / 2, this.Height / 2 - form_Playlist.Height / 2);
             form_Playlist.StartPosition = FormStartPosition.CenterParent;
@@ -144,25 +206,38 @@ namespace MuViPApp
 
         private void btn_NowPlaying_Click(object sender, EventArgs e)
         {
-            Form form_Music_Npl = new Form_Music_Nowpl(mp3Player);
-            openChildForm(form_Music_Npl);
+            btn_Playlist.selected = false;
             panel_Player.Visible = false;
+            if (btn_Music.selected == true)
+            {
+                openChildForm(new Form_Music_Nowpl(mp3Player));
+            }
+            if (btn_Video.selected == true)
+            {
+                openChildForm(new form_Video_Nowpl(mp3Player));
+            }
         }
 
         private void btn_My_Music_Click(object sender, EventArgs e)
         {
+            panel_Player.Visible = true;
+            btn_Playlist.selected = false;
             if (btn_Music.selected == true)
                 openChildForm(new Form_My_Music());
         }
 
         private void btn_My_Video_Click(object sender, EventArgs e)
         {
+            panel_Player.Visible = true;
+            btn_Playlist.selected = false;
             if (btn_Video.selected == true)
                 openChildForm(new Form_My_Video());
         }
 
         private void btn_Liked_Click(object sender, EventArgs e)
         {
+            panel_Player.Visible = true;
+            btn_Playlist.selected = false;
             if (btn_Music.selected==true)
             {
                 openChildForm(new Form_Liked_Music());
@@ -175,6 +250,8 @@ namespace MuViPApp
 
         private void btn_History_Click(object sender, EventArgs e)
         {
+            panel_Player.Visible = true;
+            btn_Playlist.selected = false;
             if (btn_Music.selected == true)
             {
                 openChildForm(new Form_History_Music());
