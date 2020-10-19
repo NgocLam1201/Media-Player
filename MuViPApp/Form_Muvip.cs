@@ -261,5 +261,12 @@ namespace MuViPApp
                 openChildForm(new Form_History_Video());
             }
         }
+
+        private void Login_Click(object sender, EventArgs e)
+        {
+            form_Login lgin = new form_Login(this);
+            lgin.ShowDialog();
+
+        }
     }
 }

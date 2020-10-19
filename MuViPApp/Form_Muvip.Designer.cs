@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Muvip));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Login = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btn_Login = new Bunifu.Framework.UI.BunifuThinButton2();
             this.Search = new Bunifu.Framework.UI.BunifuTextbox();
             this.panel_Player = new System.Windows.Forms.Panel();
             this.bunifuImageButton8 = new Bunifu.Framework.UI.BunifuImageButton();
@@ -68,6 +68,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_AddPl = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_My_Video = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_User = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             this.panel_Player.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton8)).BeginInit();
@@ -91,7 +92,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            this.panel1.Controls.Add(this.Login);
+            this.panel1.Controls.Add(this.btn_User);
+            this.panel1.Controls.Add(this.btn_Login);
             this.panel1.Controls.Add(this.Search);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(189, 0);
@@ -99,31 +101,32 @@
             this.panel1.Size = new System.Drawing.Size(722, 40);
             this.panel1.TabIndex = 7;
             // 
-            // Login
+            // btn_Login
             // 
-            this.Login.ActiveBorderThickness = 1;
-            this.Login.ActiveCornerRadius = 20;
-            this.Login.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.Login.ActiveForecolor = System.Drawing.Color.White;
-            this.Login.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.Login.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            this.Login.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Login.BackgroundImage")));
-            this.Login.ButtonText = "LOGIN";
-            this.Login.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Login.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            this.Login.IdleBorderThickness = 1;
-            this.Login.IdleCornerRadius = 20;
-            this.Login.IdleFillColor = System.Drawing.Color.White;
-            this.Login.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            this.Login.IdleLineColor = System.Drawing.Color.White;
-            this.Login.Location = new System.Drawing.Point(554, 5);
-            this.Login.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(88, 30);
-            this.Login.TabIndex = 2;
-            this.Login.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Login.ActiveBorderThickness = 1;
+            this.btn_Login.ActiveCornerRadius = 20;
+            this.btn_Login.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.btn_Login.ActiveForecolor = System.Drawing.Color.White;
+            this.btn_Login.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btn_Login.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
+            this.btn_Login.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Login.BackgroundImage")));
+            this.btn_Login.ButtonText = "LOGIN";
+            this.btn_Login.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Login.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
+            this.btn_Login.IdleBorderThickness = 1;
+            this.btn_Login.IdleCornerRadius = 20;
+            this.btn_Login.IdleFillColor = System.Drawing.Color.White;
+            this.btn_Login.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
+            this.btn_Login.IdleLineColor = System.Drawing.Color.White;
+            this.btn_Login.Location = new System.Drawing.Point(554, 5);
+            this.btn_Login.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Login.Name = "btn_Login";
+            this.btn_Login.Size = new System.Drawing.Size(88, 30);
+            this.btn_Login.TabIndex = 2;
+            this.btn_Login.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Login.Click += new System.EventHandler(this.Login_Click);
             // 
             // Search
             // 
@@ -472,7 +475,7 @@
             // btn_Music
             // 
             this.btn_Music.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btn_Music.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_Music.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
             this.btn_Music.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Music.BorderRadius = 0;
             this.btn_Music.ButtonText = "Music";
@@ -509,7 +512,7 @@
             // btn_My_Music
             // 
             this.btn_My_Music.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btn_My_Music.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_My_Music.BackColor = System.Drawing.Color.Black;
             this.btn_My_Music.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_My_Music.BorderRadius = 0;
             this.btn_My_Music.ButtonText = "My Music";
@@ -902,6 +905,42 @@
             this.btn_My_Video.Visible = false;
             this.btn_My_Video.Click += new System.EventHandler(this.btn_My_Video_Click);
             // 
+            // btn_User
+            // 
+            this.btn_User.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_User.BackColor = System.Drawing.Color.DarkOrchid;
+            this.btn_User.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_User.BorderRadius = 0;
+            this.btn_User.ButtonText = "abc";
+            this.btn_User.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_User.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_User.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_User.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_User.Iconimage")));
+            this.btn_User.Iconimage_right = null;
+            this.btn_User.Iconimage_right_Selected = null;
+            this.btn_User.Iconimage_Selected = null;
+            this.btn_User.IconMarginLeft = 0;
+            this.btn_User.IconMarginRight = 0;
+            this.btn_User.IconRightVisible = true;
+            this.btn_User.IconRightZoom = 0D;
+            this.btn_User.IconVisible = true;
+            this.btn_User.IconZoom = 50D;
+            this.btn_User.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.btn_User.IsTab = false;
+            this.btn_User.Location = new System.Drawing.Point(554, 6);
+            this.btn_User.Name = "btn_User";
+            this.btn_User.Normalcolor = System.Drawing.Color.DarkOrchid;
+            this.btn_User.OnHovercolor = System.Drawing.Color.SeaGreen;
+            this.btn_User.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_User.selected = false;
+            this.btn_User.Size = new System.Drawing.Size(102, 29);
+            this.btn_User.TabIndex = 1;
+            this.btn_User.Text = "abc";
+            this.btn_User.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_User.Textcolor = System.Drawing.Color.White;
+            this.btn_User.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_User.Visible = false;
+            // 
             // Form_Muvip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -947,7 +986,6 @@
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuThinButton2 Login;
         private Bunifu.Framework.UI.BunifuTextbox Search;
         private System.Windows.Forms.Panel panel_Player;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton8;
@@ -985,6 +1023,8 @@
         private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuFlatButton btn_AddPl;
         private Bunifu.Framework.UI.BunifuFlatButton btn_My_Video;
+        public Bunifu.Framework.UI.BunifuFlatButton btn_User;
+        public Bunifu.Framework.UI.BunifuThinButton2 btn_Login;
     }
 }
 

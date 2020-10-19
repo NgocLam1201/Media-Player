@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>..\..\..\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>D:\Tai lieu\Lập trình trực quan\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -51,6 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="Form_History_Music.cs">
       <SubType>Form</SubType>
     </Compile>
