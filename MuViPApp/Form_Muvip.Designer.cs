@@ -124,6 +124,7 @@
             this.Login.Size = new System.Drawing.Size(88, 30);
             this.Login.TabIndex = 2;
             this.Login.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Login.Click += new System.EventHandler(this.Login_Click);
             // 
             // Search
             // 
