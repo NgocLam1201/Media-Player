@@ -472,7 +472,7 @@
             // btn_Music
             // 
             this.btn_Music.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btn_Music.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
+            this.btn_Music.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btn_Music.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Music.BorderRadius = 0;
             this.btn_Music.ButtonText = "Music";
@@ -497,7 +497,7 @@
             this.btn_Music.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btn_Music.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_Music.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.btn_Music.selected = false;
+            this.btn_Music.selected = true;
             this.btn_Music.Size = new System.Drawing.Size(88, 37);
             this.btn_Music.TabIndex = 1;
             this.btn_Music.Text = "Music";
@@ -509,7 +509,7 @@
             // btn_My_Music
             // 
             this.btn_My_Music.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btn_My_Music.BackColor = System.Drawing.Color.Black;
+            this.btn_My_Music.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btn_My_Music.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_My_Music.BorderRadius = 0;
             this.btn_My_Music.ButtonText = "My Music";
@@ -533,7 +533,7 @@
             this.btn_My_Music.Normalcolor = System.Drawing.Color.Black;
             this.btn_My_Music.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btn_My_Music.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_My_Music.selected = false;
+            this.btn_My_Music.selected = true;
             this.btn_My_Music.Size = new System.Drawing.Size(189, 41);
             this.btn_My_Music.TabIndex = 10;
             this.btn_My_Music.Text = "My Music";
@@ -840,7 +840,6 @@
             this.btn_AddPl.ButtonText = "";
             this.btn_AddPl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AddPl.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_AddPl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_AddPl.Iconcolor = System.Drawing.Color.Transparent;
             this.btn_AddPl.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_AddPl.Iconimage")));
             this.btn_AddPl.Iconimage_right = null;

@@ -10,21 +10,15 @@ using System.Windows.Forms;
 
 namespace MuViPApp
 {
-    public partial class form_Music_AllPlaylist : Form
+    public partial class form_Video_Nowpl : Form
     {
-        public form_Music_AllPlaylist()
+        private Mp3Player mp3Player_Nowpl;
+        public form_Video_Nowpl(Mp3Player mp3)
         {
+            mp3Player_Nowpl = mp3;
             InitializeComponent();
         }
 
-        private void cb_Sortby_onItemSelected(object sender, EventArgs e)
-        {
-
-        }
-
-        private void music_Playlist1_Load(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

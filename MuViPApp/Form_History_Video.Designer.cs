@@ -28,21 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pn_Top = new System.Windows.Forms.Panel();
-            this.lb_My_Video = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lb_My_Video = new System.Windows.Forms.Label();
+            this.pn_Top = new System.Windows.Forms.Panel();
             this.pn_Top.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pn_Top
+            // panel1
             // 
-            this.pn_Top.Controls.Add(this.lb_My_Video);
-            this.pn_Top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pn_Top.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.pn_Top.Location = new System.Drawing.Point(0, 0);
-            this.pn_Top.Name = "pn_Top";
-            this.pn_Top.Size = new System.Drawing.Size(800, 88);
-            this.pn_Top.TabIndex = 3;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 88);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 362);
+            this.panel1.TabIndex = 4;
             // 
             // lb_My_Video
             // 
@@ -55,13 +53,15 @@
             this.lb_My_Video.TabIndex = 0;
             this.lb_My_Video.Text = "History";
             // 
-            // panel1
+            // pn_Top
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 88);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 362);
-            this.panel1.TabIndex = 4;
+            this.pn_Top.Controls.Add(this.lb_My_Video);
+            this.pn_Top.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pn_Top.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.pn_Top.Location = new System.Drawing.Point(0, 0);
+            this.pn_Top.Name = "pn_Top";
+            this.pn_Top.Size = new System.Drawing.Size(800, 88);
+            this.pn_Top.TabIndex = 3;
             // 
             // Form_History_Video
             // 
@@ -81,9 +81,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pn_Top;
-        private System.Windows.Forms.Label lb_My_Video;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lb_My_Video;
+        private System.Windows.Forms.Panel pn_Top;
     }
 }
