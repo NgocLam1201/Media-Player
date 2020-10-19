@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>D:\Tai lieu\Lập trình trực quan\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>..\..\Users\Admin\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -51,14 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.cs" />
-    <Compile Include="DataProvider.cs" />
-    <Compile Include="form_Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="form_Login.Designer.cs">
-      <DependentUpon>form_Login.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form_Muvip.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,18 +117,9 @@
     <Compile Include="form_Rename_pl.Designer.cs">
       <DependentUpon>form_Rename_pl.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_Signup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="form_Signup.Designer.cs">
-      <DependentUpon>form_Signup.cs</DependentUpon>
-    </Compile>
     <Compile Include="Mp3Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="form_Login.resx">
-      <DependentUpon>form_Login.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form_Muvip.resx">
       <DependentUpon>Form_Muvip.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,9 +152,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form_Rename_pl.resx">
       <DependentUpon>form_Rename_pl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="form_Signup.resx">
-      <DependentUpon>form_Signup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
