@@ -51,11 +51,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Form_History_Music.cs" />
+    <Compile Include="Form_History_Music.Designer.cs">
+      <DependentUpon>Form_History_Music.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Form_History_Video.cs" />
+    <Compile Include="Form_History_Video.Designer.cs">
+      <DependentUpon>Form_History_Video.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Liked_Music.cs" />
+    <Compile Include="Form_Liked_Music.Designer.cs">
+      <DependentUpon>Form_Liked_Music.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Liked_Video.cs" />
+    <Compile Include="Form_Liked_Video.Designer.cs">
+      <DependentUpon>Form_Liked_Video.cs</DependentUpon>
     </Compile>
     <Compile Include="form_Login.cs">
       <SubType>Form</SubType>
@@ -87,6 +97,18 @@
     <Compile Include="form_Music_Playlist.Designer.cs">
       <DependentUpon>form_Music_Playlist.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Muvip.cs" />
+    <Compile Include="Form_Muvip.Designer.cs">
+      <DependentUpon>Form_Muvip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_My_Music.cs" />
+    <Compile Include="Form_My_Music.Designer.cs">
+      <DependentUpon>Form_My_Music.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_My_Video.cs" />
+    <Compile Include="Form_My_Video.Designer.cs">
+      <DependentUpon>Form_My_Video.cs</DependentUpon>
+    </Compile>
     <Compile Include="form_Rename_pl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,8 +130,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Form_History_Music.resx">
+      <DependentUpon>Form_History_Music.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_History_Video.resx">
+      <DependentUpon>Form_History_Video.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Liked_Music.resx">
+      <DependentUpon>Form_Liked_Music.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Liked_Video.resx">
+      <DependentUpon>Form_Liked_Video.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_Login.resx">
       <DependentUpon>form_Login.cs</DependentUpon>
@@ -125,6 +156,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form_Music_Playlist.resx">
       <DependentUpon>form_Music_Playlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Muvip.resx">
+      <DependentUpon>Form_Muvip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_My_Music.resx">
+      <DependentUpon>Form_My_Music.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_My_Video.resx">
+      <DependentUpon>Form_My_Video.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_Rename_pl.resx">
       <DependentUpon>form_Rename_pl.cs</DependentUpon>

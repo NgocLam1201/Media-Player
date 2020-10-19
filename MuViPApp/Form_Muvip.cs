@@ -98,6 +98,8 @@ namespace MuViPApp
         {
             if (panel_Music_Playlist.Visible == false) panel_Music_Playlist.Visible = true;
             else panel_Music_Playlist.Visible = false;
+            form_Music_AllPlaylist form_Allpl = new form_Music_AllPlaylist();
+            openChildForm(form_Allpl);
         }
 
         private void btn_Music_Click(object sender, EventArgs e)
@@ -142,8 +144,9 @@ namespace MuViPApp
 
         private void btn_NowPlaying_Click(object sender, EventArgs e)
         {
-            Form form_Music_Npl = new Form_Music_Nowpl();
+            Form form_Music_Npl = new Form_Music_Nowpl(mp3Player);
             openChildForm(form_Music_Npl);
+            panel_Player.Visible = false;
         }
 
         private void btn_My_Music_Click(object sender, EventArgs e)
