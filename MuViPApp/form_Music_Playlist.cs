@@ -12,7 +12,7 @@ namespace MuViPApp
 {
     public partial class form_Music_Playlist : Form
     {
-        form_Rename_pl childform;
+        
         public form_Music_Playlist(string s)
         {
             
@@ -27,7 +27,7 @@ namespace MuViPApp
         {
             form_Rename = new form_Rename_pl();
             form_Rename.ShowDialog(this);
-          //  this.lb_NamePl.Text = form_Rename.
+            this.lb_NamePl.Text = form_Rename.s;
 
         }
     }

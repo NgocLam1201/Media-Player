@@ -13,8 +13,8 @@ namespace MuViPApp
     
     public partial class form_Rename_pl : Form
     {
-        private string s { get; set; }
-        //public form_Music_Playlist parent;
+        public string s { get; set; }
+       
         public form_Rename_pl()
         {
             
@@ -24,8 +24,8 @@ namespace MuViPApp
 
         private void btn_Rename_Ok_Click(object sender, EventArgs e)
         {
-            //this.parent.
-            s = tb_NewName.Text;
+            
+             s= tb_NewName.Text;
             this.Close();
         }
 

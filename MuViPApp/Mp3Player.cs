@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace MuViPApp
 {
-    class Mp3Player
+    public class Mp3Player
     {
         [DllImport("winmm.dll")]
         private static extern long mciSendString(string lpstrCommand, StringBuilder lpstrReturnString, int uReturnLength, int hwdCallBack);

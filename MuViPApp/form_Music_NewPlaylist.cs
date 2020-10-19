@@ -29,6 +29,7 @@ namespace MuViPApp
 
                 form_Music_Playlist nf = new form_Music_Playlist(tb_Name.Text);
                 parent.openChildForm(nf);
+               // Music
                 this.Close();
             }
         }
