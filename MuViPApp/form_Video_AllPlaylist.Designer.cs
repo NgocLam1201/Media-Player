@@ -37,10 +37,10 @@
             this.cb_Sortby = new Bunifu.Framework.UI.BunifuDropdown();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.video_Playlist4 = new MuViPApp.Video_Playlist();
             this.video_Playlist3 = new MuViPApp.Video_Playlist();
             this.video_Playlist2 = new MuViPApp.Video_Playlist();
             this.video_Playlist1 = new MuViPApp.Video_Playlist();
+            this.video_Playlist5 = new MuViPApp.Video_Playlist();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +68,6 @@
             // btn_AllPl_Add
             // 
             this.btn_AllPl_Add.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            this.btn_AllPl_Add.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_AllPl_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
             this.btn_AllPl_Add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_AllPl_Add.BorderRadius = 0;
@@ -135,7 +134,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            this.panel3.Controls.Add(this.video_Playlist4);
+            this.panel3.Controls.Add(this.video_Playlist5);
             this.panel3.Controls.Add(this.video_Playlist3);
             this.panel3.Controls.Add(this.video_Playlist2);
             this.panel3.Controls.Add(this.video_Playlist1);
@@ -149,22 +148,10 @@
             this.panel3.Size = new System.Drawing.Size(800, 450);
             this.panel3.TabIndex = 29;
             // 
-            // video_Playlist4
-            // 
-            this.video_Playlist4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.video_Playlist4.BackColor = System.Drawing.Color.Transparent;
-            this.video_Playlist4.Location = new System.Drawing.Point(60, 170);
-            this.video_Playlist4.MaximumSize = new System.Drawing.Size(125, 132);
-            this.video_Playlist4.MinimumSize = new System.Drawing.Size(125, 132);
-            this.video_Playlist4.Name = "video_Playlist4";
-            this.video_Playlist4.Size = new System.Drawing.Size(125, 132);
-            this.video_Playlist4.TabIndex = 8;
-            // 
             // video_Playlist3
             // 
-            this.video_Playlist3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.video_Playlist3.BackColor = System.Drawing.Color.Transparent;
-            this.video_Playlist3.Location = new System.Drawing.Point(238, 170);
+            this.video_Playlist3.Location = new System.Drawing.Point(239, 154);
             this.video_Playlist3.MaximumSize = new System.Drawing.Size(125, 132);
             this.video_Playlist3.MinimumSize = new System.Drawing.Size(125, 132);
             this.video_Playlist3.Name = "video_Playlist3";
@@ -173,9 +160,8 @@
             // 
             // video_Playlist2
             // 
-            this.video_Playlist2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.video_Playlist2.BackColor = System.Drawing.Color.Transparent;
-            this.video_Playlist2.Location = new System.Drawing.Point(604, 170);
+            this.video_Playlist2.Location = new System.Drawing.Point(605, 154);
             this.video_Playlist2.MaximumSize = new System.Drawing.Size(125, 132);
             this.video_Playlist2.MinimumSize = new System.Drawing.Size(125, 132);
             this.video_Playlist2.Name = "video_Playlist2";
@@ -184,14 +170,23 @@
             // 
             // video_Playlist1
             // 
-            this.video_Playlist1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.video_Playlist1.BackColor = System.Drawing.Color.Transparent;
-            this.video_Playlist1.Location = new System.Drawing.Point(419, 170);
+            this.video_Playlist1.Location = new System.Drawing.Point(420, 154);
             this.video_Playlist1.MaximumSize = new System.Drawing.Size(125, 132);
             this.video_Playlist1.MinimumSize = new System.Drawing.Size(125, 132);
             this.video_Playlist1.Name = "video_Playlist1";
             this.video_Playlist1.Size = new System.Drawing.Size(125, 132);
             this.video_Playlist1.TabIndex = 5;
+            // 
+            // video_Playlist5
+            // 
+            this.video_Playlist5.BackColor = System.Drawing.Color.Transparent;
+            this.video_Playlist5.Location = new System.Drawing.Point(61, 154);
+            this.video_Playlist5.MaximumSize = new System.Drawing.Size(125, 132);
+            this.video_Playlist5.MinimumSize = new System.Drawing.Size(125, 132);
+            this.video_Playlist5.Name = "video_Playlist5";
+            this.video_Playlist5.Size = new System.Drawing.Size(125, 132);
+            this.video_Playlist5.TabIndex = 8;
             // 
             // form_Video_AllPlaylist
             // 
@@ -217,9 +212,9 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_AllPl_Add;
         private System.Windows.Forms.Label lb_AllPl_Title;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
-        private Video_Playlist video_Playlist4;
         private Video_Playlist video_Playlist3;
         private Video_Playlist video_Playlist2;
         private Video_Playlist video_Playlist1;
+        private Video_Playlist video_Playlist5;
     }
 }

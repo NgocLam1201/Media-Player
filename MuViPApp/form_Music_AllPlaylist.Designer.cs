@@ -159,7 +159,6 @@
             // 
             // music_Playlist4
             // 
-            this.music_Playlist4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.music_Playlist4.BackColor = System.Drawing.Color.Transparent;
             this.music_Playlist4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.music_Playlist4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -172,7 +171,6 @@
             // 
             // music_Playlist3
             // 
-            this.music_Playlist3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.music_Playlist3.BackColor = System.Drawing.Color.Transparent;
             this.music_Playlist3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.music_Playlist3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -185,7 +183,6 @@
             // 
             // music_Playlist2
             // 
-            this.music_Playlist2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.music_Playlist2.BackColor = System.Drawing.Color.Transparent;
             this.music_Playlist2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.music_Playlist2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -198,7 +195,6 @@
             // 
             // music_Playlist1
             // 
-            this.music_Playlist1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.music_Playlist1.BackColor = System.Drawing.Color.Transparent;
             this.music_Playlist1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.music_Playlist1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
