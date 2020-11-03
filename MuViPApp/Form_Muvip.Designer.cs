@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Muvip));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_User = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_Login = new Bunifu.Framework.UI.BunifuThinButton2();
             this.Search = new Bunifu.Framework.UI.BunifuTextbox();
             this.panel_Player = new System.Windows.Forms.Panel();
@@ -68,7 +69,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_AddPl = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_My_Video = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btn_User = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             this.panel_Player.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton8)).BeginInit();
@@ -101,6 +101,43 @@
             this.panel1.Size = new System.Drawing.Size(722, 40);
             this.panel1.TabIndex = 7;
             // 
+            // btn_User
+            // 
+            this.btn_User.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_User.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_User.BackColor = System.Drawing.Color.DarkOrchid;
+            this.btn_User.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_User.BorderRadius = 0;
+            this.btn_User.ButtonText = "abc";
+            this.btn_User.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_User.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_User.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_User.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_User.Iconimage")));
+            this.btn_User.Iconimage_right = null;
+            this.btn_User.Iconimage_right_Selected = null;
+            this.btn_User.Iconimage_Selected = null;
+            this.btn_User.IconMarginLeft = 0;
+            this.btn_User.IconMarginRight = 0;
+            this.btn_User.IconRightVisible = true;
+            this.btn_User.IconRightZoom = 0D;
+            this.btn_User.IconVisible = true;
+            this.btn_User.IconZoom = 50D;
+            this.btn_User.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.btn_User.IsTab = false;
+            this.btn_User.Location = new System.Drawing.Point(554, 4);
+            this.btn_User.Name = "btn_User";
+            this.btn_User.Normalcolor = System.Drawing.Color.DarkOrchid;
+            this.btn_User.OnHovercolor = System.Drawing.Color.SeaGreen;
+            this.btn_User.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_User.selected = false;
+            this.btn_User.Size = new System.Drawing.Size(102, 29);
+            this.btn_User.TabIndex = 1;
+            this.btn_User.Text = "abc";
+            this.btn_User.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_User.Textcolor = System.Drawing.Color.White;
+            this.btn_User.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_User.Visible = false;
+            // 
             // btn_Login
             // 
             this.btn_Login.ActiveBorderThickness = 1;
@@ -108,7 +145,7 @@
             this.btn_Login.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btn_Login.ActiveForecolor = System.Drawing.Color.White;
             this.btn_Login.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btn_Login.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_Login.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btn_Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
             this.btn_Login.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Login.BackgroundImage")));
             this.btn_Login.ButtonText = "LOGIN";
@@ -904,42 +941,6 @@
             this.btn_My_Video.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_My_Video.Visible = false;
             this.btn_My_Video.Click += new System.EventHandler(this.btn_My_Video_Click);
-            // 
-            // btn_User
-            // 
-            this.btn_User.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btn_User.BackColor = System.Drawing.Color.DarkOrchid;
-            this.btn_User.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_User.BorderRadius = 0;
-            this.btn_User.ButtonText = "abc";
-            this.btn_User.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_User.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_User.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_User.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_User.Iconimage")));
-            this.btn_User.Iconimage_right = null;
-            this.btn_User.Iconimage_right_Selected = null;
-            this.btn_User.Iconimage_Selected = null;
-            this.btn_User.IconMarginLeft = 0;
-            this.btn_User.IconMarginRight = 0;
-            this.btn_User.IconRightVisible = true;
-            this.btn_User.IconRightZoom = 0D;
-            this.btn_User.IconVisible = true;
-            this.btn_User.IconZoom = 50D;
-            this.btn_User.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.btn_User.IsTab = false;
-            this.btn_User.Location = new System.Drawing.Point(554, 6);
-            this.btn_User.Name = "btn_User";
-            this.btn_User.Normalcolor = System.Drawing.Color.DarkOrchid;
-            this.btn_User.OnHovercolor = System.Drawing.Color.SeaGreen;
-            this.btn_User.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_User.selected = false;
-            this.btn_User.Size = new System.Drawing.Size(102, 29);
-            this.btn_User.TabIndex = 1;
-            this.btn_User.Text = "abc";
-            this.btn_User.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_User.Textcolor = System.Drawing.Color.White;
-            this.btn_User.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_User.Visible = false;
             // 
             // Form_Muvip
             // 

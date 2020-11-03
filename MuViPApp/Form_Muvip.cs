@@ -197,11 +197,17 @@ namespace MuViPApp
 
         private void btn_AddPl_Click(object sender, EventArgs e)
         {
-            
-            form_Music_NewPlaylist form_Playlist = new form_Music_NewPlaylist(this);
-            Point p = new Point(this.Width / 2 - form_Playlist.Width / 2, this.Height / 2 - form_Playlist.Height / 2);
-            form_Playlist.StartPosition = FormStartPosition.CenterParent;
-            form_Playlist.ShowDialog();
+            if (btn_User.Visible == true)
+            {
+                form_Music_NewPlaylist form_Playlist = new form_Music_NewPlaylist(this);
+                Point p = new Point(this.Width / 2 - form_Playlist.Width / 2, this.Height / 2 - form_Playlist.Height / 2);
+                form_Playlist.StartPosition = FormStartPosition.CenterParent;
+                form_Playlist.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please login to use this feature", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btn_NowPlaying_Click(object sender, EventArgs e)
