@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pn_Top = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.lb_My_music_sort = new System.Windows.Forms.Label();
             this.cb_My_music_sort = new Bunifu.Framework.UI.BunifuDropdown();
             this.btn_My_Music_Play_all = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -37,10 +38,9 @@
             this.lv_My_Music = new System.Windows.Forms.ListView();
             this.Name_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Artist_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Album_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Genre_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Date_Added_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label1 = new System.Windows.Forms.Label();
+            this.Size_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pn_Top.SuspendLayout();
             this.pn_List.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +58,16 @@
             this.pn_Top.Name = "pn_Top";
             this.pn_Top.Size = new System.Drawing.Size(800, 133);
             this.pn_Top.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(221, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 21);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "(0)";
             // 
             // lb_My_music_sort
             // 
@@ -81,7 +91,7 @@
         "A to Z",
         "Date Added",
         "Artist",
-        "Album"};
+        ""};
             this.cb_My_music_sort.Location = new System.Drawing.Point(654, 106);
             this.cb_My_music_sort.Name = "cb_My_music_sort";
             this.cb_My_music_sort.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
@@ -154,10 +164,12 @@
             this.lv_My_Music.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Name_Music,
             this.Artist_Music,
-            this.Album_Music,
             this.Genre_Music,
-            this.Date_Added_Music});
+            this.Date_Added_Music,
+            this.Size_Music});
             this.lv_My_Music.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lv_My_Music.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lv_My_Music.ForeColor = System.Drawing.SystemColors.Info;
             this.lv_My_Music.HideSelection = false;
             this.lv_My_Music.Location = new System.Drawing.Point(0, 0);
             this.lv_My_Music.Name = "lv_My_Music";
@@ -176,11 +188,6 @@
             this.Artist_Music.Text = "Artist";
             this.Artist_Music.Width = 113;
             // 
-            // Album_Music
-            // 
-            this.Album_Music.Text = "Album";
-            this.Album_Music.Width = 108;
-            // 
             // Genre_Music
             // 
             this.Genre_Music.Text = "Genre";
@@ -191,15 +198,9 @@
             this.Date_Added_Music.Text = "Date Added";
             this.Date_Added_Music.Width = 193;
             // 
-            // label1
+            // Size_Music
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(221, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 21);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "(0)";
+            this.Size_Music.Text = "Size";
             // 
             // Form_My_Music
             // 
@@ -230,9 +231,9 @@
         private System.Windows.Forms.ListView lv_My_Music;
         private System.Windows.Forms.ColumnHeader Name_Music;
         private System.Windows.Forms.ColumnHeader Artist_Music;
-        private System.Windows.Forms.ColumnHeader Album_Music;
         private System.Windows.Forms.ColumnHeader Genre_Music;
         private System.Windows.Forms.ColumnHeader Date_Added_Music;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ColumnHeader Size_Music;
     }
 }

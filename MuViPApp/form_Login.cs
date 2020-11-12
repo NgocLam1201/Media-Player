@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,25 @@ namespace MuViPApp
             {
                 this.parent.btn_User.Visible = true;
                 this.parent.btn_Login.Visible = false;
+                String connString = @"Server=ADMIN\SQLEXPRESS;Database=MuViPApp;User Id=sa;Password=0337651201;";
+
+                SqlConnection connection = new SqlConnection(connString);
+                connection.Open();
+
+                String sqlQuery = " select nickname " +
+                                  " from Account " +
+                                  " where Username = '" + tb_Login_UserName.Text +"'";
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    parent.btn_User.Text = reader.GetString(0);
+                }
+
+                connection.Close();
                 this.Close();
             }
             else
@@ -52,6 +72,11 @@ namespace MuViPApp
         private void btn_Login_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_Login_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }

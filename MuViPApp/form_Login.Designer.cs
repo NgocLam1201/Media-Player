@@ -208,6 +208,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "form_Login";
             this.Text = "form_Login";
+            this.Enter += new System.EventHandler(this.btn_Login_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

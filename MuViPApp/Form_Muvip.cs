@@ -58,8 +58,6 @@ namespace MuViPApp
             }
         }
 
-       
-
         private void Exit_Click(object sender, EventArgs e)
         {
             btn_Playlist.selected = false;
@@ -143,23 +141,30 @@ namespace MuViPApp
 
         private void btn_Playlist_Click(object sender, EventArgs e)
         {
-            panel_Player.Visible = true;
-            if (panel_Music_Playlist.Visible == false) 
-                panel_Music_Playlist.Visible = true;
-            else panel_Music_Playlist.Visible = false;
-            btn_My_Music.selected = false;
-            btn_Liked.selected = false;
-            btn_NowPlaying.selected = false;
-            btn_History.selected = false;
-            btn_Help.selected = false;
-            btn_Exit.selected = false;
-            if (btn_Music.selected == true)
-            {
-                openChildForm(new form_Music_AllPlaylist());
+            if (btn_User.Visible == true)
+            {     
+                panel_Player.Visible = true;
+                if (panel_Music_Playlist.Visible == false)
+                    panel_Music_Playlist.Visible = true;
+                else panel_Music_Playlist.Visible = false;
+                btn_My_Music.selected = false;
+                btn_Liked.selected = false;
+                btn_NowPlaying.selected = false;
+                btn_History.selected = false;
+                btn_Help.selected = false;
+                btn_Exit.selected = false;
+                if (btn_Music.selected == true)
+                {
+                    openChildForm(new form_Music_AllPlaylist());
+                }
+                if (btn_Video.selected == true)
+                {
+                    openChildForm(new form_Video_AllPlaylist());
+                }
             }
-            if (btn_Video.selected == true)
+            else
             {
-                openChildForm(new form_Video_AllPlaylist());
+                MessageBox.Show("Please login to use this feature", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -272,6 +277,11 @@ namespace MuViPApp
         {
             form_Login lgin = new form_Login(this);
             lgin.ShowDialog();
+
+        }
+
+        private void btn_User_Click(object sender, EventArgs e)
+        {
 
         }
     }

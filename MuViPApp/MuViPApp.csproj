@@ -156,6 +156,7 @@
     <Compile Include="Music_Playlist.Designer.cs">
       <DependentUpon>Music_Playlist.cs</DependentUpon>
     </Compile>
+    <Compile Include="Playlist.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Video_Playlist.cs">

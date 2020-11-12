@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Music_Playlist));
             this.lb_Playlist_Name = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lb_Number_Of_Song = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuGradientPanel1.SuspendLayout();
@@ -49,17 +49,17 @@
             this.lb_Playlist_Name.TabIndex = 1;
             this.lb_Playlist_Name.Text = "Playlist\'s Name";
             // 
-            // label1
+            // lb_Number_Of_Song
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(19, 115);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 14);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Number of songs";
+            this.lb_Number_Of_Song.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_Number_Of_Song.AutoSize = true;
+            this.lb_Number_Of_Song.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Number_Of_Song.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_Number_Of_Song.Location = new System.Drawing.Point(19, 115);
+            this.lb_Number_Of_Song.Name = "lb_Number_Of_Song";
+            this.lb_Number_Of_Song.Size = new System.Drawing.Size(83, 14);
+            this.lb_Number_Of_Song.TabIndex = 2;
+            this.lb_Number_Of_Song.Text = "Number of songs";
             // 
             // bunifuGradientPanel1
             // 
@@ -99,7 +99,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.bunifuGradientPanel1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lb_Number_Of_Song);
             this.Controls.Add(this.lb_Playlist_Name);
             this.DoubleBuffered = true;
             this.MaximumSize = new System.Drawing.Size(125, 132);
@@ -115,9 +115,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lb_Playlist_Name;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lb_Number_Of_Song;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        public System.Windows.Forms.Label lb_Playlist_Name;
     }
 }

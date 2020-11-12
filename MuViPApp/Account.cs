@@ -33,31 +33,7 @@ namespace MuViPApp
         }
 
         public bool Login(string email, string password)
-        {
-            /*//xac dinh duong dan den database 
-            String connString = @"Server=DESKTOP-PNMDCU1\SQLEXPRESS;Database=MuvidApp;User Id=sa;Password=0337651201;";
-
-            //ket noi csdl bang Sqlconnection 
-            SqlConnection connection = new SqlConnection(connString);
-            connection.Open();
-
-            //Chuan bi cau lenh query viet bang SQL 
-            String sqlQuery = "select * from Account";
-            //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai 
-            SqlCommand command = new SqlCommand(sqlQuery, connection);
-
-            //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
-            SqlDataReader reader = command.ExecuteReader();
-
-            //Su dung reader de doc tung dong du lieu //va thuc hien thao tac xu ly mong muon voi du lieu doc len 
-            while (reader.HasRows)
-            {
-                if (reader.Read() == false) break;
-                if (email == reader.GetString(1) && GetMD5(password) == reader.GetString(2))
-                    return true;
-            }
-            return false;*/
-            
+        {            
             string query = "USP_Login @email , @passWord";
 
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { email, MD5Hash(password) });

@@ -38,10 +38,6 @@
             this.cb_Sortby = new Bunifu.Framework.UI.BunifuDropdown();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.music_Playlist4 = new MuViPApp.Music_Playlist();
-            this.music_Playlist3 = new MuViPApp.Music_Playlist();
-            this.music_Playlist2 = new MuViPApp.Music_Playlist();
-            this.music_Playlist1 = new MuViPApp.Music_Playlist();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,10 +139,6 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            this.panel3.Controls.Add(this.music_Playlist4);
-            this.panel3.Controls.Add(this.music_Playlist3);
-            this.panel3.Controls.Add(this.music_Playlist2);
-            this.panel3.Controls.Add(this.music_Playlist1);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.cb_Sortby);
             this.panel3.Controls.Add(this.btn_AllPl_Add);
@@ -156,55 +148,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(800, 450);
             this.panel3.TabIndex = 27;
-            // 
-            // music_Playlist4
-            // 
-            this.music_Playlist4.BackColor = System.Drawing.Color.Transparent;
-            this.music_Playlist4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.music_Playlist4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.music_Playlist4.Location = new System.Drawing.Point(240, 164);
-            this.music_Playlist4.MaximumSize = new System.Drawing.Size(125, 132);
-            this.music_Playlist4.MinimumSize = new System.Drawing.Size(125, 132);
-            this.music_Playlist4.Name = "music_Playlist4";
-            this.music_Playlist4.Size = new System.Drawing.Size(125, 132);
-            this.music_Playlist4.TabIndex = 8;
-            // 
-            // music_Playlist3
-            // 
-            this.music_Playlist3.BackColor = System.Drawing.Color.Transparent;
-            this.music_Playlist3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.music_Playlist3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.music_Playlist3.Location = new System.Drawing.Point(606, 164);
-            this.music_Playlist3.MaximumSize = new System.Drawing.Size(125, 132);
-            this.music_Playlist3.MinimumSize = new System.Drawing.Size(125, 132);
-            this.music_Playlist3.Name = "music_Playlist3";
-            this.music_Playlist3.Size = new System.Drawing.Size(125, 132);
-            this.music_Playlist3.TabIndex = 7;
-            // 
-            // music_Playlist2
-            // 
-            this.music_Playlist2.BackColor = System.Drawing.Color.Transparent;
-            this.music_Playlist2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.music_Playlist2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.music_Playlist2.Location = new System.Drawing.Point(421, 164);
-            this.music_Playlist2.MaximumSize = new System.Drawing.Size(125, 132);
-            this.music_Playlist2.MinimumSize = new System.Drawing.Size(125, 132);
-            this.music_Playlist2.Name = "music_Playlist2";
-            this.music_Playlist2.Size = new System.Drawing.Size(125, 132);
-            this.music_Playlist2.TabIndex = 6;
-            // 
-            // music_Playlist1
-            // 
-            this.music_Playlist1.BackColor = System.Drawing.Color.Transparent;
-            this.music_Playlist1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.music_Playlist1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.music_Playlist1.Location = new System.Drawing.Point(60, 164);
-            this.music_Playlist1.MaximumSize = new System.Drawing.Size(125, 132);
-            this.music_Playlist1.MinimumSize = new System.Drawing.Size(125, 132);
-            this.music_Playlist1.Name = "music_Playlist1";
-            this.music_Playlist1.Size = new System.Drawing.Size(125, 132);
-            this.music_Playlist1.TabIndex = 5;
-            this.music_Playlist1.Load += new System.EventHandler(this.music_Playlist1_Load);
             // 
             // form_Music_AllPlaylist
             // 
@@ -228,10 +171,6 @@
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private System.Windows.Forms.Panel panel3;
-        private Music_Playlist music_Playlist4;
-        private Music_Playlist music_Playlist3;
-        private Music_Playlist music_Playlist2;
-        private Music_Playlist music_Playlist1;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuDropdown cb_Sortby;
         private Bunifu.Framework.UI.BunifuFlatButton btn_AllPl_Add;
