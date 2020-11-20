@@ -29,11 +29,13 @@ namespace MuViPApp
         {
             InitializeComponent();
             lb_Playlist_Name.Text = name;
+            lb_Number_Of_Song.Text += ": " + total.ToString();
         }
 
         private void Playlist_Load(object sender, EventArgs e)
         {
 
         }
+
     }
 }

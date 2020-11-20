@@ -38,6 +38,7 @@
             this.cb_Sortby = new Bunifu.Framework.UI.BunifuDropdown();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.FLP_playlist = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,6 +140,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
+            this.panel3.Controls.Add(this.FLP_playlist);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.cb_Sortby);
             this.panel3.Controls.Add(this.btn_AllPl_Add);
@@ -148,6 +150,18 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(800, 450);
             this.panel3.TabIndex = 27;
+            // 
+            // FLP_playlist
+            // 
+            this.FLP_playlist.AutoScrollMargin = new System.Drawing.Size(15, 20);
+            this.FLP_playlist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
+            this.FLP_playlist.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.FLP_playlist.Location = new System.Drawing.Point(0, 120);
+            this.FLP_playlist.Margin = new System.Windows.Forms.Padding(20);
+            this.FLP_playlist.Name = "FLP_playlist";
+            this.FLP_playlist.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.FLP_playlist.Size = new System.Drawing.Size(800, 330);
+            this.FLP_playlist.TabIndex = 5;
             // 
             // form_Music_AllPlaylist
             // 
@@ -175,5 +189,6 @@
         private Bunifu.Framework.UI.BunifuDropdown cb_Sortby;
         private Bunifu.Framework.UI.BunifuFlatButton btn_AllPl_Add;
         private System.Windows.Forms.Label lb_AllPl_Title;
+        private System.Windows.Forms.FlowLayoutPanel FLP_playlist;
     }
 }

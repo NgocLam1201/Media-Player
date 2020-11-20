@@ -34,6 +34,8 @@ namespace MuViPApp
             if (SignUp(tb_SignUp_UserName.Text, tb_Signup_PassWord.Text, tb_SignUp_RePass.Text))
             {
                 Account.Instance.SignUp(tb_SignUp_UserName.Text, tb_Signup_PassWord.Text);
+                DialogResult mess = MessageBox.Show("Account successfully created","Congratulate", MessageBoxButtons.OKCancel);
+                if (mess == DialogResult.OK);
                 this.Close();
                 this.parent.Show();
             }

@@ -13,6 +13,8 @@ namespace MuViPApp
 {
     public partial class Form_Muvip : Form
     {
+        public string ID_Account;
+
         private Mp3Player mp3Player = new Mp3Player();
         public Form_Muvip()
         {
@@ -155,11 +157,11 @@ namespace MuViPApp
                 btn_Exit.selected = false;
                 if (btn_Music.selected == true)
                 {
-                    openChildForm(new form_Music_AllPlaylist());
+                    openChildForm(new form_Music_AllPlaylist(this));
                 }
                 if (btn_Video.selected == true)
                 {
-                    openChildForm(new form_Video_AllPlaylist());
+                    openChildForm(new form_Video_AllPlaylist(this));
                 }
             }
             else

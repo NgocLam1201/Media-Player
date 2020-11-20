@@ -37,7 +37,7 @@ namespace MuViPApp
                 SqlConnection connection = new SqlConnection(connString);
                 connection.Open();
 
-                String sqlQuery = " select nickname " +
+                String sqlQuery = " select ID_Account, nickname " +
                                   " from Account " +
                                   " where Username = '" + tb_Login_UserName.Text +"'";
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
@@ -47,7 +47,9 @@ namespace MuViPApp
                 while (reader.HasRows)
                 {
                     if (reader.Read() == false) break;
-                    parent.btn_User.Text = reader.GetString(0);
+                    string[] user = reader.GetString(1).Split(' ');
+                    parent.btn_User.Text = user[user.Length - 1];
+                    parent.ID_Account = reader.GetString(0);
                 }
 
                 connection.Close();

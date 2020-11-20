@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MuViPApp.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,29 +16,20 @@ namespace MuViPApp
     {
         private Music_Playlist listpl;
 
-        public form_Music_AllPlaylist()
+        Form_Muvip parent;
+
+        public form_Music_AllPlaylist(Form_Muvip parent)
         {
+            this.parent = parent;
             InitializeComponent();
-            String connString = @"Server=ADMIN\SQLEXPRESS;Database=MuViPApp;User Id=sa;Password=0337651201;";
-
-            SqlConnection connection = new SqlConnection(connString);
-            connection.Open();
-
-            String sqlQuery = " select Name_Playlist, COUNT(Music.ID_Playlist) as Soluong " +
-                              " from Playlist, Music " +
-                              " where Playlist.ID_Playlist = Music.ID_Playlist " +
-                              " group by Name_Playlist ";
-            SqlCommand command = new SqlCommand(sqlQuery, connection);
-
-            SqlDataReader reader = command.ExecuteReader();
-
-            while (reader.HasRows)
+            string sqlQuery = "USP_Playlist @ID_Acc";
+            DataTable result = DataProvider.Instance.ExecuteQuery(sqlQuery, new object[] { parent.ID_Account });
+            List<Music_Playlist> listpl = new List<Music_Playlist>();
+            for (int i = 0; i < result.Rows.Count; i++) 
             {
-                if (reader.Read() == false) break;
-                Music_Playlist listpl = new MuViPApp.Music_Playlist(reader.GetString(0), reader.GetInt32(1));
-                this.panel3.Controls.Add(listpl);
+                listpl.Add(new Music_Playlist(result.Rows[i].Field<string>(0),result.Rows[i].Field<int>(1)));
+                FLP_playlist.Controls.Add(listpl[i]);
             }
-            connection.Close();
         }
 
         private void cb_Sortby_onItemSelected(object sender, EventArgs e)

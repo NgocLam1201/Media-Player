@@ -42,38 +42,37 @@ namespace MuViPApp
         }
         public void SignUp(string email, string password)
         {
-            string constr = @"Server=DESKTOP-PNMDCU1\SQLEXPRESS;Database=MuvidApp;User Id=sa;Password=0337651201;";
+            string constr = @"Server=ADMIN\SQLEXPRESS;Database=MuViPApp;User Id=sa;Password=0337651201;";
             SqlConnection connection = new SqlConnection(constr);
             connection.Open();
             try
             {
-                //Chuan bi cau lenh query viet bang SQL
-                String sqlQuery = "Insert into Account(ID_Account,Username,Password) value (@ID_Acc,@email,@password)";
-                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
-                SqlCommand command = new SqlCommand(sqlQuery, connection);
-                string ID_Acc ="";
-                ID_Acc += RandomString(1,true);
-                password = MD5Hash(password);
-                command.Parameters.AddWithValue("@ID_Acc", "ID_Account");
-                command.Parameters.AddWithValue("@email", "Username");
-                command.Parameters.AddWithValue("@password", "Password");
-                //Thuc hien cau truy van
-                int rs = command.ExecuteNonQuery();
-                //Su dung reader de doc tung dong du lieu
-                //va thuc hien thao tac xu ly mong muon voi du lieu doc len
-                if (rs != 1)
+                string ID_Acc ="AC";
+                int a = 0;
+                string query = "select count(*) from Account";
+                SqlCommand cmd = new SqlCommand(query, connection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.HasRows)
                 {
-                    throw new Exception("Failed Query");
+                    if (!reader.Read()) 
+                        break;
+                    a = reader.GetInt32(0) + 1;
                 }
-            }
-            catch (Exception ex)
-            {
-                //xu ly khi ket noi co van de
-                MessageBox.Show("Failed!");
+                if (a < 10)
+                {
+                    ID_Acc += '0' + a.ToString();
+                }
+                else
+                    ID_Acc += a.ToString();
+                connection.Close();
+                connection.Open();
+                password = MD5Hash(password);
+                String sqlQuery = @"Insert into Account(ID_Account,Username,Password) values (N'"+ID_Acc + @"',N'"+ email + @"',N'"+ @password + @"')";
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.ExecuteNonQuery();
             }
             finally
             {
-                //Dong ket noi sau khi thao tac ket thuc
                 connection.Close();
             }
         }
@@ -93,13 +92,14 @@ namespace MuViPApp
             return true;
         }
         public bool isEmailExist(string email)
-        {/*
-            string query = "USP_Login @email";
+        {
+            string query = "USP_Check_Email @email";
 
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { email });
 
-            return result.Rows.Count > 0;*/
-            String connString = @"Server=DESKTOP-PNMDCU1\SQLEXPRESS;Database=MuvidApp;User Id=sa;Password=0337651201;";
+            return result.Rows.Count > 0;
+
+            /*String connString = @"Server=ADMIN\SQLEXPRESS;Database=MuViPApp;User Id=sa;Password=0337651201;";
 
             SqlConnection connection = new SqlConnection(connString);
             connection.Open();
@@ -117,7 +117,7 @@ namespace MuViPApp
                 if (email == reader.GetString(1))
                     return true;
             }
-            return false;
+            return false;*/
         }
 
         public bool isLengthLargeThanEight(string pass)

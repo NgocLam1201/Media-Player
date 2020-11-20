@@ -55,7 +55,7 @@
             this.lb_Number_Of_Song.AutoSize = true;
             this.lb_Number_Of_Song.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Number_Of_Song.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_Number_Of_Song.Location = new System.Drawing.Point(19, 115);
+            this.lb_Number_Of_Song.Location = new System.Drawing.Point(11, 115);
             this.lb_Number_Of_Song.Name = "lb_Number_Of_Song";
             this.lb_Number_Of_Song.Size = new System.Drawing.Size(83, 14);
             this.lb_Number_Of_Song.TabIndex = 2;
@@ -118,6 +118,6 @@
         private System.Windows.Forms.Label lb_Number_Of_Song;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
-        public System.Windows.Forms.Label lb_Playlist_Name;
+        private System.Windows.Forms.Label lb_Playlist_Name;
     }
 }

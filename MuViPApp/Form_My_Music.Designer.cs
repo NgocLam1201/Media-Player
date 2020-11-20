@@ -40,7 +40,7 @@
             this.Artist_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Genre_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Date_Added_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Size_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Length_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pn_Top.SuspendLayout();
             this.pn_List.SuspendLayout();
             this.SuspendLayout();
@@ -166,7 +166,7 @@
             this.Artist_Music,
             this.Genre_Music,
             this.Date_Added_Music,
-            this.Size_Music});
+            this.Length_Music});
             this.lv_My_Music.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lv_My_Music.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lv_My_Music.ForeColor = System.Drawing.SystemColors.Info;
@@ -181,26 +181,27 @@
             // Name_Music
             // 
             this.Name_Music.Text = "Name";
-            this.Name_Music.Width = 183;
+            this.Name_Music.Width = 230;
             // 
             // Artist_Music
             // 
             this.Artist_Music.Text = "Artist";
-            this.Artist_Music.Width = 113;
+            this.Artist_Music.Width = 150;
             // 
             // Genre_Music
             // 
             this.Genre_Music.Text = "Genre";
-            this.Genre_Music.Width = 88;
+            this.Genre_Music.Width = 130;
             // 
             // Date_Added_Music
             // 
             this.Date_Added_Music.Text = "Date Added";
-            this.Date_Added_Music.Width = 193;
+            this.Date_Added_Music.Width = 130;
             // 
-            // Size_Music
+            // Length_Music
             // 
-            this.Size_Music.Text = "Size";
+            this.Length_Music.Text = "Length";
+            this.Length_Music.Width = 100;
             // 
             // Form_My_Music
             // 
@@ -234,6 +235,6 @@
         private System.Windows.Forms.ColumnHeader Genre_Music;
         private System.Windows.Forms.ColumnHeader Date_Added_Music;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ColumnHeader Size_Music;
+        private System.Windows.Forms.ColumnHeader Length_Music;
     }
 }

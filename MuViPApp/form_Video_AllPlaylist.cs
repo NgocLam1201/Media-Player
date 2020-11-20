@@ -12,8 +12,10 @@ namespace MuViPApp
 {
     public partial class form_Video_AllPlaylist : Form
     {
-        public form_Video_AllPlaylist()
+        Form_Muvip parent;
+        public form_Video_AllPlaylist(Form_Muvip parent)
         {
+            this.parent = parent;
             InitializeComponent();
         }
 

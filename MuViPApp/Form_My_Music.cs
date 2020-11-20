@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MuViPApp.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,26 +17,21 @@ namespace MuViPApp
         public Form_My_Music()
         {
             InitializeComponent();
+            string query = "USP_AllMusic";
 
-            String connString = @"Server=ADMIN\SQLEXPRESS;Database=MuViPApp;User Id=sa;Password=0337651201;";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] {});
 
-            SqlConnection connection = new SqlConnection(connString);
-            connection.Open();
-
-            String sqlQuery = " select Name_Song, Singer, Name_Genre, Date_Add, Size " +
-                              " from Music join Genre on Music.ID_Genre = Genre.ID_Genre ";
-            SqlCommand command = new SqlCommand(sqlQuery, connection);
-
-            SqlDataReader reader = command.ExecuteReader();
-
-            while (reader.HasRows)
+            for (int i = 0;i < result.Rows.Count; i++)
             {
-                if (reader.Read() == false) break;
-                var items = new ListViewItem(new[] { reader.GetString(0), reader.GetString(1), reader.GetString(2)});
+                string[] date = result.Rows[i].Field<DateTime>(3).ToString().Split(' ');
+                ListViewItem items = new ListViewItem(new[] { result.Rows[i].Field<string>(0), 
+                                                            result.Rows[i].Field<string>(1), 
+                                                            result.Rows[i].Field<string>(2),
+                                                            date[0],
+                                                            result.Rows[i].Field<TimeSpan>(4).ToString()});
                 lv_My_Music.Items.Add(items);
             }
 
-            connection.Close();
         }
     }
 }
