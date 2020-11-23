@@ -22,9 +22,11 @@ namespace MuViPApp
             panel_Music_Playlist.Visible = false;
             btn_Music.selected = true;
             btn_My_Music.selected = true;
+            btn_Music_Play.Visible = false;
+            btn_Music_Pause.Visible = true;
             //openChildForm(new Form_My_Music());
         }
-  
+
         private Form activeForm = null;
         public void openChildForm(Form childForm)
         {
@@ -52,7 +54,7 @@ namespace MuViPApp
 
         private void btn_Music_Pause_Click(object sender, EventArgs e)
         {
-             if (btn_Music_Pause.Visible == true)
+            if (btn_Music_Pause.Visible == true)
             {
                 btn_Music_Pause.Visible = false;
                 btn_Music_Play.Visible = true;
@@ -63,8 +65,7 @@ namespace MuViPApp
         private void Exit_Click(object sender, EventArgs e)
         {
             btn_Playlist.selected = false;
-            DialogResult mess = MessageBox.Show
-             ("Are you sure you want to exit?", "Error", MessageBoxButtons.OKCancel);
+            DialogResult mess = MessageBox.Show("Are you sure you want to exit?", "Error", MessageBoxButtons.OKCancel);
             if (mess == DialogResult.OK)
                 Application.Exit();
         }
@@ -93,7 +94,6 @@ namespace MuViPApp
                 if (ofd_music.ShowDialog() == DialogResult.OK)
                 {
                     mp3Player.open(ofd_music.FileName);
-
                 }
             }
         }

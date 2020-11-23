@@ -51,7 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.cs" />
+    <Compile Include="DAO\Account.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="Form_History_Music.cs">
       <SubType>Form</SubType>
@@ -150,12 +150,13 @@
       <DependentUpon>form_Video_Nowpl.cs</DependentUpon>
     </Compile>
     <Compile Include="Mp3Player.cs" />
-    <Compile Include="Music_Playlist.cs">
+    <Compile Include="Music\Music_Playlist.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Music_Playlist.Designer.cs">
+    <Compile Include="Music\Music_Playlist.Designer.cs">
       <DependentUpon>Music_Playlist.cs</DependentUpon>
     </Compile>
+    <Compile Include="Music\Music_Song.cs" />
     <Compile Include="Playlist.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -213,7 +214,7 @@
     <EmbeddedResource Include="form_Video_Nowpl.resx">
       <DependentUpon>form_Video_Nowpl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Music_Playlist.resx">
+    <EmbeddedResource Include="Music\Music_Playlist.resx">
       <DependentUpon>Music_Playlist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
