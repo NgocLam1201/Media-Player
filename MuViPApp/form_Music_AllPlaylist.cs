@@ -22,24 +22,24 @@ namespace MuViPApp
         {
             this.parent = parent;
             InitializeComponent();
+            ShowPlayList(this.parent.ID_Account);
+        }
+
+        void ShowPlayList(string ID)
+        {
             string sqlQuery = "USP_Playlist @ID_Acc";
-            DataTable result = DataProvider.Instance.ExecuteQuery(sqlQuery, new object[] { parent.ID_Account });
+            DataTable result = DataProvider.Instance.ExecuteQuery(sqlQuery, new object[] { ID });
             List<Music_Playlist> listpl = new List<Music_Playlist>();
-            for (int i = 0; i < result.Rows.Count; i++) 
+            for (int i = 0; i < result.Rows.Count; i++)
             {
-                listpl.Add(new Music_Playlist(result.Rows[i].Field<string>(0),result.Rows[i].Field<int>(1)));
+                Music_Playlist music_Playlist = new Music_Playlist(result.Rows[i].Field<string>(0), result.Rows[i].Field<string>(1), result.Rows[i].Field<int>(2));
+                listpl.Add(music_Playlist);
                 FLP_playlist.Controls.Add(listpl[i]);
             }
         }
 
-        private void cb_Sortby_onItemSelected(object sender, EventArgs e)
-        {
-
-        }
-
-        private void music_Playlist1_Load(object sender, EventArgs e)
-        {
-
-        }
+        #region Events
+        
+        #endregion
     }
 }

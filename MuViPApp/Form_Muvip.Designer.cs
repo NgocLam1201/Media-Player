@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Muvip));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_User = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -45,7 +46,6 @@
             this.RestTime = new System.Windows.Forms.TextBox();
             this.BeginTime = new System.Windows.Forms.TextBox();
             this.Artist = new System.Windows.Forms.TextBox();
-            this.NameMedia = new System.Windows.Forms.TextBox();
             this.play = new Bunifu.Framework.UI.BunifuSlider();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pn_Childform = new System.Windows.Forms.Panel();
@@ -69,6 +69,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_AddPl = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_My_Video = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.Time_Media = new System.Windows.Forms.Timer(this.components);
+            this.NameMedia = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel_Player.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton8)).BeginInit();
@@ -183,6 +185,7 @@
             // panel_Player
             // 
             this.panel_Player.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
+            this.panel_Player.Controls.Add(this.NameMedia);
             this.panel_Player.Controls.Add(this.bunifuImageButton8);
             this.panel_Player.Controls.Add(this.btn_Music_Pause);
             this.panel_Player.Controls.Add(this.bunifuImageButton6);
@@ -194,7 +197,6 @@
             this.panel_Player.Controls.Add(this.RestTime);
             this.panel_Player.Controls.Add(this.BeginTime);
             this.panel_Player.Controls.Add(this.Artist);
-            this.panel_Player.Controls.Add(this.NameMedia);
             this.panel_Player.Controls.Add(this.play);
             this.panel_Player.Controls.Add(this.pictureBox3);
             this.panel_Player.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -325,9 +327,9 @@
             this.RestTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.RestTime.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RestTime.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.RestTime.Location = new System.Drawing.Point(629, 70);
+            this.RestTime.Location = new System.Drawing.Point(638, 70);
             this.RestTime.Name = "RestTime";
-            this.RestTime.Size = new System.Drawing.Size(29, 18);
+            this.RestTime.Size = new System.Drawing.Size(57, 18);
             this.RestTime.TabIndex = 5;
             this.RestTime.Text = "4:15";
             // 
@@ -338,38 +340,28 @@
             this.BeginTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.BeginTime.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BeginTime.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.BeginTime.Location = new System.Drawing.Point(115, 70);
+            this.BeginTime.Location = new System.Drawing.Point(88, 70);
             this.BeginTime.Name = "BeginTime";
-            this.BeginTime.Size = new System.Drawing.Size(29, 18);
+            this.BeginTime.Size = new System.Drawing.Size(56, 18);
             this.BeginTime.TabIndex = 4;
-            this.BeginTime.Text = "1:42";
+            this.BeginTime.Text = "0:0:0";
+            this.BeginTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Artist
             // 
             this.Artist.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Artist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
             this.Artist.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Artist.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Artist.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Artist.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.Artist.Location = new System.Drawing.Point(124, 28);
+            this.Artist.Multiline = true;
             this.Artist.Name = "Artist";
-            this.Artist.Size = new System.Drawing.Size(41, 18);
+            this.Artist.ReadOnly = true;
+            this.Artist.Size = new System.Drawing.Size(119, 20);
             this.Artist.TabIndex = 3;
-            this.Artist.Text = "BTS";
-            // 
-            // NameMedia
-            // 
-            this.NameMedia.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.NameMedia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
-            this.NameMedia.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.NameMedia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameMedia.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.NameMedia.Location = new System.Drawing.Point(119, 7);
-            this.NameMedia.Multiline = true;
-            this.NameMedia.Name = "NameMedia";
-            this.NameMedia.Size = new System.Drawing.Size(100, 20);
-            this.NameMedia.TabIndex = 2;
-            this.NameMedia.Text = "Dynamite";
+            this.Artist.Text = "Artist";
             // 
             // play
             // 
@@ -378,10 +370,10 @@
             this.play.BackgroudColor = System.Drawing.Color.DarkGray;
             this.play.BorderRadius = 50;
             this.play.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(42)))), ((int)(((byte)(254)))));
-            this.play.Location = new System.Drawing.Point(150, 68);
+            this.play.Location = new System.Drawing.Point(150, 67);
             this.play.MaximumValue = 100;
             this.play.Name = "play";
-            this.play.Size = new System.Drawing.Size(472, 30);
+            this.play.Size = new System.Drawing.Size(473, 30);
             this.play.TabIndex = 1;
             this.play.Value = 35;
             // 
@@ -943,6 +935,19 @@
             this.btn_My_Video.Visible = false;
             this.btn_My_Video.Click += new System.EventHandler(this.btn_My_Video_Click);
             // 
+            // NameMedia
+            // 
+            this.NameMedia.AutoSize = true;
+            this.NameMedia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NameMedia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameMedia.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.NameMedia.Location = new System.Drawing.Point(122, 10);
+            this.NameMedia.Margin = new System.Windows.Forms.Padding(3);
+            this.NameMedia.Name = "NameMedia";
+            this.NameMedia.Size = new System.Drawing.Size(97, 16);
+            this.NameMedia.TabIndex = 2;
+            this.NameMedia.Text = "Name_Music";
+            // 
             // Form_Muvip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -989,7 +994,6 @@
         #endregion
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuTextbox Search;
-        private System.Windows.Forms.Panel panel_Player;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton8;
         private Bunifu.Framework.UI.BunifuImageButton btn_Music_Pause;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton6;
@@ -998,10 +1002,7 @@
         private Bunifu.Framework.UI.BunifuImageButton btn_Music_Play;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
-        private System.Windows.Forms.TextBox RestTime;
         private System.Windows.Forms.TextBox BeginTime;
-        private System.Windows.Forms.TextBox Artist;
-        private System.Windows.Forms.TextBox NameMedia;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel pn_Childform;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -1027,6 +1028,11 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_My_Video;
         public Bunifu.Framework.UI.BunifuFlatButton btn_User;
         public Bunifu.Framework.UI.BunifuThinButton2 btn_Login;
+        public System.Windows.Forms.Timer Time_Media;
+        public System.Windows.Forms.TextBox RestTime;
+        public System.Windows.Forms.TextBox Artist;
+        public System.Windows.Forms.Panel panel_Player;
+        public System.Windows.Forms.Label NameMedia;
     }
 }
 

@@ -15,7 +15,7 @@ namespace MuViPApp
     {
         public string ID_Account;
 
-        private Mp3Player mp3Player = new Mp3Player();
+        public Mp3Player mp3Player = new Mp3Player();
         public Form_Muvip()
         {
             InitializeComponent();
@@ -42,27 +42,27 @@ namespace MuViPApp
             childForm.Show();
         }
         
-        private void btn_Music_Play_Click(object sender, EventArgs e)
+        public void btn_Music_Play_Click(object sender, EventArgs e)
         {
             if (btn_Music_Play.Visible == true)
             {
                 btn_Music_Play.Visible = false;
                 btn_Music_Pause.Visible = true;
-                mp3Player.stop();
+                mp3Player.Stop();
             }
         }
 
-        private void btn_Music_Pause_Click(object sender, EventArgs e)
+        public void btn_Music_Pause_Click(object sender, EventArgs e)
         {
             if (btn_Music_Pause.Visible == true)
             {
                 btn_Music_Pause.Visible = false;
                 btn_Music_Play.Visible = true;
-                mp3Player.play();
+                mp3Player.Play();
             }
         }
 
-        private void Exit_Click(object sender, EventArgs e)
+        public void Exit_Click(object sender, EventArgs e)
         {
             btn_Playlist.selected = false;
             DialogResult mess = MessageBox.Show("Are you sure you want to exit?", "Error", MessageBoxButtons.OKCancel);
@@ -93,7 +93,7 @@ namespace MuViPApp
 
                 if (ofd_music.ShowDialog() == DialogResult.OK)
                 {
-                    mp3Player.open(ofd_music.FileName);
+                    mp3Player.Open(ofd_music.FileName);
                 }
             }
         }
@@ -121,7 +121,7 @@ namespace MuViPApp
 
                 if (ofd_video.ShowDialog() == DialogResult.OK)
                 {
-                    mp3Player.open(ofd_video.FileName);
+                    mp3Player.Open(ofd_video.FileName);
 
                 }
             }
@@ -183,7 +183,7 @@ namespace MuViPApp
             btn_History.selected = false;
             btn_Help.selected = false;
             btn_Exit.selected = false;
-            openChildForm(new Form_My_Music());
+            openChildForm(new Form_My_Music(this));
         }
 
         private void btn_Video_Click(object sender, EventArgs e)
@@ -236,7 +236,7 @@ namespace MuViPApp
             panel_Player.Visible = true;
             btn_Playlist.selected = false;
             if (btn_Music.selected == true)
-                openChildForm(new Form_My_Music());
+                openChildForm(new Form_My_Music(this));
         }
 
         private void btn_My_Video_Click(object sender, EventArgs e)

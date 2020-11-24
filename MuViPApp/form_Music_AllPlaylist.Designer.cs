@@ -124,7 +124,6 @@
             this.cb_Sortby.selectedIndex = 0;
             this.cb_Sortby.Size = new System.Drawing.Size(125, 18);
             this.cb_Sortby.TabIndex = 3;
-            this.cb_Sortby.onItemSelected += new System.EventHandler(this.cb_Sortby_onItemSelected);
             // 
             // label1
             // 

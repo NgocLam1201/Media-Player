@@ -21,20 +21,16 @@ namespace MuViPApp
 
         private void btn_Music_Nowpl_Pause_Click(object sender, EventArgs e)
         {
-           
                 btn_Music_Nowpl_Pause.Visible = false;
                 btn_Music_Nowpl_Play.Visible = true;
-                mp3Player_Nowpl.play();
-            
+                mp3Player_Nowpl.Play();           
         }
 
         private void btn_Music_Nowpl_Play_Click(object sender, EventArgs e)
-        {
-            
+        {            
                 btn_Music_Nowpl_Play.Visible = false;
                 btn_Music_Nowpl_Pause.Visible = true;
-                mp3Player_Nowpl.stop();
-                                                                    
+                mp3Player_Nowpl.Stop();                                                                  
         }
     }
 }

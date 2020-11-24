@@ -12,6 +12,12 @@ namespace MuViPApp
 {
     public partial class Music_Playlist : UserControl
     {
+        private string iD_Playlist;
+        public string ID_Playlist
+        { 
+            get { return iD_Playlist; } 
+            set { iD_Playlist = value; } 
+        }
         private static Music_Playlist instance;
 
         public static Music_Playlist Instance
@@ -25,17 +31,17 @@ namespace MuViPApp
             InitializeComponent();
         }
 
-        public Music_Playlist(string name, int total)
+        public Music_Playlist(string ID_Playlist, string name, int total)
         {
             InitializeComponent();
+            this.ID_Playlist = ID_Playlist;
             lb_Playlist_Name.Text = name;
             lb_Number_Of_Song.Text += ": " + total.ToString();
         }
 
-        private void Playlist_Load(object sender, EventArgs e)
+        private void Music_Playlist_Click(object sender, EventArgs e)
         {
-
+            
         }
-
     }
 }

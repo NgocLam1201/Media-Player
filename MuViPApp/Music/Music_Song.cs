@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MuViPApp.Music
 {
-    class Music_Song
+    public class Music_Song
     {
         private static Music_Song instance;
 
@@ -16,15 +16,54 @@ namespace MuViPApp.Music
             get { if (instance == null) instance = new Music_Song(); return instance; }
             private set { instance = value; }
         }
-
-        private string ID_Genre { get => ID_Genre; set => ID_Genre = value; }
-        private string ID_Playlist { get => ID_Playlist; set => ID_Playlist = value; }
-        private string Name_Song { get => Name_Song; set => Name_Song = value; }
-        private string Singer { get => Singer; set => Singer = value; }
-        private string Link_Music { get => Link_Music; set => Link_Music = value; }
-        private string Picture_Song { get => Picture_Song; set => Picture_Song = value; }
-        private DateTime Date_Add { get => Date_Add; set => Date_Add = value; }
-        private TimeSpan Length { get => Length; set => Length = value; }
+        private string iD_Genre;
+        private string ID_Genre
+        {
+            get { return iD_Genre; }
+            set { iD_Genre = value; }
+        }
+        private string iD_Playlist;
+        private string ID_Playlist
+        {
+            get { return iD_Playlist; }
+            set { iD_Playlist = value; }
+        }
+        private string name_Song;
+        private string Name_Song
+        {
+            get { return name_Song; }
+            set { name_Song = value; }
+        }
+        private string singer;
+        private string Singer
+        {
+            get { return singer; }
+            set { singer = value; }
+        }
+        private string link_Music;
+        private string Link_Music
+        {
+            get { return link_Music; }
+            set { link_Music = value; }
+        }
+        private string picture_Song;
+        private string Picture_Song
+        {
+            get { return picture_Song; }
+            set { picture_Song = value; }
+        }
+        private DateTime date_Add;
+        private DateTime Date_Add
+        {
+            get { return date_Add; }
+            set { date_Add = value; }
+        }
+        private TimeSpan length;
+        private TimeSpan Length
+        {
+            get { return length; }
+            set { length = value; }
+        }
 
         public Music_Song() { }
 

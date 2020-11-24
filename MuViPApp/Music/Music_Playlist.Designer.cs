@@ -32,9 +32,9 @@
             this.lb_Playlist_Name = new System.Windows.Forms.Label();
             this.lb_Number_Of_Song = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.Image_Playlist = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuGradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Image_Playlist)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_Playlist_Name
@@ -48,6 +48,7 @@
             this.lb_Playlist_Name.Size = new System.Drawing.Size(108, 17);
             this.lb_Playlist_Name.TabIndex = 1;
             this.lb_Playlist_Name.Text = "Playlist\'s Name";
+            this.lb_Playlist_Name.Click += new System.EventHandler(this.Music_Playlist_Click);
             // 
             // lb_Number_Of_Song
             // 
@@ -60,12 +61,13 @@
             this.lb_Number_Of_Song.Size = new System.Drawing.Size(83, 14);
             this.lb_Number_Of_Song.TabIndex = 2;
             this.lb_Number_Of_Song.Text = "Number of songs";
+            this.lb_Number_Of_Song.Click += new System.EventHandler(this.Music_Playlist_Click);
             // 
             // bunifuGradientPanel1
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel1.Controls.Add(this.bunifuImageButton1);
+            this.bunifuGradientPanel1.Controls.Add(this.Image_Playlist);
             this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.Black;
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.DimGray;
@@ -76,20 +78,22 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(123, 96);
             this.bunifuGradientPanel1.TabIndex = 3;
+            this.bunifuGradientPanel1.Click += new System.EventHandler(this.Music_Playlist_Click);
             // 
-            // bunifuImageButton1
+            // Image_Playlist
             // 
-            this.bunifuImageButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(14, 13);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(93, 68);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 0;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
+            this.Image_Playlist.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Image_Playlist.BackColor = System.Drawing.Color.Transparent;
+            this.Image_Playlist.Image = ((System.Drawing.Image)(resources.GetObject("Image_Playlist.Image")));
+            this.Image_Playlist.ImageActive = null;
+            this.Image_Playlist.Location = new System.Drawing.Point(14, 13);
+            this.Image_Playlist.Name = "Image_Playlist";
+            this.Image_Playlist.Size = new System.Drawing.Size(93, 68);
+            this.Image_Playlist.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Image_Playlist.TabIndex = 0;
+            this.Image_Playlist.TabStop = false;
+            this.Image_Playlist.Zoom = 10;
+            this.Image_Playlist.Click += new System.EventHandler(this.Music_Playlist_Click);
             // 
             // Music_Playlist
             // 
@@ -106,18 +110,19 @@
             this.MinimumSize = new System.Drawing.Size(125, 132);
             this.Name = "Music_Playlist";
             this.Size = new System.Drawing.Size(123, 130);
-            this.Load += new System.EventHandler(this.Playlist_Load);
+            this.Click += new System.EventHandler(this.Music_Playlist_Click);
             this.bunifuGradientPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Image_Playlist)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label lb_Number_Of_Song;
-        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
-        private System.Windows.Forms.Label lb_Playlist_Name;
+
+        public System.Windows.Forms.Label lb_Number_Of_Song;
+        public Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
+        public Bunifu.Framework.UI.BunifuImageButton Image_Playlist;
+        public System.Windows.Forms.Label lb_Playlist_Name;
     }
 }
