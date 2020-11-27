@@ -23,7 +23,7 @@ namespace MuViPApp.Music
         public List<Music_Song> GetListMusic(string ID_Playlist)
         {
             List<Music_Song> ListSong = new List<Music_Song>();
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Music WHERE ID_Playlist = " + ID_Playlist);
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT distinct * FROM Music join Genre on Music.ID_Genre = Genre.ID_Genre WHERE ID_Playlist = " + ID_Playlist);
 
             foreach (DataRow item in data.Rows)
             {

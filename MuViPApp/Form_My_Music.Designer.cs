@@ -189,12 +189,12 @@
             // Name_Music
             // 
             this.Name_Music.Text = "Name";
-            this.Name_Music.Width = 230;
+            this.Name_Music.Width = 206;
             // 
             // Artist_Music
             // 
             this.Artist_Music.Text = "Artist";
-            this.Artist_Music.Width = 150;
+            this.Artist_Music.Width = 139;
             // 
             // Genre_Music
             // 
@@ -247,7 +247,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_My_Music_Play_all;
         private System.Windows.Forms.Label lb_My_music_sort;
         protected internal Bunifu.Framework.UI.BunifuDropdown cb_My_music_sort;
-        private System.Windows.Forms.ListView lv_My_Music;
         private System.Windows.Forms.ColumnHeader Name_Music;
         private System.Windows.Forms.ColumnHeader Artist_Music;
         private System.Windows.Forms.ColumnHeader Genre_Music;
@@ -256,5 +255,6 @@
         private System.Windows.Forms.ColumnHeader Length_Music;
         private System.Windows.Forms.ColumnHeader Link_Music;
         private System.Windows.Forms.ColumnHeader Link_Picture;
+        public System.Windows.Forms.ListView lv_My_Music;
     }
 }

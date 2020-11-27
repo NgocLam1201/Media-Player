@@ -35,11 +35,12 @@
             this.btn_Login = new Bunifu.Framework.UI.BunifuThinButton2();
             this.Search = new Bunifu.Framework.UI.BunifuTextbox();
             this.panel_Player = new System.Windows.Forms.Panel();
-            this.bunifuImageButton8 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.NameMedia = new System.Windows.Forms.Label();
+            this.Loop = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_Music_Pause = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton6 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton5 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton4 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.Pre_Play = new Bunifu.Framework.UI.BunifuImageButton();
+            this.Next_Play = new Bunifu.Framework.UI.BunifuImageButton();
+            this.Mix_Media = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_Music_Play = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
@@ -70,14 +71,14 @@
             this.btn_AddPl = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_My_Video = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Time_Media = new System.Windows.Forms.Timer(this.components);
-            this.NameMedia = new System.Windows.Forms.Label();
+            this.Time_real = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel_Player.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Loop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Music_Pause)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pre_Play)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Next_Play)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mix_Media)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Music_Play)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
@@ -110,7 +111,7 @@
             this.btn_User.BackColor = System.Drawing.Color.DarkOrchid;
             this.btn_User.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_User.BorderRadius = 0;
-            this.btn_User.ButtonText = "abc";
+            this.btn_User.ButtonText = "nam_user";
             this.btn_User.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_User.DisabledColor = System.Drawing.Color.Gray;
             this.btn_User.Iconcolor = System.Drawing.Color.Transparent;
@@ -134,7 +135,7 @@
             this.btn_User.selected = false;
             this.btn_User.Size = new System.Drawing.Size(102, 29);
             this.btn_User.TabIndex = 1;
-            this.btn_User.Text = "abc";
+            this.btn_User.Text = "nam_user";
             this.btn_User.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_User.Textcolor = System.Drawing.Color.White;
             this.btn_User.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -186,11 +187,11 @@
             // 
             this.panel_Player.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
             this.panel_Player.Controls.Add(this.NameMedia);
-            this.panel_Player.Controls.Add(this.bunifuImageButton8);
+            this.panel_Player.Controls.Add(this.Loop);
             this.panel_Player.Controls.Add(this.btn_Music_Pause);
-            this.panel_Player.Controls.Add(this.bunifuImageButton6);
-            this.panel_Player.Controls.Add(this.bunifuImageButton5);
-            this.panel_Player.Controls.Add(this.bunifuImageButton4);
+            this.panel_Player.Controls.Add(this.Pre_Play);
+            this.panel_Player.Controls.Add(this.Next_Play);
+            this.panel_Player.Controls.Add(this.Mix_Media);
             this.panel_Player.Controls.Add(this.btn_Music_Play);
             this.panel_Player.Controls.Add(this.bunifuImageButton2);
             this.panel_Player.Controls.Add(this.bunifuImageButton1);
@@ -205,19 +206,33 @@
             this.panel_Player.Size = new System.Drawing.Size(722, 100);
             this.panel_Player.TabIndex = 10;
             // 
-            // bunifuImageButton8
+            // NameMedia
             // 
-            this.bunifuImageButton8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuImageButton8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
-            this.bunifuImageButton8.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton8.Image")));
-            this.bunifuImageButton8.ImageActive = null;
-            this.bunifuImageButton8.Location = new System.Drawing.Point(424, 23);
-            this.bunifuImageButton8.Name = "bunifuImageButton8";
-            this.bunifuImageButton8.Size = new System.Drawing.Size(26, 32);
-            this.bunifuImageButton8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton8.TabIndex = 13;
-            this.bunifuImageButton8.TabStop = false;
-            this.bunifuImageButton8.Zoom = 10;
+            this.NameMedia.AutoSize = true;
+            this.NameMedia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NameMedia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameMedia.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.NameMedia.Location = new System.Drawing.Point(122, 10);
+            this.NameMedia.Margin = new System.Windows.Forms.Padding(3);
+            this.NameMedia.Name = "NameMedia";
+            this.NameMedia.Size = new System.Drawing.Size(97, 16);
+            this.NameMedia.TabIndex = 2;
+            this.NameMedia.Text = "Name_Music";
+            // 
+            // Loop
+            // 
+            this.Loop.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Loop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
+            this.Loop.Image = ((System.Drawing.Image)(resources.GetObject("Loop.Image")));
+            this.Loop.ImageActive = null;
+            this.Loop.Location = new System.Drawing.Point(416, 23);
+            this.Loop.Name = "Loop";
+            this.Loop.Size = new System.Drawing.Size(34, 33);
+            this.Loop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Loop.TabIndex = 13;
+            this.Loop.TabStop = false;
+            this.Loop.Zoom = 10;
+            this.Loop.Click += new System.EventHandler(this.LoopMusic);
             // 
             // btn_Music_Pause
             // 
@@ -225,9 +240,9 @@
             this.btn_Music_Pause.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
             this.btn_Music_Pause.Image = ((System.Drawing.Image)(resources.GetObject("btn_Music_Pause.Image")));
             this.btn_Music_Pause.ImageActive = null;
-            this.btn_Music_Pause.Location = new System.Drawing.Point(318, 27);
+            this.btn_Music_Pause.Location = new System.Drawing.Point(318, 24);
             this.btn_Music_Pause.Name = "btn_Music_Pause";
-            this.btn_Music_Pause.Size = new System.Drawing.Size(19, 27);
+            this.btn_Music_Pause.Size = new System.Drawing.Size(23, 31);
             this.btn_Music_Pause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_Music_Pause.TabIndex = 12;
             this.btn_Music_Pause.TabStop = false;
@@ -235,47 +250,50 @@
             this.btn_Music_Pause.Zoom = 10;
             this.btn_Music_Pause.Click += new System.EventHandler(this.btn_Music_Pause_Click);
             // 
-            // bunifuImageButton6
+            // Pre_Play
             // 
-            this.bunifuImageButton6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuImageButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
-            this.bunifuImageButton6.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton6.Image")));
-            this.bunifuImageButton6.ImageActive = null;
-            this.bunifuImageButton6.Location = new System.Drawing.Point(274, 27);
-            this.bunifuImageButton6.Name = "bunifuImageButton6";
-            this.bunifuImageButton6.Size = new System.Drawing.Size(27, 26);
-            this.bunifuImageButton6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton6.TabIndex = 11;
-            this.bunifuImageButton6.TabStop = false;
-            this.bunifuImageButton6.Zoom = 10;
+            this.Pre_Play.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Pre_Play.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
+            this.Pre_Play.Image = ((System.Drawing.Image)(resources.GetObject("Pre_Play.Image")));
+            this.Pre_Play.ImageActive = null;
+            this.Pre_Play.Location = new System.Drawing.Point(274, 27);
+            this.Pre_Play.Name = "Pre_Play";
+            this.Pre_Play.Size = new System.Drawing.Size(27, 26);
+            this.Pre_Play.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Pre_Play.TabIndex = 11;
+            this.Pre_Play.TabStop = false;
+            this.Pre_Play.Zoom = 10;
+            this.Pre_Play.Click += new System.EventHandler(this.Pre_Play_Click);
             // 
-            // bunifuImageButton5
+            // Next_Play
             // 
-            this.bunifuImageButton5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuImageButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
-            this.bunifuImageButton5.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton5.Image")));
-            this.bunifuImageButton5.ImageActive = null;
-            this.bunifuImageButton5.Location = new System.Drawing.Point(352, 24);
-            this.bunifuImageButton5.Name = "bunifuImageButton5";
-            this.bunifuImageButton5.Size = new System.Drawing.Size(23, 32);
-            this.bunifuImageButton5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton5.TabIndex = 10;
-            this.bunifuImageButton5.TabStop = false;
-            this.bunifuImageButton5.Zoom = 10;
+            this.Next_Play.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Next_Play.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
+            this.Next_Play.Image = ((System.Drawing.Image)(resources.GetObject("Next_Play.Image")));
+            this.Next_Play.ImageActive = null;
+            this.Next_Play.Location = new System.Drawing.Point(352, 24);
+            this.Next_Play.Name = "Next_Play";
+            this.Next_Play.Size = new System.Drawing.Size(23, 32);
+            this.Next_Play.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Next_Play.TabIndex = 10;
+            this.Next_Play.TabStop = false;
+            this.Next_Play.Zoom = 10;
+            this.Next_Play.Click += new System.EventHandler(this.Next_Play_Click);
             // 
-            // bunifuImageButton4
+            // Mix_Media
             // 
-            this.bunifuImageButton4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuImageButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
-            this.bunifuImageButton4.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton4.Image")));
-            this.bunifuImageButton4.ImageActive = null;
-            this.bunifuImageButton4.Location = new System.Drawing.Point(385, 24);
-            this.bunifuImageButton4.Name = "bunifuImageButton4";
-            this.bunifuImageButton4.Size = new System.Drawing.Size(25, 32);
-            this.bunifuImageButton4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton4.TabIndex = 9;
-            this.bunifuImageButton4.TabStop = false;
-            this.bunifuImageButton4.Zoom = 10;
+            this.Mix_Media.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Mix_Media.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
+            this.Mix_Media.Image = ((System.Drawing.Image)(resources.GetObject("Mix_Media.Image")));
+            this.Mix_Media.ImageActive = null;
+            this.Mix_Media.Location = new System.Drawing.Point(385, 24);
+            this.Mix_Media.Name = "Mix_Media";
+            this.Mix_Media.Size = new System.Drawing.Size(25, 32);
+            this.Mix_Media.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Mix_Media.TabIndex = 9;
+            this.Mix_Media.TabStop = false;
+            this.Mix_Media.Zoom = 10;
+            this.Mix_Media.Click += new System.EventHandler(this.Mix_Media_Click);
             // 
             // btn_Music_Play
             // 
@@ -329,9 +347,9 @@
             this.RestTime.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.RestTime.Location = new System.Drawing.Point(638, 70);
             this.RestTime.Name = "RestTime";
-            this.RestTime.Size = new System.Drawing.Size(57, 18);
+            this.RestTime.Size = new System.Drawing.Size(49, 18);
             this.RestTime.TabIndex = 5;
-            this.RestTime.Text = "4:15";
+            this.RestTime.Text = "00:00:00";
             // 
             // BeginTime
             // 
@@ -340,11 +358,11 @@
             this.BeginTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.BeginTime.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BeginTime.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.BeginTime.Location = new System.Drawing.Point(88, 70);
+            this.BeginTime.Location = new System.Drawing.Point(93, 70);
             this.BeginTime.Name = "BeginTime";
-            this.BeginTime.Size = new System.Drawing.Size(56, 18);
+            this.BeginTime.Size = new System.Drawing.Size(51, 18);
             this.BeginTime.TabIndex = 4;
-            this.BeginTime.Text = "0:0:0";
+            this.BeginTime.Text = "00:00:00";
             this.BeginTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Artist
@@ -366,16 +384,18 @@
             // play
             // 
             this.play.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.play.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.play.BackColor = System.Drawing.Color.Transparent;
             this.play.BackgroudColor = System.Drawing.Color.DarkGray;
             this.play.BorderRadius = 50;
             this.play.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(42)))), ((int)(((byte)(254)))));
-            this.play.Location = new System.Drawing.Point(150, 67);
+            this.play.Location = new System.Drawing.Point(151, 66);
             this.play.MaximumValue = 100;
             this.play.Name = "play";
             this.play.Size = new System.Drawing.Size(473, 30);
             this.play.TabIndex = 1;
-            this.play.Value = 35;
+            this.play.Value = 0;
+            this.play.ValueChanged += new System.EventHandler(this.play_ValueChanged);
             // 
             // pictureBox3
             // 
@@ -935,18 +955,15 @@
             this.btn_My_Video.Visible = false;
             this.btn_My_Video.Click += new System.EventHandler(this.btn_My_Video_Click);
             // 
-            // NameMedia
+            // Time_Media
             // 
-            this.NameMedia.AutoSize = true;
-            this.NameMedia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.NameMedia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameMedia.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.NameMedia.Location = new System.Drawing.Point(122, 10);
-            this.NameMedia.Margin = new System.Windows.Forms.Padding(3);
-            this.NameMedia.Name = "NameMedia";
-            this.NameMedia.Size = new System.Drawing.Size(97, 16);
-            this.NameMedia.TabIndex = 2;
-            this.NameMedia.Text = "Name_Music";
+            this.Time_Media.Interval = 1000;
+            this.Time_Media.Tick += new System.EventHandler(this.Time_Media_Tick);
+            // 
+            // Time_real
+            // 
+            this.Time_real.Interval = 1000;
+            this.Time_real.Tick += new System.EventHandler(this.Time_real_Tick);
             // 
             // Form_Muvip
             // 
@@ -969,11 +986,11 @@
             this.panel1.ResumeLayout(false);
             this.panel_Player.ResumeLayout(false);
             this.panel_Player.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Loop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Music_Pause)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pre_Play)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Next_Play)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mix_Media)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Music_Play)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
@@ -994,15 +1011,14 @@
         #endregion
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuTextbox Search;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton8;
+        private Bunifu.Framework.UI.BunifuImageButton Loop;
         private Bunifu.Framework.UI.BunifuImageButton btn_Music_Pause;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton6;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton5;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton4;
+        private Bunifu.Framework.UI.BunifuImageButton Pre_Play;
+        private Bunifu.Framework.UI.BunifuImageButton Next_Play;
+        private Bunifu.Framework.UI.BunifuImageButton Mix_Media;
         private Bunifu.Framework.UI.BunifuImageButton btn_Music_Play;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
-        private System.Windows.Forms.TextBox BeginTime;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel pn_Childform;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -1022,7 +1038,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_Exit;
         private System.Windows.Forms.Panel Menuside;
         private System.Windows.Forms.Panel panel_Music_Playlist;
-        private Bunifu.Framework.UI.BunifuSlider play;
         private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuFlatButton btn_AddPl;
         private Bunifu.Framework.UI.BunifuFlatButton btn_My_Video;
@@ -1033,6 +1048,9 @@
         public System.Windows.Forms.TextBox Artist;
         public System.Windows.Forms.Panel panel_Player;
         public System.Windows.Forms.Label NameMedia;
+        private System.Windows.Forms.Timer Time_real;
+        public Bunifu.Framework.UI.BunifuSlider play;
+        public System.Windows.Forms.TextBox BeginTime;
     }
 }
 

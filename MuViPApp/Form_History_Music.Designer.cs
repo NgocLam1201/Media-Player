@@ -33,9 +33,11 @@
             this.lv_History_Music = new System.Windows.Forms.ListView();
             this.Name_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Artist_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Album_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Genre_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Date_Added_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Date_View_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Length_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Link_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Link_Picture = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pn_Top.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +48,7 @@
             this.pn_Top.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.pn_Top.Location = new System.Drawing.Point(0, 0);
             this.pn_Top.Name = "pn_Top";
-            this.pn_Top.Size = new System.Drawing.Size(800, 133);
+            this.pn_Top.Size = new System.Drawing.Size(800, 100);
             this.pn_Top.TabIndex = 2;
             // 
             // lb_History_Music
@@ -67,14 +69,20 @@
             this.lv_History_Music.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Name_Music,
             this.Artist_Music,
-            this.Album_Music,
             this.Genre_Music,
-            this.Date_Added_Music});
+            this.Date_View_Music,
+            this.Length_Music,
+            this.Link_Music,
+            this.Link_Picture});
             this.lv_History_Music.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lv_History_Music.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lv_History_Music.ForeColor = System.Drawing.SystemColors.Info;
+            this.lv_History_Music.FullRowSelect = true;
             this.lv_History_Music.HideSelection = false;
-            this.lv_History_Music.Location = new System.Drawing.Point(0, 133);
+            this.lv_History_Music.Location = new System.Drawing.Point(0, 100);
             this.lv_History_Music.Name = "lv_History_Music";
-            this.lv_History_Music.Size = new System.Drawing.Size(800, 317);
+            this.lv_History_Music.ShowItemToolTips = true;
+            this.lv_History_Music.Size = new System.Drawing.Size(800, 350);
             this.lv_History_Music.TabIndex = 3;
             this.lv_History_Music.UseCompatibleStateImageBehavior = false;
             this.lv_History_Music.View = System.Windows.Forms.View.Details;
@@ -82,27 +90,37 @@
             // Name_Music
             // 
             this.Name_Music.Text = "Name";
-            this.Name_Music.Width = 183;
+            this.Name_Music.Width = 226;
             // 
             // Artist_Music
             // 
             this.Artist_Music.Text = "Artist";
-            this.Artist_Music.Width = 113;
-            // 
-            // Album_Music
-            // 
-            this.Album_Music.Text = "Album";
-            this.Album_Music.Width = 108;
+            this.Artist_Music.Width = 150;
             // 
             // Genre_Music
             // 
             this.Genre_Music.Text = "Genre";
-            this.Genre_Music.Width = 88;
+            this.Genre_Music.Width = 139;
             // 
-            // Date_Added_Music
+            // Date_View_Music
             // 
-            this.Date_Added_Music.Text = "Date Added";
-            this.Date_Added_Music.Width = 193;
+            this.Date_View_Music.Text = "Date";
+            this.Date_View_Music.Width = 113;
+            // 
+            // Length_Music
+            // 
+            this.Length_Music.Text = "Length";
+            this.Length_Music.Width = 108;
+            // 
+            // Link_Music
+            // 
+            this.Link_Music.Text = "";
+            this.Link_Music.Width = 0;
+            // 
+            // Link_Picture
+            // 
+            this.Link_Picture.Text = "";
+            this.Link_Picture.Width = 0;
             // 
             // Form_History_Music
             // 
@@ -125,11 +143,13 @@
 
         private System.Windows.Forms.Panel pn_Top;
         private System.Windows.Forms.Label lb_History_Music;
-        private System.Windows.Forms.ListView lv_History_Music;
+        public System.Windows.Forms.ListView lv_History_Music;
         private System.Windows.Forms.ColumnHeader Name_Music;
         private System.Windows.Forms.ColumnHeader Artist_Music;
-        private System.Windows.Forms.ColumnHeader Album_Music;
         private System.Windows.Forms.ColumnHeader Genre_Music;
-        private System.Windows.Forms.ColumnHeader Date_Added_Music;
+        private System.Windows.Forms.ColumnHeader Date_View_Music;
+        private System.Windows.Forms.ColumnHeader Length_Music;
+        private System.Windows.Forms.ColumnHeader Link_Music;
+        private System.Windows.Forms.ColumnHeader Link_Picture;
     }
 }

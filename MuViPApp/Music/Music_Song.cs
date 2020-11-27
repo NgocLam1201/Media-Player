@@ -64,10 +64,16 @@ namespace MuViPApp.Music
             get { return length; }
             set { length = value; }
         }
+        private string name_Genre;
+        private string Name_Genre
+        {
+            get { return name_Genre; }
+            set { name_Genre = value; }
+        }
 
         public Music_Song() { }
 
-        public Music_Song(string ID_Genre, string ID_Pl, string Name, string Singer, string LinkSong, string LinkPic, DateTime DateAdd, TimeSpan length)
+        public Music_Song(string ID_Pl, string ID_Genre, string Name, string Singer, string LinkSong, string LinkPic, DateTime DateAdd, TimeSpan length, string name_Genre)
         {
             this.ID_Genre = ID_Genre;
             this.ID_Playlist = ID_Pl;
@@ -77,6 +83,7 @@ namespace MuViPApp.Music
             this.Singer = Singer;
             this.Link_Music = LinkSong;
             this.Date_Add = DateAdd;
+            this.Name_Genre = name_Genre;
         }
 
         public Music_Song(DataRow row)
@@ -89,6 +96,7 @@ namespace MuViPApp.Music
             this.Picture_Song = (string)row["Picture_Song"];
             this.Date_Add = (DateTime)row["ID_Playlist"];
             this.Length = (TimeSpan)row["size"];
+            this.Name_Genre = (string)row["size"];
         }
     }
 }

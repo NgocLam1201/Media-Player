@@ -150,6 +150,7 @@
       <DependentUpon>form_Video_Nowpl.cs</DependentUpon>
     </Compile>
     <Compile Include="Mp3Player.cs" />
+    <Compile Include="Music\ListMusicPlaying.cs" />
     <Compile Include="Music\Music_Playlist.cs">
       <SubType>UserControl</SubType>
     </Compile>

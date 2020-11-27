@@ -12,8 +12,11 @@ namespace MuViPApp
 {
     public partial class Form_History_Video : Form
     {
-        public Form_History_Video()
+        Form_Muvip parent;
+
+        public Form_History_Video(Form_Muvip parent = null)
         {
+            this.parent = parent;
             InitializeComponent();
         }
     }

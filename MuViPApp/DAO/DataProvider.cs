@@ -10,7 +10,7 @@ namespace MuViPApp.DAO
 {
     class DataProvider
     {
-        private string connectionSTR = @"Server=LAPTOP-97PPLKMR\SQLEXPRESS;Database=MuViPApp;User Id=sa;Password=12345678;";
+        private string connectionSTR = @"Server=ADMIN\SQLEXPRESS;Database=MuViPApp;User Id=sa;Password=0337651201;";
 
         private static DataProvider instance; // Ctrl + R + E
 

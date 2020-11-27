@@ -12,10 +12,11 @@ namespace MuViPApp
 {
     public partial class form_Video_Nowpl : Form
     {
-        private Mp3Player mp3Player_Nowpl;
-        public form_Video_Nowpl(Mp3Player mp3)
+        Form_Muvip parent;
+
+        public form_Video_Nowpl(Form_Muvip parent = null)
         {
-            mp3Player_Nowpl = mp3;
+            this.parent = parent;
             InitializeComponent();
         }
 

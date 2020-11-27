@@ -1,4 +1,5 @@
 ﻿using MuViPApp.DAO;
+using MuViPApp.Music;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,20 +16,39 @@ namespace MuViPApp
 {
     public partial class Form_My_Music : Form
     {
+        public int count;
         Form_Muvip parent;
-        public Form_My_Music(Form_Muvip parent)
+        private static Form_My_Music instance;
+
+        public static Form_My_Music Instance
+        {
+            get { if (instance == null) instance = new Form_My_Music(); return instance; }
+            private set { instance = value; }
+        }
+        public Form_My_Music(Form_Muvip parent = null)
         {
             this.parent = parent;
             InitializeComponent();
+            ShowListMusic();
+
+            for (int i = 0; i < this.lv_My_Music.SelectedItems.Count; i++)
+            {
+                lv_My_Music.KeyDown += Key_Enter_Down;
+            }
+            lv_My_Music.DoubleClick += Music_Click;
+        }        
+
+        void ShowListMusic()
+        {
             string query = "USP_AllMusic";
 
-            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] {});
-
-            for (int i = 0;i < result.Rows.Count; i++)
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { });
+            count = result.Rows.Count;
+            for (int i = 0; i < result.Rows.Count; i++)
             {
                 string[] date = result.Rows[i].Field<DateTime>(3).ToString().Split(' ');
-                ListViewItem items = new ListViewItem(new[] { result.Rows[i].Field<string>(0), 
-                                                            result.Rows[i].Field<string>(1), 
+                ListViewItem items = new ListViewItem(new[] { result.Rows[i].Field<string>(0),
+                                                            result.Rows[i].Field<string>(1),
                                                             result.Rows[i].Field<string>(2),
                                                             date[0],
                                                             result.Rows[i].Field<TimeSpan>(4).ToString(),
@@ -36,40 +56,59 @@ namespace MuViPApp
                                                             result.Rows[i].Field<string>(6)});
                 lv_My_Music.Items.Add(items);
             }
-            for (int i = 0; i < this.lv_My_Music.SelectedItems.Count; i++)
-            {
-                lv_My_Music.KeyDown += Key_Enter_Down;
-            }
-            lv_My_Music.DoubleClick += Music_Click;
         }
 
-        
-
-        private void Music_Click(object sender, EventArgs e)
+        public void Music_Click(object sender, EventArgs e)
         {
-            this.parent.Time_Media.Stop();
-            this.parent.btn_Music_Play_Click(sender, e);
-            DateTime length = Convert.ToDateTime(lv_My_Music.SelectedItems[0].SubItems[4].Text);
-            //this.parent.Time_Media.Interval = (length.Hour * 3600 + length.Minute * 60 + length.Second) * 1000;
-            //this.parent.Time_Media.Start();
-            this.parent.NameMedia.Text = lv_My_Music.SelectedItems[0].SubItems[0].Text;
-            this.parent.Artist.Text = lv_My_Music.SelectedItems[0].SubItems[1].Text;
-            this.parent.RestTime.Text = lv_My_Music.SelectedItems[0].SubItems[4].Text;
-            this.parent.mp3Player.Open(lv_My_Music.SelectedItems[0].SubItems[5].Text);
-            //this.parent.mp3Player.open(lv_My_Music.SelectedItems[0].SubItems[5].Text);
-            /*using (var soundPlayer = new SoundPlayer(lv_My_Music.SelectedItems[0].SubItems[5].Text))
+            ListMusicPlaying.Instance.Remove();
+            if (lv_My_Music.SelectedItems.Count == 1)
             {
-                soundPlayer.Play(); 
-            }*/
-            this.parent.btn_Music_Pause_Click(sender,e);
-            
+                int index = lv_My_Music.Items.IndexOf(lv_My_Music.SelectedItems[0]);
+                for (int i = index; i < count; i++)
+                {
+                    ListViewItem items = new ListViewItem(new[] {lv_My_Music.Items[i].SubItems[0].Text,
+                                                                lv_My_Music.Items[i].SubItems[1].Text,
+                                                                lv_My_Music.Items[i].SubItems[2].Text,
+                                                                lv_My_Music.Items[i].SubItems[3].Text,
+                                                                lv_My_Music.Items[i].SubItems[4].Text,
+                                                                lv_My_Music.Items[i].SubItems[5].Text,
+                                                                lv_My_Music.Items[i].SubItems[6].Text});
+                    ListMusicPlaying.Instance.AddItems(items);
+                }
+                for (int i = 0; i < index; i++)
+                {
+                    ListViewItem items = new ListViewItem(new[] {lv_My_Music.Items[i].SubItems[0].Text,
+                                                                lv_My_Music.Items[i].SubItems[1].Text,
+                                                                lv_My_Music.Items[i].SubItems[2].Text,
+                                                                lv_My_Music.Items[i].SubItems[3].Text,
+                                                                lv_My_Music.Items[i].SubItems[4].Text,
+                                                                lv_My_Music.Items[i].SubItems[5].Text,
+                                                                lv_My_Music.Items[i].SubItems[6].Text });
+                    ListMusicPlaying.Instance.AddItems(items);
+                }
+            }
+            else
+                for (int i = 0; i < lv_My_Music.SelectedItems.Count; i++)
+                {
+                    ListViewItem items = new ListViewItem(new[] {lv_My_Music.SelectedItems[i].SubItems[0].Text,
+                                                        lv_My_Music.SelectedItems[i].SubItems[1].Text,
+                                                        lv_My_Music.SelectedItems[i].SubItems[2].Text,
+                                                        lv_My_Music.SelectedItems[i].SubItems[3].Text,
+                                                        lv_My_Music.SelectedItems[i].SubItems[4].Text,
+                                                        lv_My_Music.SelectedItems[i].SubItems[5].Text,
+                                                        lv_My_Music.SelectedItems[i].SubItems[6].Text });
+                    ListMusicPlaying.Instance.AddItems(items);
+                }
+            this.parent.PlayMusic(0);
+            lv_My_Music.Items.Clear();
+            ShowListMusic();   
         }
 
-        private void Key_Enter_Down(object sender, KeyEventArgs e)
+        public void Key_Enter_Down(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                
+                Music_Click(this, new EventArgs());
             }    
         }
     }

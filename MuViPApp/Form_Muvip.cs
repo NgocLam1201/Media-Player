@@ -8,14 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Threading;
+using MuViPApp.Music;
+using MuViPApp.DAO;
 
 namespace MuViPApp
 {
     public partial class Form_Muvip : Form
     {
-        public string ID_Account;
+        public string ID_Account = null;
 
-        public Mp3Player mp3Player = new Mp3Player();
+        private static Form_Muvip instance;
+
+        public static Form_Muvip Instance
+        {
+            get { if (instance == null) instance = new Form_Muvip(); return instance; }
+            private set { instance = value; }
+        }
+
+        public int index = -1;
+        //bool loop = false;
+        bool Mix_Music = false;
         public Form_Muvip()
         {
             InitializeComponent();
@@ -24,7 +37,6 @@ namespace MuViPApp
             btn_My_Music.selected = true;
             btn_Music_Play.Visible = false;
             btn_Music_Pause.Visible = true;
-            //openChildForm(new Form_My_Music());
         }
 
         private Form activeForm = null;
@@ -48,7 +60,9 @@ namespace MuViPApp
             {
                 btn_Music_Play.Visible = false;
                 btn_Music_Pause.Visible = true;
-                mp3Player.Stop();
+                Mp3Player.Instance.Pause();
+                Time_real.Stop();
+                Time_Media.Stop();
             }
         }
 
@@ -58,7 +72,9 @@ namespace MuViPApp
             {
                 btn_Music_Pause.Visible = false;
                 btn_Music_Play.Visible = true;
-                mp3Player.Play();
+                Mp3Player.Instance.Play();
+                Time_real.Start();
+                Time_Media.Start();
             }
         }
 
@@ -93,7 +109,7 @@ namespace MuViPApp
 
                 if (ofd_music.ShowDialog() == DialogResult.OK)
                 {
-                    mp3Player.Open(ofd_music.FileName);
+                    Mp3Player.Instance.Open(ofd_music.FileName);
                 }
             }
         }
@@ -121,7 +137,7 @@ namespace MuViPApp
 
                 if (ofd_video.ShowDialog() == DialogResult.OK)
                 {
-                    mp3Player.Open(ofd_video.FileName);
+                    Mp3Player.Instance.Open(ofd_video.FileName);
 
                 }
             }
@@ -183,7 +199,7 @@ namespace MuViPApp
             btn_History.selected = false;
             btn_Help.selected = false;
             btn_Exit.selected = false;
-            openChildForm(new Form_My_Music(this));
+            openChildForm(new Form_My_Music());
         }
 
         private void btn_Video_Click(object sender, EventArgs e)
@@ -223,11 +239,11 @@ namespace MuViPApp
             panel_Player.Visible = false;
             if (btn_Music.selected == true)
             {
-                openChildForm(new Form_Music_Nowpl(mp3Player));
+                openChildForm(new Form_Music_Nowpl(this));
             }
             if (btn_Video.selected == true)
             {
-                openChildForm(new form_Video_Nowpl(mp3Player));
+                openChildForm(new form_Video_Nowpl(this));
             }
         }
 
@@ -267,11 +283,11 @@ namespace MuViPApp
             btn_Playlist.selected = false;
             if (btn_Music.selected == true)
             {
-                openChildForm(new Form_History_Music());
+                openChildForm(new Form_History_Music(this));
             }
             if (btn_Video.selected == true)
             {
-                openChildForm(new Form_History_Video());
+                openChildForm(new Form_History_Video(this));
             }
         }
 
@@ -285,6 +301,192 @@ namespace MuViPApp
         private void btn_User_Click(object sender, EventArgs e)
         {
 
+        }
+        private int a, b, c;
+
+        private void Time_real_Tick(object sender, EventArgs e)
+        {
+            if (play.Value < play.MaximumValue)
+                play.Value++;
+            string[] time = BeginTime.Text.Split(':');
+            a = Convert.ToInt32(time[0]);
+            b = Convert.ToInt32(time[1]);
+            c = Convert.ToInt32(time[2]);
+            BeginTime.Text = "";
+            c += 1;
+            if (c > 59)
+            {
+                b++;
+                if (b > 59)
+                {
+                    a++;
+                }
+            }
+            if (a < 10)
+            {
+                BeginTime.Text += "0" + a.ToString();
+            }
+            else
+                BeginTime.Text += a.ToString() + "";
+            BeginTime.Text += ":";
+            if (b < 10)
+            {
+                BeginTime.Text += "0" + b.ToString();
+            }
+            else
+                BeginTime.Text += b.ToString() + "";
+            BeginTime.Text += ":";
+            if (c < 10)
+            {
+                BeginTime.Text += "0" + c.ToString();
+            }
+            else
+                BeginTime.Text += c.ToString() + "";
+            if (BeginTime.Text == RestTime.Text)
+            {
+                Time_real.Stop();
+                Thread.Sleep(1000);
+                btn_Music_Play_Click(this, new EventArgs());
+            }
+        }
+
+        private void play_ValueChanged(object sender, EventArgs e)
+        {
+            Mp3Player.Instance.Seek(play.Value*1000);
+            int value_time = play.Value;
+            a = value_time / 3600;
+            value_time -= a * 3600;
+            b = value_time / 60;
+            c = value_time - b * 60;
+            BeginTime.Text = "";
+            if (a < 10)
+            {
+                BeginTime.Text += "0" + a.ToString();
+            }
+            else
+                BeginTime.Text += a.ToString() + "";
+            BeginTime.Text += ":";
+            if (b < 10)
+            {
+                BeginTime.Text += "0" + b.ToString();
+            }
+            else
+                BeginTime.Text += b.ToString() + "";
+            BeginTime.Text += ":";
+            if (c < 10)
+            {
+                BeginTime.Text += "0" + c.ToString();
+            }
+            else
+                BeginTime.Text += c.ToString() + "";
+        }
+
+        public void Next_Play_Click(object sender, EventArgs e)
+        {
+            var rand = new Random();
+            int length = ListMusicPlaying.Instance.Listmusic.Count;
+            if (Mix_Music)
+            {
+                int ran = rand.Next(0, length);
+                while (ran == index)
+                    ran = rand.Next(0, length);
+                index = ran;
+            }   
+            else 
+                index ++;
+            if (index == length)
+            {
+                index = 0;
+            }
+            PlayMusic(index);
+        }
+
+        public void PlayMusic(int index)
+        {
+            this.index = index;
+            Time_Media.Stop();
+            Mp3Player.Instance.Close();
+            btn_Music_Play_Click(this, new EventArgs());
+            ListViewItem Music = ListMusicPlaying.Instance.GetMusic(index);
+            DateTime length = Convert.ToDateTime(Music.SubItems[4].Text);
+            Time_Media.Interval = (length.Hour * 3600 + length.Minute * 60 + length.Second) * 1000;
+            this.NameMedia.Text = NameMedia.Text.Replace(NameMedia.Text, Music.SubItems[0].Text);
+            this.Artist.Text = Music.SubItems[1].Text;
+            this.RestTime.Text = Music.SubItems[4].Text;
+            Mp3Player.Instance.Open(Music.SubItems[5].Text);
+            Mp3Player.Instance.Play();
+            btn_Music_Pause_Click(this, new EventArgs());
+            Time_Media.Start();
+            Time_Media_Play();
+            if (ID_Account != null)
+            {
+                AddHistory(Music);
+            }
+        }
+
+        private void AddHistory(ListViewItem Music)
+        {
+            string Sql = @"insert into History values (N'" +
+                Music.SubItems[0].Text + @"',N'" +
+                Music.SubItems[1].Text + @"',N'" +
+                Music.SubItems[2].Text + @"',GETDATE(),N'" +
+                Music.SubItems[4].Text + @"',N'" +
+                Music.SubItems[5].Text + @"',N'" +
+                Music.SubItems[6].Text + @"','Music',N'" +
+                ID_Account + @"')";
+            DataProvider.Instance.ExecuteNonQuery(Sql);
+        }
+
+        public void LoopMusic(object sender, EventArgs e)
+        {
+            Mp3Player.Instance.loop = true;
+        }
+
+        public void Mix_Media_Click(object sender, EventArgs e)
+        {
+            if (Mix_Music)
+            {
+                Mix_Music = false;
+            }    
+            else
+            {
+                Mix_Music = true;
+            }                
+        }
+
+        public void Pre_Play_Click(object sender, EventArgs e)
+        {
+            var rand = new Random();
+            int length = ListMusicPlaying.Instance.Listmusic.Count;
+            if (Mix_Music)
+            {
+                int ran = rand.Next(0, length);
+                while (ran == index)
+                    ran = rand.Next(0, length);
+                index = ran;
+            }
+            else
+                index--;
+            if (index < 0)
+            {
+                index = length - 1;
+            }
+            PlayMusic(index);
+        }
+
+        public void Time_Media_Play()
+        {
+            BeginTime.Text = "00:00:00";
+            Time_real.Start();
+            Time_real_Tick(this, new EventArgs());
+            play.Value = 0;
+            play.MaximumValue = Time_Media.Interval/1000;
+        }
+        public void Time_Media_Tick(object sender, EventArgs e)
+        {
+            Time_Media.Stop();
+            Time_real.Stop();
+            Mp3Player.Instance.Close();
         }
     }
 }
