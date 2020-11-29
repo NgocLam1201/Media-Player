@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pn_Top = new System.Windows.Forms.Panel();
+            this.count_liked_song = new System.Windows.Forms.Label();
             this.btn_My_Music_Play_all = new Bunifu.Framework.UI.BunifuFlatButton();
             this.lb_Liked_Music = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -38,14 +39,13 @@
             this.Album_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Genre_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Date_Added_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label1 = new System.Windows.Forms.Label();
             this.pn_Top.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pn_Top
             // 
-            this.pn_Top.Controls.Add(this.label1);
+            this.pn_Top.Controls.Add(this.count_liked_song);
             this.pn_Top.Controls.Add(this.btn_My_Music_Play_all);
             this.pn_Top.Controls.Add(this.lb_Liked_Music);
             this.pn_Top.Dock = System.Windows.Forms.DockStyle.Top;
@@ -54,6 +54,16 @@
             this.pn_Top.Name = "pn_Top";
             this.pn_Top.Size = new System.Drawing.Size(800, 133);
             this.pn_Top.TabIndex = 1;
+            // 
+            // count_liked_song
+            // 
+            this.count_liked_song.AutoSize = true;
+            this.count_liked_song.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.count_liked_song.Location = new System.Drawing.Point(260, 44);
+            this.count_liked_song.Name = "count_liked_song";
+            this.count_liked_song.Size = new System.Drawing.Size(29, 21);
+            this.count_liked_song.TabIndex = 7;
+            this.count_liked_song.Text = "(0)";
             // 
             // btn_My_Music_Play_all
             // 
@@ -156,16 +166,6 @@
             this.Date_Added_Music.Text = "Date Added";
             this.Date_Added_Music.Width = 193;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(260, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 21);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "(0)";
-            // 
             // Form_Liked_Music
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,6 +196,6 @@
         private System.Windows.Forms.ColumnHeader Album_Music;
         private System.Windows.Forms.ColumnHeader Genre_Music;
         private System.Windows.Forms.ColumnHeader Date_Added_Music;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label count_liked_song;
     }
 }

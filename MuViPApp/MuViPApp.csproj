@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>D:\Tai lieu\Lập trình trực quan\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Apps\Bunifu\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -149,6 +149,7 @@
     <Compile Include="form_Video_Nowpl.Designer.cs">
       <DependentUpon>form_Video_Nowpl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListViewColumnSorter.cs" />
     <Compile Include="Mp3Player.cs" />
     <Compile Include="Music\ListMusicPlaying.cs" />
     <Compile Include="Music\Music_Playlist.cs">
