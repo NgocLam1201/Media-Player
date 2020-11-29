@@ -11,6 +11,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 using System.Threading;
 using MuViPApp.Music;
 using MuViPApp.DAO;
+using System.IO;
 
 namespace MuViPApp
 {
@@ -37,6 +38,11 @@ namespace MuViPApp
             btn_My_Music.selected = true;
             btn_Music_Play.Visible = false;
             btn_Music_Pause.Visible = true;
+            uint CurrVol = 0;
+            Mp3Player.waveOutGetVolume(IntPtr.Zero, out CurrVol);
+            ushort CalcVol = (ushort)(CurrVol & 0x0000ffff);
+            // gán 1 giá trị tăng lên bằng 1/10 âm lượng
+            //trackBar2.Value = CalcVol / (ushort.MaxValue / 10);
         }
 
         private Form activeForm = null;
@@ -68,13 +74,16 @@ namespace MuViPApp
 
         public void btn_Music_Pause_Click(object sender, EventArgs e)
         {
+            string _cmd = "/Media-Player/data/music/Why-Not-Me-Hiderway.mp3";
+            Mp3Player.Instance.Open(_cmd);
+            Mp3Player.Instance.Play();
             if (btn_Music_Pause.Visible == true)
             {
                 btn_Music_Pause.Visible = false;
                 btn_Music_Play.Visible = true;
                 Mp3Player.Instance.Play();
-                Time_real.Start();
-                Time_Media.Start();
+                //Time_real.Start();
+                //Time_Media.Start();
             }
         }
 
@@ -106,10 +115,24 @@ namespace MuViPApp
             };
             using (ofd_music)
             {
-
+                
                 if (ofd_music.ShowDialog() == DialogResult.OK)
                 {
+                    FileInfo fileInfo = new FileInfo(ofd_music.FileName);
                     Mp3Player.Instance.Open(ofd_music.FileName);
+                    //MessageBox.Show();
+                    /*try
+                    {
+
+                        string s = "";
+                        for (int i = 0; i < this..currentMedia.attributeCount; i++)
+{
+                            s += this.axWindowsMediaPlayer1.currentMedia.getAttributeName(i) + " : ";
+                            s += this.axWindowsMediaPlayer1.currentMedia.getItemInf o(this.axWindowsMediaPlayer1.currentMedia.getAttri buteName(i)) + "\n";
+                        }
+                        MessageBox.Show(s, this.Text);
+                    }
+                    catch (Exception loi) { MessageBox.Show(loi.Message); }*/
                 }
             }
         }
@@ -487,6 +510,7 @@ namespace MuViPApp
             Time_Media.Stop();
             Time_real.Stop();
             Mp3Player.Instance.Close();
+            Next_Play_Click(this, new EventArgs());
         }
     }
 }

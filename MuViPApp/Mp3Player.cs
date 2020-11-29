@@ -20,6 +20,8 @@ namespace MuViPApp
         public enum PlayerStatus { Ready, Playing, Paused, Stopped };
         string _command;
         public bool loop = false;
+        private const int BUFFER_LENGTH = 255;
+        StringBuilder _buffer = new StringBuilder(BUFFER_LENGTH);
         private static Mp3Player instance;
 
         public static Mp3Player Instance
@@ -29,17 +31,17 @@ namespace MuViPApp
         }
         public void Open(string fileName)
         {
-            _command = "open \"" + fileName + "\" type mpegvideo alias YinYangMedia";
+            _command = "open \"" + fileName + "\" type mpegvideo alias MuVipApp";
             mciSendString(_command, null, 0, IntPtr.Zero);
         }
         public void Close()
         {
-            _command = "close YinYangMedia";
+            _command = "close MuVipApp";
             mciSendString(_command, null, 0, IntPtr.Zero);
         }
         public void Play()
         {
-            _command = "play YinYangMedia";
+            _command = "play MuVipApp";
             if (loop)
                 _command += " repeat";
             mciSendString(_command, null, 0, IntPtr.Zero);
@@ -47,36 +49,53 @@ namespace MuViPApp
 
         public void Pause()
         {
-            _command = "pause YinYangMedia";
+            _command = "pause MuVipApp";
             mciSendString(_command, null, 0, IntPtr.Zero);
 
         }
         public void Stop()
         {
-            mciSendString("stop YinYangMedia", null, 0, IntPtr.Zero);
+            mciSendString("stop MuVipApp", null, 0, IntPtr.Zero);
         }
         public void Seek(int miliseconds)
         {
-            _command = "play YinYangMedia from " + miliseconds;
-            mciSendString(_command, null, 0, IntPtr.Zero);
+            if (this.Status.Equals("playing", StringComparison.OrdinalIgnoreCase))
+            {
+                _command = "play MuVipApp from " + miliseconds;
+                mciSendString(_command, null, 0, IntPtr.Zero);
+            }
+            else
+            {
+                _command = "seek MuVipApp to " + miliseconds;
+                mciSendString(_command, null, 0, IntPtr.Zero);
+            }
         }
 
         public void DisplayMediaWindow()
         {
-            mciSendString("put YinYangMedia", null, 0, IntPtr.Zero);
+            mciSendString("put MuVipApp", null, 0, IntPtr.Zero);
         }
 
         public void DisplayMediaWindow(Rectangle rec)
         {
-            mciSendString(String.Format("put YinYangMedia window at {0} {1} {2} {3}",
+            mciSendString(String.Format("put MuVipApp window at {0} {1} {2} {3}",
                                         rec.Left, rec.Top, rec.Width, rec.Height), null, 0, IntPtr.Zero);
         }
-        StringBuilder _buffer;
+
+        public string Status
+        {
+            get
+            {
+                mciSendString("status MuVipApp mode", _buffer, BUFFER_LENGTH, IntPtr.Zero);
+                return _buffer.ToString();
+            }
+        }
+
         public int Length
         {
             get
             {
-                mciSendString("status YinYangMedia length", _buffer, 0, IntPtr.Zero);
+                mciSendString("status MuVipApp length", _buffer, BUFFER_LENGTH, IntPtr.Zero);
                 try
                 {
                     return (int)Math.Floor(Convert.ToDouble(_buffer.ToString().Trim()));
@@ -88,7 +107,7 @@ namespace MuViPApp
         {
             get
             {
-                mciSendString("status YinYangMedia position", _buffer, 0, IntPtr.Zero);
+                mciSendString("status MuVipApp position", _buffer, BUFFER_LENGTH, IntPtr.Zero);
                 try
                 {
                     return (int)Math.Floor(Convert.ToDouble(_buffer.ToString().Trim()));
@@ -100,59 +119,19 @@ namespace MuViPApp
                 Seek(value);
             }
         }
-        /*
-        [DllImport("winmm.dll")]
-        private static extern long mciSendString(string lpstrCommand, StringBuilder lpstrReturnString, int uReturnLength, int hwdCallBack);
-        
-        public void open(string File)
+
+        public void SetVolume(int value)
         {
-            string Format = @"open ""{0}"" type MPEGVideo alias MediaFile";
-            string command = string.Format(Format, File);
-            mciSendString(command, null, 0, 0);
+            int NewVolume = ((ushort.MaxValue / 10) * value);
+
+            uint NewVolumeAllChannels = (((uint)NewVolume & 0x0000ffff) | ((uint)NewVolume << 16));
+
+            waveOutSetVolume(IntPtr.Zero, NewVolumeAllChannels);
         }
 
-        public void play()
+        public void GetInfo()
         {
-            string command = "play MediaFile";
-            mciSendString(command, null, 0, 0);
+            //this.
         }
-        public void stop()
-        {
-            string command = "stop MediaFile";
-            mciSendString(command, null, 0, 0);
-        }*/
-        /*private WindowsMediaPlayer sound;
-
-        public Mp3Player()
-        {
-            sound = new WindowsMediaPlayer();
-        }
-
-        public void Open(string _filePath)
-        {
-            sound.URL = _filePath;
-
-        }
-
-        public void Play()
-        {
-            sound.controls.play();
-        }
-
-        public void Stop()
-        {
-            sound.controls.stop();
-        }
-
-        public void Pause()
-        {
-            sound.controls.pause();
-        }
-
-        public void Resume()
-        {
-            if (sound.status == "Paused")
-                sound.controls.play();
-        }*/
     }
 }
