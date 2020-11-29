@@ -42,6 +42,9 @@ namespace MuViPApp
             uint CurrVol = 0;
             Mp3Player.waveOutGetVolume(IntPtr.Zero, out CurrVol);
             ushort CalcVol = (ushort)(CurrVol & 0x0000ffff);
+            setVolume();
+            Is_Loop.Visible = false;
+            Is_Mix.Visible = false;
             // gán 1 giá trị tăng lên bằng 1/10 âm lượng
             //trackBar2.Value = CalcVol / (ushort.MaxValue / 10);
         }
@@ -458,21 +461,33 @@ namespace MuViPApp
             DataProvider.Instance.ExecuteNonQuery(Sql);
         }
 
+        //Loop
+
         public void LoopMusic(object sender, EventArgs e)
         {
             Mp3Player.Instance.loop = true;
+            Is_Loop.Visible = true;
+            Loop.Visible = false;
+        }
+        private void Is_Loop_Click(object sender, EventArgs e)
+        {
+            Mp3Player.Instance.loop = false;
+            Is_Loop.Visible = false;
+            Loop.Visible = true;
         }
 
-        public void Mix_Media_Click(object sender, EventArgs e)
+        //Mix Music
+        private void Is_Mix_Click(object sender, EventArgs e)
         {
-            if (Mix_Music)
-            {
-                Mix_Music = false;
-            }    
-            else
-            {
-                Mix_Music = true;
-            }                
+            Mix_Music = false;
+            Is_Mix.Visible = false;
+            Mix_Media.Visible = true;
+        }
+        public void Mix_Media_Click(object sender, EventArgs e)
+        {   
+            Mix_Music = true;
+            Is_Mix.Visible = true;
+            Mix_Media.Visible = false;
         }
 
         public void Pre_Play_Click(object sender, EventArgs e)
@@ -494,6 +509,53 @@ namespace MuViPApp
             }
             PlayMusic(index);
         }
+        //volume//
+        private void setVolume()
+        {
+            Volume_Slider.Value = 50;
+            medium_Volume.Visible = true;
+            max_Volume.Visible = false;
+            Mute.Visible = false;
+        }
+        private void max_Volume_Click(object sender, EventArgs e)
+        {
+            Volume_Slider.Value = 0;
+            medium_Volume.Visible = false;
+            max_Volume.Visible = false;
+            Mute.Visible = true;
+        }
+
+        private void Volume_Slider_ValueChanged(object sender, EventArgs e)
+        {
+            if (Volume_Slider.Value==0)
+            {
+                Mute.Visible = true;
+                max_Volume.Visible = false;
+                medium_Volume.Visible = false;
+
+            }
+            else if (Volume_Slider.Value <= 50)
+            {
+                Mute.Visible = false;
+                max_Volume.Visible = false;
+                medium_Volume.Visible = true;
+            }
+
+            if (Volume_Slider.Value >50)
+            {
+                Mute.Visible = false;
+                max_Volume.Visible = true;
+                medium_Volume.Visible = false;
+
+            }
+        }
+
+        private void Mute_Click(object sender, EventArgs e)
+        {
+            setVolume();
+        }
+
+       
 
         public void Time_Media_Play()
         {

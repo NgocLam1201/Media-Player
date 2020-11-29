@@ -35,6 +35,10 @@
             this.btn_Login = new Bunifu.Framework.UI.BunifuThinButton2();
             this.Search = new Bunifu.Framework.UI.BunifuTextbox();
             this.panel_Player = new System.Windows.Forms.Panel();
+            this.Is_Mix = new Bunifu.Framework.UI.BunifuImageButton();
+            this.max_Volume = new Bunifu.Framework.UI.BunifuImageButton();
+            this.medium_Volume = new Bunifu.Framework.UI.BunifuImageButton();
+            this.Volume_Slider = new Bunifu.Framework.UI.BunifuSlider();
             this.NameMedia = new System.Windows.Forms.Label();
             this.Loop = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_Music_Pause = new Bunifu.Framework.UI.BunifuImageButton();
@@ -42,7 +46,7 @@
             this.Next_Play = new Bunifu.Framework.UI.BunifuImageButton();
             this.Mix_Media = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_Music_Play = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.Mute = new Bunifu.Framework.UI.BunifuImageButton();
             this.RestTime = new System.Windows.Forms.TextBox();
             this.BeginTime = new System.Windows.Forms.TextBox();
             this.Artist = new System.Windows.Forms.TextBox();
@@ -70,15 +74,22 @@
             this.btn_AddPl = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_My_Video = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Time_real = new System.Windows.Forms.Timer(this.components);
+<<<<<<< HEAD
+=======
+            this.Is_Loop = new Bunifu.Framework.UI.BunifuImageButton();
+>>>>>>> 04a2838c7725c5872faf9c85c73173baafd71e32
             this.panel1.SuspendLayout();
             this.panel_Player.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Is_Mix)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.max_Volume)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medium_Volume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Loop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Music_Pause)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pre_Play)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Next_Play)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mix_Media)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Music_Play)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.pn_Childform.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -87,6 +98,10 @@
             this.panel3.SuspendLayout();
             this.Menuside.SuspendLayout();
             this.panel2.SuspendLayout();
+<<<<<<< HEAD
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.Is_Loop)).BeginInit();
+>>>>>>> 04a2838c7725c5872faf9c85c73173baafd71e32
             this.SuspendLayout();
             // 
             // panel1
@@ -183,6 +198,11 @@
             // panel_Player
             // 
             this.panel_Player.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
+            this.panel_Player.Controls.Add(this.Is_Loop);
+            this.panel_Player.Controls.Add(this.Is_Mix);
+            this.panel_Player.Controls.Add(this.max_Volume);
+            this.panel_Player.Controls.Add(this.medium_Volume);
+            this.panel_Player.Controls.Add(this.Volume_Slider);
             this.panel_Player.Controls.Add(this.NameMedia);
             this.panel_Player.Controls.Add(this.Loop);
             this.panel_Player.Controls.Add(this.btn_Music_Pause);
@@ -190,7 +210,7 @@
             this.panel_Player.Controls.Add(this.Next_Play);
             this.panel_Player.Controls.Add(this.Mix_Media);
             this.panel_Player.Controls.Add(this.btn_Music_Play);
-            this.panel_Player.Controls.Add(this.bunifuImageButton1);
+            this.panel_Player.Controls.Add(this.Mute);
             this.panel_Player.Controls.Add(this.RestTime);
             this.panel_Player.Controls.Add(this.BeginTime);
             this.panel_Player.Controls.Add(this.Artist);
@@ -201,6 +221,66 @@
             this.panel_Player.Name = "panel_Player";
             this.panel_Player.Size = new System.Drawing.Size(722, 100);
             this.panel_Player.TabIndex = 10;
+            // 
+            // Is_Mix
+            // 
+            this.Is_Mix.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Is_Mix.BackColor = System.Drawing.Color.Transparent;
+            this.Is_Mix.Image = ((System.Drawing.Image)(resources.GetObject("Is_Mix.Image")));
+            this.Is_Mix.ImageActive = null;
+            this.Is_Mix.Location = new System.Drawing.Point(398, 32);
+            this.Is_Mix.Name = "Is_Mix";
+            this.Is_Mix.Size = new System.Drawing.Size(29, 28);
+            this.Is_Mix.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Is_Mix.TabIndex = 16;
+            this.Is_Mix.TabStop = false;
+            this.Is_Mix.Zoom = 10;
+            this.Is_Mix.Click += new System.EventHandler(this.Is_Mix_Click);
+            // 
+            // max_Volume
+            // 
+            this.max_Volume.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.max_Volume.BackColor = System.Drawing.Color.Transparent;
+            this.max_Volume.Image = ((System.Drawing.Image)(resources.GetObject("max_Volume.Image")));
+            this.max_Volume.ImageActive = null;
+            this.max_Volume.Location = new System.Drawing.Point(472, 25);
+            this.max_Volume.Name = "max_Volume";
+            this.max_Volume.Size = new System.Drawing.Size(28, 44);
+            this.max_Volume.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.max_Volume.TabIndex = 15;
+            this.max_Volume.TabStop = false;
+            this.max_Volume.Zoom = 10;
+            this.max_Volume.Click += new System.EventHandler(this.max_Volume_Click);
+            // 
+            // medium_Volume
+            // 
+            this.medium_Volume.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.medium_Volume.BackColor = System.Drawing.Color.Transparent;
+            this.medium_Volume.Image = ((System.Drawing.Image)(resources.GetObject("medium_Volume.Image")));
+            this.medium_Volume.ImageActive = null;
+            this.medium_Volume.Location = new System.Drawing.Point(473, 31);
+            this.medium_Volume.Name = "medium_Volume";
+            this.medium_Volume.Size = new System.Drawing.Size(23, 32);
+            this.medium_Volume.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.medium_Volume.TabIndex = 14;
+            this.medium_Volume.TabStop = false;
+            this.medium_Volume.Zoom = 10;
+            this.medium_Volume.Click += new System.EventHandler(this.max_Volume_Click);
+            // 
+            // Volume_Slider
+            // 
+            this.Volume_Slider.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Volume_Slider.BackColor = System.Drawing.Color.Transparent;
+            this.Volume_Slider.BackgroudColor = System.Drawing.Color.DarkGray;
+            this.Volume_Slider.BorderRadius = 20;
+            this.Volume_Slider.IndicatorColor = System.Drawing.Color.DarkOrchid;
+            this.Volume_Slider.Location = new System.Drawing.Point(502, 36);
+            this.Volume_Slider.MaximumValue = 100;
+            this.Volume_Slider.Name = "Volume_Slider";
+            this.Volume_Slider.Size = new System.Drawing.Size(92, 30);
+            this.Volume_Slider.TabIndex = 15;
+            this.Volume_Slider.Value = 0;
+            this.Volume_Slider.ValueChanged += new System.EventHandler(this.Volume_Slider_ValueChanged);
             // 
             // NameMedia
             // 
@@ -222,9 +302,9 @@
             this.Loop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
             this.Loop.Image = ((System.Drawing.Image)(resources.GetObject("Loop.Image")));
             this.Loop.ImageActive = null;
-            this.Loop.Location = new System.Drawing.Point(416, 23);
+            this.Loop.Location = new System.Drawing.Point(433, 30);
             this.Loop.Name = "Loop";
-            this.Loop.Size = new System.Drawing.Size(34, 33);
+            this.Loop.Size = new System.Drawing.Size(34, 32);
             this.Loop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Loop.TabIndex = 13;
             this.Loop.TabStop = false;
@@ -237,9 +317,9 @@
             this.btn_Music_Pause.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
             this.btn_Music_Pause.Image = ((System.Drawing.Image)(resources.GetObject("btn_Music_Pause.Image")));
             this.btn_Music_Pause.ImageActive = null;
-            this.btn_Music_Pause.Location = new System.Drawing.Point(316, 24);
+            this.btn_Music_Pause.Location = new System.Drawing.Point(330, 34);
             this.btn_Music_Pause.Name = "btn_Music_Pause";
-            this.btn_Music_Pause.Size = new System.Drawing.Size(23, 31);
+            this.btn_Music_Pause.Size = new System.Drawing.Size(25, 24);
             this.btn_Music_Pause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_Music_Pause.TabIndex = 12;
             this.btn_Music_Pause.TabStop = false;
@@ -253,9 +333,9 @@
             this.Pre_Play.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
             this.Pre_Play.Image = ((System.Drawing.Image)(resources.GetObject("Pre_Play.Image")));
             this.Pre_Play.ImageActive = null;
-            this.Pre_Play.Location = new System.Drawing.Point(274, 27);
+            this.Pre_Play.Location = new System.Drawing.Point(291, 34);
             this.Pre_Play.Name = "Pre_Play";
-            this.Pre_Play.Size = new System.Drawing.Size(27, 26);
+            this.Pre_Play.Size = new System.Drawing.Size(30, 24);
             this.Pre_Play.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Pre_Play.TabIndex = 11;
             this.Pre_Play.TabStop = false;
@@ -268,9 +348,9 @@
             this.Next_Play.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
             this.Next_Play.Image = ((System.Drawing.Image)(resources.GetObject("Next_Play.Image")));
             this.Next_Play.ImageActive = null;
-            this.Next_Play.Location = new System.Drawing.Point(352, 24);
+            this.Next_Play.Location = new System.Drawing.Point(364, 34);
             this.Next_Play.Name = "Next_Play";
-            this.Next_Play.Size = new System.Drawing.Size(23, 32);
+            this.Next_Play.Size = new System.Drawing.Size(28, 24);
             this.Next_Play.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Next_Play.TabIndex = 10;
             this.Next_Play.TabStop = false;
@@ -283,9 +363,9 @@
             this.Mix_Media.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
             this.Mix_Media.Image = ((System.Drawing.Image)(resources.GetObject("Mix_Media.Image")));
             this.Mix_Media.ImageActive = null;
-            this.Mix_Media.Location = new System.Drawing.Point(385, 24);
+            this.Mix_Media.Location = new System.Drawing.Point(398, 33);
             this.Mix_Media.Name = "Mix_Media";
-            this.Mix_Media.Size = new System.Drawing.Size(25, 32);
+            this.Mix_Media.Size = new System.Drawing.Size(29, 27);
             this.Mix_Media.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Mix_Media.TabIndex = 9;
             this.Mix_Media.TabStop = false;
@@ -298,7 +378,7 @@
             this.btn_Music_Play.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
             this.btn_Music_Play.Image = ((System.Drawing.Image)(resources.GetObject("btn_Music_Play.Image")));
             this.btn_Music_Play.ImageActive = null;
-            this.btn_Music_Play.Location = new System.Drawing.Point(313, 27);
+            this.btn_Music_Play.Location = new System.Drawing.Point(327, 32);
             this.btn_Music_Play.Name = "btn_Music_Play";
             this.btn_Music_Play.Size = new System.Drawing.Size(28, 26);
             this.btn_Music_Play.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -307,19 +387,20 @@
             this.btn_Music_Play.Zoom = 10;
             this.btn_Music_Play.Click += new System.EventHandler(this.btn_Music_Play_Click);
             // 
-            // bunifuImageButton1
+            // Mute
             // 
-            this.bunifuImageButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(465, 24);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(22, 32);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 6;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
+            this.Mute.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Mute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
+            this.Mute.Image = ((System.Drawing.Image)(resources.GetObject("Mute.Image")));
+            this.Mute.ImageActive = null;
+            this.Mute.Location = new System.Drawing.Point(472, 31);
+            this.Mute.Name = "Mute";
+            this.Mute.Size = new System.Drawing.Size(23, 32);
+            this.Mute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Mute.TabIndex = 6;
+            this.Mute.TabStop = false;
+            this.Mute.Zoom = 10;
+            this.Mute.Click += new System.EventHandler(this.Mute_Click);
             // 
             // RestTime
             // 
@@ -370,7 +451,7 @@
             this.play.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.play.BackColor = System.Drawing.Color.Transparent;
             this.play.BackgroudColor = System.Drawing.Color.DarkGray;
-            this.play.BorderRadius = 50;
+            this.play.BorderRadius = 30;
             this.play.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(42)))), ((int)(((byte)(254)))));
             this.play.Location = new System.Drawing.Point(151, 66);
             this.play.MaximumValue = 100;
@@ -383,7 +464,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Image = global::MuViPApp.Properties.Resources.songImg;
             this.pictureBox3.Location = new System.Drawing.Point(47, 8);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(65, 62);
@@ -943,6 +1024,23 @@
             this.Time_real.Interval = 1000;
             this.Time_real.Tick += new System.EventHandler(this.Time_real_Tick);
             // 
+<<<<<<< HEAD
+=======
+            // Is_Loop
+            // 
+            this.Is_Loop.BackColor = System.Drawing.Color.Transparent;
+            this.Is_Loop.Image = ((System.Drawing.Image)(resources.GetObject("Is_Loop.Image")));
+            this.Is_Loop.ImageActive = null;
+            this.Is_Loop.Location = new System.Drawing.Point(433, 32);
+            this.Is_Loop.Name = "Is_Loop";
+            this.Is_Loop.Size = new System.Drawing.Size(37, 29);
+            this.Is_Loop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Is_Loop.TabIndex = 17;
+            this.Is_Loop.TabStop = false;
+            this.Is_Loop.Zoom = 10;
+            this.Is_Loop.Click += new System.EventHandler(this.Is_Loop_Click);
+            // 
+>>>>>>> 04a2838c7725c5872faf9c85c73173baafd71e32
             // Form_Muvip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -964,13 +1062,16 @@
             this.panel1.ResumeLayout(false);
             this.panel_Player.ResumeLayout(false);
             this.panel_Player.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Is_Mix)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.max_Volume)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medium_Volume)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Loop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Music_Pause)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pre_Play)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Next_Play)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mix_Media)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Music_Play)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mute)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.pn_Childform.ResumeLayout(false);
             this.pn_Childform.PerformLayout();
@@ -981,6 +1082,10 @@
             this.panel3.ResumeLayout(false);
             this.Menuside.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+<<<<<<< HEAD
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.Is_Loop)).EndInit();
+>>>>>>> 04a2838c7725c5872faf9c85c73173baafd71e32
             this.ResumeLayout(false);
 
         }
@@ -994,7 +1099,7 @@
         private Bunifu.Framework.UI.BunifuImageButton Next_Play;
         private Bunifu.Framework.UI.BunifuImageButton Mix_Media;
         private Bunifu.Framework.UI.BunifuImageButton btn_Music_Play;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private Bunifu.Framework.UI.BunifuImageButton Mute;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel pn_Childform;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -1026,6 +1131,14 @@
         private System.Windows.Forms.Timer Time_real;
         public Bunifu.Framework.UI.BunifuSlider play;
         public System.Windows.Forms.TextBox BeginTime;
+<<<<<<< HEAD
+=======
+        private Bunifu.Framework.UI.BunifuImageButton max_Volume;
+        private Bunifu.Framework.UI.BunifuImageButton medium_Volume;
+        private Bunifu.Framework.UI.BunifuSlider Volume_Slider;
+        private Bunifu.Framework.UI.BunifuImageButton Is_Mix;
+        private Bunifu.Framework.UI.BunifuImageButton Is_Loop;
+>>>>>>> 04a2838c7725c5872faf9c85c73173baafd71e32
     }
 }
 
