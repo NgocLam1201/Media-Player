@@ -122,12 +122,15 @@ namespace MuViPApp
                     lv_My_Music.View = View.Details;
                     break;
                 case 1:
-                    lv_My_Music.View = View.Tile;
+                    lv_My_Music.View = View.List;
                     break;
                 case 2:
-                    lv_My_Music.View = View.LargeIcon;
+                    lv_My_Music.View = View.Tile;
                     break;
                 case 3:
+                    lv_My_Music.View = View.LargeIcon;
+                    break;
+                case 4:
                     lv_My_Music.View = View.SmallIcon;
                     break;
             }
