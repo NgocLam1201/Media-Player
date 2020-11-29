@@ -73,9 +73,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_AddPl = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_My_Video = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.Time_Media = new System.Windows.Forms.Timer(this.components);
             this.Time_real = new System.Windows.Forms.Timer(this.components);
+<<<<<<< HEAD
+=======
             this.Is_Loop = new Bunifu.Framework.UI.BunifuImageButton();
+>>>>>>> 04a2838c7725c5872faf9c85c73173baafd71e32
             this.panel1.SuspendLayout();
             this.panel_Player.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Is_Mix)).BeginInit();
@@ -96,7 +98,10 @@
             this.panel3.SuspendLayout();
             this.Menuside.SuspendLayout();
             this.panel2.SuspendLayout();
+<<<<<<< HEAD
+=======
             ((System.ComponentModel.ISupportInitialize)(this.Is_Loop)).BeginInit();
+>>>>>>> 04a2838c7725c5872faf9c85c73173baafd71e32
             this.SuspendLayout();
             // 
             // panel1
@@ -1014,16 +1019,13 @@
             this.btn_My_Video.Visible = false;
             this.btn_My_Video.Click += new System.EventHandler(this.btn_My_Video_Click);
             // 
-            // Time_Media
-            // 
-            this.Time_Media.Interval = 1000;
-            this.Time_Media.Tick += new System.EventHandler(this.Time_Media_Tick);
-            // 
             // Time_real
             // 
             this.Time_real.Interval = 1000;
             this.Time_real.Tick += new System.EventHandler(this.Time_real_Tick);
             // 
+<<<<<<< HEAD
+=======
             // Is_Loop
             // 
             this.Is_Loop.BackColor = System.Drawing.Color.Transparent;
@@ -1038,6 +1040,7 @@
             this.Is_Loop.Zoom = 10;
             this.Is_Loop.Click += new System.EventHandler(this.Is_Loop_Click);
             // 
+>>>>>>> 04a2838c7725c5872faf9c85c73173baafd71e32
             // Form_Muvip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1079,7 +1082,10 @@
             this.panel3.ResumeLayout(false);
             this.Menuside.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+<<<<<<< HEAD
+=======
             ((System.ComponentModel.ISupportInitialize)(this.Is_Loop)).EndInit();
+>>>>>>> 04a2838c7725c5872faf9c85c73173baafd71e32
             this.ResumeLayout(false);
 
         }
@@ -1118,7 +1124,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_My_Video;
         public Bunifu.Framework.UI.BunifuFlatButton btn_User;
         public Bunifu.Framework.UI.BunifuThinButton2 btn_Login;
-        public System.Windows.Forms.Timer Time_Media;
         public System.Windows.Forms.TextBox RestTime;
         public System.Windows.Forms.TextBox Artist;
         public System.Windows.Forms.Panel panel_Player;
@@ -1126,11 +1131,14 @@
         private System.Windows.Forms.Timer Time_real;
         public Bunifu.Framework.UI.BunifuSlider play;
         public System.Windows.Forms.TextBox BeginTime;
+<<<<<<< HEAD
+=======
         private Bunifu.Framework.UI.BunifuImageButton max_Volume;
         private Bunifu.Framework.UI.BunifuImageButton medium_Volume;
         private Bunifu.Framework.UI.BunifuSlider Volume_Slider;
         private Bunifu.Framework.UI.BunifuImageButton Is_Mix;
         private Bunifu.Framework.UI.BunifuImageButton Is_Loop;
+>>>>>>> 04a2838c7725c5872faf9c85c73173baafd71e32
     }
 }
 

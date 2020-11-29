@@ -12,12 +12,6 @@ namespace MuViPApp
 {
     public partial class Music_Playlist : UserControl
     {
-        private string iD_Playlist;
-        public string ID_Playlist
-        { 
-            get { return iD_Playlist; } 
-            set { iD_Playlist = value; } 
-        }
         private static Music_Playlist instance;
 
         public static Music_Playlist Instance
@@ -26,22 +20,48 @@ namespace MuViPApp
             private set { Music_Playlist.instance = value; }
         }
 
-        public Music_Playlist()
+        private string iD_Playlist;
+        public string ID_Playlist
+        { 
+            get { return iD_Playlist; } 
+            set { iD_Playlist = value; } 
+        }
+
+        private string name;
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        private int number_song;
+        public int Number_song
+        {
+            get { return number_song; }
+            set { number_song = value; }
+        }
+
+        Form_Muvip parent;
+
+        public Music_Playlist(Form_Muvip parent = null)
         {
             InitializeComponent();
         }
 
-        public Music_Playlist(string ID_Playlist, string name, int total)
+        public Music_Playlist(string ID_Playlist, string name, int total, Form_Muvip parent = null)
         {
             InitializeComponent();
+            this.parent = parent;
             this.ID_Playlist = ID_Playlist;
-            lb_Playlist_Name.Text = name;
-            lb_Number_Of_Song.Text += ": " + total.ToString();
+            this.Name = name;
+            lb_Playlist_Name.Text = this.Name;
+            this.Number_song = total;
+            lb_Number_Of_Song.Text += ": " + this.Number_song.ToString();
         }
 
         private void Music_Playlist_Click(object sender, EventArgs e)
         {
-            
+            this.parent.openChildForm(new form_Music_Playlist(this));
         }
     }
 }

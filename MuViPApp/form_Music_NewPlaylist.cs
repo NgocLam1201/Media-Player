@@ -18,20 +18,17 @@ namespace MuViPApp
             parent = pr;
             InitializeComponent();
         }
-
-     
-
+  
         private void btn_Ok_Click(object sender, EventArgs e)
         {
-            if (tb_Name.Text == "") lb_Notice.Text = "Enter Playlist's Name.";
+            /*if (tb_Name.Text == "") lb_Notice.Text = "Enter Playlist's Name.";
             else
             {
-
                 form_Music_Playlist nf = new form_Music_Playlist(tb_Name.Text);
                 parent.openChildForm(nf);
                // Music
                 this.Close();
-            }
+            }*/
         }
         public void OpenForm(Form parent)
         {          
