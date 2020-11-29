@@ -5,13 +5,13 @@ namespace MuViPApp
 {
     public partial class form_Music_Playlist : Form
     {
-
-        public form_Music_Playlist(string s)
+        Music_Playlist parent;
+        public form_Music_Playlist(Music_Playlist parent = null)
         {
-
+            this.parent = parent;
             InitializeComponent();
-            lb_NamePl.Text = s;
-
+            lb_NamePl.Text = this.parent.Name;
+            Number_song.Text = this.parent.Number_song + " song";
         }
 
         protected form_Rename_pl form_Rename;

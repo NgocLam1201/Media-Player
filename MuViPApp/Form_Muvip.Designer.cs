@@ -69,9 +69,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_AddPl = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_My_Video = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.Time_Media = new System.Windows.Forms.Timer(this.components);
             this.Time_real = new System.Windows.Forms.Timer(this.components);
-            this.Volume = new System.Windows.Forms.TrackBar();
             this.panel1.SuspendLayout();
             this.panel_Player.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Loop)).BeginInit();
@@ -89,7 +87,6 @@
             this.panel3.SuspendLayout();
             this.Menuside.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Volume)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -199,7 +196,6 @@
             this.panel_Player.Controls.Add(this.Artist);
             this.panel_Player.Controls.Add(this.play);
             this.panel_Player.Controls.Add(this.pictureBox3);
-            this.panel_Player.Controls.Add(this.Volume);
             this.panel_Player.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel_Player.Location = new System.Drawing.Point(189, 503);
             this.panel_Player.Name = "panel_Player";
@@ -942,25 +938,10 @@
             this.btn_My_Video.Visible = false;
             this.btn_My_Video.Click += new System.EventHandler(this.btn_My_Video_Click);
             // 
-            // Time_Media
-            // 
-            this.Time_Media.Interval = 1000;
-            this.Time_Media.Tick += new System.EventHandler(this.Time_Media_Tick);
-            // 
             // Time_real
             // 
             this.Time_real.Interval = 1000;
             this.Time_real.Tick += new System.EventHandler(this.Time_real_Tick);
-            // 
-            // Volume
-            // 
-            this.Volume.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Volume.Location = new System.Drawing.Point(480, 19);
-            this.Volume.Maximum = 15;
-            this.Volume.Name = "Volume";
-            this.Volume.Size = new System.Drawing.Size(123, 45);
-            this.Volume.TabIndex = 14;
-            this.Volume.TickStyle = System.Windows.Forms.TickStyle.Both;
             // 
             // Form_Muvip
             // 
@@ -1000,7 +981,6 @@
             this.panel3.ResumeLayout(false);
             this.Menuside.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Volume)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1039,7 +1019,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_My_Video;
         public Bunifu.Framework.UI.BunifuFlatButton btn_User;
         public Bunifu.Framework.UI.BunifuThinButton2 btn_Login;
-        public System.Windows.Forms.Timer Time_Media;
         public System.Windows.Forms.TextBox RestTime;
         public System.Windows.Forms.TextBox Artist;
         public System.Windows.Forms.Panel panel_Player;
@@ -1047,7 +1026,6 @@
         private System.Windows.Forms.Timer Time_real;
         public Bunifu.Framework.UI.BunifuSlider play;
         public System.Windows.Forms.TextBox BeginTime;
-        public System.Windows.Forms.TrackBar Volume;
     }
 }
 

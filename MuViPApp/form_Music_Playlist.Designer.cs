@@ -33,7 +33,7 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Number_song = new System.Windows.Forms.Label();
             this.lb_NamePl = new System.Windows.Forms.Label();
             this.btn_Delete = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_Rename = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -67,7 +67,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.Number_song);
             this.panel1.Controls.Add(this.lb_NamePl);
             this.panel1.Controls.Add(this.btn_Delete);
             this.panel1.Controls.Add(this.btn_Rename);
@@ -80,17 +80,17 @@
             this.panel1.Size = new System.Drawing.Size(643, 99);
             this.panel1.TabIndex = 1;
             // 
-            // label1
+            // Number_song
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(193, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "0 song";
+            this.Number_song.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Number_song.AutoSize = true;
+            this.Number_song.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Number_song.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Number_song.Location = new System.Drawing.Point(193, 42);
+            this.Number_song.Name = "Number_song";
+            this.Number_song.Size = new System.Drawing.Size(39, 13);
+            this.Number_song.TabIndex = 8;
+            this.Number_song.Text = "0 song";
             // 
             // lb_NamePl
             // 
@@ -100,8 +100,9 @@
             this.lb_NamePl.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lb_NamePl.Location = new System.Drawing.Point(191, 12);
             this.lb_NamePl.Name = "lb_NamePl";
-            this.lb_NamePl.Size = new System.Drawing.Size(0, 25);
+            this.lb_NamePl.Size = new System.Drawing.Size(70, 25);
             this.lb_NamePl.TabIndex = 7;
+            this.lb_NamePl.Text = "name";
             // 
             // btn_Delete
             // 
@@ -334,8 +335,8 @@
         private System.Windows.Forms.TextBox text_Addsong;
         private System.Windows.Forms.TextBox tb_GotoCollection;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label lb_NamePl;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Number_song;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label lb_NamePl;
     }
 }

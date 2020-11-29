@@ -30,6 +30,7 @@ namespace MuViPApp
         public int index = -1;
         //bool loop = false;
         bool Mix_Music = false;
+        int length;
         public Form_Muvip()
         {
             InitializeComponent();
@@ -68,22 +69,20 @@ namespace MuViPApp
                 btn_Music_Pause.Visible = true;
                 Mp3Player.Instance.Pause();
                 Time_real.Stop();
-                Time_Media.Stop();
             }
         }
 
         public void btn_Music_Pause_Click(object sender, EventArgs e)
         {
-            string _cmd = "/Media-Player/data/music/Why-Not-Me-Hiderway.mp3";
-            Mp3Player.Instance.Open(_cmd);
-            Mp3Player.Instance.Play();
+            //string _cmd = "/Media-Player/data/music/Why-Not-Me-Hiderway.mp3";
+            //Mp3Player.Instance.Open(_cmd);
+            //Mp3Player.Instance.Play();
             if (btn_Music_Pause.Visible == true)
             {
                 btn_Music_Pause.Visible = false;
                 btn_Music_Play.Visible = true;
                 Mp3Player.Instance.Play();
-                //Time_real.Start();
-                //Time_Media.Start();
+                Time_real.Start();
             }
         }
 
@@ -370,6 +369,7 @@ namespace MuViPApp
                 Time_real.Stop();
                 Thread.Sleep(1000);
                 btn_Music_Play_Click(this, new EventArgs());
+                Next_Play_Click(this, new EventArgs());
             }
         }
 
@@ -407,17 +407,17 @@ namespace MuViPApp
         public void Next_Play_Click(object sender, EventArgs e)
         {
             var rand = new Random();
-            int length = ListMusicPlaying.Instance.Listmusic.Count;
+            int count = ListMusicPlaying.Instance.Listmusic.Count;
             if (Mix_Music)
             {
-                int ran = rand.Next(0, length);
+                int ran = rand.Next(0, count);
                 while (ran == index)
-                    ran = rand.Next(0, length);
+                    ran = rand.Next(0, count);
                 index = ran;
             }   
             else 
                 index ++;
-            if (index == length)
+            if (index == count)
             {
                 index = 0;
             }
@@ -427,19 +427,17 @@ namespace MuViPApp
         public void PlayMusic(int index)
         {
             this.index = index;
-            Time_Media.Stop();
             Mp3Player.Instance.Close();
             btn_Music_Play_Click(this, new EventArgs());
             ListViewItem Music = ListMusicPlaying.Instance.GetMusic(index);
             DateTime length = Convert.ToDateTime(Music.SubItems[4].Text);
-            Time_Media.Interval = (length.Hour * 3600 + length.Minute * 60 + length.Second) * 1000;
+            this.length = length.Hour * 3600 + length.Minute * 60 + length.Second;
             this.NameMedia.Text = NameMedia.Text.Replace(NameMedia.Text, Music.SubItems[0].Text);
             this.Artist.Text = Music.SubItems[1].Text;
             this.RestTime.Text = Music.SubItems[4].Text;
             Mp3Player.Instance.Open(Music.SubItems[5].Text);
             Mp3Player.Instance.Play();
             btn_Music_Pause_Click(this, new EventArgs());
-            Time_Media.Start();
             Time_Media_Play();
             if (ID_Account != null)
             {
@@ -500,17 +498,12 @@ namespace MuViPApp
         public void Time_Media_Play()
         {
             BeginTime.Text = "00:00:00";
+            a = b = c = 0;
             Time_real.Start();
             Time_real_Tick(this, new EventArgs());
             play.Value = 0;
-            play.MaximumValue = Time_Media.Interval/1000;
+            play.MaximumValue = this.length;
         }
-        public void Time_Media_Tick(object sender, EventArgs e)
-        {
-            Time_Media.Stop();
-            Time_real.Stop();
-            Mp3Player.Instance.Close();
-            Next_Play_Click(this, new EventArgs());
-        }
+
     }
 }

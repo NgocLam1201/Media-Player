@@ -98,26 +98,6 @@ namespace MuViPApp
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { email });
 
             return result.Rows.Count > 0;
-
-            /*String connString = @"Server=ADMIN\SQLEXPRESS;Database=MuViPApp;User Id=sa;Password=0337651201;";
-
-            SqlConnection connection = new SqlConnection(connString);
-            connection.Open();
-
-            String sqlQuery = "select * from Account";
-            SqlCommand command = new SqlCommand(sqlQuery, connection);
-
-            //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
-            SqlDataReader reader = command.ExecuteReader();
-
-            //Su dung reader de doc tung dong du lieu //va thuc hien thao tac xu ly mong muon voi du lieu doc len 
-            while (reader.HasRows)
-            {
-                if (reader.Read() == false) break;
-                if (email == reader.GetString(1))
-                    return true;
-            }
-            return false;*/
         }
 
         public bool isLengthLargeThanEight(string pass)
