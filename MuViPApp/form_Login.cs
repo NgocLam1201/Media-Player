@@ -32,7 +32,7 @@ namespace MuViPApp
             {
                 this.parent.btn_User.Visible = true;
                 this.parent.btn_Login.Visible = false;
-                String connString = @"Server=ADMIN\SQLEXPRESS;Database=MuViPApp;User Id=sa;Password=0337651201;";
+                String connString = @"Server=ADMIN\SQLEXPRESS;Database=MuViPApp;User Id=sa;Password=thuytien;";
 
                 SqlConnection connection = new SqlConnection(connString);
                 connection.Open();
@@ -67,8 +67,10 @@ namespace MuViPApp
 
         private void lb_Login_Signup_Click(object sender, EventArgs e)
         {
-            form_Signup frmSignUp = new form_Signup(this);
-            frmSignUp.ShowDialog();
+            form_Signup su = new form_Signup();
+            Point p = new Point(parent.Width / 2 - su.Width / 2, this.Height / 2 - su.Height / 2);
+            su.StartPosition = FormStartPosition.CenterParent;
+            su.ShowDialog();
         }
 
         private void btn_Login_Cancel_Click(object sender, EventArgs e)
