@@ -19,6 +19,7 @@ namespace MuViPApp
     {
         public string ID_Account = null;
 
+        public bool Is_Playing = false;
         private static Form_Muvip instance;
 
         public static Form_Muvip Instance
@@ -44,9 +45,15 @@ namespace MuViPApp
             ushort CalcVol = (ushort)(CurrVol & 0x0000ffff);
             Is_Loop.Visible = false;
             Is_Mix.Visible = false;
+<<<<<<< HEAD
             if (Volume_Slider.Value == 0)
                 Volume_Slider.Value = CalcVol / (ushort.MaxValue / 10);
             SetIconVolume();
+=======
+            panel_Player.Visible = false;
+            // gán 1 giá trị tăng lên bằng 1/10 âm lượng
+            //trackBar2.Value = CalcVol / (ushort.MaxValue / 10);
+>>>>>>> cb9d679a3c2084d0bcb2f47aa5f17196fce3516f
         }
 
         private Form activeForm = null;
@@ -271,7 +278,7 @@ namespace MuViPApp
 
         private void btn_My_Music_Click(object sender, EventArgs e)
         {
-            panel_Player.Visible = true;
+            if (Is_Playing == true) panel_Player.Visible = true;
             btn_Playlist.selected = false;
             if (btn_Music.selected == true)
                 openChildForm(new Form_My_Music(this));
@@ -279,7 +286,7 @@ namespace MuViPApp
 
         private void btn_My_Video_Click(object sender, EventArgs e)
         {
-            panel_Player.Visible = true;
+            if (Is_Playing == true) panel_Player.Visible = true;
             btn_Playlist.selected = false;
             if (btn_Video.selected == true)
                 openChildForm(new Form_My_Video());
@@ -287,7 +294,7 @@ namespace MuViPApp
 
         private void btn_Liked_Click(object sender, EventArgs e)
         {
-            panel_Player.Visible = true;
+            if (Is_Playing == true) panel_Player.Visible = true;
             btn_Playlist.selected = false;
             if (btn_Music.selected==true)
             {
@@ -301,7 +308,7 @@ namespace MuViPApp
 
         private void btn_History_Click(object sender, EventArgs e)
         {
-            panel_Player.Visible = true;
+            if (Is_Playing==true) panel_Player.Visible = true;
             btn_Playlist.selected = false;
             if (btn_Music.selected == true)
             {
@@ -316,6 +323,8 @@ namespace MuViPApp
         private void Login_Click(object sender, EventArgs e)
         {
             form_Login lgin = new form_Login(this);
+            Point p = new Point(this.Width / 2 - lgin.Width / 2, this.Height / 2 - lgin.Height / 2);
+            lgin.StartPosition = FormStartPosition.CenterParent;
             lgin.ShowDialog();
 
         }

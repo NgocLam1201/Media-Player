@@ -43,6 +43,10 @@
             this.btn_Music_Nowpl_Pause = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_Music_Nowpl_Before = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_Music_Nowpl_Replay = new Bunifu.Framework.UI.BunifuImageButton();
+<<<<<<< HEAD
+=======
+            this.btn_Music_Nowpl_Mute = new Bunifu.Framework.UI.BunifuImageButton();
+>>>>>>> cb9d679a3c2084d0bcb2f47aa5f17196fce3516f
             this.btn_Music_Nowpl_Mix = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_Music_Nowpl_Next = new Bunifu.Framework.UI.BunifuImageButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -58,6 +62,8 @@
             this.Link_Picture = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listView1 = new System.Windows.Forms.ListView();
             this.timer_play = new System.Windows.Forms.Timer(this.components);
+            this.RestTime = new System.Windows.Forms.TextBox();
+            this.BeginTime = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Music_Nowpl_Play)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.max_Volume)).BeginInit();
@@ -66,6 +72,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_Music_Nowpl_Pause)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Music_Nowpl_Before)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Music_Nowpl_Replay)).BeginInit();
+<<<<<<< HEAD
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Music_Nowpl_Mute)).BeginInit();
+>>>>>>> cb9d679a3c2084d0bcb2f47aa5f17196fce3516f
             ((System.ComponentModel.ISupportInitialize)(this.btn_Music_Nowpl_Mix)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Music_Nowpl_Next)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -82,7 +92,7 @@
             this.btn_Music_Nowpl_Play.BackColor = System.Drawing.Color.Transparent;
             this.btn_Music_Nowpl_Play.Image = ((System.Drawing.Image)(resources.GetObject("btn_Music_Nowpl_Play.Image")));
             this.btn_Music_Nowpl_Play.ImageActive = null;
-            this.btn_Music_Nowpl_Play.Location = new System.Drawing.Point(56, 95);
+            this.btn_Music_Nowpl_Play.Location = new System.Drawing.Point(215, 92);
             this.btn_Music_Nowpl_Play.Name = "btn_Music_Nowpl_Play";
             this.btn_Music_Nowpl_Play.Size = new System.Drawing.Size(18, 17);
             this.btn_Music_Nowpl_Play.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -123,10 +133,15 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
+<<<<<<< HEAD
             this.panel2.Controls.Add(this.max_Volume);
             this.panel2.Controls.Add(this.medium_Volume);
             this.panel2.Controls.Add(this.Volume_Slider);
             this.panel2.Controls.Add(this.Mute);
+=======
+            this.panel2.Controls.Add(this.RestTime);
+            this.panel2.Controls.Add(this.BeginTime);
+>>>>>>> cb9d679a3c2084d0bcb2f47aa5f17196fce3516f
             this.panel2.Controls.Add(this.lb_Info_Music);
             this.panel2.Controls.Add(this.btn_Music_Nowpl_Pause);
             this.panel2.Controls.Add(this.btn_Music_Nowpl_Before);
@@ -204,7 +219,7 @@
             this.btn_Music_Nowpl_Pause.BackColor = System.Drawing.Color.Transparent;
             this.btn_Music_Nowpl_Pause.Image = ((System.Drawing.Image)(resources.GetObject("btn_Music_Nowpl_Pause.Image")));
             this.btn_Music_Nowpl_Pause.ImageActive = null;
-            this.btn_Music_Nowpl_Pause.Location = new System.Drawing.Point(59, 95);
+            this.btn_Music_Nowpl_Pause.Location = new System.Drawing.Point(222, 93);
             this.btn_Music_Nowpl_Pause.Name = "btn_Music_Nowpl_Pause";
             this.btn_Music_Nowpl_Pause.Size = new System.Drawing.Size(14, 16);
             this.btn_Music_Nowpl_Pause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -219,7 +234,7 @@
             this.btn_Music_Nowpl_Before.BackColor = System.Drawing.Color.Transparent;
             this.btn_Music_Nowpl_Before.Image = ((System.Drawing.Image)(resources.GetObject("btn_Music_Nowpl_Before.Image")));
             this.btn_Music_Nowpl_Before.ImageActive = null;
-            this.btn_Music_Nowpl_Before.Location = new System.Drawing.Point(21, 95);
+            this.btn_Music_Nowpl_Before.Location = new System.Drawing.Point(181, 91);
             this.btn_Music_Nowpl_Before.Name = "btn_Music_Nowpl_Before";
             this.btn_Music_Nowpl_Before.Size = new System.Drawing.Size(35, 17);
             this.btn_Music_Nowpl_Before.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -233,7 +248,11 @@
             this.btn_Music_Nowpl_Replay.BackColor = System.Drawing.Color.Transparent;
             this.btn_Music_Nowpl_Replay.Image = ((System.Drawing.Image)(resources.GetObject("btn_Music_Nowpl_Replay.Image")));
             this.btn_Music_Nowpl_Replay.ImageActive = null;
+<<<<<<< HEAD
             this.btn_Music_Nowpl_Replay.Location = new System.Drawing.Point(144, 93);
+=======
+            this.btn_Music_Nowpl_Replay.Location = new System.Drawing.Point(305, 91);
+>>>>>>> cb9d679a3c2084d0bcb2f47aa5f17196fce3516f
             this.btn_Music_Nowpl_Replay.Name = "btn_Music_Nowpl_Replay";
             this.btn_Music_Nowpl_Replay.Size = new System.Drawing.Size(23, 18);
             this.btn_Music_Nowpl_Replay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -242,12 +261,28 @@
             this.btn_Music_Nowpl_Replay.Zoom = 10;
             this.btn_Music_Nowpl_Replay.Click += new System.EventHandler(this.btn_Music_Nowpl_Replay_Click);
             // 
+<<<<<<< HEAD
+=======
+            // btn_Music_Nowpl_Mute
+            // 
+            this.btn_Music_Nowpl_Mute.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Music_Nowpl_Mute.Image = ((System.Drawing.Image)(resources.GetObject("btn_Music_Nowpl_Mute.Image")));
+            this.btn_Music_Nowpl_Mute.ImageActive = null;
+            this.btn_Music_Nowpl_Mute.Location = new System.Drawing.Point(338, 93);
+            this.btn_Music_Nowpl_Mute.Name = "btn_Music_Nowpl_Mute";
+            this.btn_Music_Nowpl_Mute.Size = new System.Drawing.Size(17, 16);
+            this.btn_Music_Nowpl_Mute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_Music_Nowpl_Mute.TabIndex = 14;
+            this.btn_Music_Nowpl_Mute.TabStop = false;
+            this.btn_Music_Nowpl_Mute.Zoom = 10;
+            // 
+>>>>>>> cb9d679a3c2084d0bcb2f47aa5f17196fce3516f
             // btn_Music_Nowpl_Mix
             // 
             this.btn_Music_Nowpl_Mix.BackColor = System.Drawing.Color.Transparent;
             this.btn_Music_Nowpl_Mix.Image = ((System.Drawing.Image)(resources.GetObject("btn_Music_Nowpl_Mix.Image")));
             this.btn_Music_Nowpl_Mix.ImageActive = null;
-            this.btn_Music_Nowpl_Mix.Location = new System.Drawing.Point(115, 94);
+            this.btn_Music_Nowpl_Mix.Location = new System.Drawing.Point(275, 92);
             this.btn_Music_Nowpl_Mix.Name = "btn_Music_Nowpl_Mix";
             this.btn_Music_Nowpl_Mix.Size = new System.Drawing.Size(19, 18);
             this.btn_Music_Nowpl_Mix.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -261,7 +296,7 @@
             this.btn_Music_Nowpl_Next.BackColor = System.Drawing.Color.Transparent;
             this.btn_Music_Nowpl_Next.Image = ((System.Drawing.Image)(resources.GetObject("btn_Music_Nowpl_Next.Image")));
             this.btn_Music_Nowpl_Next.ImageActive = null;
-            this.btn_Music_Nowpl_Next.Location = new System.Drawing.Point(79, 95);
+            this.btn_Music_Nowpl_Next.Location = new System.Drawing.Point(239, 92);
             this.btn_Music_Nowpl_Next.Name = "btn_Music_Nowpl_Next";
             this.btn_Music_Nowpl_Next.Size = new System.Drawing.Size(27, 16);
             this.btn_Music_Nowpl_Next.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -286,12 +321,12 @@
             this.play.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.play.BackColor = System.Drawing.Color.Transparent;
             this.play.BackgroudColor = System.Drawing.Color.DarkGray;
-            this.play.BorderRadius = 10;
+            this.play.BorderRadius = 15;
             this.play.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(42)))), ((int)(((byte)(254)))));
-            this.play.Location = new System.Drawing.Point(3, 69);
+            this.play.Location = new System.Drawing.Point(11, 68);
             this.play.MaximumValue = 100;
             this.play.Name = "play";
-            this.play.Size = new System.Drawing.Size(640, 30);
+            this.play.Size = new System.Drawing.Size(624, 30);
             this.play.TabIndex = 22;
             this.play.Value = 0;
             // 
@@ -381,6 +416,33 @@
             this.timer_play.Interval = 1000;
             this.timer_play.Tick += new System.EventHandler(this.timer_play_Tick);
             // 
+            // RestTime
+            // 
+            this.RestTime.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.RestTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
+            this.RestTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.RestTime.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RestTime.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.RestTime.Location = new System.Drawing.Point(582, 92);
+            this.RestTime.Name = "RestTime";
+            this.RestTime.Size = new System.Drawing.Size(49, 18);
+            this.RestTime.TabIndex = 24;
+            this.RestTime.Text = "00:00:00";
+            // 
+            // BeginTime
+            // 
+            this.BeginTime.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BeginTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
+            this.BeginTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.BeginTime.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BeginTime.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.BeginTime.Location = new System.Drawing.Point(12, 93);
+            this.BeginTime.Name = "BeginTime";
+            this.BeginTime.Size = new System.Drawing.Size(51, 18);
+            this.BeginTime.TabIndex = 23;
+            this.BeginTime.Text = "00:00:00";
+            this.BeginTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // Form_Music_Nowpl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,6 +464,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_Music_Nowpl_Pause)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Music_Nowpl_Before)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Music_Nowpl_Replay)).EndInit();
+<<<<<<< HEAD
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Music_Nowpl_Mute)).EndInit();
+>>>>>>> cb9d679a3c2084d0bcb2f47aa5f17196fce3516f
             ((System.ComponentModel.ISupportInitialize)(this.btn_Music_Nowpl_Mix)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Music_Nowpl_Next)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -436,9 +502,14 @@
         private System.Windows.Forms.ColumnHeader Link_Picture;
         private Bunifu.Framework.UI.BunifuSlider play;
         private System.Windows.Forms.Timer timer_play;
+<<<<<<< HEAD
         private Bunifu.Framework.UI.BunifuImageButton max_Volume;
         private Bunifu.Framework.UI.BunifuImageButton medium_Volume;
         private Bunifu.Framework.UI.BunifuImageButton Mute;
         public Bunifu.Framework.UI.BunifuSlider Volume_Slider;
+=======
+        public System.Windows.Forms.TextBox RestTime;
+        public System.Windows.Forms.TextBox BeginTime;
+>>>>>>> cb9d679a3c2084d0bcb2f47aa5f17196fce3516f
     }
 }

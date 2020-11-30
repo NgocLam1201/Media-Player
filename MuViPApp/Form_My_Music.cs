@@ -62,6 +62,8 @@ namespace MuViPApp
 
         public void Music_Click(object sender, EventArgs e)
         {
+            parent.Is_Playing = true;
+            parent.panel_Player.Visible = true;
             ListMusicPlaying.Instance.Remove();
             if (lv_My_Music.SelectedItems.Count == 1)
             {
