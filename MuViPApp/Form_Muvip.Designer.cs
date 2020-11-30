@@ -35,6 +35,7 @@
             this.btn_Login = new Bunifu.Framework.UI.BunifuThinButton2();
             this.Search = new Bunifu.Framework.UI.BunifuTextbox();
             this.panel_Player = new System.Windows.Forms.Panel();
+            this.Is_Loop = new Bunifu.Framework.UI.BunifuImageButton();
             this.Is_Mix = new Bunifu.Framework.UI.BunifuImageButton();
             this.max_Volume = new Bunifu.Framework.UI.BunifuImageButton();
             this.medium_Volume = new Bunifu.Framework.UI.BunifuImageButton();
@@ -53,6 +54,7 @@
             this.play = new Bunifu.Framework.UI.BunifuSlider();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pn_Childform = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel_Music_Playlist = new System.Windows.Forms.Panel();
             this.Logo = new System.Windows.Forms.Panel();
@@ -74,12 +76,9 @@
             this.btn_AddPl = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_My_Video = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Time_real = new System.Windows.Forms.Timer(this.components);
-<<<<<<< HEAD
-=======
-            this.Is_Loop = new Bunifu.Framework.UI.BunifuImageButton();
->>>>>>> 04a2838c7725c5872faf9c85c73173baafd71e32
             this.panel1.SuspendLayout();
             this.panel_Player.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Is_Loop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Is_Mix)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.max_Volume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medium_Volume)).BeginInit();
@@ -98,10 +97,6 @@
             this.panel3.SuspendLayout();
             this.Menuside.SuspendLayout();
             this.panel2.SuspendLayout();
-<<<<<<< HEAD
-=======
-            ((System.ComponentModel.ISupportInitialize)(this.Is_Loop)).BeginInit();
->>>>>>> 04a2838c7725c5872faf9c85c73173baafd71e32
             this.SuspendLayout();
             // 
             // panel1
@@ -222,6 +217,20 @@
             this.panel_Player.Size = new System.Drawing.Size(722, 100);
             this.panel_Player.TabIndex = 10;
             // 
+            // Is_Loop
+            // 
+            this.Is_Loop.BackColor = System.Drawing.Color.Transparent;
+            this.Is_Loop.Image = ((System.Drawing.Image)(resources.GetObject("Is_Loop.Image")));
+            this.Is_Loop.ImageActive = null;
+            this.Is_Loop.Location = new System.Drawing.Point(433, 32);
+            this.Is_Loop.Name = "Is_Loop";
+            this.Is_Loop.Size = new System.Drawing.Size(37, 29);
+            this.Is_Loop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Is_Loop.TabIndex = 17;
+            this.Is_Loop.TabStop = false;
+            this.Is_Loop.Zoom = 10;
+            this.Is_Loop.Click += new System.EventHandler(this.Is_Loop_Click);
+            // 
             // Is_Mix
             // 
             this.Is_Mix.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -243,7 +252,7 @@
             this.max_Volume.BackColor = System.Drawing.Color.Transparent;
             this.max_Volume.Image = ((System.Drawing.Image)(resources.GetObject("max_Volume.Image")));
             this.max_Volume.ImageActive = null;
-            this.max_Volume.Location = new System.Drawing.Point(472, 25);
+            this.max_Volume.Location = new System.Drawing.Point(472, 26);
             this.max_Volume.Name = "max_Volume";
             this.max_Volume.Size = new System.Drawing.Size(28, 44);
             this.max_Volume.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -251,6 +260,7 @@
             this.max_Volume.TabStop = false;
             this.max_Volume.Zoom = 10;
             this.max_Volume.Click += new System.EventHandler(this.max_Volume_Click);
+            this.max_Volume.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Volume_MouseMove);
             // 
             // medium_Volume
             // 
@@ -258,7 +268,7 @@
             this.medium_Volume.BackColor = System.Drawing.Color.Transparent;
             this.medium_Volume.Image = ((System.Drawing.Image)(resources.GetObject("medium_Volume.Image")));
             this.medium_Volume.ImageActive = null;
-            this.medium_Volume.Location = new System.Drawing.Point(473, 31);
+            this.medium_Volume.Location = new System.Drawing.Point(472, 30);
             this.medium_Volume.Name = "medium_Volume";
             this.medium_Volume.Size = new System.Drawing.Size(23, 32);
             this.medium_Volume.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -266,6 +276,7 @@
             this.medium_Volume.TabStop = false;
             this.medium_Volume.Zoom = 10;
             this.medium_Volume.Click += new System.EventHandler(this.max_Volume_Click);
+            this.medium_Volume.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Volume_MouseMove);
             // 
             // Volume_Slider
             // 
@@ -274,10 +285,10 @@
             this.Volume_Slider.BackgroudColor = System.Drawing.Color.DarkGray;
             this.Volume_Slider.BorderRadius = 20;
             this.Volume_Slider.IndicatorColor = System.Drawing.Color.DarkOrchid;
-            this.Volume_Slider.Location = new System.Drawing.Point(502, 36);
+            this.Volume_Slider.Location = new System.Drawing.Point(501, 36);
             this.Volume_Slider.MaximumValue = 100;
             this.Volume_Slider.Name = "Volume_Slider";
-            this.Volume_Slider.Size = new System.Drawing.Size(92, 30);
+            this.Volume_Slider.Size = new System.Drawing.Size(93, 30);
             this.Volume_Slider.TabIndex = 15;
             this.Volume_Slider.Value = 0;
             this.Volume_Slider.ValueChanged += new System.EventHandler(this.Volume_Slider_ValueChanged);
@@ -401,6 +412,7 @@
             this.Mute.TabStop = false;
             this.Mute.Zoom = 10;
             this.Mute.Click += new System.EventHandler(this.Mute_Click);
+            this.Mute.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Volume_MouseMove);
             // 
             // RestTime
             // 
@@ -475,6 +487,7 @@
             // pn_Childform
             // 
             this.pn_Childform.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
+            this.pn_Childform.Controls.Add(this.flowLayoutPanel1);
             this.pn_Childform.Controls.Add(this.pictureBox2);
             this.pn_Childform.Cursor = System.Windows.Forms.Cursors.Default;
             this.pn_Childform.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -484,6 +497,13 @@
             this.pn_Childform.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.pn_Childform.Size = new System.Drawing.Size(722, 463);
             this.pn_Childform.TabIndex = 11;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(291, 489);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(333, 44);
+            this.flowLayoutPanel1.TabIndex = 18;
             // 
             // pictureBox2
             // 
@@ -1024,23 +1044,6 @@
             this.Time_real.Interval = 1000;
             this.Time_real.Tick += new System.EventHandler(this.Time_real_Tick);
             // 
-<<<<<<< HEAD
-=======
-            // Is_Loop
-            // 
-            this.Is_Loop.BackColor = System.Drawing.Color.Transparent;
-            this.Is_Loop.Image = ((System.Drawing.Image)(resources.GetObject("Is_Loop.Image")));
-            this.Is_Loop.ImageActive = null;
-            this.Is_Loop.Location = new System.Drawing.Point(433, 32);
-            this.Is_Loop.Name = "Is_Loop";
-            this.Is_Loop.Size = new System.Drawing.Size(37, 29);
-            this.Is_Loop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Is_Loop.TabIndex = 17;
-            this.Is_Loop.TabStop = false;
-            this.Is_Loop.Zoom = 10;
-            this.Is_Loop.Click += new System.EventHandler(this.Is_Loop_Click);
-            // 
->>>>>>> 04a2838c7725c5872faf9c85c73173baafd71e32
             // Form_Muvip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1062,6 +1065,7 @@
             this.panel1.ResumeLayout(false);
             this.panel_Player.ResumeLayout(false);
             this.panel_Player.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Is_Loop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Is_Mix)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.max_Volume)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medium_Volume)).EndInit();
@@ -1082,10 +1086,6 @@
             this.panel3.ResumeLayout(false);
             this.Menuside.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-<<<<<<< HEAD
-=======
-            ((System.ComponentModel.ISupportInitialize)(this.Is_Loop)).EndInit();
->>>>>>> 04a2838c7725c5872faf9c85c73173baafd71e32
             this.ResumeLayout(false);
 
         }
@@ -1099,7 +1099,6 @@
         private Bunifu.Framework.UI.BunifuImageButton Next_Play;
         private Bunifu.Framework.UI.BunifuImageButton Mix_Media;
         private Bunifu.Framework.UI.BunifuImageButton btn_Music_Play;
-        private Bunifu.Framework.UI.BunifuImageButton Mute;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel pn_Childform;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -1131,14 +1130,14 @@
         private System.Windows.Forms.Timer Time_real;
         public Bunifu.Framework.UI.BunifuSlider play;
         public System.Windows.Forms.TextBox BeginTime;
-<<<<<<< HEAD
-=======
-        private Bunifu.Framework.UI.BunifuImageButton max_Volume;
-        private Bunifu.Framework.UI.BunifuImageButton medium_Volume;
-        private Bunifu.Framework.UI.BunifuSlider Volume_Slider;
         private Bunifu.Framework.UI.BunifuImageButton Is_Mix;
         private Bunifu.Framework.UI.BunifuImageButton Is_Loop;
->>>>>>> 04a2838c7725c5872faf9c85c73173baafd71e32
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        public Bunifu.Framework.UI.BunifuImageButton Mute;
+        public Bunifu.Framework.UI.BunifuImageButton max_Volume;
+        public Bunifu.Framework.UI.BunifuImageButton medium_Volume;
+        public Bunifu.Framework.UI.BunifuSlider Volume_Slider;
+        //>>>>>>> 04a2838c7725c5872faf9c85c73173baafd71e32
     }
 }
 

@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.ColumnHeader Link_Music;
+            System.Windows.Forms.ColumnHeader Link_Picture;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_My_Music));
             this.pn_Top = new System.Windows.Forms.Panel();
+            this.lb_view = new System.Windows.Forms.Label();
             this.Cb_My_Music_View = new Bunifu.Framework.UI.BunifuDropdown();
             this.count_items = new System.Windows.Forms.Label();
             this.btn_My_Music_Play_all = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -42,11 +45,11 @@
             this.Genre_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Date_Added_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Length_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Link_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Link_Picture = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.largeIML = new System.Windows.Forms.ImageList(this.components);
             this.smallIML = new System.Windows.Forms.ImageList(this.components);
-            this.lb_view = new System.Windows.Forms.Label();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            Link_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            Link_Picture = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pn_Top.SuspendLayout();
             this.pn_List.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +68,17 @@
             this.pn_Top.Size = new System.Drawing.Size(800, 133);
             this.pn_Top.TabIndex = 0;
             // 
+            // lb_view
+            // 
+            this.lb_view.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_view.AutoSize = true;
+            this.lb_view.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_view.Location = new System.Drawing.Point(630, 97);
+            this.lb_view.Name = "lb_view";
+            this.lb_view.Size = new System.Drawing.Size(42, 16);
+            this.lb_view.TabIndex = 11;
+            this.lb_view.Text = "View :";
+            // 
             // Cb_My_Music_View
             // 
             this.Cb_My_Music_View.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -73,7 +87,6 @@
             this.Cb_My_Music_View.ForeColor = System.Drawing.Color.MediumOrchid;
             this.Cb_My_Music_View.Items = new string[] {
         "Details",
-        "List",
         "Title",
         "Large icon",
         "Small icon"};
@@ -130,6 +143,7 @@
             this.btn_My_Music_Play_all.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_My_Music_Play_all.Textcolor = System.Drawing.Color.White;
             this.btn_My_Music_Play_all.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_My_Music_Play_all.Click += new System.EventHandler(this.btn_My_Music_Play_all_Click);
             // 
             // lb_My_Music
             // 
@@ -164,8 +178,9 @@
             this.Genre_Music,
             this.Date_Added_Music,
             this.Length_Music,
-            this.Link_Music,
-            this.Link_Picture});
+            this.columnHeader1,
+            Link_Music,
+            Link_Picture});
             this.lv_My_Music.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lv_My_Music.ForeColor = System.Drawing.SystemColors.Info;
             this.lv_My_Music.FullRowSelect = true;
@@ -210,13 +225,15 @@
             // 
             // Link_Music
             // 
-            this.Link_Music.Text = "";
-            this.Link_Music.Width = 0;
+            Link_Music.DisplayIndex = 6;
+            Link_Music.Text = "";
+            Link_Music.Width = 0;
             // 
             // Link_Picture
             // 
-            this.Link_Picture.Text = "";
-            this.Link_Picture.Width = 0;
+            Link_Picture.DisplayIndex = 5;
+            Link_Picture.Text = "";
+            Link_Picture.Width = 0;
             // 
             // largeIML
             // 
@@ -230,16 +247,11 @@
             this.smallIML.TransparentColor = System.Drawing.Color.Transparent;
             this.smallIML.Images.SetKeyName(0, "musical-note.png");
             // 
-            // lb_view
+            // columnHeader1
             // 
-            this.lb_view.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_view.AutoSize = true;
-            this.lb_view.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_view.Location = new System.Drawing.Point(630, 97);
-            this.lb_view.Name = "lb_view";
-            this.lb_view.Size = new System.Drawing.Size(42, 16);
-            this.lb_view.TabIndex = 11;
-            this.lb_view.Text = "View :";
+            this.columnHeader1.DisplayIndex = 7;
+            this.columnHeader1.Text = "";
+            this.columnHeader1.Width = 0;
             // 
             // Form_My_Music
             // 
@@ -271,12 +283,11 @@
         private System.Windows.Forms.ColumnHeader Date_Added_Music;
         private System.Windows.Forms.Label count_items;
         private System.Windows.Forms.ColumnHeader Length_Music;
-        private System.Windows.Forms.ColumnHeader Link_Music;
-        private System.Windows.Forms.ColumnHeader Link_Picture;
         public System.Windows.Forms.ListView lv_My_Music;
         private Bunifu.Framework.UI.BunifuDropdown Cb_My_Music_View;
         private System.Windows.Forms.ImageList smallIML;
         private System.Windows.Forms.ImageList largeIML;
         private System.Windows.Forms.Label lb_view;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

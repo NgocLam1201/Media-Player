@@ -28,9 +28,9 @@ namespace MuViPApp
         }
 
         public int index = -1;
-        //bool loop = false;
         bool Mix_Music = false;
         int length;
+        int volume;
         public Form_Muvip()
         {
             InitializeComponent();
@@ -42,11 +42,11 @@ namespace MuViPApp
             uint CurrVol = 0;
             Mp3Player.waveOutGetVolume(IntPtr.Zero, out CurrVol);
             ushort CalcVol = (ushort)(CurrVol & 0x0000ffff);
-            setVolume();
             Is_Loop.Visible = false;
             Is_Mix.Visible = false;
-            // gán 1 giá trị tăng lên bằng 1/10 âm lượng
-            //trackBar2.Value = CalcVol / (ushort.MaxValue / 10);
+            if (Volume_Slider.Value == 0)
+                Volume_Slider.Value = CalcVol / (ushort.MaxValue / 10);
+            SetIconVolume();
         }
 
         private Form activeForm = null;
@@ -77,9 +77,6 @@ namespace MuViPApp
 
         public void btn_Music_Pause_Click(object sender, EventArgs e)
         {
-            //string _cmd = "/Media-Player/data/music/Why-Not-Me-Hiderway.mp3";
-            //Mp3Player.Instance.Open(_cmd);
-            //Mp3Player.Instance.Play();
             if (btn_Music_Pause.Visible == true)
             {
                 btn_Music_Pause.Visible = false;
@@ -510,29 +507,30 @@ namespace MuViPApp
             PlayMusic(index);
         }
         //volume//
-        private void setVolume()
-        {
-            Volume_Slider.Value = 50;
-            medium_Volume.Visible = true;
-            max_Volume.Visible = false;
-            Mute.Visible = false;
-        }
-        private void max_Volume_Click(object sender, EventArgs e)
+        public void max_Volume_Click(object sender, EventArgs e)
         {
             Volume_Slider.Value = 0;
             medium_Volume.Visible = false;
             max_Volume.Visible = false;
             Mute.Visible = true;
+            Volume_Slider_ValueChanged(this, new EventArgs());
         }
 
-        private void Volume_Slider_ValueChanged(object sender, EventArgs e)
+        public void Volume_Slider_ValueChanged(object sender, EventArgs e)
         {
-            if (Volume_Slider.Value==0)
+            Mp3Player.Instance.SetVolume(Volume_Slider.Value);
+            if (Volume_Slider.Value > 0)
+                this.volume = Volume_Slider.Value;
+            SetIconVolume();
+        }
+
+        void SetIconVolume()
+        {
+            if (Volume_Slider.Value == 0)
             {
                 Mute.Visible = true;
                 max_Volume.Visible = false;
                 medium_Volume.Visible = false;
-
             }
             else if (Volume_Slider.Value <= 50)
             {
@@ -541,21 +539,30 @@ namespace MuViPApp
                 medium_Volume.Visible = true;
             }
 
-            if (Volume_Slider.Value >50)
+            if (Volume_Slider.Value > 50)
             {
                 Mute.Visible = false;
                 max_Volume.Visible = true;
                 medium_Volume.Visible = false;
-
             }
         }
 
-        private void Mute_Click(object sender, EventArgs e)
+        public void Volume_MouseLeave(object sender, EventArgs e)
         {
-            setVolume();
+            Volume_Slider.Visible = false;
         }
 
-       
+        public void Volume_MouseMove(object sender, MouseEventArgs e)
+        {
+            Volume_Slider.Visible = true;
+        }
+
+        public void Mute_Click(object sender, EventArgs e)
+        {
+            Volume_Slider.Value = volume;
+            SetIconVolume();
+            Volume_Slider_ValueChanged(this, new EventArgs());
+        }
 
         public void Time_Media_Play()
         {

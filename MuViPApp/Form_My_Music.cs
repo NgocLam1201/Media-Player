@@ -51,7 +51,7 @@ namespace MuViPApp
                                                             result.Rows[i].Field<string>(1),
                                                             result.Rows[i].Field<string>(2),
                                                             date[0],
-                                                            result.Rows[i].Field<TimeSpan>(4).ToString(),
+                                                            result.Rows[i].Field<TimeSpan>(4).ToString()," ",
                                                             result.Rows[i].Field<string>(5),
                                                             result.Rows[i].Field<string>(6)});
                 lv_My_Music.Items.Add(items);
@@ -73,8 +73,8 @@ namespace MuViPApp
                                                                 lv_My_Music.Items[i].SubItems[2].Text,
                                                                 lv_My_Music.Items[i].SubItems[3].Text,
                                                                 lv_My_Music.Items[i].SubItems[4].Text,
-                                                                lv_My_Music.Items[i].SubItems[5].Text,
-                                                                lv_My_Music.Items[i].SubItems[6].Text});
+                                                                lv_My_Music.Items[i].SubItems[6].Text,
+                                                                lv_My_Music.Items[i].SubItems[7].Text});
                     ListMusicPlaying.Instance.AddItems(items);
                 }
                 for (int i = 0; i < index; i++)
@@ -84,8 +84,8 @@ namespace MuViPApp
                                                                 lv_My_Music.Items[i].SubItems[2].Text,
                                                                 lv_My_Music.Items[i].SubItems[3].Text,
                                                                 lv_My_Music.Items[i].SubItems[4].Text,
-                                                                lv_My_Music.Items[i].SubItems[5].Text,
-                                                                lv_My_Music.Items[i].SubItems[6].Text });
+                                                                lv_My_Music.Items[i].SubItems[6].Text,
+                                                                lv_My_Music.Items[i].SubItems[7].Text });
                     ListMusicPlaying.Instance.AddItems(items);
                 }
             }
@@ -97,8 +97,8 @@ namespace MuViPApp
                                                         lv_My_Music.SelectedItems[i].SubItems[2].Text,
                                                         lv_My_Music.SelectedItems[i].SubItems[3].Text,
                                                         lv_My_Music.SelectedItems[i].SubItems[4].Text,
-                                                        lv_My_Music.SelectedItems[i].SubItems[5].Text,
-                                                        lv_My_Music.SelectedItems[i].SubItems[6].Text });
+                                                        lv_My_Music.SelectedItems[i].SubItems[6].Text,
+                                                        lv_My_Music.SelectedItems[i].SubItems[7].Text });
                     ListMusicPlaying.Instance.AddItems(items);
                 }
             this.parent.PlayMusic(0);
@@ -122,15 +122,12 @@ namespace MuViPApp
                     lv_My_Music.View = View.Details;
                     break;
                 case 1:
-                    lv_My_Music.View = View.List;
-                    break;
-                case 2:
                     lv_My_Music.View = View.Tile;
                     break;
-                case 3:
+                case 2:
                     lv_My_Music.View = View.LargeIcon;
                     break;
-                case 4:
+                case 3:
                     lv_My_Music.View = View.SmallIcon;
                     break;
             }
@@ -164,6 +161,12 @@ namespace MuViPApp
 
             // Perform the sort with these new sort options.
             this.lv_My_Music.Sort();
+        }
+
+        private void btn_My_Music_Play_all_Click(object sender, EventArgs e)
+        {
+            lv_My_Music.Items[0].Selected = true;
+            Music_Click(this, new EventArgs());
         }
     }
 }

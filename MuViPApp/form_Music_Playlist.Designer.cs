@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_Music_Playlist));
+            System.Windows.Forms.ColumnHeader Link_Music;
+            System.Windows.Forms.ColumnHeader Link_Picture;
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -39,13 +41,17 @@
             this.btn_Rename = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_Addto = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_Playall = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.text_Addsong = new System.Windows.Forms.TextBox();
-            this.tb_GotoCollection = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lv_My_Music = new System.Windows.Forms.ListView();
+            this.Name_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Artist_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Genre_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Date_Added_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Length_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            Link_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            Link_Picture = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -127,7 +133,7 @@
             this.btn_Delete.IconVisible = true;
             this.btn_Delete.IconZoom = 35D;
             this.btn_Delete.IsTab = false;
-            this.btn_Delete.Location = new System.Drawing.Point(532, 72);
+            this.btn_Delete.Location = new System.Drawing.Point(532, 70);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
             this.btn_Delete.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
@@ -164,7 +170,7 @@
             this.btn_Rename.IconVisible = true;
             this.btn_Rename.IconZoom = 35D;
             this.btn_Rename.IsTab = false;
-            this.btn_Rename.Location = new System.Drawing.Point(409, 72);
+            this.btn_Rename.Location = new System.Drawing.Point(409, 70);
             this.btn_Rename.Name = "btn_Rename";
             this.btn_Rename.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
             this.btn_Rename.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
@@ -202,7 +208,7 @@
             this.btn_Addto.IconVisible = true;
             this.btn_Addto.IconZoom = 35D;
             this.btn_Addto.IsTab = false;
-            this.btn_Addto.Location = new System.Drawing.Point(300, 72);
+            this.btn_Addto.Location = new System.Drawing.Point(300, 70);
             this.btn_Addto.Name = "btn_Addto";
             this.btn_Addto.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
             this.btn_Addto.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
@@ -240,7 +246,7 @@
             this.btn_Playall.IconVisible = true;
             this.btn_Playall.IconZoom = 35D;
             this.btn_Playall.IsTab = false;
-            this.btn_Playall.Location = new System.Drawing.Point(196, 72);
+            this.btn_Playall.Location = new System.Drawing.Point(196, 70);
             this.btn_Playall.Name = "btn_Playall";
             this.btn_Playall.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
             this.btn_Playall.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
@@ -253,51 +259,76 @@
             this.btn_Playall.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Playall.Textcolor = System.Drawing.Color.White;
             this.btn_Playall.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Playall.Click += new System.EventHandler(this.btn_Playall_Click);
             // 
-            // text_Addsong
+            // lv_My_Music
             // 
-            this.text_Addsong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            this.text_Addsong.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.text_Addsong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_Addsong.ForeColor = System.Drawing.SystemColors.Info;
-            this.text_Addsong.Location = new System.Drawing.Point(59, 189);
-            this.text_Addsong.Name = "text_Addsong";
-            this.text_Addsong.Size = new System.Drawing.Size(172, 14);
-            this.text_Addsong.TabIndex = 3;
-            this.text_Addsong.Text = "Add song from my collection";
+            this.lv_My_Music.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
+            this.lv_My_Music.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lv_My_Music.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Name_Music,
+            this.Artist_Music,
+            this.Genre_Music,
+            this.Date_Added_Music,
+            this.Length_Music,
+            this.columnHeader1,
+            Link_Music,
+            Link_Picture});
+            this.lv_My_Music.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lv_My_Music.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lv_My_Music.ForeColor = System.Drawing.SystemColors.Info;
+            this.lv_My_Music.FullRowSelect = true;
+            this.lv_My_Music.HideSelection = false;
+            this.lv_My_Music.Location = new System.Drawing.Point(0, 98);
+            this.lv_My_Music.Name = "lv_My_Music";
+            this.lv_My_Music.ShowItemToolTips = true;
+            this.lv_My_Music.Size = new System.Drawing.Size(643, 313);
+            this.lv_My_Music.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.lv_My_Music.TabIndex = 7;
+            this.lv_My_Music.UseCompatibleStateImageBehavior = false;
+            this.lv_My_Music.View = System.Windows.Forms.View.Details;
             // 
-            // tb_GotoCollection
+            // Name_Music
             // 
-            this.tb_GotoCollection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            this.tb_GotoCollection.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_GotoCollection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_GotoCollection.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.tb_GotoCollection.Location = new System.Drawing.Point(59, 204);
-            this.tb_GotoCollection.Name = "tb_GotoCollection";
-            this.tb_GotoCollection.Size = new System.Drawing.Size(93, 14);
-            this.tb_GotoCollection.TabIndex = 4;
-            this.tb_GotoCollection.Text = "Go to collection";
+            this.Name_Music.Text = "Name";
+            this.Name_Music.Width = 192;
             // 
-            // pictureBox2
+            // Artist_Music
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(19, 189);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 29);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
+            this.Artist_Music.Text = "Artist";
+            this.Artist_Music.Width = 148;
             // 
-            // label2
+            // Genre_Music
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(15, 149);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(278, 23);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "What\'s a playlist without music?";
+            this.Genre_Music.Text = "Genre";
+            this.Genre_Music.Width = 109;
+            // 
+            // Date_Added_Music
+            // 
+            this.Date_Added_Music.Text = "Date Added";
+            this.Date_Added_Music.Width = 98;
+            // 
+            // Length_Music
+            // 
+            this.Length_Music.Text = "Length";
+            this.Length_Music.Width = 100;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.DisplayIndex = 7;
+            this.columnHeader1.Text = "";
+            this.columnHeader1.Width = 0;
+            // 
+            // Link_Music
+            // 
+            Link_Music.Text = "";
+            Link_Music.Width = 0;
+            // 
+            // Link_Picture
+            // 
+            Link_Picture.DisplayIndex = 5;
+            Link_Picture.Text = "";
+            Link_Picture.Width = 0;
             // 
             // form_Music_Playlist
             // 
@@ -305,10 +336,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(643, 411);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.tb_GotoCollection);
-            this.Controls.Add(this.text_Addsong);
+            this.Controls.Add(this.lv_My_Music);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(189, 0);
@@ -317,9 +345,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -332,11 +358,14 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_Delete;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Rename;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Addto;
-        private System.Windows.Forms.TextBox text_Addsong;
-        private System.Windows.Forms.TextBox tb_GotoCollection;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label Number_song;
-        private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label lb_NamePl;
+        public System.Windows.Forms.ListView lv_My_Music;
+        private System.Windows.Forms.ColumnHeader Name_Music;
+        private System.Windows.Forms.ColumnHeader Artist_Music;
+        private System.Windows.Forms.ColumnHeader Genre_Music;
+        private System.Windows.Forms.ColumnHeader Date_Added_Music;
+        private System.Windows.Forms.ColumnHeader Length_Music;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }
