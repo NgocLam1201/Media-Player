@@ -19,7 +19,9 @@ namespace MuViPApp
         public static extern int waveOutSetVolume(IntPtr hwo, uint dwVolume);
         public enum PlayerStatus { Ready, Playing, Paused, Stopped };
         string _command;
+        public bool Is_playing = false;
         public bool loop = false;
+        public bool Mix = false;
         private const int BUFFER_LENGTH = 255;
         StringBuilder _buffer = new StringBuilder(BUFFER_LENGTH);
         private static Mp3Player instance;
@@ -41,6 +43,7 @@ namespace MuViPApp
         }
         public void Play()
         {
+            Is_playing = true;
             _command = "play MuVipApp";
             if (loop)
                 _command += " repeat";
@@ -49,6 +52,7 @@ namespace MuViPApp
 
         public void Pause()
         {
+            Is_playing = false;
             _command = "pause MuVipApp";
             mciSendString(_command, null, 0, IntPtr.Zero);
 

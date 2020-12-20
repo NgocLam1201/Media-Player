@@ -33,10 +33,12 @@ namespace MuViPApp
             }
             this.timer_play.Interval = 1000;
             this.timer_play.Start();
-            if (this.parent.index > -1 )
+            if (this.parent.index > -1)
                 this.lb_Info_Music.Text = this.parent.Artist.Text + " - " + this.parent.RestTime.Text + " - " + ListMusicPlaying.Instance.GetMusic(this.parent.index).SubItems[3].Text;
             SetPlay();
             this.Volume_Slider.Value = this.parent.Volume_Slider.Value;
+            setMixIcon();
+            setLoopIcon();
         }
 
         private void SetPlay()
@@ -46,18 +48,46 @@ namespace MuViPApp
             this.play.Value = this.parent.play.Value;
         }
 
-        private void btn_Music_Nowpl_Pause_Click(object sender, EventArgs e)
+        private void setMixIcon()
         {
+            if (Mp3Player.Instance.Mix == true)
+            {
+                Is_Mix.Visible = true;
+                btn_Music_Nowpl_Mix.Visible = false;
+            }
+            else
+            {
+                Is_Mix.Visible = false ;
+                btn_Music_Nowpl_Mix.Visible = true;
+            }                
+
+        }
+        //play music 
+        public void SetPlayIcon()
+        {
+            if (Mp3Player.Instance.Is_playing)
+            {
                 btn_Music_Nowpl_Pause.Visible = false;
                 btn_Music_Nowpl_Play.Visible = true;
-                Mp3Player.Instance.Play();           
+            }
+            else
+            {
+                btn_Music_Nowpl_Pause.Visible = true;
+                btn_Music_Nowpl_Play.Visible = false;
+            }
+        }
+        private void btn_Music_Nowpl_Pause_Click(object sender, EventArgs e)
+        {         
+            Mp3Player.Instance.Play();
+            SetPlayIcon();
+            parent.SetPlayIcon();
         }
 
         private void btn_Music_Nowpl_Play_Click(object sender, EventArgs e)
-        {            
-                btn_Music_Nowpl_Play.Visible = false;
-                btn_Music_Nowpl_Pause.Visible = true;
-                Mp3Player.Instance.Pause();                                                                  
+        {
+            Mp3Player.Instance.Pause();
+            SetPlayIcon();
+            parent.SetPlayIcon();
         }
 
         private void btn_Music_Nowpl_Replay_Click(object sender, EventArgs e)
@@ -67,7 +97,7 @@ namespace MuViPApp
 
         private void btn_Music_Nowpl_Next_Click(object sender, EventArgs e)
         {
-            this.parent.Next_Play_Click(this.parent,new EventArgs());
+            this.parent.Next_Play_Click(this.parent, new EventArgs());
         }
 
         private void btn_Music_Nowpl_Before_Click(object sender, EventArgs e)
@@ -82,7 +112,9 @@ namespace MuViPApp
 
         private void btn_Music_Nowpl_Mix_Click(object sender, EventArgs e)
         {
-            this.parent.Mix_Media_Click(this, new EventArgs());
+            Mp3Player.Instance.Mix = true;
+            setMixIcon();
+            parent.SetMixIcon();
         }
 
         private void Volume_Slider_ValueChanged(object sender, EventArgs e)
@@ -123,6 +155,47 @@ namespace MuViPApp
                 max_Volume.Visible = true;
                 medium_Volume.Visible = false;
             }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Is_Mix_Click(object sender, EventArgs e)
+        {
+            Mp3Player.Instance.Mix = false;
+            setMixIcon();
+            parent.SetMixIcon();
+        }
+
+        //Loop
+        private void setLoopIcon()
+        {
+            if (Mp3Player.Instance.loop)
+            {
+                Is_Loop.Visible = true;
+                Loop.Visible = false;
+            }    
+            else
+            {
+                Is_Loop.Visible = false;
+                Loop.Visible = true;
+            }    
+        }
+
+        private void Is_Loop_Click(object sender, EventArgs e)
+        {
+            Mp3Player.Instance.loop = false;
+            setLoopIcon();
+            parent.Is_Loop_Click(sender, e);
+        }
+
+        private void Loop_Click(object sender, EventArgs e)
+        {
+            Mp3Player.Instance.loop = true;
+            setLoopIcon();
+            parent.LoopMusic(sender, e);
         }
     }
 }

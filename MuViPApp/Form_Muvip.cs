@@ -19,6 +19,7 @@ namespace MuViPApp
     {
         public string ID_Account = null;
 
+        public bool Is_Playing = false;
         private static Form_Muvip instance;
 
         public static Form_Muvip Instance
@@ -28,7 +29,6 @@ namespace MuViPApp
         }
 
         public int index = -1;
-        bool Mix_Music = false;
         int length;
         int volume;
         public Form_Muvip()
@@ -47,6 +47,7 @@ namespace MuViPApp
             if (Volume_Slider.Value == 0)
                 Volume_Slider.Value = CalcVol / (ushort.MaxValue / 10);
             SetIconVolume();
+            panel_Player.Visible = false;
         }
 
         private Form activeForm = null;
@@ -63,27 +64,39 @@ namespace MuViPApp
             childForm.BringToFront();
             childForm.Show();
         }
-        
-        public void btn_Music_Play_Click(object sender, EventArgs e)
+        public void SetActive_PanelPlayer()
         {
-            if (btn_Music_Play.Visible == true)
+            if (Is_Playing == true) panel_Player.Visible = true;
+            else panel_Player.Visible = false;
+        }
+        
+        //play music
+
+        public void SetPlayIcon()
+        {
+            if (Mp3Player.Instance.Is_playing)
+            {
+                btn_Music_Play.Visible = true;
+                btn_Music_Pause.Visible = false;
+            }
+            else
             {
                 btn_Music_Play.Visible = false;
                 btn_Music_Pause.Visible = true;
+            }                
+        }
+        public void btn_Music_Play_Click(object sender, EventArgs e)
+        {
                 Mp3Player.Instance.Pause();
+                SetPlayIcon();
                 Time_real.Stop();
-            }
         }
 
         public void btn_Music_Pause_Click(object sender, EventArgs e)
         {
-            if (btn_Music_Pause.Visible == true)
-            {
-                btn_Music_Pause.Visible = false;
-                btn_Music_Play.Visible = true;
-                Mp3Player.Instance.Play();
-                Time_real.Start();
-            }
+            Mp3Player.Instance.Play();
+            SetPlayIcon();
+            Time_real.Start();
         }
 
         public void Exit_Click(object sender, EventArgs e)
@@ -181,9 +194,9 @@ namespace MuViPApp
 
         private void btn_Playlist_Click(object sender, EventArgs e)
         {
-            if (btn_User.Visible == true)
-            {     
-                panel_Player.Visible = true;
+
+
+            SetActive_PanelPlayer();
                 if (panel_Music_Playlist.Visible == false)
                     panel_Music_Playlist.Visible = true;
                 else panel_Music_Playlist.Visible = false;
@@ -201,11 +214,7 @@ namespace MuViPApp
                 {
                     openChildForm(new form_Video_AllPlaylist(this));
                 }
-            }
-            else
-            {
-                MessageBox.Show("Please login to use this feature", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void btn_Music_Click(object sender, EventArgs e)
@@ -226,6 +235,7 @@ namespace MuViPApp
 
         private void btn_Video_Click(object sender, EventArgs e)
         {
+
             btn_My_Video.Visible = true;
             btn_My_Music.Visible = false;
             btn_My_Video.selected = true;
@@ -271,7 +281,7 @@ namespace MuViPApp
 
         private void btn_My_Music_Click(object sender, EventArgs e)
         {
-            panel_Player.Visible = true;
+            SetActive_PanelPlayer();
             btn_Playlist.selected = false;
             if (btn_Music.selected == true)
                 openChildForm(new Form_My_Music(this));
@@ -287,6 +297,7 @@ namespace MuViPApp
 
         private void btn_Liked_Click(object sender, EventArgs e)
         {
+            SetActive_PanelPlayer();
             panel_Player.Visible = true;
             btn_Playlist.selected = false;
             if (btn_Music.selected==true)
@@ -301,6 +312,7 @@ namespace MuViPApp
 
         private void btn_History_Click(object sender, EventArgs e)
         {
+            SetActive_PanelPlayer();
             panel_Player.Visible = true;
             btn_Playlist.selected = false;
             if (btn_Music.selected == true)
@@ -408,7 +420,7 @@ namespace MuViPApp
         {
             var rand = new Random();
             int count = ListMusicPlaying.Instance.Listmusic.Count;
-            if (Mix_Music)
+            if (Mp3Player.Instance.Mix)
             {
                 int ran = rand.Next(0, count);
                 while (ran == index)
@@ -466,7 +478,7 @@ namespace MuViPApp
             Is_Loop.Visible = true;
             Loop.Visible = false;
         }
-        private void Is_Loop_Click(object sender, EventArgs e)
+        public void Is_Loop_Click(object sender, EventArgs e)
         {
             Mp3Player.Instance.loop = false;
             Is_Loop.Visible = false;
@@ -474,24 +486,35 @@ namespace MuViPApp
         }
 
         //Mix Music
-        private void Is_Mix_Click(object sender, EventArgs e)
+        public void SetMixIcon()
         {
-            Mix_Music = false;
-            Is_Mix.Visible = false;
-            Mix_Media.Visible = true;
+            if (Mp3Player.Instance.Mix==true)
+            {
+                Is_Mix.Visible = true;
+                Mix_Media.Visible = false;
+            }
+            else
+            {
+                Is_Mix.Visible = false;
+                Mix_Media.Visible = true;
+            }
+        }
+        public void Is_Mix_Click(object sender, EventArgs e)
+        {
+            Mp3Player.Instance.Mix = false;
+            SetMixIcon();
         }
         public void Mix_Media_Click(object sender, EventArgs e)
-        {   
-            Mix_Music = true;
-            Is_Mix.Visible = true;
-            Mix_Media.Visible = false;
+        {
+            Mp3Player.Instance.Mix = true;
+            SetMixIcon();
         }
 
         public void Pre_Play_Click(object sender, EventArgs e)
         {
             var rand = new Random();
             int length = ListMusicPlaying.Instance.Listmusic.Count;
-            if (Mix_Music)
+            if (Mp3Player.Instance.Mix)
             {
                 int ran = rand.Next(0, length);
                 while (ran == index)
