@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Threading;
 using MuViPApp.Music;
-using MuViPApp.DAO;
 using System.IO;
 
 namespace MuViPApp
@@ -20,6 +19,7 @@ namespace MuViPApp
         public string ID_Account = null;
 
         public bool Is_Playing = false;
+        public bool Is_Playing_NowPlaying = true;
         private static Form_Muvip instance;
 
         public static Form_Muvip Instance
@@ -67,7 +67,8 @@ namespace MuViPApp
         public void SetActive_PanelPlayer()
         {
             if (Is_Playing == true) panel_Player.Visible = true;
-            else panel_Player.Visible = false;
+            else
+                panel_Player.Visible = false;
         }
         
         //play music
@@ -110,7 +111,6 @@ namespace MuViPApp
         {
             OpenFileDialog ofd_music = new OpenFileDialog()
             {
-
                 InitialDirectory = @"Music\",
                 Title = "Add MP3 Files",
 
@@ -131,20 +131,9 @@ namespace MuViPApp
                 if (ofd_music.ShowDialog() == DialogResult.OK)
                 {
                     FileInfo fileInfo = new FileInfo(ofd_music.FileName);
-                    Mp3Player.Instance.Open(ofd_music.FileName);
-                    //MessageBox.Show();
-                    /*try
-                    {
-
-                        string s = "";
-                        for (int i = 0; i < this..currentMedia.attributeCount; i++)
-{
-                            s += this.axWindowsMediaPlayer1.currentMedia.getAttributeName(i) + " : ";
-                            s += this.axWindowsMediaPlayer1.currentMedia.getItemInf o(this.axWindowsMediaPlayer1.currentMedia.getAttri buteName(i)) + "\n";
-                        }
-                        MessageBox.Show(s, this.Text);
-                    }
-                    catch (Exception loi) { MessageBox.Show(loi.Message); }*/
+                    //Mp3Player.Instance.Open(ofd_music.FileName);
+                    var fileTag = TagLib.File.Create(fileInfo.FullName);
+                    
                 }
             }
         }
@@ -194,27 +183,24 @@ namespace MuViPApp
 
         private void btn_Playlist_Click(object sender, EventArgs e)
         {
-
-
             SetActive_PanelPlayer();
-                if (panel_Music_Playlist.Visible == false)
-                    panel_Music_Playlist.Visible = true;
-                else panel_Music_Playlist.Visible = false;
-                btn_My_Music.selected = false;
-                btn_Liked.selected = false;
-                btn_NowPlaying.selected = false;
-                btn_History.selected = false;
-                btn_Help.selected = false;
-                btn_Exit.selected = false;
-                if (btn_Music.selected == true)
-                {
-                    openChildForm(new form_Music_AllPlaylist(this));
-                }
-                if (btn_Video.selected == true)
-                {
-                    openChildForm(new form_Video_AllPlaylist(this));
-                }
-            
+            if (panel_Music_Playlist.Visible == false)
+                panel_Music_Playlist.Visible = true;
+            else panel_Music_Playlist.Visible = false;
+            btn_My_Music.selected = false;
+            btn_Liked.selected = false;
+            btn_NowPlaying.selected = false;
+            btn_History.selected = false;
+            btn_Help.selected = false;
+            btn_Exit.selected = false;
+            if (btn_Music.selected == true)
+            {
+                openChildForm(new form_Music_AllPlaylist(this));
+            }
+            if (btn_Video.selected == true)
+            {
+                openChildForm(new form_Video_AllPlaylist(this));
+            }    
         }
 
         private void btn_Music_Click(object sender, EventArgs e)
@@ -235,7 +221,6 @@ namespace MuViPApp
 
         private void btn_Video_Click(object sender, EventArgs e)
         {
-
             btn_My_Video.Visible = true;
             btn_My_Music.Visible = false;
             btn_My_Video.selected = true;
@@ -252,18 +237,12 @@ namespace MuViPApp
 
         private void btn_AddPl_Click(object sender, EventArgs e)
         {
-            if (btn_User.Visible == true)
-            {
-                form_Music_NewPlaylist form_Playlist = new form_Music_NewPlaylist(this);
-                Point p = new Point(this.Width / 2 - form_Playlist.Width / 2, this.Height / 2 - form_Playlist.Height / 2);
-                form_Playlist.StartPosition = FormStartPosition.CenterParent;
-                form_Playlist.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Please login to use this feature", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            form_Music_NewPlaylist form_Playlist = new form_Music_NewPlaylist(this);
+            Point p = new Point(this.Width / 2 - form_Playlist.Width / 2, this.Height / 2 - form_Playlist.Height / 2);
+            form_Playlist.StartPosition = FormStartPosition.CenterParent;
+            form_Playlist.ShowDialog();
         }
+
 
         private void btn_NowPlaying_Click(object sender, EventArgs e)
         {
@@ -325,27 +304,17 @@ namespace MuViPApp
             }
         }
 
-        private void Login_Click(object sender, EventArgs e)
-        {
-            form_Login lgin = new form_Login(this);
-            lgin.ShowDialog();
-
-        }
-
-        private void btn_User_Click(object sender, EventArgs e)
-        {
-
-        }
         private int a, b, c;
 
         private void Time_real_Tick(object sender, EventArgs e)
         {
             if (play.Value < play.MaximumValue)
                 play.Value++;
-            string[] time = BeginTime.Text.Split(':');
-            a = Convert.ToInt32(time[0]);
-            b = Convert.ToInt32(time[1]);
-            c = Convert.ToInt32(time[2]);
+            int value_time = Mp3Player.Instance.CurrentMilisecond/1000;
+            a = value_time / 3600;
+            value_time -= a * 3600;
+            b = value_time / 60;
+            c = value_time - b * 60;
             BeginTime.Text = "";
             c += 1;
             if (c > 59)
@@ -385,15 +354,15 @@ namespace MuViPApp
             }
         }
 
-        private void play_ValueChanged(object sender, EventArgs e)
+        public void Set_PlayValue(int value)
         {
-            Mp3Player.Instance.Seek(play.Value*1000);
-            int value_time = play.Value;
+            Mp3Player.Instance.Seek(value * 1000);
+            int value_time = value;
             a = value_time / 3600;
             value_time -= a * 3600;
             b = value_time / 60;
             c = value_time - b * 60;
-            BeginTime.Text = "";
+            this.BeginTime.Text = "";
             if (a < 10)
             {
                 BeginTime.Text += "0" + a.ToString();
@@ -414,12 +383,18 @@ namespace MuViPApp
             }
             else
                 BeginTime.Text += c.ToString() + "";
+            this.play.Value = value;
+        }
+
+        private void play_ValueChanged(object sender, EventArgs e)
+        {
+            Set_PlayValue(play.Value);
         }
 
         public void Next_Play_Click(object sender, EventArgs e)
         {
             var rand = new Random();
-            int count = ListMusicPlaying.Instance.Listmusic.Count;
+            int count = ListMusicPlaying.Instance.GetMusic().Count;
             if (Mp3Player.Instance.Mix)
             {
                 int ran = rand.Next(0, count);
@@ -441,13 +416,15 @@ namespace MuViPApp
             this.index = index;
             Mp3Player.Instance.Close();
             btn_Music_Play_Click(this, new EventArgs());
-            ListViewItem Music = ListMusicPlaying.Instance.GetMusic(index);
-            DateTime length = Convert.ToDateTime(Music.SubItems[4].Text);
-            this.length = length.Hour * 3600 + length.Minute * 60 + length.Second;
-            this.NameMedia.Text = NameMedia.Text.Replace(NameMedia.Text, Music.SubItems[0].Text);
-            this.Artist.Text = Music.SubItems[1].Text;
-            this.RestTime.Text = Music.SubItems[4].Text;
-            Mp3Player.Instance.Open(Music.SubItems[5].Text);
+            Music_Song Music = ListMusicPlaying.Instance.GetMusic(index);
+            DateTime time = Convert.ToDateTime(Music.Length);
+            this.length = time.Hour * 3600 + time.Minute * 60 + time.Second;
+            this.play.MaximumValue = this.length;
+            this.NameMedia.Text = Music.Name_Song;
+            this.Artist.Text = Music.Singer;
+            this.RestTime.Text = Music.Length;
+            this.picturesong.Image = Music.Picture_Song;
+            Mp3Player.Instance.Open(Music.Link_Music);
             Mp3Player.Instance.Play();
             btn_Music_Pause_Click(this, new EventArgs());
             Time_Media_Play();
@@ -457,17 +434,9 @@ namespace MuViPApp
             }
         }
 
-        private void AddHistory(ListViewItem Music)
+        private void AddHistory(Music_Song Music)
         {
-            string Sql = @"insert into History values (N'" +
-                Music.SubItems[0].Text + @"',N'" +
-                Music.SubItems[1].Text + @"',N'" +
-                Music.SubItems[2].Text + @"',GETDATE(),N'" +
-                Music.SubItems[4].Text + @"',N'" +
-                Music.SubItems[5].Text + @"',N'" +
-                Music.SubItems[6].Text + @"','Music',N'" +
-                ID_Account + @"')";
-            DataProvider.Instance.ExecuteNonQuery(Sql);
+            ListMusicRecently.Instance.AddItems(Music);
         }
 
         //Loop
@@ -513,7 +482,7 @@ namespace MuViPApp
         public void Pre_Play_Click(object sender, EventArgs e)
         {
             var rand = new Random();
-            int length = ListMusicPlaying.Instance.Listmusic.Count;
+            int length = ListMusicPlaying.Instance.GetMusic().Count;
             if (Mp3Player.Instance.Mix)
             {
                 int ran = rand.Next(0, length);

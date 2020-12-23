@@ -50,10 +50,17 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="TagLibSharp">
+      <HintPath>..\packages\TagLibSharp.2.2.0\lib\net45\TagLibSharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\Account.cs" />
-    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="Form_ListMusic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ListMusic.Designer.cs">
+      <DependentUpon>Form_ListMusic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_History_Music.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,12 +84,6 @@
     </Compile>
     <Compile Include="Form_Liked_Video.Designer.cs">
       <DependentUpon>Form_Liked_Video.cs</DependentUpon>
-    </Compile>
-    <Compile Include="form_Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="form_Login.Designer.cs">
-      <DependentUpon>form_Login.cs</DependentUpon>
     </Compile>
     <Compile Include="form_Music_AllPlaylist.cs">
       <SubType>Form</SubType>
@@ -132,12 +133,6 @@
     <Compile Include="form_Rename_pl.Designer.cs">
       <DependentUpon>form_Rename_pl.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_Signup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="form_Signup.Designer.cs">
-      <DependentUpon>form_Signup.cs</DependentUpon>
-    </Compile>
     <Compile Include="form_Video_AllPlaylist.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,9 +145,11 @@
     <Compile Include="form_Video_Nowpl.Designer.cs">
       <DependentUpon>form_Video_Nowpl.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListViewColumnSorter.cs" />
-    <Compile Include="Mp3Player.cs" />
+    <Compile Include="Music\ListMyMusic.cs" />
+    <Compile Include="Music\ListViewColumnSorter.cs" />
+    <Compile Include="Music\Mp3Player.cs" />
     <Compile Include="Music\ListMusicPlaying.cs" />
+    <Compile Include="Music\ListMusicRecently.cs" />
     <Compile Include="Music\Music_Playlist.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -161,7 +158,7 @@
     </Compile>
     <Compile Include="Music\Music_Song.cs" />
     <Compile Include="Music\PlayListInfo.cs" />
-    <Compile Include="Playlist.cs" />
+    <Compile Include="Music\Playlist.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Video_Playlist.cs">
@@ -170,6 +167,9 @@
     <Compile Include="Video_Playlist.Designer.cs">
       <DependentUpon>Video_Playlist.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form_ListMusic.resx">
+      <DependentUpon>Form_ListMusic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_History_Music.resx">
       <DependentUpon>Form_History_Music.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,9 +181,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Liked_Video.resx">
       <DependentUpon>Form_Liked_Video.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="form_Login.resx">
-      <DependentUpon>form_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_Music_AllPlaylist.resx">
       <DependentUpon>form_Music_AllPlaylist.cs</DependentUpon>
@@ -209,9 +206,6 @@
     <EmbeddedResource Include="form_Rename_pl.resx">
       <DependentUpon>form_Rename_pl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_Signup.resx">
-      <DependentUpon>form_Signup.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="form_Video_AllPlaylist.resx">
       <DependentUpon>form_Video_AllPlaylist.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +228,7 @@
     <EmbeddedResource Include="Video_Playlist.resx">
       <DependentUpon>Video_Playlist.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

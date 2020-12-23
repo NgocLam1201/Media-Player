@@ -20,8 +20,8 @@ namespace MuViPApp
             private set { Music_Playlist.instance = value; }
         }
 
-        private string iD_Playlist;
-        public string ID_Playlist
+        private int iD_Playlist;
+        public int ID_Playlist
         { 
             get { return iD_Playlist; } 
             set { iD_Playlist = value; } 
@@ -41,14 +41,14 @@ namespace MuViPApp
             set { number_song = value; }
         }
 
-        Form_Muvip parent;
+        public Form_Muvip parent;
 
         public Music_Playlist(Form_Muvip parent = null)
         {
             InitializeComponent();
         }
 
-        public Music_Playlist(string ID_Playlist, string name, int total, Form_Muvip parent = null)
+        public Music_Playlist(int ID_Playlist, string name, int total, Form_Muvip parent = null)
         {
             InitializeComponent();
             this.parent = parent;

@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_Music_Playlist));
             System.Windows.Forms.ColumnHeader Link_Music;
-            System.Windows.Forms.ColumnHeader Link_Picture;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_Music_Playlist));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -49,10 +48,15 @@
             this.Length_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             Link_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            Link_Picture = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // Link_Music
+            // 
+            Link_Music.DisplayIndex = 5;
+            Link_Music.Text = "";
+            Link_Music.Width = 0;
             // 
             // bunifuElipse1
             // 
@@ -146,6 +150,7 @@
             this.btn_Delete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Delete.Textcolor = System.Drawing.Color.White;
             this.btn_Delete.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Rename
             // 
@@ -221,6 +226,7 @@
             this.btn_Addto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Addto.Textcolor = System.Drawing.Color.White;
             this.btn_Addto.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Addto.Click += new System.EventHandler(this.btn_Addto_Click);
             // 
             // btn_Playall
             // 
@@ -272,8 +278,7 @@
             this.Date_Added_Music,
             this.Length_Music,
             this.columnHeader1,
-            Link_Music,
-            Link_Picture});
+            Link_Music});
             this.lv_My_Music.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lv_My_Music.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lv_My_Music.ForeColor = System.Drawing.SystemColors.Info;
@@ -315,20 +320,9 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.DisplayIndex = 7;
+            this.columnHeader1.DisplayIndex = 6;
             this.columnHeader1.Text = "";
             this.columnHeader1.Width = 0;
-            // 
-            // Link_Music
-            // 
-            Link_Music.Text = "";
-            Link_Music.Width = 0;
-            // 
-            // Link_Picture
-            // 
-            Link_Picture.DisplayIndex = 5;
-            Link_Picture.Text = "";
-            Link_Picture.Width = 0;
             // 
             // form_Music_Playlist
             // 

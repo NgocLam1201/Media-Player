@@ -1,4 +1,4 @@
-﻿using MuViPApp.DAO;
+﻿using MuViPApp.Music;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,18 +26,9 @@ namespace MuViPApp
                 MessageBox.Show("Enter a playlist's name","Notify");
             else
             {
-                string query = @"select count(ID_Playlist) from Playlist where ID_Account = '" + this.parent.ID_Account+@"'";
-                DataTable result = DataProvider.Instance.ExecuteQuery(query);
-                string ID = "Pl";
-                if (result.Rows.Count + 1 < 10)
-                {
-                    ID += "0" + result.Rows.Count + 1;
-                }
-                else
-                    ID += (result.Rows.Count + 1).ToString();
-                query = @"insert into Playlist values('" + this.parent.ID_Account + @"','" + ID + @"',N'" + this.tb_Name.Text + @"',null,GETDATE(),'Music')";
-                DataProvider.Instance.ExecuteNonQuery(query);
-                form_Music_Playlist NewForm = new form_Music_Playlist(new Music_Playlist(ID,this.tb_Name.Text,0,this.parent));
+                string Name_PL = tb_Name.Text;
+                Playlist.Instance.AddItems(new PlayListInfo());
+                form_Music_Playlist NewForm = new form_Music_Playlist(new Music_Playlist(Playlist.Instance.GetAllPlayListMusic().Count,this.tb_Name.Text,0,this.parent));
                 this.parent.openChildForm(NewForm);
                 this.Close();
             }

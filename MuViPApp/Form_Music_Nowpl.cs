@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,6 +15,7 @@ namespace MuViPApp
     public partial class Form_Music_Nowpl : Form
     {
         Form_Muvip parent;
+        Form_ListMusic FlistMusic;
 
         private static Form_Music_Nowpl instance;
 
@@ -27,25 +29,38 @@ namespace MuViPApp
         {
             this.parent = parent;
             InitializeComponent();
-            for (int i = 0; i < ListMusicPlaying.Instance.Listmusic.Count; i++)
-            {
-                lv_My_Music.Items.Add(ListMusicPlaying.Instance.Listmusic[i]);
-            }
+            LoadMusic();
             this.timer_play.Interval = 1000;
             this.timer_play.Start();
-            if (this.parent.index > -1)
-                this.lb_Info_Music.Text = this.parent.Artist.Text + " - " + this.parent.RestTime.Text + " - " + ListMusicPlaying.Instance.GetMusic(this.parent.index).SubItems[3].Text;
+            this.parent.Is_Playing_NowPlaying = true;
             SetPlay();
-            this.Volume_Slider.Value = this.parent.Volume_Slider.Value;
             setMixIcon();
             setLoopIcon();
         }
 
+        public void LoadMusic()
+        {
+            FlistMusic = new Form_ListMusic(this.parent, ListMusicPlaying.Instance.GetMusic());
+            FlistMusic.TopLevel = false;
+            FlistMusic.FormBorderStyle = FormBorderStyle.None;
+            FlistMusic.Dock = DockStyle.Fill;
+            this.pn_List.Controls.Add(FlistMusic);
+            this.pn_List.Tag = FlistMusic;
+            FlistMusic.BringToFront();
+            FlistMusic.Show();
+        }
+
         private void SetPlay()
         {
+            this.picturesong.Image = this.parent.picturesong.Image;
+            if (this.parent.index > -1)
+                this.lb_Info_Music.Text = this.parent.Artist.Text + " - " + this.parent.RestTime.Text + " - " + ListMusicPlaying.Instance.GetMusic(this.parent.index).Date_Add;
             this.lb_NamePl.Text = this.parent.NameMedia.Text;
             this.play.MaximumValue = this.parent.play.MaximumValue;
             this.play.Value = this.parent.play.Value;
+            this.Volume_Slider.Value = this.parent.Volume_Slider.Value;
+            this.RestTime.Text = this.parent.RestTime.Text;
+            this.BeginTime.Text = this.parent.BeginTime.Text;
         }
 
         private void setMixIcon()
@@ -98,16 +113,15 @@ namespace MuViPApp
         private void btn_Music_Nowpl_Next_Click(object sender, EventArgs e)
         {
             this.parent.Next_Play_Click(this.parent, new EventArgs());
+            SetPlay();
+            SetPlayIcon();
         }
 
         private void btn_Music_Nowpl_Before_Click(object sender, EventArgs e)
         {
             this.parent.Pre_Play_Click(this, new EventArgs());
-        }
-
-        private void timer_play_Tick(object sender, EventArgs e)
-        {
             SetPlay();
+            SetPlayIcon();
         }
 
         private void btn_Music_Nowpl_Mix_Click(object sender, EventArgs e)
@@ -157,11 +171,6 @@ namespace MuViPApp
             }
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void Is_Mix_Click(object sender, EventArgs e)
         {
             Mp3Player.Instance.Mix = false;
@@ -196,6 +205,18 @@ namespace MuViPApp
             Mp3Player.Instance.loop = true;
             setLoopIcon();
             parent.LoopMusic(sender, e);
+        }
+
+        private void timer_play_Tick_1(object sender, EventArgs e)
+        {
+            SetPlay();
+        }
+
+        private void play_ValueChanged(object sender, EventArgs e)
+        {
+            Mp3Player.Instance.Seek(this.play.Value * 1000);
+            this.parent.Set_PlayValue(this.play.Value);
+            //this.timer_play.Start();
         }
     }
 }

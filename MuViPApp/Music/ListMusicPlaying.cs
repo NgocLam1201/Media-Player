@@ -9,8 +9,7 @@ namespace MuViPApp.Music
 {
     public class ListMusicPlaying
     {
-        public List<ListViewItem> Listmusic = new List<ListViewItem>();
-
+        
         private static ListMusicPlaying instance;
 
         public static ListMusicPlaying Instance
@@ -19,13 +18,19 @@ namespace MuViPApp.Music
             private set { instance = value; }
         }
 
-        public void AddItems(ListViewItem item)
+        private List<Music_Song> Listmusic = new List<Music_Song>();
+
+        public void AddItems(Music_Song item)
         {
             Listmusic.Add(item);
         }
 
-        
-        public ListViewItem GetMusic(int index)
+        public List<Music_Song> GetMusic()
+        {
+            return Listmusic;
+        }
+
+        public Music_Song GetMusic(int index)
         {
             return Listmusic[index];
         }
@@ -33,6 +38,11 @@ namespace MuViPApp.Music
         public void Remove()
         {
             Listmusic.Clear();
+        }
+
+        public void Remove(int index)
+        {
+            Listmusic.RemoveAt(index);
         }
     }
 }

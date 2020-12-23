@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Muvip));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_User = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btn_Login = new Bunifu.Framework.UI.BunifuThinButton2();
             this.Search = new Bunifu.Framework.UI.BunifuTextbox();
             this.panel_Player = new System.Windows.Forms.Panel();
             this.Is_Loop = new Bunifu.Framework.UI.BunifuImageButton();
@@ -52,7 +50,7 @@
             this.BeginTime = new System.Windows.Forms.TextBox();
             this.Artist = new System.Windows.Forms.TextBox();
             this.play = new Bunifu.Framework.UI.BunifuSlider();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.picturesong = new System.Windows.Forms.PictureBox();
             this.pn_Childform = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -89,7 +87,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Mix_Media)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Music_Play)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mute)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturesong)).BeginInit();
             this.pn_Childform.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.Logo.SuspendLayout();
@@ -102,79 +100,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            this.panel1.Controls.Add(this.btn_User);
-            this.panel1.Controls.Add(this.btn_Login);
             this.panel1.Controls.Add(this.Search);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(189, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(722, 40);
             this.panel1.TabIndex = 7;
-            // 
-            // btn_User
-            // 
-            this.btn_User.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btn_User.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btn_User.BackColor = System.Drawing.Color.DarkOrchid;
-            this.btn_User.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_User.BorderRadius = 0;
-            this.btn_User.ButtonText = "nam_user";
-            this.btn_User.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_User.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_User.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_User.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_User.Iconimage")));
-            this.btn_User.Iconimage_right = null;
-            this.btn_User.Iconimage_right_Selected = null;
-            this.btn_User.Iconimage_Selected = null;
-            this.btn_User.IconMarginLeft = 0;
-            this.btn_User.IconMarginRight = 0;
-            this.btn_User.IconRightVisible = true;
-            this.btn_User.IconRightZoom = 0D;
-            this.btn_User.IconVisible = true;
-            this.btn_User.IconZoom = 50D;
-            this.btn_User.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.btn_User.IsTab = false;
-            this.btn_User.Location = new System.Drawing.Point(554, 4);
-            this.btn_User.Name = "btn_User";
-            this.btn_User.Normalcolor = System.Drawing.Color.DarkOrchid;
-            this.btn_User.OnHovercolor = System.Drawing.Color.SeaGreen;
-            this.btn_User.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_User.selected = false;
-            this.btn_User.Size = new System.Drawing.Size(102, 29);
-            this.btn_User.TabIndex = 1;
-            this.btn_User.Text = "nam_user";
-            this.btn_User.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_User.Textcolor = System.Drawing.Color.White;
-            this.btn_User.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_User.Visible = false;
-            this.btn_User.Click += new System.EventHandler(this.btn_User_Click);
-            // 
-            // btn_Login
-            // 
-            this.btn_Login.ActiveBorderThickness = 1;
-            this.btn_Login.ActiveCornerRadius = 20;
-            this.btn_Login.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.btn_Login.ActiveForecolor = System.Drawing.Color.White;
-            this.btn_Login.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btn_Login.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btn_Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            this.btn_Login.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Login.BackgroundImage")));
-            this.btn_Login.ButtonText = "LOGIN";
-            this.btn_Login.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Login.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            this.btn_Login.IdleBorderThickness = 1;
-            this.btn_Login.IdleCornerRadius = 20;
-            this.btn_Login.IdleFillColor = System.Drawing.Color.White;
-            this.btn_Login.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            this.btn_Login.IdleLineColor = System.Drawing.Color.White;
-            this.btn_Login.Location = new System.Drawing.Point(554, 5);
-            this.btn_Login.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_Login.Name = "btn_Login";
-            this.btn_Login.Size = new System.Drawing.Size(88, 30);
-            this.btn_Login.TabIndex = 2;
-            this.btn_Login.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_Login.Click += new System.EventHandler(this.Login_Click);
             // 
             // Search
             // 
@@ -210,7 +141,7 @@
             this.panel_Player.Controls.Add(this.BeginTime);
             this.panel_Player.Controls.Add(this.Artist);
             this.panel_Player.Controls.Add(this.play);
-            this.panel_Player.Controls.Add(this.pictureBox3);
+            this.panel_Player.Controls.Add(this.picturesong);
             this.panel_Player.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel_Player.Location = new System.Drawing.Point(189, 503);
             this.panel_Player.Name = "panel_Player";
@@ -252,7 +183,7 @@
             this.max_Volume.BackColor = System.Drawing.Color.Transparent;
             this.max_Volume.Image = ((System.Drawing.Image)(resources.GetObject("max_Volume.Image")));
             this.max_Volume.ImageActive = null;
-            this.max_Volume.Location = new System.Drawing.Point(476, 32);
+            this.max_Volume.Location = new System.Drawing.Point(473, 34);
             this.max_Volume.Name = "max_Volume";
             this.max_Volume.Size = new System.Drawing.Size(28, 30);
             this.max_Volume.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -419,10 +350,12 @@
             this.RestTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RestTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
             this.RestTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.RestTime.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RestTime.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RestTime.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.RestTime.Location = new System.Drawing.Point(638, 70);
             this.RestTime.Name = "RestTime";
+            this.RestTime.ReadOnly = true;
             this.RestTime.Size = new System.Drawing.Size(49, 18);
             this.RestTime.TabIndex = 5;
             this.RestTime.Text = "00:00:00";
@@ -432,10 +365,12 @@
             this.BeginTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BeginTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
             this.BeginTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.BeginTime.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BeginTime.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BeginTime.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.BeginTime.Location = new System.Drawing.Point(93, 70);
             this.BeginTime.Name = "BeginTime";
+            this.BeginTime.ReadOnly = true;
             this.BeginTime.Size = new System.Drawing.Size(51, 18);
             this.BeginTime.TabIndex = 4;
             this.BeginTime.Text = "00:00:00";
@@ -474,16 +409,16 @@
             this.play.Value = 0;
             this.play.ValueChanged += new System.EventHandler(this.play_ValueChanged);
             // 
-            // pictureBox3
+            // picturesong
             // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox3.Image = global::MuViPApp.Properties.Resources.songImg;
-            this.pictureBox3.Location = new System.Drawing.Point(47, 8);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(65, 62);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
+            this.picturesong.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picturesong.Image = global::MuViPApp.Properties.Resources.songImg;
+            this.picturesong.Location = new System.Drawing.Point(47, 8);
+            this.picturesong.Name = "picturesong";
+            this.picturesong.Size = new System.Drawing.Size(65, 62);
+            this.picturesong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picturesong.TabIndex = 0;
+            this.picturesong.TabStop = false;
             // 
             // pn_Childform
             // 
@@ -1077,7 +1012,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Mix_Media)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Music_Play)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mute)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturesong)).EndInit();
             this.pn_Childform.ResumeLayout(false);
             this.pn_Childform.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -1100,7 +1035,6 @@
         private Bunifu.Framework.UI.BunifuImageButton Next_Play;
         private Bunifu.Framework.UI.BunifuImageButton Mix_Media;
         private Bunifu.Framework.UI.BunifuImageButton btn_Music_Play;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel pn_Childform;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel Logo;
@@ -1122,8 +1056,6 @@
         private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuFlatButton btn_AddPl;
         private Bunifu.Framework.UI.BunifuFlatButton btn_My_Video;
-        public Bunifu.Framework.UI.BunifuFlatButton btn_User;
-        public Bunifu.Framework.UI.BunifuThinButton2 btn_Login;
         public System.Windows.Forms.TextBox RestTime;
         public System.Windows.Forms.TextBox Artist;
         public System.Windows.Forms.Panel panel_Player;
@@ -1138,6 +1070,7 @@
         public Bunifu.Framework.UI.BunifuImageButton max_Volume;
         public Bunifu.Framework.UI.BunifuImageButton medium_Volume;
         public Bunifu.Framework.UI.BunifuSlider Volume_Slider;
+        public System.Windows.Forms.PictureBox picturesong;
         //>>>>>>> 04a2838c7725c5872faf9c85c73173baafd71e32
     }
 }

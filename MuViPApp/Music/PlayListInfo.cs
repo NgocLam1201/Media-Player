@@ -1,5 +1,4 @@
-﻿using MuViPApp.DAO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -18,19 +17,43 @@ namespace MuViPApp.Music
             private set { PlayListInfo.instance = value; }
         }
 
-        private PlayListInfo() { }
-
-        public List<Music_Song> GetListMusic(string ID_Playlist)
+        public PlayListInfo(string name_PL = null) 
         {
-            List<Music_Song> ListSong = new List<Music_Song>();
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT distinct * FROM Music join Genre on Music.ID_Genre = Genre.ID_Genre WHERE ID_Playlist = " + ID_Playlist);
+            Name_PL = name_PL;
+        }
 
-            foreach (DataRow item in data.Rows)
-            {
-                Music_Song info = new Music_Song(item);
-                ListSong.Add(info);
-            }
-            return ListSong;
+        private string name_PL;
+        public string Name_PL
+        {
+            get { return name_PL; }
+            set { name_PL = value; }
+        }
+
+        private List<Music_Song> Listmusic = new List<Music_Song>();
+
+        public void AddItems(Music_Song item)
+        {
+            Listmusic.Add(item);
+        }
+
+        public List<Music_Song> GetMusic()
+        {
+            return Listmusic;
+        }
+
+        public Music_Song GetMusic(int index)
+        {
+            return Listmusic[index];
+        }
+
+        public void Remove()
+        {
+            Listmusic.Clear();
+        }
+
+        public void Remove(int index)
+        {
+            Listmusic.RemoveAt(index);
         }
     }
 }
