@@ -27,11 +27,11 @@ namespace MuViPApp
             set { iD_Playlist = value; } 
         }
 
-        private string name;
-        public string Name
+        private string namePlay;
+        public string NamePlay
         {
-            get { return name; }
-            set { name = value; }
+            get { return NamePlay; }
+            set { NamePlay = value; }
         }
 
         private int number_song;
@@ -48,13 +48,13 @@ namespace MuViPApp
             InitializeComponent();
         }
 
-        public Music_Playlist(int ID_Playlist, string name, int total, Form_Muvip parent = null)
+        public Music_Playlist(int ID_Playlist, string NamePlay, int total, Form_Muvip parent = null)
         {
             InitializeComponent();
             this.parent = parent;
             this.ID_Playlist = ID_Playlist;
-            this.Name = name;
-            lb_Playlist_Name.Text = this.Name;
+            this.NamePlay = NamePlay;
+            lb_Playlist_Name.Text = this.NamePlay;
             this.Number_song = total;
             lb_Number_Of_Song.Text += ": " + this.Number_song.ToString();
         }
