@@ -30,8 +30,8 @@ namespace MuViPApp
         private string namePlay;
         public string NamePlay
         {
-            get { return NamePlay; }
-            set { NamePlay = value; }
+            get { return namePlay; }
+            set { namePlay = value; }
         }
 
         private int number_song;
