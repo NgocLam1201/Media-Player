@@ -19,7 +19,7 @@ namespace MuViPApp
         public string ID_Account = null;
 
         public bool Is_Playing = false;
-        public bool Is_Playing_NowPlaying = true;
+        public bool Is_Playing_NowPlaying = false;
         private static Form_Muvip instance;
 
         public static Form_Muvip Instance
@@ -66,7 +66,7 @@ namespace MuViPApp
         }
         public void SetActive_PanelPlayer()
         {
-            if (Is_Playing == true) panel_Player.Visible = true;
+            if (Is_Playing == true && Is_Playing_NowPlaying == false) panel_Player.Visible = true;
             else
                 panel_Player.Visible = false;
         }
