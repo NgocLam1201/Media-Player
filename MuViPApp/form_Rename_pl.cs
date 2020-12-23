@@ -13,19 +13,17 @@ namespace MuViPApp
     
     public partial class form_Rename_pl : Form
     {
-        public string s { get; set; }
+        private string reName;
+        public string ReName { get { return reName; } set{ reName = value; } }
        
         public form_Rename_pl()
         {
-            
             InitializeComponent();
-            
         }
 
         private void btn_Rename_Ok_Click(object sender, EventArgs e)
         {
-            
-             s= tb_NewName.Text;
+            reName = tb_NewName.Text;
             this.Close();
         }
 

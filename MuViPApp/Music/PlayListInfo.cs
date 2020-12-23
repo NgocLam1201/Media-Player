@@ -17,7 +17,9 @@ namespace MuViPApp.Music
             private set { PlayListInfo.instance = value; }
         }
 
-        public PlayListInfo(string name_PL = null) 
+        public PlayListInfo() { }
+
+        public PlayListInfo(DateTime date_create,string name_PL) 
         {
             Name_PL = name_PL;
         }
@@ -27,6 +29,13 @@ namespace MuViPApp.Music
         {
             get { return name_PL; }
             set { name_PL = value; }
+        }
+
+        private DateTime date_Create;
+        public DateTime Date_Create
+        {
+            get { return date_Create; }
+            set { date_Create = value; }
         }
 
         private List<Music_Song> Listmusic = new List<Music_Song>();
