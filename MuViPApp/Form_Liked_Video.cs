@@ -13,7 +13,11 @@ namespace MuViPApp
     public partial class Form_Liked_Video : Form
     {
         Form_Muvip parent;
+<<<<<<< Updated upstream
         public Form_Liked_Video(Form_Muvip parent = null)
+=======
+        public Form_Liked_Video(Form_Muvip parent)
+>>>>>>> Stashed changes
         {
             this.parent = parent;
             InitializeComponent();

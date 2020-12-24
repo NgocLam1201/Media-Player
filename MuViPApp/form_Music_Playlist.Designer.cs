@@ -28,38 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_Music_Playlist));
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Date_create = new System.Windows.Forms.Label();
             this.Number_song = new System.Windows.Forms.Label();
             this.lb_NamePl = new System.Windows.Forms.Label();
+            this.pn_List = new System.Windows.Forms.Panel();
             this.btn_Delete = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_Rename = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_Addto = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_Playall = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.pn_List = new System.Windows.Forms.Panel();
-            this.Date_create = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 5;
-            this.bunifuElipse1.TargetControl = this;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(59, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(89, 78);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
@@ -77,6 +59,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(643, 99);
             this.panel1.TabIndex = 1;
+            // 
+            // Date_create
+            // 
+            this.Date_create.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Date_create.AutoSize = true;
+            this.Date_create.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Date_create.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Date_create.Location = new System.Drawing.Point(259, 42);
+            this.Date_create.Name = "Date_create";
+            this.Date_create.Size = new System.Drawing.Size(66, 13);
+            this.Date_create.TabIndex = 9;
+            this.Date_create.Text = "Date_create";
             // 
             // Number_song
             // 
@@ -101,6 +95,14 @@
             this.lb_NamePl.Size = new System.Drawing.Size(70, 25);
             this.lb_NamePl.TabIndex = 7;
             this.lb_NamePl.Text = "name";
+            // 
+            // pn_List
+            // 
+            this.pn_List.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pn_List.Location = new System.Drawing.Point(0, 99);
+            this.pn_List.Name = "pn_List";
+            this.pn_List.Size = new System.Drawing.Size(643, 312);
+            this.pn_List.TabIndex = 2;
             // 
             // btn_Delete
             // 
@@ -255,25 +257,16 @@
             this.btn_Playall.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Playall.Click += new System.EventHandler(this.btn_Playall_Click);
             // 
-            // pn_List
+            // pictureBox1
             // 
-            this.pn_List.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pn_List.Location = new System.Drawing.Point(0, 99);
-            this.pn_List.Name = "pn_List";
-            this.pn_List.Size = new System.Drawing.Size(643, 312);
-            this.pn_List.TabIndex = 2;
-            // 
-            // Date_create
-            // 
-            this.Date_create.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Date_create.AutoSize = true;
-            this.Date_create.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Date_create.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Date_create.Location = new System.Drawing.Point(259, 42);
-            this.Date_create.Name = "Date_create";
-            this.Date_create.Size = new System.Drawing.Size(66, 13);
-            this.Date_create.TabIndex = 9;
-            this.Date_create.Text = "Date_create";
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(59, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(89, 78);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // form_Music_Playlist
             // 
@@ -287,16 +280,14 @@
             this.Location = new System.Drawing.Point(189, 0);
             this.Name = "form_Music_Playlist";
             this.Text = "form_Music_Playlist";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Playall;
         private System.Windows.Forms.PictureBox pictureBox1;

@@ -37,9 +37,6 @@ namespace MuViPApp
         }
 
         #region Events
-
-        #endregion
-
         private void btn_AllPl_Add_Click(object sender, EventArgs e)
         {
             this.parent.btn_AddPl_Click(this, new EventArgs());
@@ -68,5 +65,6 @@ namespace MuViPApp
             }
             ShowPlayList();
         }
+        #endregion
     }
 }
