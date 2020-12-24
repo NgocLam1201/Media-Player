@@ -16,6 +16,8 @@ namespace MuViPApp
 {
     public partial class Form_Muvip : Form
     {
+        public string ID_Account = null;
+
         public bool Is_Playing = false;
         public bool Is_Playing_NowPlaying = false;
         private static Form_Muvip instance;
@@ -233,7 +235,7 @@ namespace MuViPApp
             openChildForm(new Form_My_Video());
         }
 
-        public void btn_AddPl_Click(object sender, EventArgs e)
+        private void btn_AddPl_Click(object sender, EventArgs e)
         {
             form_Music_NewPlaylist form_Playlist = new form_Music_NewPlaylist(this);
             Point p = new Point(this.Width / 2 - form_Playlist.Width / 2, this.Height / 2 - form_Playlist.Height / 2);
@@ -426,7 +428,10 @@ namespace MuViPApp
             Mp3Player.Instance.Play();
             btn_Music_Pause_Click(this, new EventArgs());
             Time_Media_Play();
-            AddHistory(Music);
+            if (ID_Account != null)
+            {
+                AddHistory(Music);
+            }
         }
 
         private void AddHistory(Music_Song Music)

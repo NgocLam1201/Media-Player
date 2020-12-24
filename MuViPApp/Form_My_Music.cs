@@ -30,7 +30,7 @@ namespace MuViPApp
         {
             this.parent = parent;
             InitializeComponent();
-            this.parent.Is_Playing_NowPlaying = true;
+            this.parent.Is_Playing_NowPlaying = false;
             ShowListMusic();
         }        
 

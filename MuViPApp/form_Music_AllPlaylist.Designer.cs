@@ -105,7 +105,6 @@
             this.btn_AllPl_Add.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_AllPl_Add.Textcolor = System.Drawing.Color.White;
             this.btn_AllPl_Add.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AllPl_Add.Click += new System.EventHandler(this.btn_AllPl_Add_Click);
             // 
             // cb_Sortby
             // 
@@ -117,7 +116,7 @@
             this.cb_Sortby.Items = new string[] {
         "A to Z",
         "Date modified"};
-            this.cb_Sortby.Location = new System.Drawing.Point(268, 79);
+            this.cb_Sortby.Location = new System.Drawing.Point(268, 80);
             this.cb_Sortby.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cb_Sortby.Name = "cb_Sortby";
             this.cb_Sortby.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
@@ -125,7 +124,6 @@
             this.cb_Sortby.selectedIndex = 0;
             this.cb_Sortby.Size = new System.Drawing.Size(125, 18);
             this.cb_Sortby.TabIndex = 3;
-            this.cb_Sortby.onItemSelected += new System.EventHandler(this.cb_Sortby_onItemSelected);
             // 
             // label1
             // 

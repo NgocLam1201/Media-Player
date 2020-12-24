@@ -20,12 +20,11 @@ namespace MuViPApp
         {
             this.parent = parent;
             InitializeComponent();
-            ShowPlayList();
+            ShowPlayList(this.parent.ID_Account);
         }
 
-        void ShowPlayList()
+        void ShowPlayList(string ID)
         {
-            FLP_playlist.Controls.Clear();
             List<Music_Playlist> listpl = new List<Music_Playlist>();
             for (int i = 0; i < Playlist.Instance.GetAllPlayListMusic().Count; i++)
             {
@@ -40,33 +39,5 @@ namespace MuViPApp
 
         #endregion
 
-        private void btn_AllPl_Add_Click(object sender, EventArgs e)
-        {
-            this.parent.btn_AddPl_Click(this, new EventArgs());
-        }
-
-        private void cb_Sortby_onItemSelected(object sender, EventArgs e)
-        {
-            switch (cb_Sortby.selectedIndex)
-            {
-                case 0:
-                    var All_ListPl_Sortby_Name = Playlist.Instance.GetAllPlayListMusic().OrderBy(L => L.Name_PL);
-                    Playlist.Instance.Remove();
-                    foreach (PlayListInfo item in All_ListPl_Sortby_Name)
-                    {
-                        Playlist.Instance.AddItems(item);
-                    }
-                    break;
-                case 1:
-                    var All_ListPl_Sortby_Date = Playlist.Instance.GetAllPlayListMusic().OrderBy(L => L.Date_Create);
-                    Playlist.Instance.Remove();
-                    foreach (PlayListInfo item in All_ListPl_Sortby_Date)
-                    {
-                        Playlist.Instance.AddItems(item);
-                    }
-                    break;
-            }
-            ShowPlayList();
-        }
     }
 }

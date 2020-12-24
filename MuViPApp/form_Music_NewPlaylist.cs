@@ -26,7 +26,8 @@ namespace MuViPApp
                 MessageBox.Show("Enter a playlist's name","Notify");
             else
             {
-                Playlist.Instance.AddItems(new PlayListInfo(DateTime.Now, tb_Name.Text));
+                string Name_PL = tb_Name.Text;
+                Playlist.Instance.AddItems(new PlayListInfo());
                 form_Music_Playlist NewForm = new form_Music_Playlist(new Music_Playlist(Playlist.Instance.GetAllPlayListMusic().Count,this.tb_Name.Text,0,this.parent));
                 this.parent.openChildForm(NewForm);
                 this.Close();
