@@ -161,6 +161,18 @@
     <Compile Include="Music\Playlist.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubPanelSelect1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SubPanelSelect1.Designer.cs">
+      <DependentUpon>SubPanelSelect1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubPanelSelectMany.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SubPanelSelectMany.Designer.cs">
+      <DependentUpon>SubPanelSelectMany.cs</DependentUpon>
+    </Compile>
     <Compile Include="Video_Playlist.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -225,6 +237,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SubPanelSelect1.resx">
+      <DependentUpon>SubPanelSelect1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubPanelSelectMany.resx">
+      <DependentUpon>SubPanelSelectMany.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Video_Playlist.resx">
       <DependentUpon>Video_Playlist.cs</DependentUpon>
     </EmbeddedResource>
