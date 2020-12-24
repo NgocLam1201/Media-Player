@@ -48,7 +48,7 @@ namespace MuViPApp
             ListMusicPlaying.Instance.Remove();
             this.parent.Is_Playing = true;
             this.parent.SetActive_PanelPlayer();
-            ; if (lv_My_Music.SelectedItems.Count == 1)
+            if (lv_My_Music.SelectedItems.Count == 1)
             {
                 int index = lv_My_Music.Items.IndexOf(lv_My_Music.SelectedItems[0]);
                 for (int i = index; i < lv_My_Music.Items.Count; i++)
@@ -127,6 +127,15 @@ namespace MuViPApp
         {
             lv_My_Music.Items[0].Selected = true;
             Music_Click(this, new EventArgs());
+        }
+
+        public void DeleteMusic()
+        {
+            for (int i = 0; i < lv_My_Music.SelectedItems.Count; i++)
+            {
+                ListMusicPlaying.Instance.Remove(lv_My_Music.Items.IndexOf(lv_My_Music.SelectedItems[i]));
+            }
+            LoadMusic();
         }
     }
 }
