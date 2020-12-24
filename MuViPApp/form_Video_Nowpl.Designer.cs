@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_Video_Nowpl));
             this.panel3 = new System.Windows.Forms.Panel();
             this.pn_Video = new System.Windows.Forms.Panel();
+            this.MediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Play = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_Pause = new Bunifu.Framework.UI.BunifuImageButton();
@@ -42,13 +43,15 @@
             this.btn_Mix = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_Next = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.list_Video = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lb_NamePl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.list_Video = new System.Windows.Forms.ListBox();
             this.tmrVideo = new System.Windows.Forms.Timer(this.components);
             this.panel3.SuspendLayout();
+            this.pn_Video.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MediaPlayer)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Play)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Pause)).BeginInit();
@@ -76,11 +79,22 @@
             // pn_Video
             // 
             this.pn_Video.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
+            this.pn_Video.Controls.Add(this.MediaPlayer);
             this.pn_Video.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn_Video.Location = new System.Drawing.Point(0, 0);
             this.pn_Video.Name = "pn_Video";
             this.pn_Video.Size = new System.Drawing.Size(655, 365);
             this.pn_Video.TabIndex = 7;
+            // 
+            // MediaPlayer
+            // 
+            this.MediaPlayer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MediaPlayer.Enabled = true;
+            this.MediaPlayer.Location = new System.Drawing.Point(0, 0);
+            this.MediaPlayer.Name = "MediaPlayer";
+            this.MediaPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("MediaPlayer.OcxState")));
+            this.MediaPlayer.Size = new System.Drawing.Size(655, 365);
+            this.MediaPlayer.TabIndex = 0;
             // 
             // panel1
             // 
@@ -128,6 +142,7 @@
             this.btn_Pause.TabStop = false;
             this.btn_Pause.Visible = false;
             this.btn_Pause.Zoom = 10;
+            this.btn_Pause.Click += new System.EventHandler(this.btn_Pause_Click);
             // 
             // pb_Music_Player
             // 
@@ -222,6 +237,18 @@
             this.panel4.Size = new System.Drawing.Size(145, 406);
             this.panel4.TabIndex = 6;
             // 
+            // list_Video
+            // 
+            this.list_Video.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
+            this.list_Video.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.list_Video.ForeColor = System.Drawing.SystemColors.Info;
+            this.list_Video.FormattingEnabled = true;
+            this.list_Video.Location = new System.Drawing.Point(0, 0);
+            this.list_Video.MultiColumn = true;
+            this.list_Video.Name = "list_Video";
+            this.list_Video.Size = new System.Drawing.Size(145, 406);
+            this.list_Video.TabIndex = 0;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
@@ -259,19 +286,6 @@
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this;
             // 
-            // list_Video
-            // 
-            this.list_Video.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
-            this.list_Video.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.list_Video.ForeColor = System.Drawing.SystemColors.Info;
-            this.list_Video.FormattingEnabled = true;
-            this.list_Video.Location = new System.Drawing.Point(0, 0);
-            this.list_Video.MultiColumn = true;
-            this.list_Video.Name = "list_Video";
-            this.list_Video.Size = new System.Drawing.Size(145, 406);
-            this.list_Video.TabIndex = 0;
-            this.list_Video.SelectedIndexChanged += new System.EventHandler(this.list_Video_SelectedIndexChanged);
-            // 
             // form_Video_Nowpl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,8 +296,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "form_Video_Nowpl";
             this.Text = "form_Video_Nowpl";
-            this.Load += new System.EventHandler(this.form_Video_Nowpl_Load);
             this.panel3.ResumeLayout(false);
+            this.pn_Video.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.MediaPlayer)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_Play)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Pause)).EndInit();
@@ -320,5 +335,6 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.ListBox list_Video;
         private System.Windows.Forms.Timer tmrVideo;
+        private AxWMPLib.AxWindowsMediaPlayer MediaPlayer;
     }
 }
