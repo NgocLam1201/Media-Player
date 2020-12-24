@@ -1054,6 +1054,7 @@
         private System.Windows.Forms.Panel Menuside;
         private System.Windows.Forms.Panel panel_Music_Playlist;
         private System.Windows.Forms.Panel panel2;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_AddPl;
         private Bunifu.Framework.UI.BunifuFlatButton btn_My_Video;
         public System.Windows.Forms.TextBox RestTime;
         public System.Windows.Forms.TextBox Artist;
@@ -1070,7 +1071,6 @@
         public Bunifu.Framework.UI.BunifuImageButton medium_Volume;
         public Bunifu.Framework.UI.BunifuSlider Volume_Slider;
         public System.Windows.Forms.PictureBox picturesong;
-        public Bunifu.Framework.UI.BunifuFlatButton btn_AddPl;
         //>>>>>>> 04a2838c7725c5872faf9c85c73173baafd71e32
     }
 }

@@ -19,7 +19,38 @@ namespace MuViPApp
             this.parent = parent;
             InitializeComponent();
         }
+        //Play
+        private void SetPlayIcon()
+        {
+            if (Mp3Player.Instance.Is_playing)
+            {
+                btn_Pause.Visible = false;
+                btn_Play.Visible = true;
+            }
+            else
+            {
+                btn_Pause.Visible = true;
+                btn_Play.Visible = false;
+            }
+        }
+        private void btn_Pause_Click(object sender, EventArgs e)
+        {
+            Mp3Player.Instance.Is_playing = false;
+            MediaPlayer.Ctlcontrols.play();
+            SetPlayIcon();
+            parent.SetPlayIcon();
+        }
 
-      
+        private void btn_Play_Click(object sender, EventArgs e)
+        {
+            Mp3Player.Instance.Is_playing = true;
+            MediaPlayer.Ctlcontrols.play();
+            SetPlayIcon();
+            parent.SetPlayIcon();
+        }
+
+     
+
+
     }
 }

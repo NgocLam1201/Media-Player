@@ -37,6 +37,9 @@
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
+    <Reference Include="policy.2.0.taglib-sharp">
+      <HintPath>..\..\..\..\Downloads\taglib-sharp-2.1.0.0-windows\taglib-sharp-2.1.0.0-windows\Libraries\policy.2.0.taglib-sharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -50,6 +53,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="taglib-sharp">
+      <HintPath>..\..\..\..\Downloads\taglib-sharp-2.1.0.0-windows\taglib-sharp-2.1.0.0-windows\Libraries\taglib-sharp.dll</HintPath>
+    </Reference>
     <Reference Include="TagLibSharp">
       <HintPath>..\packages\TagLibSharp.2.2.0\lib\net45\TagLibSharp.dll</HintPath>
     </Reference>
@@ -161,6 +167,18 @@
     <Compile Include="Music\Playlist.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubPanelSelect1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SubPanelSelect1.Designer.cs">
+      <DependentUpon>SubPanelSelect1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubPanelSelectMany.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SubPanelSelectMany.Designer.cs">
+      <DependentUpon>SubPanelSelectMany.cs</DependentUpon>
+    </Compile>
     <Compile Include="Video_Playlist.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -225,6 +243,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SubPanelSelect1.resx">
+      <DependentUpon>SubPanelSelect1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubPanelSelectMany.resx">
+      <DependentUpon>SubPanelSelectMany.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Video_Playlist.resx">
       <DependentUpon>Video_Playlist.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,6 +267,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
     <COMReference Include="WMPLib">
       <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
       <VersionMajor>1</VersionMajor>

@@ -31,6 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Music_Nowpl));
             this.pn_List = new System.Windows.Forms.Panel();
+            this.lv_My_Music = new System.Windows.Forms.ListView();
+            this.Name_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Artist_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Genre_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Date_Added_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Length_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Link_Music = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Link_Picture = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.max_Volume = new Bunifu.Framework.UI.BunifuImageButton();
             this.medium_Volume = new Bunifu.Framework.UI.BunifuImageButton();
             this.Volume_Slider = new Bunifu.Framework.UI.BunifuSlider();
@@ -53,6 +61,7 @@
             this.btn_Music_Nowpl_Play = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.pn_List.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.max_Volume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medium_Volume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mute)).BeginInit();
@@ -70,11 +79,71 @@
             // 
             // pn_List
             // 
+            this.pn_List.Controls.Add(this.lv_My_Music);
             this.pn_List.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn_List.Location = new System.Drawing.Point(0, 120);
             this.pn_List.Name = "pn_List";
             this.pn_List.Size = new System.Drawing.Size(659, 291);
             this.pn_List.TabIndex = 27;
+            // 
+            // lv_My_Music
+            // 
+            this.lv_My_Music.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
+            this.lv_My_Music.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lv_My_Music.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Name_Music,
+            this.Artist_Music,
+            this.Genre_Music,
+            this.Date_Added_Music,
+            this.Length_Music,
+            this.Link_Music,
+            this.Link_Picture});
+            this.lv_My_Music.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lv_My_Music.ForeColor = System.Drawing.SystemColors.Info;
+            this.lv_My_Music.FullRowSelect = true;
+            this.lv_My_Music.HideSelection = false;
+            this.lv_My_Music.Location = new System.Drawing.Point(-12, 105);
+            this.lv_My_Music.Name = "lv_My_Music";
+            this.lv_My_Music.ShowItemToolTips = true;
+            this.lv_My_Music.Size = new System.Drawing.Size(659, 291);
+            this.lv_My_Music.TabIndex = 1;
+            this.lv_My_Music.UseCompatibleStateImageBehavior = false;
+            this.lv_My_Music.View = System.Windows.Forms.View.Details;
+            // 
+            // Name_Music
+            // 
+            this.Name_Music.Text = "Name";
+            this.Name_Music.Width = 200;
+            // 
+            // Artist_Music
+            // 
+            this.Artist_Music.Text = "Artist";
+            this.Artist_Music.Width = 130;
+            // 
+            // Genre_Music
+            // 
+            this.Genre_Music.Text = "Genre";
+            this.Genre_Music.Width = 120;
+            // 
+            // Date_Added_Music
+            // 
+            this.Date_Added_Music.Text = "Date Added";
+            this.Date_Added_Music.Width = 100;
+            // 
+            // Length_Music
+            // 
+            this.Length_Music.Text = "Length";
+            this.Length_Music.Width = 100;
+            // 
+            // Link_Music
+            // 
+            this.Link_Music.Text = "";
+            this.Link_Music.Width = 0;
+            // 
+            // Link_Picture
+            // 
+            this.Link_Picture.Text = "";
+            this.Link_Picture.Width = 0;
             // 
             // max_Volume
             // 
@@ -392,6 +461,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Music_Nowpl";
             this.Text = "Form_Music_Nowpl";
+            this.pn_List.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.max_Volume)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medium_Volume)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mute)).EndInit();
@@ -413,6 +483,14 @@
         #endregion
 
         private System.Windows.Forms.Panel pn_List;
+        public System.Windows.Forms.ListView lv_My_Music;
+        private System.Windows.Forms.ColumnHeader Name_Music;
+        private System.Windows.Forms.ColumnHeader Artist_Music;
+        private System.Windows.Forms.ColumnHeader Genre_Music;
+        private System.Windows.Forms.ColumnHeader Date_Added_Music;
+        private System.Windows.Forms.ColumnHeader Length_Music;
+        private System.Windows.Forms.ColumnHeader Link_Music;
+        private System.Windows.Forms.ColumnHeader Link_Picture;
         private Bunifu.Framework.UI.BunifuImageButton max_Volume;
         private Bunifu.Framework.UI.BunifuImageButton medium_Volume;
         public Bunifu.Framework.UI.BunifuSlider Volume_Slider;
