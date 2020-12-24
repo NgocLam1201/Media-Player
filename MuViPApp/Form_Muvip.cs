@@ -279,11 +279,11 @@ namespace MuViPApp
             btn_Playlist.selected = false;
             if (btn_Music.selected==true)
             {
-                openChildForm(new Form_Liked_Music());
+                openChildForm(new Form_Liked_Music(this));
             }
             if (btn_Video.selected==true)
             {
-                openChildForm(new Form_Liked_Video());
+                openChildForm(new Form_Liked_Video(this));
             }
         }
 

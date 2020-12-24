@@ -15,7 +15,7 @@ namespace MuViPApp
     {
         Form_ListMusic FlistMusic;
         Form_Muvip parent;
-        public Form_Liked_Music(Form_Muvip parent)
+        public Form_Liked_Music(Form_Muvip parent = null)
         {
             this.parent = parent;
             InitializeComponent();
