@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MuViPApp.Video;
 
 namespace MuViPApp
 {
@@ -19,9 +20,17 @@ namespace MuViPApp
             InitializeComponent();
         }
 
-        private void video_Playlist5_Load(object sender, EventArgs e)
+        void ShowPlayList()
         {
-
+            FLP_playlist_video.Controls.Clear();
+            List<Video_Playlist> listpl = new List<Video_Playlist>();
+            for (int i = 0; i < PlaylistVideo.Instance.GetAllPlayListVideo().Count; i++)
+            {
+                PlayListInfoVideo Playlistvideo = PlaylistVideo.Instance.GetListVideo(i);
+                Music_Playlist music_Playlist = new Music_Playlist(i, Playlistvideo.Name_PL, Playlistvideo.GetVideo().Count, this.parent);
+                listpl.Add(Video_Playlist);
+                FLP_playlist_video.Controls.Add(listpl[i]);
+            }
         }
     }
 }
