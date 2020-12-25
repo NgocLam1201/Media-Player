@@ -54,25 +54,24 @@
             this.pn_Childform = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel_Music_Playlist = new System.Windows.Forms.Panel();
             this.Logo = new System.Windows.Forms.Panel();
             this.title = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_Video = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_Music = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btn_My_Music = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btn_Add = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btn_Liked = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btn_Playlist = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btn_NowPlaying = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btn_History = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btn_Help = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btn_Exit = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Menuside = new System.Windows.Forms.Panel();
+            this.btn_Exit = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_Help = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_History = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_NowPlaying = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_AddPl = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_Playlist = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_Liked = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_Add = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_My_Video = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_My_Music = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Time_real = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel_Player.SuspendLayout();
@@ -234,7 +233,7 @@
             this.NameMedia.Location = new System.Drawing.Point(122, 10);
             this.NameMedia.Margin = new System.Windows.Forms.Padding(3);
             this.NameMedia.Name = "NameMedia";
-            this.NameMedia.Size = new System.Drawing.Size(97, 16);
+            this.NameMedia.Size = new System.Drawing.Size(99, 16);
             this.NameMedia.TabIndex = 2;
             this.NameMedia.Text = "Name_Music";
             // 
@@ -452,15 +451,6 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // panel_Music_Playlist
-            // 
-            this.panel_Music_Playlist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(36)))));
-            this.panel_Music_Playlist.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_Music_Playlist.Location = new System.Drawing.Point(0, 323);
-            this.panel_Music_Playlist.Name = "panel_Music_Playlist";
-            this.panel_Music_Playlist.Size = new System.Drawing.Size(189, 86);
-            this.panel_Music_Playlist.TabIndex = 10;
-            // 
             // Logo
             // 
             this.Logo.Controls.Add(this.title);
@@ -579,260 +569,28 @@
             this.btn_Music.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Music.Click += new System.EventHandler(this.btn_Music_Click);
             // 
-            // btn_My_Music
+            // Menuside
             // 
-            this.btn_My_Music.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btn_My_Music.BackColor = System.Drawing.Color.Black;
-            this.btn_My_Music.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_My_Music.BorderRadius = 0;
-            this.btn_My_Music.ButtonText = "My Music";
-            this.btn_My_Music.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_My_Music.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_My_Music.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_My_Music.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_My_Music.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_My_Music.Iconimage")));
-            this.btn_My_Music.Iconimage_right = null;
-            this.btn_My_Music.Iconimage_right_Selected = null;
-            this.btn_My_Music.Iconimage_Selected = null;
-            this.btn_My_Music.IconMarginLeft = 30;
-            this.btn_My_Music.IconMarginRight = 0;
-            this.btn_My_Music.IconRightVisible = true;
-            this.btn_My_Music.IconRightZoom = 0D;
-            this.btn_My_Music.IconVisible = true;
-            this.btn_My_Music.IconZoom = 70D;
-            this.btn_My_Music.IsTab = true;
-            this.btn_My_Music.Location = new System.Drawing.Point(0, 121);
-            this.btn_My_Music.Name = "btn_My_Music";
-            this.btn_My_Music.Normalcolor = System.Drawing.Color.Black;
-            this.btn_My_Music.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btn_My_Music.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_My_Music.selected = true;
-            this.btn_My_Music.Size = new System.Drawing.Size(189, 41);
-            this.btn_My_Music.TabIndex = 10;
-            this.btn_My_Music.Text = "My Music";
-            this.btn_My_Music.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_My_Music.Textcolor = System.Drawing.Color.Transparent;
-            this.btn_My_Music.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_My_Music.Click += new System.EventHandler(this.btn_My_Music_Click);
-            // 
-            // btn_Add
-            // 
-            this.btn_Add.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btn_Add.BackColor = System.Drawing.Color.Black;
-            this.btn_Add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Add.BorderRadius = 0;
-            this.btn_Add.ButtonText = "Add";
-            this.btn_Add.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Add.DisabledColor = System.Drawing.Color.Black;
-            this.btn_Add.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Add.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_Add.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_Add.Iconimage")));
-            this.btn_Add.Iconimage_right = null;
-            this.btn_Add.Iconimage_right_Selected = null;
-            this.btn_Add.Iconimage_Selected = null;
-            this.btn_Add.IconMarginLeft = 30;
-            this.btn_Add.IconMarginRight = 0;
-            this.btn_Add.IconRightVisible = true;
-            this.btn_Add.IconRightZoom = 1D;
-            this.btn_Add.IconVisible = true;
-            this.btn_Add.IconZoom = 70D;
-            this.btn_Add.IsTab = true;
-            this.btn_Add.Location = new System.Drawing.Point(0, 202);
-            this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Normalcolor = System.Drawing.Color.Black;
-            this.btn_Add.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btn_Add.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_Add.selected = false;
-            this.btn_Add.Size = new System.Drawing.Size(189, 40);
-            this.btn_Add.TabIndex = 3;
-            this.btn_Add.Text = "Add";
-            this.btn_Add.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_Add.Textcolor = System.Drawing.Color.White;
-            this.btn_Add.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
-            // 
-            // btn_Liked
-            // 
-            this.btn_Liked.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btn_Liked.BackColor = System.Drawing.Color.Black;
-            this.btn_Liked.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Liked.BorderRadius = 0;
-            this.btn_Liked.ButtonText = "Liked";
-            this.btn_Liked.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Liked.DisabledColor = System.Drawing.Color.Black;
-            this.btn_Liked.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_Liked.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Liked.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_Liked.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_Liked.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_Liked.Iconimage")));
-            this.btn_Liked.Iconimage_right = null;
-            this.btn_Liked.Iconimage_right_Selected = null;
-            this.btn_Liked.Iconimage_Selected = null;
-            this.btn_Liked.IconMarginLeft = 30;
-            this.btn_Liked.IconMarginRight = 0;
-            this.btn_Liked.IconRightVisible = true;
-            this.btn_Liked.IconRightZoom = 0D;
-            this.btn_Liked.IconVisible = true;
-            this.btn_Liked.IconZoom = 70D;
-            this.btn_Liked.IsTab = true;
-            this.btn_Liked.Location = new System.Drawing.Point(0, 242);
-            this.btn_Liked.Name = "btn_Liked";
-            this.btn_Liked.Normalcolor = System.Drawing.Color.Black;
-            this.btn_Liked.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btn_Liked.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_Liked.selected = false;
-            this.btn_Liked.Size = new System.Drawing.Size(189, 40);
-            this.btn_Liked.TabIndex = 4;
-            this.btn_Liked.Text = "Liked";
-            this.btn_Liked.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_Liked.Textcolor = System.Drawing.Color.White;
-            this.btn_Liked.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Liked.Click += new System.EventHandler(this.btn_Liked_Click);
-            // 
-            // btn_Playlist
-            // 
-            this.btn_Playlist.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btn_Playlist.BackColor = System.Drawing.SystemColors.WindowText;
-            this.btn_Playlist.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Playlist.BorderRadius = 0;
-            this.btn_Playlist.ButtonText = "Playlist";
-            this.btn_Playlist.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Playlist.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_Playlist.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btn_Playlist.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_Playlist.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_Playlist.Iconimage")));
-            this.btn_Playlist.Iconimage_right = null;
-            this.btn_Playlist.Iconimage_right_Selected = null;
-            this.btn_Playlist.Iconimage_Selected = null;
-            this.btn_Playlist.IconMarginLeft = 30;
-            this.btn_Playlist.IconMarginRight = 0;
-            this.btn_Playlist.IconRightVisible = true;
-            this.btn_Playlist.IconRightZoom = 0D;
-            this.btn_Playlist.IconVisible = true;
-            this.btn_Playlist.IconZoom = 70D;
-            this.btn_Playlist.IsTab = true;
-            this.btn_Playlist.Location = new System.Drawing.Point(0, 0);
-            this.btn_Playlist.Name = "btn_Playlist";
-            this.btn_Playlist.Normalcolor = System.Drawing.SystemColors.WindowText;
-            this.btn_Playlist.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btn_Playlist.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_Playlist.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btn_Playlist.selected = false;
-            this.btn_Playlist.Size = new System.Drawing.Size(154, 41);
-            this.btn_Playlist.TabIndex = 5;
-            this.btn_Playlist.Text = "Playlist";
-            this.btn_Playlist.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Playlist.Textcolor = System.Drawing.Color.White;
-            this.btn_Playlist.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Playlist.Click += new System.EventHandler(this.btn_Playlist_Click);
-            // 
-            // btn_NowPlaying
-            // 
-            this.btn_NowPlaying.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btn_NowPlaying.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_NowPlaying.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_NowPlaying.BorderRadius = 0;
-            this.btn_NowPlaying.ButtonText = "Now Playing";
-            this.btn_NowPlaying.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_NowPlaying.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_NowPlaying.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_NowPlaying.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_NowPlaying.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_NowPlaying.Iconimage")));
-            this.btn_NowPlaying.Iconimage_right = null;
-            this.btn_NowPlaying.Iconimage_right_Selected = null;
-            this.btn_NowPlaying.Iconimage_Selected = null;
-            this.btn_NowPlaying.IconMarginLeft = 30;
-            this.btn_NowPlaying.IconMarginRight = 0;
-            this.btn_NowPlaying.IconRightVisible = true;
-            this.btn_NowPlaying.IconRightZoom = 0D;
-            this.btn_NowPlaying.IconVisible = true;
-            this.btn_NowPlaying.IconZoom = 70D;
-            this.btn_NowPlaying.IsTab = true;
-            this.btn_NowPlaying.Location = new System.Drawing.Point(0, 409);
-            this.btn_NowPlaying.Name = "btn_NowPlaying";
-            this.btn_NowPlaying.Normalcolor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_NowPlaying.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btn_NowPlaying.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_NowPlaying.selected = false;
-            this.btn_NowPlaying.Size = new System.Drawing.Size(189, 37);
-            this.btn_NowPlaying.TabIndex = 4;
-            this.btn_NowPlaying.Text = "Now Playing";
-            this.btn_NowPlaying.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_NowPlaying.Textcolor = System.Drawing.Color.White;
-            this.btn_NowPlaying.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_NowPlaying.Click += new System.EventHandler(this.btn_NowPlaying_Click);
-            // 
-            // btn_History
-            // 
-            this.btn_History.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btn_History.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_History.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_History.BorderRadius = 0;
-            this.btn_History.ButtonText = "History";
-            this.btn_History.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_History.DisabledColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_History.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_History.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_History.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_History.Iconimage")));
-            this.btn_History.Iconimage_right = null;
-            this.btn_History.Iconimage_right_Selected = null;
-            this.btn_History.Iconimage_Selected = null;
-            this.btn_History.IconMarginLeft = 30;
-            this.btn_History.IconMarginRight = 0;
-            this.btn_History.IconRightVisible = true;
-            this.btn_History.IconRightZoom = 0D;
-            this.btn_History.IconVisible = true;
-            this.btn_History.IconZoom = 70D;
-            this.btn_History.IsTab = true;
-            this.btn_History.Location = new System.Drawing.Point(0, 446);
-            this.btn_History.Name = "btn_History";
-            this.btn_History.Normalcolor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_History.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btn_History.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_History.selected = false;
-            this.btn_History.Size = new System.Drawing.Size(189, 40);
-            this.btn_History.TabIndex = 5;
-            this.btn_History.Text = "History";
-            this.btn_History.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_History.Textcolor = System.Drawing.Color.White;
-            this.btn_History.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_History.Click += new System.EventHandler(this.btn_History_Click);
-            // 
-            // btn_Help
-            // 
-            this.btn_Help.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btn_Help.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_Help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Help.BorderRadius = 0;
-            this.btn_Help.ButtonText = "Help";
-            this.btn_Help.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Help.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_Help.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_Help.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_Help.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_Help.Iconimage")));
-            this.btn_Help.Iconimage_right = null;
-            this.btn_Help.Iconimage_right_Selected = null;
-            this.btn_Help.Iconimage_Selected = null;
-            this.btn_Help.IconMarginLeft = 30;
-            this.btn_Help.IconMarginRight = 0;
-            this.btn_Help.IconRightVisible = true;
-            this.btn_Help.IconRightZoom = 0D;
-            this.btn_Help.IconVisible = true;
-            this.btn_Help.IconZoom = 60D;
-            this.btn_Help.IsTab = true;
-            this.btn_Help.Location = new System.Drawing.Point(0, 486);
-            this.btn_Help.Name = "btn_Help";
-            this.btn_Help.Normalcolor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_Help.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btn_Help.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_Help.selected = false;
-            this.btn_Help.Size = new System.Drawing.Size(189, 43);
-            this.btn_Help.TabIndex = 9;
-            this.btn_Help.Text = "Help";
-            this.btn_Help.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_Help.Textcolor = System.Drawing.Color.White;
-            this.btn_Help.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Menuside.AutoScroll = true;
+            this.Menuside.AutoScrollMargin = new System.Drawing.Size(1, 1);
+            this.Menuside.AutoScrollMinSize = new System.Drawing.Size(1, 1);
+            this.Menuside.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Menuside.Controls.Add(this.btn_Exit);
+            this.Menuside.Controls.Add(this.btn_Help);
+            this.Menuside.Controls.Add(this.btn_History);
+            this.Menuside.Controls.Add(this.btn_NowPlaying);
+            this.Menuside.Controls.Add(this.panel2);
+            this.Menuside.Controls.Add(this.btn_Liked);
+            this.Menuside.Controls.Add(this.btn_Add);
+            this.Menuside.Controls.Add(this.btn_My_Video);
+            this.Menuside.Controls.Add(this.btn_My_Music);
+            this.Menuside.Controls.Add(this.panel3);
+            this.Menuside.Controls.Add(this.Logo);
+            this.Menuside.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Menuside.Location = new System.Drawing.Point(0, 0);
+            this.Menuside.Name = "Menuside";
+            this.Menuside.Size = new System.Drawing.Size(189, 603);
+            this.Menuside.TabIndex = 14;
             // 
             // btn_Exit
             // 
@@ -856,7 +614,7 @@
             this.btn_Exit.IconVisible = true;
             this.btn_Exit.IconZoom = 60D;
             this.btn_Exit.IsTab = true;
-            this.btn_Exit.Location = new System.Drawing.Point(0, 529);
+            this.btn_Exit.Location = new System.Drawing.Point(0, 443);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Normalcolor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_Exit.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -870,29 +628,112 @@
             this.btn_Exit.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
-            // Menuside
+            // btn_Help
             // 
-            this.Menuside.AutoScroll = true;
-            this.Menuside.AutoScrollMargin = new System.Drawing.Size(1, 1);
-            this.Menuside.AutoScrollMinSize = new System.Drawing.Size(1, 1);
-            this.Menuside.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Menuside.Controls.Add(this.btn_Exit);
-            this.Menuside.Controls.Add(this.btn_Help);
-            this.Menuside.Controls.Add(this.btn_History);
-            this.Menuside.Controls.Add(this.btn_NowPlaying);
-            this.Menuside.Controls.Add(this.panel_Music_Playlist);
-            this.Menuside.Controls.Add(this.panel2);
-            this.Menuside.Controls.Add(this.btn_Liked);
-            this.Menuside.Controls.Add(this.btn_Add);
-            this.Menuside.Controls.Add(this.btn_My_Video);
-            this.Menuside.Controls.Add(this.btn_My_Music);
-            this.Menuside.Controls.Add(this.panel3);
-            this.Menuside.Controls.Add(this.Logo);
-            this.Menuside.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Menuside.Location = new System.Drawing.Point(0, 0);
-            this.Menuside.Name = "Menuside";
-            this.Menuside.Size = new System.Drawing.Size(189, 603);
-            this.Menuside.TabIndex = 14;
+            this.btn_Help.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_Help.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Help.BorderRadius = 0;
+            this.btn_Help.ButtonText = "Help";
+            this.btn_Help.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Help.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_Help.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Help.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_Help.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_Help.Iconimage")));
+            this.btn_Help.Iconimage_right = null;
+            this.btn_Help.Iconimage_right_Selected = null;
+            this.btn_Help.Iconimage_Selected = null;
+            this.btn_Help.IconMarginLeft = 30;
+            this.btn_Help.IconMarginRight = 0;
+            this.btn_Help.IconRightVisible = true;
+            this.btn_Help.IconRightZoom = 0D;
+            this.btn_Help.IconVisible = true;
+            this.btn_Help.IconZoom = 60D;
+            this.btn_Help.IsTab = true;
+            this.btn_Help.Location = new System.Drawing.Point(0, 400);
+            this.btn_Help.Name = "btn_Help";
+            this.btn_Help.Normalcolor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Help.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_Help.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_Help.selected = false;
+            this.btn_Help.Size = new System.Drawing.Size(189, 43);
+            this.btn_Help.TabIndex = 9;
+            this.btn_Help.Text = "Help";
+            this.btn_Help.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Help.Textcolor = System.Drawing.Color.White;
+            this.btn_Help.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // btn_History
+            // 
+            this.btn_History.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_History.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_History.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_History.BorderRadius = 0;
+            this.btn_History.ButtonText = "History";
+            this.btn_History.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_History.DisabledColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_History.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_History.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_History.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_History.Iconimage")));
+            this.btn_History.Iconimage_right = null;
+            this.btn_History.Iconimage_right_Selected = null;
+            this.btn_History.Iconimage_Selected = null;
+            this.btn_History.IconMarginLeft = 30;
+            this.btn_History.IconMarginRight = 0;
+            this.btn_History.IconRightVisible = true;
+            this.btn_History.IconRightZoom = 0D;
+            this.btn_History.IconVisible = true;
+            this.btn_History.IconZoom = 70D;
+            this.btn_History.IsTab = true;
+            this.btn_History.Location = new System.Drawing.Point(0, 360);
+            this.btn_History.Name = "btn_History";
+            this.btn_History.Normalcolor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_History.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_History.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_History.selected = false;
+            this.btn_History.Size = new System.Drawing.Size(189, 40);
+            this.btn_History.TabIndex = 5;
+            this.btn_History.Text = "History";
+            this.btn_History.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_History.Textcolor = System.Drawing.Color.White;
+            this.btn_History.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_History.Click += new System.EventHandler(this.btn_History_Click);
+            // 
+            // btn_NowPlaying
+            // 
+            this.btn_NowPlaying.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_NowPlaying.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_NowPlaying.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_NowPlaying.BorderRadius = 0;
+            this.btn_NowPlaying.ButtonText = "Now Playing";
+            this.btn_NowPlaying.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_NowPlaying.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_NowPlaying.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_NowPlaying.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_NowPlaying.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_NowPlaying.Iconimage")));
+            this.btn_NowPlaying.Iconimage_right = null;
+            this.btn_NowPlaying.Iconimage_right_Selected = null;
+            this.btn_NowPlaying.Iconimage_Selected = null;
+            this.btn_NowPlaying.IconMarginLeft = 30;
+            this.btn_NowPlaying.IconMarginRight = 0;
+            this.btn_NowPlaying.IconRightVisible = true;
+            this.btn_NowPlaying.IconRightZoom = 0D;
+            this.btn_NowPlaying.IconVisible = true;
+            this.btn_NowPlaying.IconZoom = 70D;
+            this.btn_NowPlaying.IsTab = true;
+            this.btn_NowPlaying.Location = new System.Drawing.Point(0, 323);
+            this.btn_NowPlaying.Name = "btn_NowPlaying";
+            this.btn_NowPlaying.Normalcolor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_NowPlaying.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_NowPlaying.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_NowPlaying.selected = false;
+            this.btn_NowPlaying.Size = new System.Drawing.Size(189, 37);
+            this.btn_NowPlaying.TabIndex = 4;
+            this.btn_NowPlaying.Text = "Now Playing";
+            this.btn_NowPlaying.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_NowPlaying.Textcolor = System.Drawing.Color.White;
+            this.btn_NowPlaying.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_NowPlaying.Click += new System.EventHandler(this.btn_NowPlaying_Click);
             // 
             // panel2
             // 
@@ -938,6 +779,118 @@
             this.btn_AddPl.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AddPl.Click += new System.EventHandler(this.btn_AddPl_Click);
             // 
+            // btn_Playlist
+            // 
+            this.btn_Playlist.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_Playlist.BackColor = System.Drawing.SystemColors.WindowText;
+            this.btn_Playlist.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Playlist.BorderRadius = 0;
+            this.btn_Playlist.ButtonText = "Playlist";
+            this.btn_Playlist.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Playlist.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_Playlist.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_Playlist.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_Playlist.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_Playlist.Iconimage")));
+            this.btn_Playlist.Iconimage_right = null;
+            this.btn_Playlist.Iconimage_right_Selected = null;
+            this.btn_Playlist.Iconimage_Selected = null;
+            this.btn_Playlist.IconMarginLeft = 30;
+            this.btn_Playlist.IconMarginRight = 0;
+            this.btn_Playlist.IconRightVisible = true;
+            this.btn_Playlist.IconRightZoom = 0D;
+            this.btn_Playlist.IconVisible = true;
+            this.btn_Playlist.IconZoom = 70D;
+            this.btn_Playlist.IsTab = true;
+            this.btn_Playlist.Location = new System.Drawing.Point(0, 0);
+            this.btn_Playlist.Name = "btn_Playlist";
+            this.btn_Playlist.Normalcolor = System.Drawing.SystemColors.WindowText;
+            this.btn_Playlist.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_Playlist.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_Playlist.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.btn_Playlist.selected = false;
+            this.btn_Playlist.Size = new System.Drawing.Size(154, 41);
+            this.btn_Playlist.TabIndex = 5;
+            this.btn_Playlist.Text = "Playlist";
+            this.btn_Playlist.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Playlist.Textcolor = System.Drawing.Color.White;
+            this.btn_Playlist.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Playlist.Click += new System.EventHandler(this.btn_Playlist_Click);
+            // 
+            // btn_Liked
+            // 
+            this.btn_Liked.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_Liked.BackColor = System.Drawing.Color.Black;
+            this.btn_Liked.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Liked.BorderRadius = 0;
+            this.btn_Liked.ButtonText = "Liked";
+            this.btn_Liked.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Liked.DisabledColor = System.Drawing.Color.Black;
+            this.btn_Liked.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Liked.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Liked.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_Liked.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_Liked.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_Liked.Iconimage")));
+            this.btn_Liked.Iconimage_right = null;
+            this.btn_Liked.Iconimage_right_Selected = null;
+            this.btn_Liked.Iconimage_Selected = null;
+            this.btn_Liked.IconMarginLeft = 30;
+            this.btn_Liked.IconMarginRight = 0;
+            this.btn_Liked.IconRightVisible = true;
+            this.btn_Liked.IconRightZoom = 0D;
+            this.btn_Liked.IconVisible = true;
+            this.btn_Liked.IconZoom = 70D;
+            this.btn_Liked.IsTab = true;
+            this.btn_Liked.Location = new System.Drawing.Point(0, 242);
+            this.btn_Liked.Name = "btn_Liked";
+            this.btn_Liked.Normalcolor = System.Drawing.Color.Black;
+            this.btn_Liked.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_Liked.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_Liked.selected = false;
+            this.btn_Liked.Size = new System.Drawing.Size(189, 40);
+            this.btn_Liked.TabIndex = 4;
+            this.btn_Liked.Text = "Liked";
+            this.btn_Liked.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Liked.Textcolor = System.Drawing.Color.White;
+            this.btn_Liked.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Liked.Click += new System.EventHandler(this.btn_Liked_Click);
+            // 
+            // btn_Add
+            // 
+            this.btn_Add.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_Add.BackColor = System.Drawing.Color.Black;
+            this.btn_Add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Add.BorderRadius = 0;
+            this.btn_Add.ButtonText = "Add";
+            this.btn_Add.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Add.DisabledColor = System.Drawing.Color.Black;
+            this.btn_Add.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Add.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_Add.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_Add.Iconimage")));
+            this.btn_Add.Iconimage_right = null;
+            this.btn_Add.Iconimage_right_Selected = null;
+            this.btn_Add.Iconimage_Selected = null;
+            this.btn_Add.IconMarginLeft = 30;
+            this.btn_Add.IconMarginRight = 0;
+            this.btn_Add.IconRightVisible = true;
+            this.btn_Add.IconRightZoom = 1D;
+            this.btn_Add.IconVisible = true;
+            this.btn_Add.IconZoom = 70D;
+            this.btn_Add.IsTab = true;
+            this.btn_Add.Location = new System.Drawing.Point(0, 202);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Normalcolor = System.Drawing.Color.Black;
+            this.btn_Add.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_Add.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_Add.selected = false;
+            this.btn_Add.Size = new System.Drawing.Size(189, 40);
+            this.btn_Add.TabIndex = 3;
+            this.btn_Add.Text = "Add";
+            this.btn_Add.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Add.Textcolor = System.Drawing.Color.White;
+            this.btn_Add.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
+            // 
             // btn_My_Video
             // 
             this.btn_My_Video.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
@@ -974,6 +927,42 @@
             this.btn_My_Video.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_My_Video.Visible = false;
             this.btn_My_Video.Click += new System.EventHandler(this.btn_My_Video_Click);
+            // 
+            // btn_My_Music
+            // 
+            this.btn_My_Music.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_My_Music.BackColor = System.Drawing.Color.Black;
+            this.btn_My_Music.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_My_Music.BorderRadius = 0;
+            this.btn_My_Music.ButtonText = "My Music";
+            this.btn_My_Music.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_My_Music.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_My_Music.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_My_Music.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_My_Music.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_My_Music.Iconimage")));
+            this.btn_My_Music.Iconimage_right = null;
+            this.btn_My_Music.Iconimage_right_Selected = null;
+            this.btn_My_Music.Iconimage_Selected = null;
+            this.btn_My_Music.IconMarginLeft = 30;
+            this.btn_My_Music.IconMarginRight = 0;
+            this.btn_My_Music.IconRightVisible = true;
+            this.btn_My_Music.IconRightZoom = 0D;
+            this.btn_My_Music.IconVisible = true;
+            this.btn_My_Music.IconZoom = 70D;
+            this.btn_My_Music.IsTab = true;
+            this.btn_My_Music.Location = new System.Drawing.Point(0, 121);
+            this.btn_My_Music.Name = "btn_My_Music";
+            this.btn_My_Music.Normalcolor = System.Drawing.Color.Black;
+            this.btn_My_Music.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_My_Music.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_My_Music.selected = true;
+            this.btn_My_Music.Size = new System.Drawing.Size(189, 41);
+            this.btn_My_Music.TabIndex = 10;
+            this.btn_My_Music.Text = "My Music";
+            this.btn_My_Music.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_My_Music.Textcolor = System.Drawing.Color.Transparent;
+            this.btn_My_Music.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_My_Music.Click += new System.EventHandler(this.btn_My_Music_Click);
             // 
             // Time_real
             // 
@@ -1052,7 +1041,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_Help;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Exit;
         private System.Windows.Forms.Panel Menuside;
-        private System.Windows.Forms.Panel panel_Music_Playlist;
         private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuFlatButton btn_My_Video;
         public System.Windows.Forms.TextBox RestTime;

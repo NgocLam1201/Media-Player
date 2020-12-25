@@ -30,14 +30,24 @@ namespace MuViPApp
         {
             this.parent = parent;
             InitializeComponent();
-            this.parent.Is_Playing_NowPlaying = true;
+            if (this.parent.NameMedia.Text != "Name_Music")
+            {
+                this.parent.Is_Playing_NowPlaying = false;
+                this.parent.Is_Playing = true;
+            }
+            else
+                this.parent.Is_Playing = false;
+            this.parent.SetActive_PanelPlayer();
             ShowListMusic();
         }        
 
         void ShowListMusic()
         {
             ListMyMusic.Instance.Remove();
-            foreach (var child in Directory.GetFiles(@"F:\Media-Player\data\music"))
+            string LinkMusic = @"C:\Users\Admin\Music";
+            if (!Directory.Exists(LinkMusic))
+                Directory.CreateDirectory(LinkMusic);
+            foreach (var child in Directory.GetFiles(LinkMusic))
             {
                 FileInfo info = new FileInfo(child);
                 if (info.Extension == ".mp3")

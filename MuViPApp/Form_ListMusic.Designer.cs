@@ -57,7 +57,7 @@
             this.Length_Music,
             this.columnHeader1,
             Link_Music});
-            this.lv_My_Music.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lv_My_Music.Dock = System.Windows.Forms.DockStyle.Top;
             this.lv_My_Music.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lv_My_Music.ForeColor = System.Drawing.SystemColors.Info;
             this.lv_My_Music.FullRowSelect = true;
@@ -65,7 +65,7 @@
             this.lv_My_Music.Location = new System.Drawing.Point(0, 0);
             this.lv_My_Music.Name = "lv_My_Music";
             this.lv_My_Music.ShowItemToolTips = true;
-            this.lv_My_Music.Size = new System.Drawing.Size(710, 423);
+            this.lv_My_Music.Size = new System.Drawing.Size(724, 446);
             this.lv_My_Music.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.lv_My_Music.TabIndex = 1;
             this.lv_My_Music.UseCompatibleStateImageBehavior = false;
@@ -110,7 +110,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(710, 423);
+            this.ClientSize = new System.Drawing.Size(724, 450);
             this.Controls.Add(this.lv_My_Music);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_ListMusic";

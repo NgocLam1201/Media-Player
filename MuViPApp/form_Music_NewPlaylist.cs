@@ -19,6 +19,14 @@ namespace MuViPApp
             this.parent = parent;
             InitializeComponent();
         }
+
+        List<Music_Song> listMusic = new List<Music_Song>();
+
+        public form_Music_NewPlaylist(Form_Muvip parent, List<Music_Song> listMusic)
+        {
+            this.parent = parent;
+            this.listMusic = listMusic;
+        }
   
         private void btn_Ok_Click(object sender, EventArgs e)
         {
@@ -26,7 +34,7 @@ namespace MuViPApp
                 MessageBox.Show("Enter a playlist's name","Notify");
             else
             {
-                Playlist.Instance.AddItems(new PlayListInfo(DateTime.Now, tb_Name.Text));
+                Playlist.Instance.AddItems(new PlayListInfo(DateTime.Now, tb_Name.Text,listMusic));
                 form_Music_Playlist NewForm = new form_Music_Playlist(new Music_Playlist(Playlist.Instance.GetAllPlayListMusic().Count - 1,this.tb_Name.Text,0,this.parent));
                 this.parent.openChildForm(NewForm);
                 this.Close();

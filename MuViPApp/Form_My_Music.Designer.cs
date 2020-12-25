@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.pn_Top = new System.Windows.Forms.Panel();
             this.lb_view = new System.Windows.Forms.Label();
             this.Cb_My_Music_View = new Bunifu.Framework.UI.BunifuDropdown();
@@ -36,7 +35,6 @@
             this.btn_My_Music_Play_all = new Bunifu.Framework.UI.BunifuFlatButton();
             this.lb_My_Music = new System.Windows.Forms.Label();
             this.pn_List = new System.Windows.Forms.Panel();
-            this.Imagelist = new System.Windows.Forms.ImageList(this.components);
             this.pn_Top.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -151,12 +149,6 @@
             this.pn_List.Size = new System.Drawing.Size(800, 344);
             this.pn_List.TabIndex = 1;
             // 
-            // Imagelist
-            // 
-            this.Imagelist.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.Imagelist.ImageSize = new System.Drawing.Size(30, 30);
-            this.Imagelist.TransparentColor = System.Drawing.Color.Transparent;
-            // 
             // Form_My_Music
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,7 +174,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_My_Music_Play_all;
         private System.Windows.Forms.Label count_items;
         private Bunifu.Framework.UI.BunifuDropdown Cb_My_Music_View;
-        private System.Windows.Forms.ImageList Imagelist;
         private System.Windows.Forms.Label lb_view;
     }
 }

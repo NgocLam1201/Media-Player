@@ -216,7 +216,6 @@ namespace MuViPApp
         {
             Mp3Player.Instance.Seek(this.play.Value * 1000);
             this.parent.Set_PlayValue(this.play.Value);
-            //this.timer_play.Start();
         }
     }
 }

@@ -19,9 +19,11 @@ namespace MuViPApp.Music
 
         public PlayListInfo() { }
 
-        public PlayListInfo(DateTime date_create,string name_PL) 
+        public PlayListInfo(DateTime date_create,string name_PL, List<Music_Song> listmusic = null) 
         {
+            this.Date_Create = date_Create;
             Name_PL = name_PL;
+            this.Listmusic = listmusic;
         }
 
         private string name_PL;

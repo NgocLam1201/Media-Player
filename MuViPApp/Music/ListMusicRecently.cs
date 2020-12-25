@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,10 +18,30 @@ namespace MuViPApp.Music
             get { if (instance == null) instance = new ListMusicRecently(); return instance; }
             private set { instance = value; }
         }
+        string path = @"History_Music_MuVipApp.txt";
+
+        private ListMusicRecently()
+        {
+            if (File.Exists(path))
+            using (StreamReader sr = new StreamReader(path))
+            {
+                string lines;
+                while ((lines = sr.ReadLine()) != null)
+                {
+                    if (File.Exists(lines))
+                        Listmusic.Add(new Music_Song(lines));
+                }
+            }
+        }
 
         public void AddItems(Music_Song item)
         {
             Listmusic.Add(item);
+            using (StreamWriter sw = new StreamWriter(path, true))
+            {
+                sw.WriteLine(item.Link_Music);
+                sw.Close();
+            }
         }
 
         public List<Music_Song> GetMusic()

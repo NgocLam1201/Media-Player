@@ -32,7 +32,6 @@ namespace MuViPApp
         public Form_Muvip()
         {
             InitializeComponent();
-            panel_Music_Playlist.Visible = false;
             btn_Music.selected = true;
             btn_My_Music.selected = true;
             btn_Music_Play.Visible = false;
@@ -68,8 +67,6 @@ namespace MuViPApp
             else
                 panel_Player.Visible = false;
         }
-        
-        //play music
 
         public void SetPlayIcon()
         {
@@ -182,9 +179,6 @@ namespace MuViPApp
         private void btn_Playlist_Click(object sender, EventArgs e)
         {
             SetActive_PanelPlayer();
-            if (panel_Music_Playlist.Visible == false)
-                panel_Music_Playlist.Visible = true;
-            else panel_Music_Playlist.Visible = false;
             btn_My_Music.selected = false;
             btn_Liked.selected = false;
             btn_NowPlaying.selected = false;
@@ -235,15 +229,11 @@ namespace MuViPApp
 
         public void btn_AddPl_Click(object sender, EventArgs e)
         {
-            /*ToolStrip ListToolStrip = new ToolStrip();
-            ToolStripButton Addto_Pl = new ToolStripButton("Now playing");
-            ListToolStrip.Items.Add(Addto_Pl);*/
             form_Music_NewPlaylist form_Playlist = new form_Music_NewPlaylist(this);
             Point p = new Point(this.Width / 2 - form_Playlist.Width / 2, this.Height / 2 - form_Playlist.Height / 2);
             form_Playlist.StartPosition = FormStartPosition.CenterParent;
             form_Playlist.ShowDialog();
         }
-
 
         private void btn_NowPlaying_Click(object sender, EventArgs e)
         {
@@ -311,41 +301,7 @@ namespace MuViPApp
         {
             if (play.Value < play.MaximumValue)
                 play.Value++;
-            int value_time = Mp3Player.Instance.CurrentMilisecond/1000;
-            a = value_time / 3600;
-            value_time -= a * 3600;
-            b = value_time / 60;
-            c = value_time - b * 60;
-            BeginTime.Text = "";
-            c += 1;
-            if (c > 59)
-            {
-                b++;
-                if (b > 59)
-                {
-                    a++;
-                }
-            }
-            if (a < 10)
-            {
-                BeginTime.Text += "0" + a.ToString();
-            }
-            else
-                BeginTime.Text += a.ToString() + "";
-            BeginTime.Text += ":";
-            if (b < 10)
-            {
-                BeginTime.Text += "0" + b.ToString();
-            }
-            else
-                BeginTime.Text += b.ToString() + "";
-            BeginTime.Text += ":";
-            if (c < 10)
-            {
-                BeginTime.Text += "0" + c.ToString();
-            }
-            else
-                BeginTime.Text += c.ToString() + "";
+            Set_PlayValue(play.Value);
             if (BeginTime.Text == RestTime.Text)
             {
                 Time_real.Stop();
@@ -357,7 +313,6 @@ namespace MuViPApp
 
         public void Set_PlayValue(int value)
         {
-            Mp3Player.Instance.Seek(value * 1000);
             int value_time = value;
             a = value_time / 3600;
             value_time -= a * 3600;
@@ -389,6 +344,7 @@ namespace MuViPApp
 
         private void play_ValueChanged(object sender, EventArgs e)
         {
+            Mp3Player.Instance.Seek(play.Value * 1000);
             Set_PlayValue(play.Value);
         }
 
@@ -436,8 +392,6 @@ namespace MuViPApp
         {
             ListMusicRecently.Instance.AddItems(Music);
         }
-
-        //Loop
 
         public void LoopMusic(object sender, EventArgs e)
         {
@@ -559,7 +513,6 @@ namespace MuViPApp
             BeginTime.Text = "00:00:00";
             a = b = c = 0;
             Time_real.Start();
-            Time_real_Tick(this, new EventArgs());
             play.Value = 0;
             play.MaximumValue = this.length;
         }
