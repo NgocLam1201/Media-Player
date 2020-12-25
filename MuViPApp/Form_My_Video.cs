@@ -7,22 +7,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MuViPApp.Video;
+using System.IO;
 
 namespace MuViPApp
 {
     public partial class Form_My_Video : Form
     {
-        public Form_My_Video()
+        Form_Muvip parent = new Form_Muvip();
+        public Form_My_Video(Form_Muvip parent=null)
         {
             InitializeComponent();
-            string _cmd = "/Media-Player/data/video/Tik Tok Trung Quốc 🇨🇳 __ Các bài tập để có đôi tay đẹp ❤ ❤ (2).mp4";
-            Mp3Player.Instance.Open(_cmd);
-            //Mp3Player.Instance.DisplayMediaWindow();
-            Mp3Player.Instance.Play();
+            this.parent = parent;
+            ShowListVid();
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        public void ShowListVid()
         {
+            ListMyVideo.Instance.Remove();
+            foreach (var child in Directory.GetFiles(@"C:\Users\Admin\Videos\"))
+            {
+                FileInfo info = new FileInfo(child);
+                if (info.Extension == ".mp4"|| info.Extension == ".wmv")
+                {
+                    ListMyVideo.Instance.AddItems(new VideoInfo(info.FullName));
+                }
+            }
+            ListVideo lvideo = new ListVideo(this.parent, ListMyVideo.Instance.GetMusic());
+            lvideo.TopLevel = false;
+            lvideo.Dock = DockStyle.Fill; 
+            panel_List.Controls.Add(lvideo);
+            lvideo.BringToFront();
+            lvideo.Show();
+
         }
+       
     }
 }
