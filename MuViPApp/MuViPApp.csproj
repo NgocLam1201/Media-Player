@@ -146,11 +146,23 @@
     <Compile Include="form_Video_AllPlaylist.Designer.cs">
       <DependentUpon>form_Video_AllPlaylist.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Video_NewPlaylist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Video_NewPlaylist.Designer.cs">
+      <DependentUpon>Form_Video_NewPlaylist.cs</DependentUpon>
+    </Compile>
     <Compile Include="form_Video_Nowpl.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form_Video_Nowpl.Designer.cs">
       <DependentUpon>form_Video_Nowpl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Video_Playlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Video_Playlist.Designer.cs">
+      <DependentUpon>Form_Video_Playlist.cs</DependentUpon>
     </Compile>
     <Compile Include="ListVideo.cs">
       <SubType>Form</SubType>
@@ -194,6 +206,12 @@
     <Compile Include="SubPanelSelectMany.Designer.cs">
       <DependentUpon>SubPanelSelectMany.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Video\Data\Video_Playlist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Properties\Video\Data\Video_Playlist.Designer.cs">
+      <DependentUpon>Video_Playlist.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form_ListMusic.resx">
       <DependentUpon>Form_ListMusic.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,8 +254,14 @@
     <EmbeddedResource Include="form_Video_AllPlaylist.resx">
       <DependentUpon>form_Video_AllPlaylist.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Video_NewPlaylist.resx">
+      <DependentUpon>Form_Video_NewPlaylist.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form_Video_Nowpl.resx">
       <DependentUpon>form_Video_Nowpl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Video_Playlist.resx">
+      <DependentUpon>Form_Video_Playlist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListVideo.resx">
       <DependentUpon>ListVideo.cs</DependentUpon>
@@ -261,6 +285,9 @@
     <EmbeddedResource Include="SubPanelSelectMany.resx">
       <DependentUpon>SubPanelSelectMany.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Video\Data\Video_Playlist.resx">
+      <DependentUpon>Video_Playlist.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -276,6 +303,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
     <COMReference Include="WMPLib">
       <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
       <VersionMajor>1</VersionMajor>

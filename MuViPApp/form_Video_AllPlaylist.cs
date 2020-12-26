@@ -18,19 +18,22 @@ namespace MuViPApp
         {
             this.parent = parent;
             InitializeComponent();
+            ShowPlayList();
         }
 
         void ShowPlayList()
         {
-            FLP_playlist_video.Controls.Clear();
+            FLP_videoplaylist.Controls.Clear();
             List<Video_Playlist> listpl = new List<Video_Playlist>();
             for (int i = 0; i < PlaylistVideo.Instance.GetAllPlayListVideo().Count; i++)
             {
                 PlayListInfoVideo Playlistvideo = PlaylistVideo.Instance.GetListVideo(i);
-                Music_Playlist music_Playlist = new Music_Playlist(i, Playlistvideo.Name_PL, Playlistvideo.GetVideo().Count, this.parent);
-                listpl.Add(Video_Playlist);
-                FLP_playlist_video.Controls.Add(listpl[i]);
+                Video_Playlist video_Playlist = new Video_Playlist(i, Playlistvideo.Name_PL, Playlistvideo.GetVideo().Count, this.parent);
+                listpl.Add(video_Playlist);
+                FLP_videoplaylist.Controls.Add(listpl[i]);
             }
         }
+
+
     }
 }
