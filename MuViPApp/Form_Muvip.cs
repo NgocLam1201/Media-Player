@@ -103,7 +103,7 @@ namespace MuViPApp
         }
         private void Music_File_Dialog()
         {
-            /*OpenFileDialog ofd_music = new OpenFileDialog()
+            OpenFileDialog ofd_music = new OpenFileDialog()
             {
                 InitialDirectory = @"C:\Users\Admin\Music\",
                 Title = "Add MP3 Files",
@@ -111,26 +111,15 @@ namespace MuViPApp
                 CheckFileExists = false,
                 CheckPathExists = true,
 
-                //DefaultExt = "mp3",
-                //Filter = "Mp3 Files| *.mp3",
+                DefaultExt = "mp3",
+                Filter = "Mp3 Files| *.mp3",
                 FilterIndex = 2,
                 RestoreDirectory = true,
 
                 ReadOnlyChecked = true,
                 ShowReadOnly = true
-            };*/
-            using (var fbd = new FolderBrowserDialog())
-            {
-                DialogResult result = fbd.ShowDialog();
-
-                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
-                {
-                    string[] files = Directory.GetFiles(fbd.SelectedPath);
-
-                    MessageBox.Show("Files found: " + files.Length.ToString(), "Message");
-                }
-            }
-            /*using (ofd_music)
+            };
+            using (ofd_music)
             {
                 
                 if (ofd_music.ShowDialog() == DialogResult.OK)
@@ -139,7 +128,7 @@ namespace MuViPApp
                     var fileTag = TagLib.File.Create(fileInfo.FullName);
                     
                 }
-            }*/
+            }
         }
         private void Video_File_Dialog()
         {

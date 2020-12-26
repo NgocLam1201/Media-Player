@@ -173,6 +173,7 @@
     <Compile Include="Mediacs.Designer.cs">
       <DependentUpon>Mediacs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Music\ListFolderLocalMusic.cs" />
     <Compile Include="Music\ListMusicLiked.cs" />
     <Compile Include="Music\ListMyMusic.cs" />
     <Compile Include="Music\ListViewColumnSorter.cs" />

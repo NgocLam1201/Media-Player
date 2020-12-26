@@ -60,21 +60,24 @@ namespace MuViPApp
 
         private void btn_Addto_Click(object sender, EventArgs e)
         {
-            toolStrip.Items.Add("Now playing");
-            toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
-            toolStrip.Items.Add("-");
-            toolStrip.Items.Add("New playlist");
-            int Y = 400;
-            foreach (PlayListInfo item in Playlist.Instance.GetAllPlayListMusic())
+            if (toolStrip == null)
             {
-                toolStrip.Items.Add(item.Name_PL);
-                Y -= 22;
+                toolStrip.Items.Add("Now playing");
+                toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
+                toolStrip.Items.Add("-");
+                toolStrip.Items.Add("New playlist");
+                int Y = 400;
+                foreach (PlayListInfo item in Playlist.Instance.GetAllPlayListMusic())
+                {
+                    toolStrip.Items.Add(item.Name_PL);
+                    Y -= 22;
+                }
+                toolStrip.Location = new Point(btn_Addto.Location.X + 70, btn_Addto.Location.Y + Y);
+                this.parent.Controls.Add(toolStrip);
+                toolStrip.BringToFront();
+                toolStrip.GripStyle = ToolStripGripStyle.Hidden;
+                toolStrip.Dock = DockStyle.None;
             }
-            toolStrip.Location = new Point(btn_Addto.Location.X + 70, btn_Addto.Location.Y + Y);
-            this.parent.Controls.Add(toolStrip);
-            toolStrip.BringToFront();
-            toolStrip.GripStyle = ToolStripGripStyle.Hidden;
-            toolStrip.Dock = DockStyle.None;
         }
 
         private void btn_PlayNext_Click(object sender, EventArgs e)

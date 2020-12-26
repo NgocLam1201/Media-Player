@@ -19,6 +19,8 @@ namespace MuViPApp
         public int count;
         Form_Muvip parent;
         Form_ListMusic FlistMusic;
+        ToolStrip toolStrip = new ToolStrip();
+
         private static Form_My_Music instance;
 
         public static Form_My_Music Instance
@@ -39,22 +41,11 @@ namespace MuViPApp
             else
                 this.parent.Is_Playing = false;
             ShowListMusic();
-        }        
+            toolStrip.ItemClicked += ClickItem;
+        }
 
         void ShowListMusic()
-        {
-            ListMyMusic.Instance.Remove();
-            string LinkMusic = @"C:\Users\Admin\Music";
-            if (!Directory.Exists(LinkMusic))
-                Directory.CreateDirectory(LinkMusic);
-            foreach (var child in Directory.GetFiles(LinkMusic))
-            {
-                FileInfo info = new FileInfo(child);
-                if (info.Extension == ".mp3")
-                {
-                    ListMyMusic.Instance.AddItems(new Music_Song(info.FullName));
-                }
-            }
+        {          
             FlistMusic = new Form_ListMusic(this.parent, ListMyMusic.Instance.GetMusic());
             FlistMusic.TopLevel = false;
             FlistMusic.FormBorderStyle = FormBorderStyle.None;
@@ -76,5 +67,44 @@ namespace MuViPApp
         {
             FlistMusic.PlayAllMusic();
         }
+
+        private void ChoiceFolderMusic_Click(object sender, EventArgs e)
+        {
+            using (var fbd = new FolderBrowserDialog())
+            {
+                DialogResult result = fbd.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                {
+                    ListFolderLocalMusic.Instance.Additem(fbd.SelectedPath);
+                }
+            }
+            ListFolderLocalMusic.Instance.Export();
+        }
+
+        private void ClickItem(object sender, ToolStripItemClickedEventArgs e)
+        {
+            ListFolderLocalMusic.Instance.Remove(e.ClickedItem.Text);
+            ListFolderLocalMusic.Instance.Export();
+            toolStrip = null;
+        }
+
+        private void DeleteFolderMusic_Click(object sender, EventArgs e)
+        {
+            if (toolStrip == null)
+            {
+                toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
+                int Y = 60;
+                foreach (string item in ListFolderLocalMusic.Instance.GetLink())
+                {
+                    toolStrip.Items.Add(item);
+                }
+                toolStrip.Location = new Point(DeleteFolderMusic.Location.X + 250, DeleteFolderMusic.Location.Y + Y);
+                this.parent.Controls.Add(toolStrip);
+                toolStrip.BringToFront();
+                toolStrip.GripStyle = ToolStripGripStyle.Hidden;
+                toolStrip.Dock = DockStyle.None;
+            }
+        }        
     }
 }
