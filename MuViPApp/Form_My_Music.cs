@@ -41,6 +41,7 @@ namespace MuViPApp
             else
                 this.parent.Is_Playing = false;
             ShowListMusic();
+            this.Click += FormClick;
             toolStrip.ItemClicked += ClickItem;
         }
 
@@ -80,31 +81,30 @@ namespace MuViPApp
                 }
             }
             ListFolderLocalMusic.Instance.Export();
+            ShowListMusic();
         }
 
         private void ClickItem(object sender, ToolStripItemClickedEventArgs e)
         {
             ListFolderLocalMusic.Instance.Remove(e.ClickedItem.Text);
             ListFolderLocalMusic.Instance.Export();
-            toolStrip = null;
+            this.parent.Controls.Remove(toolStrip);
         }
 
         private void DeleteFolderMusic_Click(object sender, EventArgs e)
         {
-            if (toolStrip == null)
+            this.parent.Controls.Remove(toolStrip);
+            toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
+            int Y = 60;
+            foreach (string item in ListFolderLocalMusic.Instance.GetLink())
             {
-                toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
-                int Y = 60;
-                foreach (string item in ListFolderLocalMusic.Instance.GetLink())
-                {
-                    toolStrip.Items.Add(item);
-                }
-                toolStrip.Location = new Point(DeleteFolderMusic.Location.X + 250, DeleteFolderMusic.Location.Y + Y);
-                this.parent.Controls.Add(toolStrip);
-                toolStrip.BringToFront();
-                toolStrip.GripStyle = ToolStripGripStyle.Hidden;
-                toolStrip.Dock = DockStyle.None;
+                toolStrip.Items.Add(item);
             }
+            toolStrip.Location = new Point(DeleteFolderMusic.Location.X + 250, DeleteFolderMusic.Location.Y + Y);
+            this.parent.Controls.Add(toolStrip);
+            toolStrip.BringToFront();
+            toolStrip.GripStyle = ToolStripGripStyle.Hidden;
+            toolStrip.Dock = DockStyle.None;
         }        
     }
 }
