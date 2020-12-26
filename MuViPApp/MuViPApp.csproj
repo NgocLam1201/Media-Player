@@ -197,11 +197,11 @@
     <Compile Include="SubPanelSelect.Designer.cs">
       <DependentUpon>SubPanelSelect.cs</DependentUpon>
     </Compile>
-    <Compile Include="Videos\ControlCentre.cs" />
-    <Compile Include="Videos\ListMyVideo.cs" />
-    <Compile Include="Videos\ListVideoLiked.cs" />
-    <Compile Include="Videos\ListVideoPlaying.cs" />
-    <Compile Include="Videos\VideoInfo.cs" />
+    <Compile Include="Video\ControlCentre.cs" />
+    <Compile Include="Video\ListMyVideo.cs" />
+    <Compile Include="Video\ListVideoLiked.cs" />
+    <Compile Include="Video\ListVideoPlaying.cs" />
+    <Compile Include="Video\VideoInfo.cs" />
     <Compile Include="Video_Playlist.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -91,6 +91,11 @@ namespace MuViPApp
             this.parent.Controls.Remove(toolStrip);
         }
 
+        private void FormClick(object s, EventArgs e)
+        {
+            this.parent.Controls.Remove(toolStrip);
+        }
+
         private void DeleteFolderMusic_Click(object sender, EventArgs e)
         {
             this.parent.Controls.Remove(toolStrip);
