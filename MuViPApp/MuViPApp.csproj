@@ -161,6 +161,18 @@
     <Compile Include="form_Video_Nowpl.Designer.cs">
       <DependentUpon>form_Video_Nowpl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListVideo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListVideo.Designer.cs">
+      <DependentUpon>ListVideo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mediacs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mediacs.Designer.cs">
+      <DependentUpon>Mediacs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Music\ListMusicLiked.cs" />
     <Compile Include="Music\ListMyMusic.cs" />
     <Compile Include="Music\ListViewColumnSorter.cs" />
@@ -184,6 +196,11 @@
     <Compile Include="SubPanelSelect.Designer.cs">
       <DependentUpon>SubPanelSelect.cs</DependentUpon>
     </Compile>
+    <Compile Include="Videos\ControlCentre.cs" />
+    <Compile Include="Videos\ListMyVideo.cs" />
+    <Compile Include="Videos\ListVideoLiked.cs" />
+    <Compile Include="Videos\ListVideoPlaying.cs" />
+    <Compile Include="Videos\VideoInfo.cs" />
     <Compile Include="Video_Playlist.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -235,6 +252,12 @@
     <EmbeddedResource Include="form_Video_Nowpl.resx">
       <DependentUpon>form_Video_Nowpl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListVideo.resx">
+      <DependentUpon>ListVideo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mediacs.resx">
+      <DependentUpon>Mediacs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Music\Music_Playlist.resx">
       <DependentUpon>Music_Playlist.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +292,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
     <COMReference Include="WMPLib">
       <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
       <VersionMajor>1</VersionMajor>
@@ -282,23 +313,7 @@
   <ItemGroup>
     <None Include="Resources\songimg.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="MuVipApp.txt" />
-  </ItemGroup>
-  <ItemGroup Condition="$(VisualStudioVersion) == '16.0'">
-    <Reference Include="Microsoft.Data.Tools.Schema.Sql, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>$(SSDTPath)\Microsoft.Data.Tools.Schema.Sql.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTesting, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <SsdtUnitTestVersion>3.1</SsdtUnitTestVersion>

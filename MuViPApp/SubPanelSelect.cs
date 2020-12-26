@@ -43,6 +43,7 @@ namespace MuViPApp
                     }
                     break;
             }
+            toolStrip = null;
             this.parent.AfterClick();
         }
 

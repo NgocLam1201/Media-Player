@@ -81,10 +81,6 @@ namespace MuViPApp
 
         public void SelectMusic(object sender, MouseEventArgs e)
         {
-            /*if (lv_My_Music.Items[lv_My_Music.Items.IndexOf(lv_My_Music.SelectedItems[0])].Selected == true)
-            {
-                lv_My_Music.SelectedItems[0].Selected = false;
-            }*/    
             if (sp_SelectMusic == null)
             {
                 this.parent.Is_Playing = false;
@@ -166,7 +162,7 @@ namespace MuViPApp
         {
             for (int i = 0; i < lv_My_Music.SelectedItems.Count; i++)
             {
-                ListMusicPlaying.Instance.Remove(lv_My_Music.Items.IndexOf(lv_My_Music.SelectedItems[i]));
+                Listmusic.Remove(new Music_Song(lv_My_Music.SelectedItems[i].SubItems[6].Text));
             }
             LoadMusic();
         }
@@ -187,6 +183,8 @@ namespace MuViPApp
 
         public void AddToPlaylist(PlayListInfo P_list)
         {
+            if (lv_My_Music.SelectedItems.Count == 0)
+                SelectAll();
             for (int i = 0; i < lv_My_Music.SelectedItems.Count; i++)
             {
                 P_list.AddItems(new Music_Song(lv_My_Music.SelectedItems[i].SubItems[6].Text));
@@ -195,6 +193,8 @@ namespace MuViPApp
 
         public void AddtoNowPlaying()
         {
+            if (lv_My_Music.SelectedItems.Count == 0)
+                SelectAll();
             for (int i=0;i<lv_My_Music.SelectedItems.Count;i++)
             {
                 ListMusicPlaying.Instance.AddItems(new Music_Song(lv_My_Music.SelectedItems[i].SubItems[6].Text));
@@ -204,6 +204,8 @@ namespace MuViPApp
 
         public void AddToNewPlaylist()
         {
+            if (lv_My_Music.SelectedItems.Count == 0)
+                SelectAll();
             List<Music_Song> lstMusic = new List<Music_Song>();
             for (int i = 0; i < lv_My_Music.SelectedItems.Count; i++)
             {

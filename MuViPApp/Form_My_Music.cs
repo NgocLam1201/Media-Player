@@ -30,14 +30,14 @@ namespace MuViPApp
         {
             this.parent = parent;
             InitializeComponent();
-            if (this.parent.NameMedia.Text != "Name_Music")
+            if (Mp3Player.Instance.CurrentMilisecond > 0)
             {
                 this.parent.Is_Playing_NowPlaying = false;
                 this.parent.Is_Playing = true;
+                this.parent.SetActive_PanelPlayer();
             }
             else
                 this.parent.Is_Playing = false;
-            this.parent.SetActive_PanelPlayer();
             ShowListMusic();
         }        
 

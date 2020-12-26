@@ -116,7 +116,7 @@
             this.Search.Icon = ((System.Drawing.Image)(resources.GetObject("Search.Icon")));
             this.Search.Location = new System.Drawing.Point(203, 9);
             this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(247, 24);
+            this.Search.Size = new System.Drawing.Size(349, 24);
             this.Search.TabIndex = 3;
             this.Search.text = "Search";
             // 
@@ -233,7 +233,7 @@
             this.NameMedia.Location = new System.Drawing.Point(122, 10);
             this.NameMedia.Margin = new System.Windows.Forms.Padding(3);
             this.NameMedia.Name = "NameMedia";
-            this.NameMedia.Size = new System.Drawing.Size(99, 16);
+            this.NameMedia.Size = new System.Drawing.Size(97, 16);
             this.NameMedia.TabIndex = 2;
             this.NameMedia.Text = "Name_Music";
             // 
@@ -759,8 +759,8 @@
             this.btn_AddPl.Iconimage_right = null;
             this.btn_AddPl.Iconimage_right_Selected = null;
             this.btn_AddPl.Iconimage_Selected = null;
-            this.btn_AddPl.IconMarginLeft = 0;
-            this.btn_AddPl.IconMarginRight = 0;
+            this.btn_AddPl.IconMarginLeft = -5;
+            this.btn_AddPl.IconMarginRight = 10;
             this.btn_AddPl.IconRightVisible = true;
             this.btn_AddPl.IconRightZoom = 0D;
             this.btn_AddPl.IconVisible = true;

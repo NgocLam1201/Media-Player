@@ -33,7 +33,6 @@ namespace MuViPApp
         {
             InitializeComponent();
             btn_Music.selected = true;
-            btn_My_Music.selected = true;
             btn_Music_Play.Visible = false;
             btn_Music_Pause.Visible = true;
             uint CurrVol = 0;
@@ -104,33 +103,43 @@ namespace MuViPApp
         }
         private void Music_File_Dialog()
         {
-            OpenFileDialog ofd_music = new OpenFileDialog()
+            /*OpenFileDialog ofd_music = new OpenFileDialog()
             {
-                InitialDirectory = @"Music\",
+                InitialDirectory = @"C:\Users\Admin\Music\",
                 Title = "Add MP3 Files",
 
-                CheckFileExists = true,
+                CheckFileExists = false,
                 CheckPathExists = true,
 
-                DefaultExt = "mp3",
-                Filter = "Mp3 Files| *.mp3",
+                //DefaultExt = "mp3",
+                //Filter = "Mp3 Files| *.mp3",
                 FilterIndex = 2,
                 RestoreDirectory = true,
 
                 ReadOnlyChecked = true,
                 ShowReadOnly = true
-            };
-            using (ofd_music)
+            };*/
+            using (var fbd = new FolderBrowserDialog())
+            {
+                DialogResult result = fbd.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                {
+                    string[] files = Directory.GetFiles(fbd.SelectedPath);
+
+                    MessageBox.Show("Files found: " + files.Length.ToString(), "Message");
+                }
+            }
+            /*using (ofd_music)
             {
                 
                 if (ofd_music.ShowDialog() == DialogResult.OK)
                 {
                     FileInfo fileInfo = new FileInfo(ofd_music.FileName);
-                    //Mp3Player.Instance.Open(ofd_music.FileName);
                     var fileTag = TagLib.File.Create(fileInfo.FullName);
                     
                 }
-            }
+            }*/
         }
         private void Video_File_Dialog()
         {
@@ -161,6 +170,7 @@ namespace MuViPApp
                 }
             }
         }
+
         private void btn_Add_Click(object sender, EventArgs e)
         {
             
@@ -173,7 +183,6 @@ namespace MuViPApp
             {
                 Video_File_Dialog();
             }
-            
         }
 
         private void btn_Playlist_Click(object sender, EventArgs e)
@@ -208,7 +217,7 @@ namespace MuViPApp
             btn_History.selected = false;
             btn_Help.selected = false;
             btn_Exit.selected = false;
-            openChildForm(new Form_My_Music());
+            openChildForm(new Form_My_Music(this));
         }
 
         private void btn_Video_Click(object sender, EventArgs e)
@@ -224,7 +233,7 @@ namespace MuViPApp
             btn_History.selected = false;
             btn_Help.selected = false;
             btn_Exit.selected = false;
-            openChildForm(new Form_My_Video());
+            openChildForm(new Form_My_Video(this));
         }
 
         public void btn_AddPl_Click(object sender, EventArgs e)

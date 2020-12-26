@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,7 @@ namespace MuViPApp.Music
         public string Name_PL
         {
             get { return name_PL; }
-            set { name_PL = value; }
+            set { File.Move(Name_PL + ".txt", value); File.Delete(Name_PL + ".txt"); name_PL = value;}
         }
 
         private DateTime date_Create;
@@ -41,6 +42,36 @@ namespace MuViPApp.Music
         }
 
         private List<Music_Song> Listmusic = new List<Music_Song>();
+
+        public void Import()
+        {
+            if (!File.Exists(this.Name_PL + ".txt"))
+                File.Create(this.Name_PL + ".txt");
+            using (StreamReader sr = new StreamReader(this.name_PL + ".txt"))
+            {
+                string lines;
+                while ((lines = sr.ReadLine()) != null)
+                {
+                    if (File.Exists(lines))
+                        Listmusic.Add(new Music_Song(lines));
+                }
+                sr.Close();
+            }
+        }
+
+        public void Export()
+        {
+            if (File.Exists(this.Name_PL + ".txt"))
+                File.Delete(this.Name_PL + ".txt");
+            using (StreamWriter sw = new StreamWriter(this.Name_PL + ".txt", true))
+            {
+                foreach (Music_Song item in Listmusic)
+                {
+                    sw.WriteLine(item.Link_Music);
+                }
+                sw.Close();
+            }
+        }
 
         public void AddItems(Music_Song item)
         {

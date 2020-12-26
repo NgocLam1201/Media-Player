@@ -21,7 +21,7 @@ namespace MuViPApp
 
         private List<PlayListInfo> Listmusic = new List<PlayListInfo>();
 
-        string path = @"Playlist.txt";
+        string path = @"Playlist_Music_MuVipApp.txt";
 
         public Playlist()
         {
@@ -36,30 +36,30 @@ namespace MuViPApp
                     string[] words = lines.Split('\t');
                     playListInfo.Name_PL = words[0];
                     playListInfo.Date_Create = Convert.ToDateTime(words[1]);
-                    for (int i = 2; i < words.Length; i++)
-                    {
-                        if (File.Exists(words[i]))
-                            playListInfo.AddItems(new Music_Song(words[i]));
-                    }
-                    AddItems(playListInfo);
+                    playListInfo.Import();
                 }
                 sr.Close();
+            }
+        }
+
+        public void Export()
+        {
+            if (File.Exists(path))
+                File.Delete(path);
+            using (StreamWriter sw = new StreamWriter(path, true))
+            {
+                foreach (PlayListInfo item in Listmusic)
+                {
+                    sw.WriteLine(item.Name_PL + '\t' + item.Date_Create);
+                }
+                sw.Close();
             }
         }
 
         public void AddItems(PlayListInfo item)
         {
             Listmusic.Add(item);
-            using (StreamWriter sw = new StreamWriter(path, true))
-            {
-                sw.Write(item.Name_PL + '\t' + item.Date_Create + '\t');
-                for (int i = 0; i < item.GetMusic().Count; i++)
-                {
-                    sw.Write(item.GetMusic(i).Link_Music + '\t');
-                }
-                sw.WriteLine();
-                sw.Close();
-            }
+            item.Export();
         }
 
         public List<PlayListInfo> GetAllPlayListMusic()

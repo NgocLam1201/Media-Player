@@ -115,14 +115,14 @@
             this.btn_My_Music_Play_all.IconVisible = true;
             this.btn_My_Music_Play_all.IconZoom = 35D;
             this.btn_My_Music_Play_all.IsTab = false;
-            this.btn_My_Music_Play_all.Location = new System.Drawing.Point(95, 62);
+            this.btn_My_Music_Play_all.Location = new System.Drawing.Point(104, 66);
             this.btn_My_Music_Play_all.Name = "btn_My_Music_Play_all";
             this.btn_My_Music_Play_all.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
             this.btn_My_Music_Play_all.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
             this.btn_My_Music_Play_all.OnHoverTextColor = System.Drawing.Color.DarkViolet;
             this.btn_My_Music_Play_all.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btn_My_Music_Play_all.selected = false;
-            this.btn_My_Music_Play_all.Size = new System.Drawing.Size(129, 47);
+            this.btn_My_Music_Play_all.Size = new System.Drawing.Size(84, 40);
             this.btn_My_Music_Play_all.TabIndex = 6;
             this.btn_My_Music_Play_all.Text = "Play all";
             this.btn_My_Music_Play_all.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

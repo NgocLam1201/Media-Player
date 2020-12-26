@@ -1,6 +1,7 @@
 ﻿using MuViPApp.Music;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace MuViPApp
@@ -9,6 +10,8 @@ namespace MuViPApp
     {
         Music_Playlist parent;
         Form_ListMusic FlistMusic;
+        ToolStrip toolStrip = new ToolStrip();
+
         public form_Music_Playlist(Music_Playlist parent = null)
         {
             this.parent = parent;
@@ -16,6 +19,7 @@ namespace MuViPApp
             lb_NamePl.Text = this.parent.NamePlay;
             this.parent.parent.Is_Playing_NowPlaying = false;
             LoadListMusic();
+            toolStrip.ItemClicked += ClickItem;
         }
 
         private void LoadListMusic()
@@ -54,7 +58,45 @@ namespace MuViPApp
 
         private void btn_Addto_Click(object sender, EventArgs e)
         {
-            
+            toolStrip.Items.Add("Now playing");
+            toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
+            toolStrip.Items.Add("-");
+            toolStrip.Items.Add("New playlist");
+            int Y = 400;
+            foreach (PlayListInfo item in Playlist.Instance.GetAllPlayListMusic())
+            {
+                toolStrip.Items.Add(item.Name_PL);
+            }
+            toolStrip.Location = new Point(btn_Addto.Location.X + 70, btn_Addto.Location.Y + Y);
+            this.parent.Controls.Add(toolStrip);
+            toolStrip.BringToFront();
+            toolStrip.GripStyle = ToolStripGripStyle.Hidden;
+            toolStrip.Dock = DockStyle.None;
+        }
+
+        private void ClickItem(object sender, ToolStripItemClickedEventArgs e)
+        {
+            switch (e.ClickedItem.Text)
+            {
+                case "Now playing":
+                    FlistMusic.AddtoNowPlaying();
+                    break;
+                case "New playlist":
+                    FlistMusic.AddToNewPlaylist();
+                    break;
+                default:
+                    foreach (PlayListInfo item in Playlist.Instance.GetAllPlayListMusic())
+                    {
+                        if (item.Name_PL == e.ClickedItem.Text)
+                        {
+                            FlistMusic.AddToPlaylist(item);
+                            break;
+                        }
+                    }
+                    break;
+            }
+            toolStrip = null;
+            FlistMusic.AfterClick();
         }
     }
 }

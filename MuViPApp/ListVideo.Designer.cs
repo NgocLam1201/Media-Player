@@ -37,6 +37,11 @@
             fpath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
+            // fpath
+            // 
+            fpath.Text = "";
+            fpath.Width = 0;
+            // 
             // listView_myvideo
             // 
             this.listView_myvideo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
@@ -49,6 +54,7 @@
             fpath});
             this.listView_myvideo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView_myvideo.ForeColor = System.Drawing.SystemColors.Info;
+            this.listView_myvideo.FullRowSelect = true;
             this.listView_myvideo.HideSelection = false;
             this.listView_myvideo.Location = new System.Drawing.Point(0, 0);
             this.listView_myvideo.Name = "listView_myvideo";
@@ -76,11 +82,6 @@
             // 
             this.Length.Text = "Length";
             this.Length.Width = 120;
-            // 
-            // fpath
-            // 
-            fpath.Text = "";
-            fpath.Width = 0;
             // 
             // ListVideo
             // 
