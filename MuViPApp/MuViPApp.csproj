@@ -35,7 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Apps\Bunifu\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.Compatibility" />
@@ -58,7 +58,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="TagLibSharp">
-      <HintPath>..\packages\TagLibSharp.2.2.0\lib\net45\TagLibSharp.dll</HintPath>
+      <HintPath>..\..\..\packages\TagLibSharp.2.2.0\lib\netstandard2.0\TagLibSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -146,11 +146,29 @@
     <Compile Include="form_Video_AllPlaylist.Designer.cs">
       <DependentUpon>form_Video_AllPlaylist.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Video_NewPlaylist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Video_NewPlaylist.Designer.cs">
+      <DependentUpon>Form_Video_NewPlaylist.cs</DependentUpon>
+    </Compile>
     <Compile Include="form_Video_Nowpl.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form_Video_Nowpl.Designer.cs">
       <DependentUpon>form_Video_Nowpl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Video_Playlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Video_Playlist.Designer.cs">
+      <DependentUpon>Form_Video_Playlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListVideo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListVideo.Designer.cs">
+      <DependentUpon>ListVideo.cs</DependentUpon>
     </Compile>
     <Compile Include="Music\ListMusicLiked.cs" />
     <Compile Include="Music\ListMyMusic.cs" />
@@ -167,12 +185,31 @@
     <Compile Include="Music\Music_Song.cs" />
     <Compile Include="Music\PlayListInfo.cs" />
     <Compile Include="Music\Playlist.cs" />
+    <Compile Include="Properties\Video\Data\PlayListInfoVideo.cs" />
+    <Compile Include="Properties\Video\Data\PlaylistVideo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Video_Playlist.cs">
+    <Compile Include="Properties\Video\Classes\ControlCentre.cs" />
+    <Compile Include="Properties\Video\Data\ListMyVideo.cs" />
+    <Compile Include="Properties\Video\Data\ListVideoLiked.cs" />
+    <Compile Include="Properties\Video\Data\ListVideoPlaying.cs" />
+    <Compile Include="Properties\Video\Data\VideoInfo.cs" />
+    <Compile Include="SubPanelSelect1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Video_Playlist.Designer.cs">
+    <Compile Include="SubPanelSelect1.Designer.cs">
+      <DependentUpon>SubPanelSelect1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubPanelSelectMany.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SubPanelSelectMany.Designer.cs">
+      <DependentUpon>SubPanelSelectMany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Video\Data\Video_Playlist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Properties\Video\Data\Video_Playlist.Designer.cs">
       <DependentUpon>Video_Playlist.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form_ListMusic.resx">
@@ -217,8 +254,17 @@
     <EmbeddedResource Include="form_Video_AllPlaylist.resx">
       <DependentUpon>form_Video_AllPlaylist.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Video_NewPlaylist.resx">
+      <DependentUpon>Form_Video_NewPlaylist.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form_Video_Nowpl.resx">
       <DependentUpon>form_Video_Nowpl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Video_Playlist.resx">
+      <DependentUpon>Form_Video_Playlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListVideo.resx">
+      <DependentUpon>ListVideo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Music\Music_Playlist.resx">
       <DependentUpon>Music_Playlist.cs</DependentUpon>
@@ -233,7 +279,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Video_Playlist.resx">
+    <EmbeddedResource Include="SubPanelSelect1.resx">
+      <DependentUpon>SubPanelSelect1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubPanelSelectMany.resx">
+      <DependentUpon>SubPanelSelectMany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Video\Data\Video_Playlist.resx">
       <DependentUpon>Video_Playlist.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -251,6 +303,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
     <COMReference Include="WMPLib">
       <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
       <VersionMajor>1</VersionMajor>
@@ -264,5 +324,6 @@
   <ItemGroup>
     <None Include="Resources\songimg.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

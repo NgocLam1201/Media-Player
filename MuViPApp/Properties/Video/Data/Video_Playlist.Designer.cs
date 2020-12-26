@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Video_Playlist));
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lb_Number_Of_Video = new System.Windows.Forms.Label();
             this.lb_Playlist_Name = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
@@ -67,17 +67,17 @@
             this.bunifuImageButton1.TabStop = false;
             this.bunifuImageButton1.Zoom = 10;
             // 
-            // label1
+            // lb_Number_Of_Video
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(15, 118);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 14);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Number of videos";
+            this.lb_Number_Of_Video.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_Number_Of_Video.AutoSize = true;
+            this.lb_Number_Of_Video.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Number_Of_Video.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_Number_Of_Video.Location = new System.Drawing.Point(15, 118);
+            this.lb_Number_Of_Video.Name = "lb_Number_Of_Video";
+            this.lb_Number_Of_Video.Size = new System.Drawing.Size(85, 14);
+            this.lb_Number_Of_Video.TabIndex = 5;
+            this.lb_Number_Of_Video.Text = "Number of videos";
             // 
             // lb_Playlist_Name
             // 
@@ -97,7 +97,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.bunifuGradientPanel1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lb_Number_Of_Video);
             this.Controls.Add(this.lb_Playlist_Name);
             this.MaximumSize = new System.Drawing.Size(125, 132);
             this.MinimumSize = new System.Drawing.Size(125, 132);
@@ -113,7 +113,7 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lb_Number_Of_Video;
         private System.Windows.Forms.Label lb_Playlist_Name;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
     }

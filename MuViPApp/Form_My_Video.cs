@@ -24,7 +24,11 @@ namespace MuViPApp
         public void ShowListVid()
         {
             ListMyVideo.Instance.Remove();
+<<<<<<< HEAD
             foreach (var child in Directory.GetFiles(@"C:\Users\Admin\Videos\"))
+=======
+            foreach (var child in Directory.GetFiles(@"C:\Users\ACER\Videos\"))
+>>>>>>> lastupdatephuc
             {
                 FileInfo info = new FileInfo(child);
                 if (info.Extension == ".mp4"|| info.Extension == ".wmv")
