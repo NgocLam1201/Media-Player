@@ -86,25 +86,36 @@ namespace MuViPApp
 
         private void ClickItem(object sender, ToolStripItemClickedEventArgs e)
         {
-            ListFolderLocalMusic.Instance.Remove(e.ClickedItem.Text);
-            ListFolderLocalMusic.Instance.Export();
-            this.parent.Controls.Remove(toolStrip);
+            if (e.ClickedItem.Text == "Cancel")
+            {
+                this.parent.Controls.Remove(toolStrip);
+            }
+            else
+            {
+                ListFolderLocalMusic.Instance.Remove(e.ClickedItem.Text);
+                ListFolderLocalMusic.Instance.Export();
+                this.parent.Controls.Remove(toolStrip);
+            }
         }
 
         private void FormClick(object s, EventArgs e)
         {
+            toolStrip = null;
+            toolStrip.Items.Clear();
             this.parent.Controls.Remove(toolStrip);
+
         }
 
         private void DeleteFolderMusic_Click(object sender, EventArgs e)
         {
-            this.parent.Controls.Remove(toolStrip);
+            toolStrip.Items.Clear();
             toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             int Y = 60;
             foreach (string item in ListFolderLocalMusic.Instance.GetLink())
             {
                 toolStrip.Items.Add(item);
             }
+            toolStrip.Items.Add("Cancel");
             toolStrip.Location = new Point(DeleteFolderMusic.Location.X + 250, DeleteFolderMusic.Location.Y + Y);
             this.parent.Controls.Add(toolStrip);
             toolStrip.BringToFront();
