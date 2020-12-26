@@ -98,10 +98,12 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView_myvideo;
+        public System.Windows.Forms.ListView listView_myvideo;
+
         private System.Windows.Forms.ColumnHeader namevideo;
         private System.Windows.Forms.ColumnHeader date_mod;
         private System.Windows.Forms.ColumnHeader Size;
         private System.Windows.Forms.ColumnHeader Length;
+        
     }
 }

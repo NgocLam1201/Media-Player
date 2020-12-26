@@ -227,10 +227,30 @@ namespace MuViPApp
 
         public void btn_AddPl_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             form_Music_NewPlaylist form_Playlist = new form_Music_NewPlaylist(this);
             Point p = new Point(this.Width / 2 - form_Playlist.Width / 2, this.Height / 2 - form_Playlist.Height / 2);
             form_Playlist.StartPosition = FormStartPosition.CenterParent;
             form_Playlist.ShowDialog();
+=======
+            /*ToolStrip ListToolStrip = new ToolStrip();
+            ToolStripButton Addto_Pl = new ToolStripButton("Now playing");
+            ListToolStrip.Items.Add(Addto_Pl);*/
+            if (btn_Music.selected == true)
+            {
+                form_Music_NewPlaylist form_Playlist = new form_Music_NewPlaylist(this);
+                Point p = new Point(this.Width / 2 - form_Playlist.Width / 2, this.Height / 2 - form_Playlist.Height / 2);
+                form_Playlist.StartPosition = FormStartPosition.CenterParent;
+                form_Playlist.ShowDialog();
+            }
+            if (btn_Video.selected == true)
+            {
+                Form_Video_NewPlaylist form_Playlist = new Form_Video_NewPlaylist(this);
+                Point p = new Point(this.Width / 2 - form_Playlist.Width / 2, this.Height / 2 - form_Playlist.Height / 2);
+                form_Playlist.StartPosition = FormStartPosition.CenterParent;
+                form_Playlist.ShowDialog();
+            }
+>>>>>>> finalupdate
         }
 
         private void btn_NowPlaying_Click(object sender, EventArgs e)
