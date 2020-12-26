@@ -44,7 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>D:\Study\Năm 2\HK1\Lập trình trực quan\Đồ án\packages\Bunifu\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.Compatibility" />
@@ -67,7 +67,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="TagLibSharp">
-      <HintPath>..\packages\TagLibSharp.2.2.0\lib\net45\TagLibSharp.dll</HintPath>
+      <HintPath>D:\Study\Năm 2\HK1\Lập trình trực quan\Đồ án\packages\TagLibSharp.2.2.0\lib\netstandard2.0\TagLibSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -197,11 +197,6 @@
     <Compile Include="SubPanelSelect.Designer.cs">
       <DependentUpon>SubPanelSelect.cs</DependentUpon>
     </Compile>
-    <Compile Include="Video\ControlCentre.cs" />
-    <Compile Include="Video\ListMyVideo.cs" />
-    <Compile Include="Video\ListVideoLiked.cs" />
-    <Compile Include="Video\ListVideoPlaying.cs" />
-    <Compile Include="Video\VideoInfo.cs" />
     <Compile Include="Video_Playlist.cs">
       <SubType>UserControl</SubType>
     </Compile>
