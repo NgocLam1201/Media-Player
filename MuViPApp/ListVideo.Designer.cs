@@ -37,14 +37,11 @@
             fpath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
-<<<<<<< HEAD
-=======
             // fpath
             // 
             fpath.Text = "";
             fpath.Width = 0;
             // 
->>>>>>> lastupdatephuc
             // listView_myvideo
             // 
             this.listView_myvideo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
@@ -85,14 +82,11 @@
             this.Length.Text = "Length";
             this.Length.Width = 120;
             // 
-<<<<<<< HEAD
             // fpath
             // 
             fpath.Text = "";
             fpath.Width = 0;
             // 
-=======
->>>>>>> lastupdatephuc
             // ListVideo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -107,18 +101,13 @@
         }
 
         #endregion
-<<<<<<< HEAD
 
-        private System.Windows.Forms.ListView listView_myvideo;
-=======
->>>>>>> lastupdatephuc
+        public System.Windows.Forms.ListView listView_myvideo;
+
         private System.Windows.Forms.ColumnHeader namevideo;
         private System.Windows.Forms.ColumnHeader date_mod;
         private System.Windows.Forms.ColumnHeader Size;
         private System.Windows.Forms.ColumnHeader Length;
-<<<<<<< HEAD
-=======
-        public System.Windows.Forms.ListView listView_myvideo;
->>>>>>> lastupdatephuc
+        
     }
 }
