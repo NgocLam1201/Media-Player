@@ -9,8 +9,11 @@ namespace MuViPApp.Video.Classes
 {
     class ControlCentre
     {
-         public static string currentMediaAddress;
-        public static int lastVolume = 100;
+        
+        public static int lastVolume = 50;
+        public static bool Mix = false;
+        public  static bool Loop = false;
+        public static bool Playing = false;
         private static bool isMute = false;
 
 
@@ -32,9 +35,6 @@ namespace MuViPApp.Video.Classes
                 Player.Visible = true;
                 Player.URL = MediaAddress;
                 Player.Ctlcontrols.play();
-                //currentMediaAddress = MediaAddress;
-                //AutoPlaylist.CurrentTrack = MediaAddress;
-               // MainForm.isReady = true;
             }
             else
             {
