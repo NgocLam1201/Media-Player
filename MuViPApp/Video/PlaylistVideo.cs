@@ -24,8 +24,8 @@ namespace MuViPApp
 
         public PlaylistVideo()
         {
-            if (!File.Exists(path))
-                File.Create(path);
+            using (StreamWriter sw = new StreamWriter(path, true))
+                sw.Close();
             using (StreamReader sr = new StreamReader(path))
             {
                 string lines;
@@ -36,8 +36,22 @@ namespace MuViPApp
                     playListInfo.Name_PL = words[0];
                     playListInfo.Date_Create = Convert.ToDateTime(words[1]);
                     playListInfo.Import();
+                    Listvideo.Add(playListInfo);
                 }
                 sr.Close();
+            }
+        }
+        public void Export()
+        {
+            if (File.Exists(path))
+                File.Delete(path);
+            using (StreamWriter sw = new StreamWriter(path, true))
+            {
+                foreach (PlayListInfoVideo item in Listvideo)
+                {
+                    sw.WriteLine(item.Name_PL + '\t' + item.Date_Create);
+                }
+                sw.Close();
             }
         }
         public void AddItems(PlayListInfoVideo item)

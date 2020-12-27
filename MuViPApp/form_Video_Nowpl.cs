@@ -24,9 +24,9 @@ namespace MuViPApp
             InitializeComponent();
             ShowList();
             if (listView_VideoPlaying.Items.Count > 0)
-            { 
+           { 
                 PlayVideo(0); 
-            }
+          }
             setMixIcon();
             setLoopIcon();
             Volume_Slider.Value = ControlCentre.lastVolume;
@@ -259,7 +259,7 @@ namespace MuViPApp
             lb_Endtime.Text = MediaPlayer.currentMedia.durationString;
             Video_Slider.Value = (int)MediaPlayer.Ctlcontrols.currentPosition;
             Video_Slider.MaximumValue = (int)MediaPlayer.currentMedia.duration;
-            if (Video_Slider.Value == Video_Slider.MaximumValue)
+            if (Video_Slider.Value == Video_Slider.MaximumValue&& Video_Slider.MaximumValue!=0)
             {
                 timer_Video.Stop();
                 if (ControlCentre.Loop) PlayVideo(index);

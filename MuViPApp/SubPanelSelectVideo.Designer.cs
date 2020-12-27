@@ -32,7 +32,6 @@
             this.btn_Cancel = new Bunifu.Framework.UI.BunifuTileButton();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_Play = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btn_PlayNext = new Bunifu.Framework.UI.BunifuTileButton();
             this.btn_Addto = new Bunifu.Framework.UI.BunifuTileButton();
             this.btn_Delete = new Bunifu.Framework.UI.BunifuTileButton();
             this.btn_SelectAll = new Bunifu.Framework.UI.BunifuTileButton();
@@ -52,7 +51,7 @@
             this.btn_Cancel.ImageZoom = 25;
             this.btn_Cancel.LabelPosition = 20;
             this.btn_Cancel.LabelText = "Cancel";
-            this.btn_Cancel.Location = new System.Drawing.Point(184, 0);
+            this.btn_Cancel.Location = new System.Drawing.Point(256, 0);
             this.btn_Cancel.Margin = new System.Windows.Forms.Padding(6);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(72, 50);
@@ -66,7 +65,7 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Right;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(256, 0);
+            this.label2.Location = new System.Drawing.Point(328, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 42);
             this.label2.TabIndex = 23;
@@ -86,33 +85,12 @@
             this.btn_Play.ImageZoom = 20;
             this.btn_Play.LabelPosition = 20;
             this.btn_Play.LabelText = "Play";
-            this.btn_Play.Location = new System.Drawing.Point(284, 0);
+            this.btn_Play.Location = new System.Drawing.Point(356, 0);
             this.btn_Play.Margin = new System.Windows.Forms.Padding(6);
             this.btn_Play.Name = "btn_Play";
             this.btn_Play.Size = new System.Drawing.Size(72, 50);
             this.btn_Play.TabIndex = 20;
             this.btn_Play.Click += new System.EventHandler(this.btn_Play_Click);
-            // 
-            // btn_PlayNext
-            // 
-            this.btn_PlayNext.BackColor = System.Drawing.Color.Transparent;
-            this.btn_PlayNext.color = System.Drawing.Color.Transparent;
-            this.btn_PlayNext.colorActive = System.Drawing.Color.DimGray;
-            this.btn_PlayNext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_PlayNext.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_PlayNext.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_PlayNext.ForeColor = System.Drawing.Color.White;
-            this.btn_PlayNext.Image = ((System.Drawing.Image)(resources.GetObject("btn_PlayNext.Image")));
-            this.btn_PlayNext.ImagePosition = 10;
-            this.btn_PlayNext.ImageZoom = 27;
-            this.btn_PlayNext.LabelPosition = 20;
-            this.btn_PlayNext.LabelText = "Play Next";
-            this.btn_PlayNext.Location = new System.Drawing.Point(356, 0);
-            this.btn_PlayNext.Margin = new System.Windows.Forms.Padding(6);
-            this.btn_PlayNext.Name = "btn_PlayNext";
-            this.btn_PlayNext.Size = new System.Drawing.Size(72, 50);
-            this.btn_PlayNext.TabIndex = 19;
-            this.btn_PlayNext.Click += new System.EventHandler(this.btn_PlayNext_Click);
             // 
             // btn_Addto
             // 
@@ -185,7 +163,6 @@
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_Play);
-            this.Controls.Add(this.btn_PlayNext);
             this.Controls.Add(this.btn_Addto);
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.btn_SelectAll);
@@ -201,7 +178,6 @@
         private Bunifu.Framework.UI.BunifuTileButton btn_Cancel;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuTileButton btn_Play;
-        private Bunifu.Framework.UI.BunifuTileButton btn_PlayNext;
         private Bunifu.Framework.UI.BunifuTileButton btn_Addto;
         private Bunifu.Framework.UI.BunifuTileButton btn_Delete;
         private Bunifu.Framework.UI.BunifuTileButton btn_SelectAll;

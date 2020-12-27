@@ -31,7 +31,15 @@ namespace MuViPApp
         public string Name_PL
         {
             get { return name_PL; }
-            set { File.Move(Name_PL + ".txt", value); File.Delete(Name_PL + ".txt"); name_PL = value; }
+            set
+            {
+                if (File.Exists(Name_PL + ".txt"))
+                {
+                    File.Move(Name_PL + ".txt", value);
+                    File.Delete(Name_PL + ".txt");
+                }
+                name_PL = value;
+            }
         }
 
         private DateTime date_Create;
@@ -44,8 +52,9 @@ namespace MuViPApp
         private List<VideoInfo> Listmusic = new List<VideoInfo>();
         public void Import()
         {
-            if (!File.Exists(this.Name_PL + ".txt"))
-                File.Create(this.Name_PL + ".txt");
+            string path = this.Name_PL + ".txt";
+            using (StreamWriter sw = new StreamWriter(path, true))
+                sw.Close();
             using (StreamReader sr = new StreamReader(this.name_PL + ".txt"))
             {
                 string lines;
