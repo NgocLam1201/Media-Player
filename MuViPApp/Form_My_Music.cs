@@ -41,7 +41,6 @@ namespace MuViPApp
             else
                 this.parent.Is_Playing = false;
             ShowListMusic();
-            this.Click += FormClick;
             toolStrip.ItemClicked += ClickItem;
         }
 
@@ -89,11 +88,6 @@ namespace MuViPApp
             ListFolderLocalMusic.Instance.Remove(e.ClickedItem.Text);
             ListFolderLocalMusic.Instance.Export();
             this.parent.Controls.Remove(toolStrip);
-        }
-
-        private void FormClick(object s, EventArgs e)
-        {
-
         }
 
         private void DeleteFolderMusic_Click(object sender, EventArgs e)

@@ -25,6 +25,7 @@ namespace MuViPApp
         public form_Music_NewPlaylist(Form_Muvip parent, List<Music_Song> listMusic)
         {
             this.parent = parent;
+            InitializeComponent();
             this.listMusic = listMusic;
             this.KeyDown += Key_OK;
         }

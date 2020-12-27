@@ -18,6 +18,7 @@ namespace MuViPApp
         public List<Music_Song> Listmusic = new List<Music_Song>();
         public SubPanelSelect sp_SelectMusic;
         public Form_Delete form_Delete = new Form_Delete();
+        ToolStripMenuItem toolStripMenuItem = new ToolStripMenuItem();
         public Form_ListMusic(Form_Muvip parent = null, List<Music_Song> Listmusic = null)
         {
             this.parent = parent;
@@ -31,12 +32,24 @@ namespace MuViPApp
             }
             lv_My_Music.DoubleClick += Music_Click;
             lv_My_Music.MouseClick += SelectMusic;
-            lv_My_Music.ContextMenuStrip = new ContextMenuStrip();
-            ToolStripItem deleteCI = new ToolStripButton("Like");
-            deleteCI.Click += (s, e) => {
-                ListMusicLiked.Instance.AddItems(new Music_Song(lv_My_Music.SelectedItems[0].SubItems[6].Text));
-            };
-            this.lv_My_Music.ContextMenuStrip.Items.Add(deleteCI);
+            foreach (PlayListInfo item in Playlist.Instance.GetAllPlayListMusic())
+            {
+                toolStripMenuItem = new ToolStripMenuItem(item.Name_PL);
+                addToToolStripMenuItem.DropDownItems.Add(toolStripMenuItem);
+            }
+            toolStripMenuItem.Click += ToolStripMenuItem_Click;
+        }
+
+        private void ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (PlayListInfo item in Playlist.Instance.GetAllPlayListMusic())
+            {
+                if (item.Name_PL == toolStripMenuItem.Text)
+                {
+                    this.AddToPlaylist(item);
+                    break;
+                }
+            }
         }
 
         public void LoadMusic()
@@ -245,9 +258,88 @@ namespace MuViPApp
                 lstMusic.Add(new Music_Song(lv_My_Music.SelectedItems[i].SubItems[6].Text));
             }
             form_Music_NewPlaylist form_Playlist = new form_Music_NewPlaylist(this.parent,lstMusic);
-            Point p = new Point(this.Width / 2 - form_Playlist.Width / 2, this.Height / 2 - form_Playlist.Height / 2);
             form_Playlist.StartPosition = FormStartPosition.CenterParent;
             form_Playlist.ShowDialog();
+        }
+
+        private void likeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListMusicLiked.Instance.AddItems(new Music_Song(lv_My_Music.SelectedItems[0].SubItems[6].Text));
+            ListMusicLiked.Instance.export();
+        }
+
+        private void unlikeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListMusicLiked.Instance.Remove(new Music_Song(lv_My_Music.SelectedItems[0].SubItems[6].Text));
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteMusic();
+        }
+
+        private void playToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Music_Click(this,new EventArgs());
+        }
+
+        private void playNextToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Playnext();
+        }
+
+        private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SelectAll();
+        }
+
+        private void cancelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CancelSelect();
+        }
+
+        public void Playnext()
+        {
+            if (ListMusicPlaying.Instance.GetMusic().Count > 0)
+            {
+                List<Music_Song> TempList = new List<Music_Song>();
+                int i = 0;
+                foreach (Music_Song item in ListMusicPlaying.Instance.GetMusic())
+                {
+                    TempList.Add(item);
+                    i++;
+                    if (item.Name_Song == this.parent.NameMedia.Text)
+                    {
+                        break;
+                    }
+                }
+                for (int j = 0; j < this.lv_My_Music.SelectedItems.Count; j++)
+                {
+                    TempList.Add(new Music_Song(this.lv_My_Music.SelectedItems[j].SubItems[6].Text));
+                }
+
+                for (int j = i; j < ListMusicPlaying.Instance.GetMusic().Count; j++)
+                {
+                    TempList.Add(ListMusicPlaying.Instance.GetMusic(j));
+                }
+
+                ListMusicPlaying.Instance.Remove();
+                foreach (Music_Song item in TempList)
+                {
+                    ListMusicPlaying.Instance.AddItems(item);
+                }
+                ListMusicPlaying.Instance.export();
+            }
+        }
+
+        private void nowPlayingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddtoNowPlaying();
+        }
+
+        private void newPlaylistToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddToNewPlaylist();
         }
     }
 }
