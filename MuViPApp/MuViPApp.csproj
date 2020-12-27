@@ -44,7 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>D:\Study\Năm 2\HK1\Lập trình trực quan\Đồ án\packages\Bunifu\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.Compatibility" />
@@ -67,6 +67,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="taglib-sharp">
+      <HintPath>..\..\..\..\Downloads\taglib-sharp-2.1.0.0-windows\taglib-sharp-2.1.0.0-windows\Libraries\taglib-sharp.dll</HintPath>
+    </Reference>
     <Reference Include="TagLibSharp">
       <HintPath>D:\Study\Năm 2\HK1\Lập trình trực quan\Đồ án\packages\TagLibSharp.2.2.0\lib\netstandard2.0\TagLibSharp.dll</HintPath>
     </Reference>
@@ -202,6 +205,7 @@
     <Compile Include="SubPanelSelect.Designer.cs">
       <DependentUpon>SubPanelSelect.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Video\ControlCentre.cs" />
     <Compile Include="Video\ListMyVideo.cs" />
     <Compile Include="Video\ListVideoLiked.cs" />
@@ -210,6 +214,17 @@
     <Compile Include="Video\PlaylistVideo.cs" />
     <Compile Include="Video\VideoInfo.cs" />
     <Compile Include="Video\Video_Playlist.cs">
+=======
+    <Compile Include="Video\Classes\ControlCentre.cs" />
+    <Compile Include="Video\Data\ListMyVideo.cs" />
+    <Compile Include="Video\Data\ListVideoLiked.cs" />
+    <Compile Include="Video\Data\ListVideoPlayed.cs" />
+    <Compile Include="Video\Data\ListVideoPlaying.cs" />
+    <Compile Include="Video\Data\PlayListInfoVideo.cs" />
+    <Compile Include="Video\Data\PlaylistVideo.cs" />
+    <Compile Include="Video\Data\VideoInfo.cs" />
+    <Compile Include="Video\Data\Video_Playlist.cs">
+>>>>>>> update
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Video\Video_Playlist.designer.cs">

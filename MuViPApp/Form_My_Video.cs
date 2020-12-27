@@ -27,7 +27,7 @@ namespace MuViPApp
 
             //foreach (var child in Directory.GetFiles(@"C:\Users\Admin\Videos\"))
 
-            foreach (var child in Directory.GetFiles(@"C:\Users\ACER\Videos\"))
+            foreach (var child in Directory.GetFiles(@"C:\Users\Admin\Videos\"))
 
             {
                 FileInfo info = new FileInfo(child);
