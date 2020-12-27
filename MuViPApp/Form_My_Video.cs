@@ -28,10 +28,6 @@ namespace MuViPApp
             //foreach (var child in Directory.GetFiles(@"C:\Users\Admin\Videos\"))
 
             foreach (var child in Directory.GetFiles(@"C:\Users\Admin\Videos\"))
-<<<<<<< HEAD
-=======
-
->>>>>>> a5c0d6ddb48387d6d444d24b09890a3f2390134f
             {
                 FileInfo info = new FileInfo(child);
                 if (info.Extension == ".mp4"|| info.Extension == ".wmv")
