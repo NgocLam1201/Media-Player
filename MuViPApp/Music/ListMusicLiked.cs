@@ -52,6 +52,11 @@ namespace MuViPApp.Music
 
         public void AddItems(Music_Song item)
         {
+            foreach (Music_Song music_Song in Listmusic)
+            {
+                if (item == music_Song)
+                    return;
+            }
             Listmusic.Add(item);
         }
 
@@ -73,6 +78,11 @@ namespace MuViPApp.Music
         public void Remove(int index)
         {
             Listmusic.RemoveAt(index);
+        }
+
+        public void Remove(Music_Song music_Song)
+        {
+            Listmusic.Remove(music_Song);
         }
     }
 }

@@ -32,6 +32,7 @@ namespace MuViPApp.Music
                     if (File.Exists(lines))
                         Listmusic.Add(new Music_Song(lines));
                 }
+                sr.Close()
             }
             for (int i=0;i<Listmusic.Count/2;i++)
             {
@@ -69,6 +70,11 @@ namespace MuViPApp.Music
         public void Remove(int index)
         {
             Listmusic.RemoveAt(index);
+        }
+
+        public void Remove(Music_Song music_Song)
+        {
+            Listmusic.Remove(music_Song);
         }
     }
 }

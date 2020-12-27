@@ -56,8 +56,9 @@ namespace MuViPApp.Music
                 foreach (string item in listPath)
                 {
                     sw.WriteLine(item);
-                    sw.Close();
                 }
+                sw.Close();
+
             }
         }
 

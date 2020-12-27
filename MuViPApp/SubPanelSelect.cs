@@ -80,37 +80,8 @@ namespace MuViPApp
 
         private void btn_PlayNext_Click(object sender, EventArgs e)
         {
-            if (ListMusicPlaying.Instance.GetMusic().Count > 0)
-            {
-                List<Music_Song> TempList = new List<Music_Song>();
-                int i = 0;
-                foreach (Music_Song item in ListMusicPlaying.Instance.GetMusic())
-                {
-                    TempList.Add(item);
-                    i++;
-                    if (item.Name_Song == this.parent.parent.NameMedia.Text)
-                    {
-                        break;
-                    }
-                }
-                for (int j=0;j<this.parent.lv_My_Music.SelectedItems.Count;j++)
-                {
-                    TempList.Add(new Music_Song(this.parent.lv_My_Music.SelectedItems[j].SubItems[6].Text));
-                }    
-            
-                for (int j = i;j<ListMusicPlaying.Instance.GetMusic().Count;j++)
-                {
-                    TempList.Add(ListMusicPlaying.Instance.GetMusic(j));
-                }
-
-                ListMusicPlaying.Instance.Remove();
-                foreach (Music_Song item in TempList)
-                {
-                    ListMusicPlaying.Instance.AddItems(item);
-                }
-                ListMusicPlaying.Instance.export();
-                this.parent.AfterClick();
-            }
+            this.parent.Playnext();
+            this.parent.AfterClick();
         }
 
         private void btn_Play_Click(object sender, EventArgs e)

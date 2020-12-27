@@ -21,7 +21,7 @@ namespace MuViPApp.Music
 
         public ListMyMusic()
         {
-            foreach (var item in ListFolderLocalMusic.Instance.GetLink())
+            foreach (string item in ListFolderLocalMusic.Instance.GetLink())
             {
                 if (Directory.Exists(item))
                     foreach (var child in Directory.GetFiles(item))
