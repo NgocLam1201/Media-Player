@@ -66,6 +66,7 @@
             this.bunifuImageButton1.TabIndex = 0;
             this.bunifuImageButton1.TabStop = false;
             this.bunifuImageButton1.Zoom = 10;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.Video_Playlist_Click);
             // 
             // lb_Number_Of_Video
             // 

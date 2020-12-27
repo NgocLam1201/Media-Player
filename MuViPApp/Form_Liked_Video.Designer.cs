@@ -28,15 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Liked_Video));
             this.pn_Top = new System.Windows.Forms.Panel();
-            this.lb_My_Video = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lb_My_Video = new System.Windows.Forms.Label();
+            this.pn_Liked_Video = new System.Windows.Forms.Panel();
             this.pn_Top.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // pn_Top
@@ -50,6 +46,16 @@
             this.pn_Top.Size = new System.Drawing.Size(800, 88);
             this.pn_Top.TabIndex = 2;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(270, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 21);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "(1)";
+            // 
             // lb_My_Video
             // 
             this.lb_My_Video.AutoSize = true;
@@ -61,34 +67,13 @@
             this.lb_My_Video.TabIndex = 0;
             this.lb_My_Video.Text = "Liked Videos";
             // 
-            // panel1
+            // pn_Liked_Video
             // 
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 88);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 362);
-            this.panel1.TabIndex = 3;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(55, 15);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(150, 150);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(270, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 21);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "(1)";
+            this.pn_Liked_Video.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pn_Liked_Video.Location = new System.Drawing.Point(0, 88);
+            this.pn_Liked_Video.Name = "pn_Liked_Video";
+            this.pn_Liked_Video.Size = new System.Drawing.Size(800, 362);
+            this.pn_Liked_Video.TabIndex = 3;
             // 
             // Form_Liked_Video
             // 
@@ -96,15 +81,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pn_Liked_Video);
             this.Controls.Add(this.pn_Top);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Liked_Video";
             this.Text = "Form_Liked_Video";
             this.pn_Top.ResumeLayout(false);
             this.pn_Top.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -113,8 +96,7 @@
 
         private System.Windows.Forms.Panel pn_Top;
         private System.Windows.Forms.Label lb_My_Video;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel pn_Liked_Video;
         private System.Windows.Forms.Label label1;
     }
 }

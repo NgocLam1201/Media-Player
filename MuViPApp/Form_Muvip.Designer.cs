@@ -60,7 +60,6 @@
             this.btn_Music = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Menuside = new System.Windows.Forms.Panel();
             this.btn_Exit = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btn_Help = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_History = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_NowPlaying = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -546,7 +545,6 @@
             this.Menuside.AutoScrollMinSize = new System.Drawing.Size(1, 1);
             this.Menuside.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Menuside.Controls.Add(this.btn_Exit);
-            this.Menuside.Controls.Add(this.btn_Help);
             this.Menuside.Controls.Add(this.btn_History);
             this.Menuside.Controls.Add(this.btn_NowPlaying);
             this.Menuside.Controls.Add(this.panel2);
@@ -584,7 +582,7 @@
             this.btn_Exit.IconVisible = true;
             this.btn_Exit.IconZoom = 60D;
             this.btn_Exit.IsTab = true;
-            this.btn_Exit.Location = new System.Drawing.Point(0, 442);
+            this.btn_Exit.Location = new System.Drawing.Point(0, 399);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Normalcolor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_Exit.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -597,41 +595,6 @@
             this.btn_Exit.Textcolor = System.Drawing.Color.White;
             this.btn_Exit.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Exit.Click += new System.EventHandler(this.Exit_Click);
-            // 
-            // btn_Help
-            // 
-            this.btn_Help.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btn_Help.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_Help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Help.BorderRadius = 0;
-            this.btn_Help.ButtonText = "Help";
-            this.btn_Help.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Help.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_Help.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_Help.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_Help.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_Help.Iconimage")));
-            this.btn_Help.Iconimage_right = null;
-            this.btn_Help.Iconimage_right_Selected = null;
-            this.btn_Help.Iconimage_Selected = null;
-            this.btn_Help.IconMarginLeft = 30;
-            this.btn_Help.IconMarginRight = 0;
-            this.btn_Help.IconRightVisible = true;
-            this.btn_Help.IconRightZoom = 0D;
-            this.btn_Help.IconVisible = true;
-            this.btn_Help.IconZoom = 60D;
-            this.btn_Help.IsTab = true;
-            this.btn_Help.Location = new System.Drawing.Point(0, 399);
-            this.btn_Help.Name = "btn_Help";
-            this.btn_Help.Normalcolor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_Help.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btn_Help.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_Help.selected = false;
-            this.btn_Help.Size = new System.Drawing.Size(189, 43);
-            this.btn_Help.TabIndex = 9;
-            this.btn_Help.Text = "Help";
-            this.btn_Help.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_Help.Textcolor = System.Drawing.Color.White;
-            this.btn_Help.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // btn_History
             // 
@@ -1001,7 +964,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_Add;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Playlist;
         private Bunifu.Framework.UI.BunifuFlatButton btn_History;
-        private Bunifu.Framework.UI.BunifuFlatButton btn_Help;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Exit;
         private System.Windows.Forms.Panel Menuside;
         private System.Windows.Forms.Panel panel2;
