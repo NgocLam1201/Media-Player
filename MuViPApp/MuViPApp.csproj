@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SSDTUnitTestPath Condition="'$(SSDTUnitTestPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB</SSDTUnitTestPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SSDTPath Condition="'$(SSDTPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\130</SSDTPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1EA361B5-BC71-4DF1-8175-C554FFFB74B9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MuViPApp</RootNamespace>
+    <AssemblyName>MuViPApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="taglib-sharp">
+      <HintPath>..\..\..\..\Downloads\taglib-sharp-2.1.0.0-windows\taglib-sharp-2.1.0.0-windows\Libraries\taglib-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="TagLibSharp">
+      <HintPath>D:\Study\Năm 2\HK1\Lập trình trực quan\Đồ án\packages\TagLibSharp.2.2.0\lib\netstandard2.0\TagLibSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Delete.Designer.cs">
+      <DependentUpon>Form_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ListMusic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ListMusic.Designer.cs">
+      <DependentUpon>Form_ListMusic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_History_Music.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_History_Music.Designer.cs">
+      <DependentUpon>Form_History_Music.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_History_Video.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_History_Video.Designer.cs">
+      <DependentUpon>Form_History_Video.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Liked_Music.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Liked_Music.Designer.cs">
+      <DependentUpon>Form_Liked_Music.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Liked_Video.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Liked_Video.Designer.cs">
+      <DependentUpon>Form_Liked_Video.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_Music_AllPlaylist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_Music_AllPlaylist.Designer.cs">
+      <DependentUpon>form_Music_AllPlaylist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_Music_NewPlaylist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_Music_NewPlaylist.Designer.cs">
+      <DependentUpon>form_Music_NewPlaylist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Music_Nowpl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Music_Nowpl.Designer.cs">
+      <DependentUpon>Form_Music_Nowpl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_Music_Playlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_Music_Playlist.Designer.cs">
+      <DependentUpon>form_Music_Playlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Muvip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Muvip.Designer.cs">
+      <DependentUpon>Form_Muvip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_My_Music.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_My_Music.Designer.cs">
+      <DependentUpon>Form_My_Music.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_My_Video.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_My_Video.Designer.cs">
+      <DependentUpon>Form_My_Video.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_Rename_pl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_Rename_pl.Designer.cs">
+      <DependentUpon>form_Rename_pl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_Video_AllPlaylist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_Video_AllPlaylist.Designer.cs">
+      <DependentUpon>form_Video_AllPlaylist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Video_NewPlaylist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Video_NewPlaylist.Designer.cs">
+      <DependentUpon>Form_Video_NewPlaylist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_Video_Nowpl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_Video_Nowpl.Designer.cs">
+      <DependentUpon>form_Video_Nowpl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Video_Playlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Video_Playlist.Designer.cs">
+      <DependentUpon>Form_Video_Playlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListVideo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListVideo.Designer.cs">
+      <DependentUpon>ListVideo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Music\ListFolderLocalMusic.cs" />
+    <Compile Include="Music\ListMusicLiked.cs" />
+    <Compile Include="Music\ListMyMusic.cs" />
+    <Compile Include="Music\ListViewColumnSorter.cs" />
+    <Compile Include="Music\Mp3Player.cs" />
+    <Compile Include="Music\ListMusicPlaying.cs" />
+    <Compile Include="Music\ListMusicRecently.cs" />
+    <Compile Include="Music\Music_Playlist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Music\Music_Playlist.Designer.cs">
+      <DependentUpon>Music_Playlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Music\Music_Song.cs" />
+    <Compile Include="Music\PlayListInfo.cs" />
+    <Compile Include="Music\Playlist.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubPanelSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SubPanelSelect.Designer.cs">
+      <DependentUpon>SubPanelSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubPanelSelectVideo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SubPanelSelectVideo.Designer.cs">
+      <DependentUpon>SubPanelSelectVideo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Video\ControlCentre.cs" />
+    <Compile Include="Video\ListFolderLocalVideo.cs" />
+    <Compile Include="Video\ListMyVideo.cs" />
+    <Compile Include="Video\ListVideoLiked.cs" />
+    <Compile Include="Video\ListVideoPlayed.cs" />
+    <Compile Include="Video\ListVideoPlaying.cs" />
+    <Compile Include="Video\ListVideoRecently.cs" />
+    <Compile Include="Video\PlayListInfoVideo.cs" />
+    <Compile Include="Video\PlaylistVideo.cs" />
+    <Compile Include="Video\VideoInfo.cs" />
+    <Compile Include="Video\Video_Playlist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Video\Video_Playlist.Designer.cs">
+      <DependentUpon>Video_Playlist.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form_Delete.resx">
+      <DependentUpon>Form_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ListMusic.resx">
+      <DependentUpon>Form_ListMusic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_History_Music.resx">
+      <DependentUpon>Form_History_Music.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_History_Video.resx">
+      <DependentUpon>Form_History_Video.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Liked_Music.resx">
+      <DependentUpon>Form_Liked_Music.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Liked_Video.resx">
+      <DependentUpon>Form_Liked_Video.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_Music_AllPlaylist.resx">
+      <DependentUpon>form_Music_AllPlaylist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_Music_NewPlaylist.resx">
+      <DependentUpon>form_Music_NewPlaylist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Music_Nowpl.resx">
+      <DependentUpon>Form_Music_Nowpl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_Music_Playlist.resx">
+      <DependentUpon>form_Music_Playlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Muvip.resx">
+      <DependentUpon>Form_Muvip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_My_Music.resx">
+      <DependentUpon>Form_My_Music.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_My_Video.resx">
+      <DependentUpon>Form_My_Video.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_Rename_pl.resx">
+      <DependentUpon>form_Rename_pl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_Video_AllPlaylist.resx">
+      <DependentUpon>form_Video_AllPlaylist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Video_NewPlaylist.resx">
+      <DependentUpon>Form_Video_NewPlaylist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_Video_Nowpl.resx">
+      <DependentUpon>form_Video_Nowpl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Video_Playlist.resx">
+      <DependentUpon>Form_Video_Playlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListVideo.resx">
+      <DependentUpon>ListVideo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Music\Music_Playlist.resx">
+      <DependentUpon>Music_Playlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SubPanelSelect.resx">
+      <DependentUpon>SubPanelSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubPanelSelectVideo.resx">
+      <DependentUpon>SubPanelSelectVideo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Video\Video_Playlist.resx">
+      <DependentUpon>Video_Playlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\songimg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\video-files.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <SsdtUnitTestVersion>3.1</SsdtUnitTestVersion>
+  </PropertyGroup>
+</Project>
