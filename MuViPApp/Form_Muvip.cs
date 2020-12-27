@@ -138,6 +138,7 @@ namespace MuViPApp
                     FileInfo fileInfo = new FileInfo(ofd_music.FileName);
                     ListFolderLocalMusic.Instance.Additem(fileInfo.FullName);
                     ListFolderLocalMusic.Instance.Export();
+                    this.openChildForm(new Form_My_Music(this));
                 }
             }
         }

@@ -108,7 +108,7 @@
             // 
             // Date_Added_Music
             // 
-            this.Date_Added_Music.Text = "Date Added";
+            this.Date_Added_Music.Text = "Date";
             this.Date_Added_Music.Width = 130;
             // 
             // Length_Music
@@ -138,7 +138,7 @@
             this.selectAllToolStripMenuItem,
             this.cancelToolStripMenuItem});
             this.MenuStrip.Name = "contextMenuStrip1";
-            this.MenuStrip.Size = new System.Drawing.Size(181, 226);
+            this.MenuStrip.Size = new System.Drawing.Size(123, 204);
             // 
             // likeToolStripMenuItem
             // 
@@ -197,25 +197,25 @@
             this.toolStripMenuItem4,
             this.newPlaylistToolStripMenuItem});
             this.addToToolStripMenuItem.Name = "addToToolStripMenuItem";
-            this.addToToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addToToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.addToToolStripMenuItem.Text = "Add to";
             // 
             // nowPlayingToolStripMenuItem
             // 
             this.nowPlayingToolStripMenuItem.Name = "nowPlayingToolStripMenuItem";
-            this.nowPlayingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nowPlayingToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.nowPlayingToolStripMenuItem.Text = "Now playing";
             this.nowPlayingToolStripMenuItem.Click += new System.EventHandler(this.nowPlayingToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(138, 6);
             // 
             // newPlaylistToolStripMenuItem
             // 
             this.newPlaylistToolStripMenuItem.Name = "newPlaylistToolStripMenuItem";
-            this.newPlaylistToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newPlaylistToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.newPlaylistToolStripMenuItem.Text = "New playlist";
             this.newPlaylistToolStripMenuItem.Click += new System.EventHandler(this.newPlaylistToolStripMenuItem_Click);
             // 

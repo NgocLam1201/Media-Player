@@ -44,6 +44,12 @@ namespace MuViPApp.Music
 
         public void AddItems(Music_Song item)
         {
+            item.Date_Add = DateTime.Now.ToString();
+            foreach (Music_Song music_Song in Listmusic)
+            {
+                if (music_Song.Link_Music == item.Link_Music)
+                    Listmusic.Remove(item);
+            }
             Listmusic.Add(item);
             using (StreamWriter sw = new StreamWriter(path, true))
             {

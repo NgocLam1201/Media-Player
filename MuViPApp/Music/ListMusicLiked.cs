@@ -52,12 +52,17 @@ namespace MuViPApp.Music
 
         public void AddItems(Music_Song item)
         {
+            bool check = true;
             foreach (Music_Song music_Song in Listmusic)
             {
                 if (item == music_Song)
-                    return;
+                {
+                    check = false;
+                    break;
+                }
             }
-            Listmusic.Add(item);
+            if (check)
+                Listmusic.Add(item);
         }
 
         public List<Music_Song> GetMusic()
