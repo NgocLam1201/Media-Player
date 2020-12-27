@@ -62,6 +62,7 @@
             this.listView_myvideo.TabIndex = 3;
             this.listView_myvideo.UseCompatibleStateImageBehavior = false;
             this.listView_myvideo.View = System.Windows.Forms.View.Details;
+            this.listView_myvideo.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView_myvideo_ColumnClick);
             // 
             // namevideo
             // 

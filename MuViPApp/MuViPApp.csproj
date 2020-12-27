@@ -201,15 +201,25 @@
     <Compile Include="Music\Playlist.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SubPanelSelect.cs" />
+    <Compile Include="SubPanelSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="SubPanelSelect.Designer.cs">
       <DependentUpon>SubPanelSelect.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubPanelSelectVideo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SubPanelSelectVideo.Designer.cs">
+      <DependentUpon>SubPanelSelectVideo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Video\Classes\ControlCentre.cs" />
+    <Compile Include="Video\Data\ListFolderLocalVideo.cs" />
     <Compile Include="Video\Data\ListMyVideo.cs" />
     <Compile Include="Video\Data\ListVideoLiked.cs" />
     <Compile Include="Video\Data\ListVideoPlayed.cs" />
     <Compile Include="Video\Data\ListVideoPlaying.cs" />
+    <Compile Include="Video\Data\ListVideoRecently.cs" />
     <Compile Include="Video\Data\PlayListInfoVideo.cs" />
     <Compile Include="Video\Data\PlaylistVideo.cs" />
     <Compile Include="Video\Data\VideoInfo.cs" />
@@ -288,6 +298,9 @@
     </Compile>
     <EmbeddedResource Include="SubPanelSelect.resx">
       <DependentUpon>SubPanelSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubPanelSelectVideo.resx">
+      <DependentUpon>SubPanelSelectVideo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Video\Data\Video_Playlist.resx">
       <DependentUpon>Video_Playlist.cs</DependentUpon>
