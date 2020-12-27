@@ -28,7 +28,7 @@ Bất kì ai và bất kì lứa tuổi nào đang sử dụng máy tính với 
 - Sắp xếp các bài nhạc, video (Theo tên, ca sĩ, album, năm phát hành …).
 - Hiển thị lịch sử phát.
 - Add nhạc vào playlist.
-###Lộ trình
+### Lộ trình
 1. Báo cáo lần 1
 - Cơ bản hoàn thành giao diện, phát được nhạc trong PC
 2. Báo cáo lần 2
