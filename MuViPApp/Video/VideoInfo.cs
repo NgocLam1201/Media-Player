@@ -40,6 +40,13 @@ namespace MuViPApp.Video
 
         }
 
+        private string date_Add;
+        public string Date_Add
+        {
+            get { return date_Add; }
+            set { date_Add = value; }
+        }
+
         private Image picture_Song;
         public Image Picture_Song
         {

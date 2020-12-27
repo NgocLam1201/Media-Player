@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Threading;
 using MuViPApp.Music;
+using MuViPApp.Video;
 using System.IO;
 
 namespace MuViPApp
@@ -405,6 +406,11 @@ namespace MuViPApp
         private void AddHistory(Music_Song Music)
         {
             ListMusicRecently.Instance.AddItems(Music);
+        }
+
+        public void AddHistoryvideo(VideoInfo Video)
+        {
+            ListVideoRecently.Instance.AddItems(Video);
         }
 
         public void LoopMusic(object sender, EventArgs e)

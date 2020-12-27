@@ -58,12 +58,12 @@ namespace MuViPApp.Video
             List_VidPlaying.Add(item);
         }
 
-        public List<VideoInfo> GetMusic()
+        public List<VideoInfo> GetVideo()
         {
             return List_VidPlaying;
         }
 
-        public VideoInfo GetMusic(int index)
+        public VideoInfo GetVideo(int index)
         {
             return List_VidPlaying[index];
         }

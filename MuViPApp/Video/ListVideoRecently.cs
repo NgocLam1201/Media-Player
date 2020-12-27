@@ -58,6 +58,20 @@ namespace MuViPApp.Video
             }
         }
 
+        public void Export()
+        {
+            if (File.Exists(path))
+                File.Delete(path);
+            using (StreamWriter sw = new StreamWriter(path, true))
+            {
+                foreach (VideoInfo item in ListVideo)
+                {
+                    sw.WriteLine(item.Link_Video + '\t' + item.Date_Add);
+                }
+                sw.Close();
+            }
+        }
+
         public List<VideoInfo> GetVideo()
         {
             return ListVideo;

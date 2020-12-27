@@ -89,12 +89,14 @@ namespace MuViPApp
                 {
                     ListVideoPlaying.Instance.AddItems(new VideoInfo(listView_myvideo.Items[i].SubItems[5].Text));
                 }
-            //ListVideoPlaying.Instance.export();
+            ListVideoPlaying.Instance.export();
+            //this.parent.AddHistoryvideo(ListVid[0]);
             //this.parent.PlayMusic(0);
             this.parent.btn_NowPlaying.selected = true;
             this.parent.btn_My_Video.selected = false;
             this.parent.openChildForm(new form_Video_Nowpl());
             listView_myvideo.Items.Clear();
+
         }
 
         public void SelectVideo(object sender, MouseEventArgs e)
@@ -273,6 +275,9 @@ namespace MuViPApp
             if (listView_myvideo.SelectedItems.Count > 0)
             {
                 ListVideoLiked.Instance.Remove(new VideoInfo(listView_myvideo.SelectedItems[0].SubItems[6].Text));
+
+                listView_myvideo.Items.Clear();
+                ShowListVid();
             }
         }
 

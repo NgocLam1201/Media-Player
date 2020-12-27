@@ -55,12 +55,12 @@ namespace MuViPApp.Video
             list_VidLiked.Add(item);
         }
 
-        public List<VideoInfo> GetMusic()
+        public List<VideoInfo> GetVideo()
         {
             return list_VidLiked;
         }
 
-        public VideoInfo GetMusic(int index)
+        public VideoInfo GetVideo(int index)
         {
             return list_VidLiked[index];
         }

@@ -36,7 +36,7 @@ namespace MuViPApp
         public void ShowList()
         {
 
-            foreach (VideoInfo item in ListVideoPlaying.Instance.GetMusic())
+            foreach (VideoInfo item in ListVideoPlaying.Instance.GetVideo())
             {
                 ListViewItem items = new ListViewItem(new[] {item.Name,item.Length,item.Link_Video});
                 listView_VideoPlaying.Items.Add(items);
@@ -69,6 +69,8 @@ namespace MuViPApp
             MediaPlayer.Ctlcontrols.play();
             setPlayIcon();
             timer_Video.Start();
+            VideoInfo Video = ListVideoPlaying.Instance.GetVideo(index);
+            //parent.AddHistoryvideo(Video);
         }
 
 
