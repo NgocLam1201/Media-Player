@@ -10,7 +10,7 @@ namespace MuViPApp
     {
         Music_Playlist parent;
         Form_ListMusic FlistMusic;
-        ToolStrip toolStrip = new ToolStrip();
+        ContextMenuStrip toolStrip = new ContextMenuStrip();
 
         public form_Music_Playlist(Music_Playlist parent = null)
         {
@@ -43,6 +43,7 @@ namespace MuViPApp
             {
                 this.lb_NamePl.Text = form_Rename.ReName;
                 Playlist.Instance.GetListMusic(this.parent.ID_Playlist).Name_PL = lb_NamePl.Text;
+                Playlist.Instance.Export();
             }
         }
 
@@ -62,13 +63,11 @@ namespace MuViPApp
             toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             toolStrip.Items.Add("-");
             toolStrip.Items.Add("New playlist");
-            int Y = 400;
             foreach (PlayListInfo item in Playlist.Instance.GetAllPlayListMusic())
             {
                 toolStrip.Items.Add(item.Name_PL);
             }
-            toolStrip.Location = new Point(btn_Addto.Location.X + 70, btn_Addto.Location.Y + Y);
-            this.parent.Controls.Add(toolStrip);
+            toolStrip.Show(MousePosition);
             toolStrip.BringToFront();
             toolStrip.GripStyle = ToolStripGripStyle.Hidden;
             toolStrip.Dock = DockStyle.None;

@@ -31,5 +31,16 @@ namespace MuViPApp
         {
             this.Close();
         }
+
+        private void form_Rename_pl_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                reName = tb_NewName.Text;
+                this.Close();
+            }
+            if (e.KeyCode == Keys.Escape)
+                this.Close();
+        }
     }
 }

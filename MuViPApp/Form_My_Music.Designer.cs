@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.pn_Top = new System.Windows.Forms.Panel();
+            this.DeleteFolderMusic = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.ChoiceFolderMusic = new Bunifu.Framework.UI.BunifuFlatButton();
             this.lb_view = new System.Windows.Forms.Label();
             this.Cb_My_Music_View = new Bunifu.Framework.UI.BunifuDropdown();
             this.count_items = new System.Windows.Forms.Label();
             this.btn_My_Music_Play_all = new Bunifu.Framework.UI.BunifuFlatButton();
             this.lb_My_Music = new System.Windows.Forms.Label();
             this.pn_List = new System.Windows.Forms.Panel();
-            this.ChoiceFolderMusic = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.DeleteFolderMusic = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pn_Top.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,82 @@
             this.pn_Top.Name = "pn_Top";
             this.pn_Top.Size = new System.Drawing.Size(800, 106);
             this.pn_Top.TabIndex = 0;
+            // 
+            // DeleteFolderMusic
+            // 
+            this.DeleteFolderMusic.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
+            this.DeleteFolderMusic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.DeleteFolderMusic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
+            this.DeleteFolderMusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.DeleteFolderMusic.BorderRadius = 0;
+            this.DeleteFolderMusic.ButtonText = "Delete local music";
+            this.DeleteFolderMusic.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteFolderMusic.DisabledColor = System.Drawing.SystemColors.ButtonFace;
+            this.DeleteFolderMusic.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteFolderMusic.Iconcolor = System.Drawing.Color.Transparent;
+            this.DeleteFolderMusic.Iconimage = null;
+            this.DeleteFolderMusic.Iconimage_right = null;
+            this.DeleteFolderMusic.Iconimage_right_Selected = null;
+            this.DeleteFolderMusic.Iconimage_Selected = null;
+            this.DeleteFolderMusic.IconMarginLeft = 0;
+            this.DeleteFolderMusic.IconMarginRight = 0;
+            this.DeleteFolderMusic.IconRightVisible = true;
+            this.DeleteFolderMusic.IconRightZoom = 0D;
+            this.DeleteFolderMusic.IconVisible = true;
+            this.DeleteFolderMusic.IconZoom = 35D;
+            this.DeleteFolderMusic.IsTab = false;
+            this.DeleteFolderMusic.Location = new System.Drawing.Point(152, 73);
+            this.DeleteFolderMusic.Name = "DeleteFolderMusic";
+            this.DeleteFolderMusic.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
+            this.DeleteFolderMusic.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
+            this.DeleteFolderMusic.OnHoverTextColor = System.Drawing.Color.DarkViolet;
+            this.DeleteFolderMusic.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.DeleteFolderMusic.selected = false;
+            this.DeleteFolderMusic.Size = new System.Drawing.Size(134, 33);
+            this.DeleteFolderMusic.TabIndex = 13;
+            this.DeleteFolderMusic.Text = "Delete local music";
+            this.DeleteFolderMusic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DeleteFolderMusic.Textcolor = System.Drawing.Color.White;
+            this.DeleteFolderMusic.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteFolderMusic.Click += new System.EventHandler(this.DeleteFolderMusic_Click);
+            // 
+            // ChoiceFolderMusic
+            // 
+            this.ChoiceFolderMusic.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
+            this.ChoiceFolderMusic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ChoiceFolderMusic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
+            this.ChoiceFolderMusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ChoiceFolderMusic.BorderRadius = 0;
+            this.ChoiceFolderMusic.ButtonText = "Add local music";
+            this.ChoiceFolderMusic.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ChoiceFolderMusic.DisabledColor = System.Drawing.SystemColors.ButtonFace;
+            this.ChoiceFolderMusic.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChoiceFolderMusic.Iconcolor = System.Drawing.Color.Transparent;
+            this.ChoiceFolderMusic.Iconimage = null;
+            this.ChoiceFolderMusic.Iconimage_right = null;
+            this.ChoiceFolderMusic.Iconimage_right_Selected = null;
+            this.ChoiceFolderMusic.Iconimage_Selected = null;
+            this.ChoiceFolderMusic.IconMarginLeft = 0;
+            this.ChoiceFolderMusic.IconMarginRight = 0;
+            this.ChoiceFolderMusic.IconRightVisible = true;
+            this.ChoiceFolderMusic.IconRightZoom = 0D;
+            this.ChoiceFolderMusic.IconVisible = true;
+            this.ChoiceFolderMusic.IconZoom = 35D;
+            this.ChoiceFolderMusic.IsTab = false;
+            this.ChoiceFolderMusic.Location = new System.Drawing.Point(31, 73);
+            this.ChoiceFolderMusic.Name = "ChoiceFolderMusic";
+            this.ChoiceFolderMusic.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
+            this.ChoiceFolderMusic.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
+            this.ChoiceFolderMusic.OnHoverTextColor = System.Drawing.Color.DarkViolet;
+            this.ChoiceFolderMusic.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.ChoiceFolderMusic.selected = false;
+            this.ChoiceFolderMusic.Size = new System.Drawing.Size(127, 33);
+            this.ChoiceFolderMusic.TabIndex = 12;
+            this.ChoiceFolderMusic.Text = "Add local music";
+            this.ChoiceFolderMusic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ChoiceFolderMusic.Textcolor = System.Drawing.Color.White;
+            this.ChoiceFolderMusic.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChoiceFolderMusic.Click += new System.EventHandler(this.ChoiceFolderMusic_Click);
             // 
             // lb_view
             // 
@@ -152,82 +228,6 @@
             this.pn_List.Name = "pn_List";
             this.pn_List.Size = new System.Drawing.Size(800, 344);
             this.pn_List.TabIndex = 1;
-            // 
-            // ChoiceFolderMusic
-            // 
-            this.ChoiceFolderMusic.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
-            this.ChoiceFolderMusic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ChoiceFolderMusic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
-            this.ChoiceFolderMusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ChoiceFolderMusic.BorderRadius = 0;
-            this.ChoiceFolderMusic.ButtonText = "Add local music";
-            this.ChoiceFolderMusic.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ChoiceFolderMusic.DisabledColor = System.Drawing.SystemColors.ButtonFace;
-            this.ChoiceFolderMusic.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChoiceFolderMusic.Iconcolor = System.Drawing.Color.Transparent;
-            this.ChoiceFolderMusic.Iconimage = null;
-            this.ChoiceFolderMusic.Iconimage_right = null;
-            this.ChoiceFolderMusic.Iconimage_right_Selected = null;
-            this.ChoiceFolderMusic.Iconimage_Selected = null;
-            this.ChoiceFolderMusic.IconMarginLeft = 0;
-            this.ChoiceFolderMusic.IconMarginRight = 0;
-            this.ChoiceFolderMusic.IconRightVisible = true;
-            this.ChoiceFolderMusic.IconRightZoom = 0D;
-            this.ChoiceFolderMusic.IconVisible = true;
-            this.ChoiceFolderMusic.IconZoom = 35D;
-            this.ChoiceFolderMusic.IsTab = false;
-            this.ChoiceFolderMusic.Location = new System.Drawing.Point(31, 73);
-            this.ChoiceFolderMusic.Name = "ChoiceFolderMusic";
-            this.ChoiceFolderMusic.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
-            this.ChoiceFolderMusic.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
-            this.ChoiceFolderMusic.OnHoverTextColor = System.Drawing.Color.DarkViolet;
-            this.ChoiceFolderMusic.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.ChoiceFolderMusic.selected = false;
-            this.ChoiceFolderMusic.Size = new System.Drawing.Size(127, 33);
-            this.ChoiceFolderMusic.TabIndex = 12;
-            this.ChoiceFolderMusic.Text = "Add local music";
-            this.ChoiceFolderMusic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ChoiceFolderMusic.Textcolor = System.Drawing.Color.White;
-            this.ChoiceFolderMusic.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChoiceFolderMusic.Click += new System.EventHandler(this.ChoiceFolderMusic_Click);
-            // 
-            // DeleteFolderMusic
-            // 
-            this.DeleteFolderMusic.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
-            this.DeleteFolderMusic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.DeleteFolderMusic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
-            this.DeleteFolderMusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.DeleteFolderMusic.BorderRadius = 0;
-            this.DeleteFolderMusic.ButtonText = "Delete local music";
-            this.DeleteFolderMusic.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DeleteFolderMusic.DisabledColor = System.Drawing.SystemColors.ButtonFace;
-            this.DeleteFolderMusic.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteFolderMusic.Iconcolor = System.Drawing.Color.Transparent;
-            this.DeleteFolderMusic.Iconimage = null;
-            this.DeleteFolderMusic.Iconimage_right = null;
-            this.DeleteFolderMusic.Iconimage_right_Selected = null;
-            this.DeleteFolderMusic.Iconimage_Selected = null;
-            this.DeleteFolderMusic.IconMarginLeft = 0;
-            this.DeleteFolderMusic.IconMarginRight = 0;
-            this.DeleteFolderMusic.IconRightVisible = true;
-            this.DeleteFolderMusic.IconRightZoom = 0D;
-            this.DeleteFolderMusic.IconVisible = true;
-            this.DeleteFolderMusic.IconZoom = 35D;
-            this.DeleteFolderMusic.IsTab = false;
-            this.DeleteFolderMusic.Location = new System.Drawing.Point(152, 73);
-            this.DeleteFolderMusic.Name = "DeleteFolderMusic";
-            this.DeleteFolderMusic.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
-            this.DeleteFolderMusic.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
-            this.DeleteFolderMusic.OnHoverTextColor = System.Drawing.Color.DarkViolet;
-            this.DeleteFolderMusic.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.DeleteFolderMusic.selected = false;
-            this.DeleteFolderMusic.Size = new System.Drawing.Size(134, 33);
-            this.DeleteFolderMusic.TabIndex = 13;
-            this.DeleteFolderMusic.Text = "Delete local music";
-            this.DeleteFolderMusic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DeleteFolderMusic.Textcolor = System.Drawing.Color.White;
-            this.DeleteFolderMusic.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteFolderMusic.Click += new System.EventHandler(this.DeleteFolderMusic_Click);
             // 
             // Form_My_Music
             // 

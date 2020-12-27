@@ -145,6 +145,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "form_Rename_pl";
             this.Text = "                 ";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.form_Rename_pl_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

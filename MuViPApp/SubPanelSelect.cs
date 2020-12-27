@@ -14,7 +14,7 @@ namespace MuViPApp
     public partial class SubPanelSelect : UserControl
     {
         Form_ListMusic parent;
-        ToolStrip toolStrip = new ToolStrip();
+        ContextMenuStrip toolStrip = new ContextMenuStrip();
         public SubPanelSelect(Form_ListMusic parent = null)
         {
             this.parent = parent;
@@ -54,30 +54,28 @@ namespace MuViPApp
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
+            this.parent.DeleteMusic();
             this.parent.AfterClick();
-
         }
 
         private void btn_Addto_Click(object sender, EventArgs e)
         {
-            if (toolStrip == null)
+            toolStrip.Items.Clear();
+            toolStrip.Items.Add("Now playing");
+            toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
+            toolStrip.Items.Add("-");
+            toolStrip.Items.Add("New playlist");
+            int Y = 400;
+            foreach (PlayListInfo item in Playlist.Instance.GetAllPlayListMusic())
             {
-                toolStrip.Items.Add("Now playing");
-                toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
-                toolStrip.Items.Add("-");
-                toolStrip.Items.Add("New playlist");
-                int Y = 400;
-                foreach (PlayListInfo item in Playlist.Instance.GetAllPlayListMusic())
-                {
-                    toolStrip.Items.Add(item.Name_PL);
-                    Y -= 22;
-                }
-                toolStrip.Location = new Point(btn_Addto.Location.X + 70, btn_Addto.Location.Y + Y);
-                this.parent.Controls.Add(toolStrip);
-                toolStrip.BringToFront();
-                toolStrip.GripStyle = ToolStripGripStyle.Hidden;
-                toolStrip.Dock = DockStyle.None;
+                toolStrip.Items.Add(item.Name_PL);
+                Y -= 22;
             }
+            toolStrip.Location = new Point(btn_Addto.Location.X + 70, btn_Addto.Location.Y + Y);
+            toolStrip.Show(MousePosition);
+            toolStrip.BringToFront();
+            toolStrip.GripStyle = ToolStripGripStyle.Hidden;
+            toolStrip.Dock = DockStyle.None;
         }
 
         private void btn_PlayNext_Click(object sender, EventArgs e)

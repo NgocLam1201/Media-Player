@@ -37,6 +37,7 @@ namespace MuViPApp
                     playListInfo.Name_PL = words[0];
                     playListInfo.Date_Create = Convert.ToDateTime(words[1]);
                     playListInfo.Import();
+                    Listmusic.Add(playListInfo);
                 }
                 sr.Close();
             }
