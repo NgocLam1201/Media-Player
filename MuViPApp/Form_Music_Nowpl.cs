@@ -30,7 +30,6 @@ namespace MuViPApp
             this.parent = parent;
             InitializeComponent();
             LoadMusic();
-            this.timer_play.Interval = 1000;
             this.timer_play.Start();
             this.parent.Is_Playing_NowPlaying = true;
             SetPlay();
@@ -52,15 +51,25 @@ namespace MuViPApp
 
         private void SetPlay()
         {
-            this.picturesong.Image = this.parent.picturesong.Image;
-            if (this.parent.index > -1)
-                this.lb_Info_Music.Text = this.parent.Artist.Text + " - " + this.parent.RestTime.Text + " - " + ListMusicPlaying.Instance.GetMusic(this.parent.index).Date_Add;
-            this.lb_NamePl.Text = this.parent.NameMedia.Text;
-            this.play.MaximumValue = this.parent.play.MaximumValue;
-            this.play.Value = this.parent.play.Value;
-            this.Volume_Slider.Value = this.parent.Volume_Slider.Value;
-            this.RestTime.Text = this.parent.RestTime.Text;
-            this.BeginTime.Text = this.parent.BeginTime.Text;
+            if (this.parent.play.Value == 0)
+            {
+                this.lb_NamePl.Visible = false;
+                this.lb_Info_Music.Visible = false;
+            }
+            else
+            {
+                this.lb_NamePl.Visible = true;
+                this.lb_Info_Music.Visible = true;
+                this.picturesong.Image = this.parent.picturesong.Image;
+                if (this.parent.index > -1)
+                    this.lb_Info_Music.Text = this.parent.Artist.Text + " - " + this.parent.RestTime.Text + " - " + ListMusicPlaying.Instance.GetMusic(this.parent.index).Date_Add;
+                this.lb_NamePl.Text = this.parent.NameMedia.Text;
+                this.play.MaximumValue = this.parent.play.MaximumValue;
+                this.play.Value = this.parent.play.Value;
+                this.Volume_Slider.Value = this.parent.Volume_Slider.Value;
+                this.RestTime.Text = this.parent.RestTime.Text;
+                this.BeginTime.Text = this.parent.BeginTime.Text;
+            }
         }
 
         private void setMixIcon()

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace MuViPApp
         public Form_Muvip parent;
         public List<Music_Song> Listmusic = new List<Music_Song>();
         public SubPanelSelect sp_SelectMusic;
+        public Form_Delete form_Delete = new Form_Delete();
         public Form_ListMusic(Form_Muvip parent = null, List<Music_Song> Listmusic = null)
         {
             this.parent = parent;
@@ -29,6 +31,12 @@ namespace MuViPApp
             }
             lv_My_Music.DoubleClick += Music_Click;
             lv_My_Music.MouseClick += SelectMusic;
+            lv_My_Music.ContextMenuStrip = new ContextMenuStrip();
+            ToolStripItem deleteCI = new ToolStripButton("Like");
+            deleteCI.Click += (s, e) => {
+                ListMusicLiked.Instance.AddItems(new Music_Song(lv_My_Music.SelectedItems[0].SubItems[6].Text));
+            };
+            this.lv_My_Music.ContextMenuStrip.Items.Add(deleteCI);
         }
 
         public void LoadMusic()
@@ -72,6 +80,7 @@ namespace MuViPApp
                 }
             ListMusicPlaying.Instance.export();
             this.parent.PlayMusic(0);
+            this.Controls.Remove(sp_SelectMusic);
             sp_SelectMusic = null;
             this.parent.Is_Playing = true;
             this.parent.SetActive_PanelPlayer();
@@ -81,15 +90,16 @@ namespace MuViPApp
 
         public void SelectMusic(object sender, MouseEventArgs e)
         {
-            if (sp_SelectMusic == null)
-            {
-                this.parent.Is_Playing = false;
-                this.parent.SetActive_PanelPlayer();
-                sp_SelectMusic = new SubPanelSelect(this);
-                this.Controls.Add(sp_SelectMusic);
-                sp_SelectMusic.Dock = DockStyle.Bottom;
-                sp_SelectMusic.BringToFront();
-            }
+            this.Controls.Remove(sp_SelectMusic);
+            this.parent.Is_Playing = false;
+            this.parent.SetActive_PanelPlayer();
+            sp_SelectMusic = new SubPanelSelect(this);
+            if (this.parent.play.Value > 0)
+                this.parent.Is_Playing = true;
+            this.Controls.Add(sp_SelectMusic);
+            sp_SelectMusic.Dock = DockStyle.Bottom;
+            sp_SelectMusic.BringToFront();
+            
         }
 
         public void AfterClick()
@@ -97,6 +107,7 @@ namespace MuViPApp
             this.Controls.Remove(sp_SelectMusic);
             lv_My_Music.Items.Clear();
             LoadMusic();
+            this.parent.SetActive_PanelPlayer();
         }
 
         private ListViewColumnSorter lvwColumnSorter;
@@ -160,10 +171,29 @@ namespace MuViPApp
 
         public void DeleteMusic()
         {
+            if (this.parent.btn_My_Music.selected == true)
+            {
+                form_Delete.StartPosition = FormStartPosition.CenterParent;
+                form_Delete.title.Text += lv_My_Music.SelectedItems.Count + " selected item(s).";
+                if (form_Delete.ShowDialog() == DialogResult.OK)
+                {
+                    if (form_Delete.delete_on_this_PC == true)
+                    {
+                        for (int i = 0; i < lv_My_Music.SelectedItems.Count; i++)
+                        {
+                            File.Delete(lv_My_Music.SelectedItems[i].SubItems[6].Text);
+                            Listmusic.Remove(new Music_Song(lv_My_Music.SelectedItems[i].SubItems[6].Text));
+                        }
+                    }
+                }
+            }    
             for (int i = 0; i < lv_My_Music.SelectedItems.Count; i++)
             {
                 Listmusic.Remove(new Music_Song(lv_My_Music.SelectedItems[i].SubItems[6].Text));
             }
+            ListMusicPlaying.Instance.export();
+            PlayListInfo.Instance.Export();
+            ListMusicLiked.Instance.export();
             LoadMusic();
         }
 
@@ -177,8 +207,7 @@ namespace MuViPApp
 
         public void CancelSelect()
         {
-            lv_My_Music.Items.Clear();
-            LoadMusic();
+            AfterClick();
         }
 
         public void AddToPlaylist(PlayListInfo P_list)
@@ -189,6 +218,7 @@ namespace MuViPApp
             {
                 P_list.AddItems(new Music_Song(lv_My_Music.SelectedItems[i].SubItems[6].Text));
             }
+            P_list.Export();
         }
 
         public void AddtoNowPlaying()

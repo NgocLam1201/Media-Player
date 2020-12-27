@@ -40,12 +40,21 @@ namespace MuViPApp
             get { return number_song; }
             set { number_song = value; }
         }
+        ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
 
         public Form_Muvip parent;
 
         public Music_Playlist(Form_Muvip parent = null)
         {
             InitializeComponent();
+            contextMenuStrip.Items.Add("Delete");
+            contextMenuStrip.ItemClicked += (s, e) =>
+             {
+                 Playlist.Instance.Remove(Number_song);
+                 this.parent.openChildForm(new form_Music_AllPlaylist(this.parent));
+             };
+            this.ContextMenuStrip = contextMenuStrip;
+
         }
 
         public Music_Playlist(int ID_Playlist, string NamePlay, int total, Form_Muvip parent = null)

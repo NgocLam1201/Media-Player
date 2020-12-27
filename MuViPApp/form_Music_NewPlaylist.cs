@@ -26,8 +26,14 @@ namespace MuViPApp
         {
             this.parent = parent;
             this.listMusic = listMusic;
+            this.KeyDown += Key_OK;
         }
-  
+
+        private void Key_OK(object sender, KeyEventArgs e)
+        {
+            btn_Ok_Click(this, new EventArgs());
+        }
+
         private void btn_Ok_Click(object sender, EventArgs e)
         {
             if (tb_Name.Text == "")
@@ -37,6 +43,8 @@ namespace MuViPApp
                 Playlist.Instance.AddItems(new PlayListInfo(DateTime.Now, tb_Name.Text,listMusic));
                 form_Music_Playlist NewForm = new form_Music_Playlist(new Music_Playlist(Playlist.Instance.GetAllPlayListMusic().Count - 1,this.tb_Name.Text,0,this.parent));
                 this.parent.openChildForm(NewForm);
+                Playlist.Instance.Export();
+                Playlist.Instance.GetListMusic(Playlist.Instance.GetAllPlayListMusic().Count - 1).Export();
                 this.Close();
             }
         }
