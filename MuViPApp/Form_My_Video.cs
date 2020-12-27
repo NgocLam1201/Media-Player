@@ -53,9 +53,6 @@ namespace MuViPApp
         }
 
 
-<<<<<<< HEAD
-            foreach (var child in Directory.GetFiles(@"C:\Users\Admin\Videos\"))
-=======
         private void btn_Play_all_Click(object sender, EventArgs e)
         {
             FlistVideo.PlayAllMusic();
@@ -69,7 +66,6 @@ namespace MuViPApp
         private void ChoiceFolderMusic_Click(object sender, EventArgs e)
         {
             using (var fbd = new FolderBrowserDialog())
->>>>>>> Video_Update
             {
                 DialogResult result = fbd.ShowDialog();
 

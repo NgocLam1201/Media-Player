@@ -1030,10 +1030,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_Music;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Add;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Liked;
-<<<<<<< HEAD
-=======
         private Bunifu.Framework.UI.BunifuFlatButton btn_Playlist;
->>>>>>> Video_Update
         private Bunifu.Framework.UI.BunifuFlatButton btn_History;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Help;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Exit;
@@ -1055,16 +1052,11 @@
         public Bunifu.Framework.UI.BunifuSlider Volume_Slider;
         public System.Windows.Forms.PictureBox picturesong;
         public Bunifu.Framework.UI.BunifuFlatButton btn_AddPl;
-<<<<<<< HEAD
+
         public Bunifu.Framework.UI.BunifuFlatButton btn_My_Music;
-        public Bunifu.Framework.UI.BunifuFlatButton btn_Playlist;
         public Bunifu.Framework.UI.BunifuFlatButton btn_NowPlaying;
         public Bunifu.Framework.UI.BunifuTextbox Search;
-=======
-        public Bunifu.Framework.UI.BunifuFlatButton btn_NowPlaying;
         public Bunifu.Framework.UI.BunifuFlatButton btn_My_Video;
->>>>>>> Video_Update
-        //>>>>>>> 04a2838c7725c5872faf9c85c73173baafd71e32
     }
 }
 
