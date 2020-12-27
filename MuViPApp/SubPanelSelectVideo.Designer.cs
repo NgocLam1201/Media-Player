@@ -57,6 +57,7 @@
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(72, 50);
             this.btn_Cancel.TabIndex = 22;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // label2
             // 
@@ -90,6 +91,7 @@
             this.btn_Play.Name = "btn_Play";
             this.btn_Play.Size = new System.Drawing.Size(72, 50);
             this.btn_Play.TabIndex = 20;
+            this.btn_Play.Click += new System.EventHandler(this.btn_Play_Click);
             // 
             // btn_PlayNext
             // 
@@ -110,6 +112,7 @@
             this.btn_PlayNext.Name = "btn_PlayNext";
             this.btn_PlayNext.Size = new System.Drawing.Size(72, 50);
             this.btn_PlayNext.TabIndex = 19;
+            this.btn_PlayNext.Click += new System.EventHandler(this.btn_PlayNext_Click);
             // 
             // btn_Addto
             // 
@@ -130,6 +133,7 @@
             this.btn_Addto.Name = "btn_Addto";
             this.btn_Addto.Size = new System.Drawing.Size(72, 50);
             this.btn_Addto.TabIndex = 18;
+            this.btn_Addto.Click += new System.EventHandler(this.btn_Addto_Click);
             // 
             // btn_Delete
             // 
@@ -150,6 +154,7 @@
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(72, 50);
             this.btn_Delete.TabIndex = 17;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_SelectAll
             // 
@@ -170,6 +175,7 @@
             this.btn_SelectAll.Name = "btn_SelectAll";
             this.btn_SelectAll.Size = new System.Drawing.Size(72, 50);
             this.btn_SelectAll.TabIndex = 21;
+            this.btn_SelectAll.Click += new System.EventHandler(this.btn_SelectAll_Click);
             // 
             // SubPanelSelectVideo
             // 

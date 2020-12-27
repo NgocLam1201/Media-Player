@@ -62,9 +62,13 @@ namespace MuViPApp
         }
         public void SetActive_PanelPlayer()
         {
-            if (Is_Playing == true && Is_Playing_NowPlaying == false) panel_Player.Visible = true;
-            else
-                panel_Player.Visible = false;
+            if (btn_Music.selected == true)
+            {
+                if (Is_Playing == true && Is_Playing_NowPlaying == false) panel_Player.Visible = true;
+                else
+                    panel_Player.Visible = false;
+            }
+            if (btn_Video.selected==true) panel_Player.Visible = false;
         }
 
         public void SetPlayIcon()
@@ -270,7 +274,7 @@ namespace MuViPApp
 
         private void btn_My_Video_Click(object sender, EventArgs e)
         {
-            panel_Player.Visible = true;
+            SetActive_PanelPlayer();
             btn_Playlist.selected = false;
             if (btn_Video.selected == true)
                 openChildForm(new Form_My_Video());
@@ -294,7 +298,6 @@ namespace MuViPApp
         private void btn_History_Click(object sender, EventArgs e)
         {
             SetActive_PanelPlayer();
-            panel_Player.Visible = true;
             btn_Playlist.selected = false;
             if (btn_Music.selected == true)
             {

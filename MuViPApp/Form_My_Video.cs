@@ -15,6 +15,7 @@ namespace MuViPApp
     public partial class Form_My_Video : Form
     {
         Form_Muvip parent = new Form_Muvip();
+        public int count;
         ListVideo FlistVideo;
         ToolStrip toolStrip = new ToolStrip();
         public Form_My_Video(Form_Muvip parent=null)
@@ -25,23 +26,16 @@ namespace MuViPApp
         }
         public void ShowListVid()
         {
-            ListMyVideo.Instance.Remove();
-
-            foreach (var child in Directory.GetFiles(@"C:\Users\Admin\Videos\"))
-
-            {
-                FileInfo info = new FileInfo(child);
-                if (info.Extension == ".mp4"|| info.Extension == ".wmv")
-                {
-                    ListMyVideo.Instance.AddItems(new VideoInfo(info.FullName));
-                }
-            }
-            ListVideo lvideo = new ListVideo(this.parent, ListMyVideo.Instance.GetMusic());
-            lvideo.TopLevel = false;
-            lvideo.Dock = DockStyle.Fill; 
-            pn_List.Controls.Add(lvideo);
-            lvideo.BringToFront();
-            lvideo.Show();
+            FlistVideo = new ListVideo(this.parent, ListMyVideo.Instance.GetVideo());
+            FlistVideo.TopLevel = false;
+            FlistVideo.FormBorderStyle = FormBorderStyle.None;
+            FlistVideo.Dock = DockStyle.Fill;
+            this.pn_List.Controls.Add(FlistVideo);
+            this.pn_List.Tag = FlistVideo;
+            FlistVideo.BringToFront();
+            FlistVideo.Show();
+            count = ListMyVideo.Instance.GetVideo().Count;
+            count_items.Text = "(" + count + ")";
 
         }
 

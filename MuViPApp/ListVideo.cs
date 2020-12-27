@@ -51,32 +51,28 @@ namespace MuViPApp
                 int index = listView_myvideo.Items.IndexOf(listView_myvideo.SelectedItems[0]);
                 for (int i = index; i < listView_myvideo.Items.Count; i++)
                 {
-                    ListVideoPlaying.Instance.AddItems(new VideoInfo(listView_myvideo.Items[i].SubItems[2].Text));
+                    ListVideoPlaying.Instance.AddItems(new VideoInfo(listView_myvideo.Items[i].SubItems[5].Text));
                 }
                 for (int i = 0; i < index; i++)
                 {
-                    ListVideoPlaying.Instance.AddItems(new VideoInfo(listView_myvideo.Items[i].SubItems[2].Text));
+                    ListVideoPlaying.Instance.AddItems(new VideoInfo(listView_myvideo.Items[i].SubItems[5].Text));
                 }
             }
             else
                 for (int i = 0; i < listView_myvideo.SelectedItems.Count; i++)
                 {
-                    ListVideoPlaying.Instance.AddItems(new VideoInfo(listView_myvideo.Items[i].SubItems[2].Text));
+                    ListVideoPlaying.Instance.AddItems(new VideoInfo(listView_myvideo.Items[i].SubItems[5].Text));
                 }
-            ListVideoPlaying.Instance.export();
-            this.parent.PlayMusic(0);
-            sp_Select = null;
-            this.parent.Is_Playing = true;
-            this.parent.SetActive_PanelPlayer();
-            listView_myvideo.Items.Clear();
-            ShowListVid();
+            this.parent.btn_NowPlaying.selected = true;
+            this.parent.btn_My_Video.selected = false;
+            this.parent.openChildForm(new form_Video_Nowpl());
         }
 
         public void SelectVideo(object sender, MouseEventArgs e)
         {
             if (sp_Select == null)
             {
-                this.parent.Is_Playing = false;
+                //this.parent.Is_Playing = false;
                 this.parent.SetActive_PanelPlayer();
                 sp_Select = new SubPanelSelectVideo(this);
                 this.Controls.Add(sp_Select);

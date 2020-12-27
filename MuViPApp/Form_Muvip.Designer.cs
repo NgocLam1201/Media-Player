@@ -1036,13 +1036,11 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_Add;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Liked;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Playlist;
-        private Bunifu.Framework.UI.BunifuFlatButton btn_NowPlaying;
         private Bunifu.Framework.UI.BunifuFlatButton btn_History;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Help;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Exit;
         private System.Windows.Forms.Panel Menuside;
         private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuFlatButton btn_My_Video;
         public System.Windows.Forms.TextBox RestTime;
         public System.Windows.Forms.TextBox Artist;
         public System.Windows.Forms.Panel panel_Player;
@@ -1059,6 +1057,8 @@
         public Bunifu.Framework.UI.BunifuSlider Volume_Slider;
         public System.Windows.Forms.PictureBox picturesong;
         public Bunifu.Framework.UI.BunifuFlatButton btn_AddPl;
+        public Bunifu.Framework.UI.BunifuFlatButton btn_NowPlaying;
+        public Bunifu.Framework.UI.BunifuFlatButton btn_My_Video;
         //>>>>>>> 04a2838c7725c5872faf9c85c73173baafd71e32
     }
 }

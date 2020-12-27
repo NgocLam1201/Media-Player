@@ -11,7 +11,7 @@ namespace MuViPApp.Video
     {
         List<string> listPath = new List<string>();
 
-        string path = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
+        string path = "MyVideo_MuVipApp.txt";
 
         private static ListFolderLocalVideo instance;
 
@@ -23,6 +23,14 @@ namespace MuViPApp.Video
 
         public ListFolderLocalVideo()
         {
+            if (!File.Exists(path))
+            {
+                using (StreamWriter sw = new StreamWriter(path, true))
+                {
+                    sw.WriteLine(Environment.GetFolderPath(Environment.SpecialFolder.MyVideos));
+                    sw.Close();
+                }
+            }
             using (StreamReader sr = new StreamReader(path))
             {
                 string lines;

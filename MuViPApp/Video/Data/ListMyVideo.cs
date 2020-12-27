@@ -28,7 +28,8 @@ namespace MuViPApp.Video
                     foreach (var child in Directory.GetFiles(item))
                     {
                         FileInfo info = new FileInfo(child);
-                        if (info.Extension == ".mp3")
+
+                        if (info.Extension == ".mp4"|| info.Extension == ".wmv")
                         {
                             ListVideo.Add(new VideoInfo(info.FullName));
                         }
@@ -44,12 +45,12 @@ namespace MuViPApp.Video
             ListVideo.Add(item);
         }
 
-        public List<VideoInfo> GetMusic()
+        public List<VideoInfo> GetVideo()
         {
             return ListVideo;
         }
 
-        public VideoInfo GetMusic(int index)
+        public VideoInfo GetVideo(int index)
         {
             return ListVideo[index];
         }

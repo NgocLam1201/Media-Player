@@ -137,7 +137,7 @@
             this.lb_view.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_view.AutoSize = true;
             this.lb_view.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_view.Location = new System.Drawing.Point(630, 73);
+            this.lb_view.Location = new System.Drawing.Point(630, 81);
             this.lb_view.Name = "lb_view";
             this.lb_view.Size = new System.Drawing.Size(42, 16);
             this.lb_view.TabIndex = 11;
@@ -154,7 +154,7 @@
         "Title",
         "Large icon",
         "Small icon"};
-            this.Cb_View.Location = new System.Drawing.Point(671, 69);
+            this.Cb_View.Location = new System.Drawing.Point(671, 77);
             this.Cb_View.Name = "Cb_View";
             this.Cb_View.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
             this.Cb_View.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
@@ -224,9 +224,9 @@
             // pn_List
             // 
             this.pn_List.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pn_List.Location = new System.Drawing.Point(0, 0);
+            this.pn_List.Location = new System.Drawing.Point(0, 106);
             this.pn_List.Name = "pn_List";
-            this.pn_List.Size = new System.Drawing.Size(800, 450);
+            this.pn_List.Size = new System.Drawing.Size(800, 344);
             this.pn_List.TabIndex = 3;
             // 
             // Form_My_Video
@@ -235,8 +235,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pn_Top);
             this.Controls.Add(this.pn_List);
+            this.Controls.Add(this.pn_Top);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_My_Video";
             this.Text = "Form_My_Video";
