@@ -16,8 +16,7 @@ Bất kì ai và bất kì lứa tuổi nào đang sử dụng máy tính với 
 - IDE: Visual Studio 2019
 - Ngôn ngữ lập trình: C# (Farmework .NET)
 - Flatform: 64bit (x64)
-- GUI: Windows Forms
-> *Đang chờ cập nhật*
+- GUI: Windows Forms, Bunifu.
 ### Tính năng 
 - Chơi được một số định dạng nhạc và video phổ biến (mp3, wav, mp4, etc.)
 - Một số chức năng chơi nhạc và video cơ bản như trộn, lặp, dừng, phát, tăng giảm âm lượng etc.
@@ -29,6 +28,4 @@ Bất kì ai và bất kì lứa tuổi nào đang sử dụng máy tính với 
 - Sắp xếp các bài nhạc, video (Theo tên, ca sĩ, album, năm phát hành …).
 - Hiển thị lịch sử phát.
 - Tạo tính liên thông giữa các thông tin của bài hát (Cùng ca sĩ, cùng album,…).
-- Tìm kiếm thông tin bài nhạc, video theo tên, ca sĩ,..
-- Chuyển đổi ngôn ngữ (tiếng Anh, tiếng Việt).
 > *Đang chờ cập nhật...*
