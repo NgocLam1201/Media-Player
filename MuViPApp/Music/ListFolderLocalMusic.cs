@@ -25,8 +25,7 @@ namespace MuViPApp.Music
         {
             if (!File.Exists(path))
             {
-                File.Create(path);
-                using (StreamWriter sw = new StreamWriter(path))
+                using (StreamWriter sw = new StreamWriter(path,true))
                 {
                     sw.WriteLine(Environment.GetFolderPath(Environment.SpecialFolder.MyMusic));
                     sw.Close();

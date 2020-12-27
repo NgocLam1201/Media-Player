@@ -32,6 +32,9 @@ namespace MuViPApp
         public Form_Muvip()
         {
             InitializeComponent();
+            ListMusicLiked.Instance.export();
+            ListMusicPlaying.Instance.export();
+            Playlist.Instance.Export();
             btn_Music.selected = true;
             btn_Music_Play.Visible = false;
             btn_Music_Pause.Visible = true;
@@ -43,7 +46,14 @@ namespace MuViPApp
             if (Volume_Slider.Value == 0)
                 Volume_Slider.Value = CalcVol / (ushort.MaxValue / 10);
             SetIconVolume();
-            panel_Player.Visible = false;
+            
+            if (play.Value > 0)
+            {
+                Is_Playing = true;
+            }
+            else
+                Is_Playing = false;
+            SetActive_PanelPlayer();
         }
 
         private Form activeForm = null;
@@ -162,7 +172,6 @@ namespace MuViPApp
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            
             btn_Playlist.selected = false;
             if (btn_Music.selected == true)
             {

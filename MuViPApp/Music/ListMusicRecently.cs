@@ -22,7 +22,8 @@ namespace MuViPApp.Music
 
         private ListMusicRecently()
         {
-            if (File.Exists(path))
+            using (StreamWriter sw = new StreamWriter(path, true))
+                sw.Close();
             using (StreamReader sr = new StreamReader(path))
             {
                 string lines;

@@ -23,16 +23,17 @@ namespace MuViPApp.Music
 
         public ListMusicLiked()
         {
-            if (File.Exists(path))
-                using (StreamReader sr = new StreamReader(path))
+            using (StreamWriter sw = new StreamWriter(path, true))
+                sw.Close();
+            using (StreamReader sr = new StreamReader(path))
+            {
+                string lines;
+                while ((lines = sr.ReadLine()) != null)
                 {
-                    string lines;
-                    while ((lines = sr.ReadLine()) != null)
-                    {
-                        if (File.Exists(lines))
-                            Listmusic.Add(new Music_Song(lines));
-                    }
+                    if (File.Exists(lines))
+                        Listmusic.Add(new Music_Song(lines));
                 }
+            }
         }
 
         public void export()

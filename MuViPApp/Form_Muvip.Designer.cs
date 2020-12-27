@@ -119,7 +119,6 @@
             this.Search.Size = new System.Drawing.Size(349, 24);
             this.Search.TabIndex = 3;
             this.Search.text = "Search";
-            this.Search.KeyDown += new System.EventHandler(this.Search_KeyDown);
             // 
             // panel_Player
             // 

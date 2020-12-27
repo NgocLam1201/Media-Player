@@ -90,15 +90,18 @@ namespace MuViPApp
 
         public void SelectMusic(object sender, MouseEventArgs e)
         {
-            this.Controls.Remove(sp_SelectMusic);
-            this.parent.Is_Playing = false;
-            this.parent.SetActive_PanelPlayer();
-            sp_SelectMusic = new SubPanelSelect(this);
-            if (this.parent.play.Value > 0)
-                this.parent.Is_Playing = true;
-            this.Controls.Add(sp_SelectMusic);
-            sp_SelectMusic.Dock = DockStyle.Bottom;
-            sp_SelectMusic.BringToFront();
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Controls.Remove(sp_SelectMusic);
+                this.parent.Is_Playing = false;
+                this.parent.SetActive_PanelPlayer();
+                sp_SelectMusic = new SubPanelSelect(this);
+                if (this.parent.play.Value > 0)
+                    this.parent.Is_Playing = true;
+                this.Controls.Add(sp_SelectMusic);
+                sp_SelectMusic.Dock = DockStyle.Bottom;
+                sp_SelectMusic.BringToFront();
+            }
             
         }
 
