@@ -65,6 +65,7 @@
             // 
             // lv_My_Music
             // 
+            this.lv_My_Music.AutoArrange = false;
             this.lv_My_Music.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
             this.lv_My_Music.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lv_My_Music.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -83,7 +84,7 @@
             this.lv_My_Music.Location = new System.Drawing.Point(-1, 3);
             this.lv_My_Music.Name = "lv_My_Music";
             this.lv_My_Music.ShowItemToolTips = true;
-            this.lv_My_Music.Size = new System.Drawing.Size(724, 446);
+            this.lv_My_Music.Size = new System.Drawing.Size(724, 431);
             this.lv_My_Music.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.lv_My_Music.TabIndex = 1;
             this.lv_My_Music.UseCompatibleStateImageBehavior = false;
@@ -244,7 +245,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(724, 450);
+            this.ClientSize = new System.Drawing.Size(724, 436);
             this.Controls.Add(this.lv_My_Music);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_ListMusic";

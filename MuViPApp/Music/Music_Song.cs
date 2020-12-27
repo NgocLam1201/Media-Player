@@ -84,7 +84,7 @@ namespace MuViPApp.Music
                 this.Name_Song = fileTag.Tag.Title;
                 this.Singer = fileTag.Tag.FirstPerformer;
                 this.Name_Genre = fileTag.Tag.FirstGenre;
-                this.Date_Add = info.LastAccessTime.ToString();
+                this.Date_Add = info.CreationTime.ToString();
                 this.Length = fileTag.Properties.Duration.ToString(@"hh\:mm\:ss");
                 this.Link_Music = info.FullName;
                 if (this.Name_Genre == null) this.Name_Genre = "Unknown";

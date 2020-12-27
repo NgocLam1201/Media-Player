@@ -29,17 +29,16 @@ namespace MuViPApp.Music
                 string lines;
                 while ((lines = sr.ReadLine()) != null)
                 {
-                    if (File.Exists(lines))
-                        Listmusic.Add(new Music_Song(lines));
+                    string[] words = lines.Split('\t');
+                    if (File.Exists(words[0]))
+                    {
+                        Music_Song music_Song = new Music_Song(words[0]);
+                        music_Song.Date_Add = words[1];
+                        Listmusic.Add(music_Song);
+                    }
                 }
                 sr.Close();
             }
-            for (int i=0;i<Listmusic.Count/2;i++)
-            {
-                Music_Song temp = Listmusic[i];
-                Listmusic[Listmusic.Count - i - 1] = Listmusic[i];
-                Listmusic[i] = temp;
-            }    
         }
 
         public void AddItems(Music_Song item)
@@ -48,12 +47,26 @@ namespace MuViPApp.Music
             foreach (Music_Song music_Song in Listmusic)
             {
                 if (music_Song.Link_Music == item.Link_Music)
-                    Listmusic.Remove(item);
+                {
+                    Listmusic.Remove(music_Song);
+                    break;
+                }
             }
             Listmusic.Add(item);
+            Listmusic = Listmusic.OrderByDescending(L => L.Date_Add).ToList();
+            Export();
+        }
+
+        public void Export()
+        {
+            if (File.Exists(path))
+                File.Delete(path);
             using (StreamWriter sw = new StreamWriter(path, true))
             {
-                sw.WriteLine(item.Link_Music);
+                foreach (Music_Song item in Listmusic)
+                {
+                    sw.WriteLine(item.Link_Music + '\t' + item.Date_Add);
+                }
                 sw.Close();
             }
         }

@@ -187,12 +187,13 @@ namespace MuViPApp
 
         public void DeleteMusic()
         {
-            if (this.parent.btn_My_Music.selected == true)
+            if (lv_My_Music.SelectedItems.Count > 0)
             {
-                form_Delete.StartPosition = FormStartPosition.CenterParent;
-                form_Delete.title.Text += lv_My_Music.SelectedItems.Count + " selected item(s).";
-                if (form_Delete.ShowDialog() == DialogResult.OK)
+                if (this.parent.btn_My_Music.selected == true)
                 {
+                    form_Delete.StartPosition = FormStartPosition.CenterParent;
+                    form_Delete.title.Text += lv_My_Music.SelectedItems.Count + " selected item(s).";
+                    form_Delete.ShowDialog();
                     if (form_Delete.delete_on_this_PC == true)
                     {
                         for (int i = 0; i < lv_My_Music.SelectedItems.Count; i++)
@@ -202,15 +203,17 @@ namespace MuViPApp
                         }
                     }
                 }
-            }    
-            for (int i = 0; i < lv_My_Music.SelectedItems.Count; i++)
-            {
-                Listmusic.Remove(new Music_Song(lv_My_Music.SelectedItems[i].SubItems[6].Text));
+                else
+                    for (int i = 0; i < lv_My_Music.SelectedItems.Count; i++)
+                    {
+                        Listmusic.Remove(new Music_Song(lv_My_Music.SelectedItems[i].SubItems[6].Text));
+                    }
+                ListMusicPlaying.Instance.export();
+                PlayListInfo.Instance.Export();
+                ListMusicLiked.Instance.export();
+                lv_My_Music.Items.Clear();
+                LoadMusic();
             }
-            ListMusicPlaying.Instance.export();
-            PlayListInfo.Instance.Export();
-            ListMusicLiked.Instance.export();
-            LoadMusic();
         }
 
         public void SelectAll()
@@ -264,13 +267,19 @@ namespace MuViPApp
 
         private void likeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ListMusicLiked.Instance.AddItems(new Music_Song(lv_My_Music.SelectedItems[0].SubItems[6].Text));
-            ListMusicLiked.Instance.export();
+            if (lv_My_Music.SelectedItems.Count > 0)
+            {
+                ListMusicLiked.Instance.AddItems(new Music_Song(lv_My_Music.SelectedItems[0].SubItems[6].Text));
+                ListMusicLiked.Instance.export();
+            }
         }
 
         private void unlikeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ListMusicLiked.Instance.Remove(new Music_Song(lv_My_Music.SelectedItems[0].SubItems[6].Text));
+            if (lv_My_Music.SelectedItems.Count > 0)
+            {
+                ListMusicLiked.Instance.Remove(new Music_Song(lv_My_Music.SelectedItems[0].SubItems[6].Text));
+            }
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -280,12 +289,14 @@ namespace MuViPApp
 
         private void playToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Music_Click(this,new EventArgs());
+            if (lv_My_Music.SelectedItems.Count>0)
+                Music_Click(this,new EventArgs());
         }
 
         private void playNextToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Playnext();
+            if (lv_My_Music.SelectedItems.Count > 0)
+                Playnext();
         }
 
         private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)

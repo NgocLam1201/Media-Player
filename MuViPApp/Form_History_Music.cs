@@ -29,6 +29,7 @@ namespace MuViPApp
             FlistMusic.TopLevel = false;
             FlistMusic.FormBorderStyle = FormBorderStyle.None;
             FlistMusic.Dock = DockStyle.Fill;
+            FlistMusic.lv_My_Music.Sorting = SortOrder.None;
             this.pn_List.Controls.Add(FlistMusic);
             this.pn_List.Tag = FlistMusic;
             FlistMusic.BringToFront();
