@@ -213,20 +213,18 @@
     <Compile Include="SubPanelSelectVideo.Designer.cs">
       <DependentUpon>SubPanelSelectVideo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Video\Classes\ControlCentre.cs" />
-    <Compile Include="Video\Data\ListFolderLocalVideo.cs" />
-    <Compile Include="Video\Data\ListMyVideo.cs" />
-    <Compile Include="Video\Data\ListVideoLiked.cs" />
-    <Compile Include="Video\Data\ListVideoPlayed.cs" />
-    <Compile Include="Video\Data\ListVideoPlaying.cs" />
-    <Compile Include="Video\Data\ListVideoRecently.cs" />
-    <Compile Include="Video\Data\PlayListInfoVideo.cs" />
-    <Compile Include="Video\Data\PlaylistVideo.cs" />
-    <Compile Include="Video\Data\VideoInfo.cs" />
-    <Compile Include="Video\Data\Video_Playlist.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Video\Data\Video_Playlist.Designer.cs">
+    <Compile Include="Video\ControlCentre.cs" />
+    <Compile Include="Video\ListFolderLocalVideo.cs" />
+    <Compile Include="Video\ListMyVideo.cs" />
+    <Compile Include="Video\ListVideoLiked.cs" />
+    <Compile Include="Video\ListVideoPlayed.cs" />
+    <Compile Include="Video\ListVideoPlaying.cs" />
+    <Compile Include="Video\ListVideoRecently.cs" />
+    <Compile Include="Video\PlayListInfoVideo.cs" />
+    <Compile Include="Video\PlaylistVideo.cs" />
+    <Compile Include="Video\VideoInfo.cs" />
+    <Compile Include="Video\Video_Playlist.cs" />
+    <Compile Include="Video\Video_Playlist.Designer.cs">
       <DependentUpon>Video_Playlist.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form_ListMusic.resx">
@@ -302,7 +300,7 @@
     <EmbeddedResource Include="SubPanelSelectVideo.resx">
       <DependentUpon>SubPanelSelectVideo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Video\Data\Video_Playlist.resx">
+    <EmbeddedResource Include="Video\Video_Playlist.resx">
       <DependentUpon>Video_Playlist.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
