@@ -47,7 +47,7 @@ namespace MuViPApp.Video
             {
                 foreach (VideoInfo item in List_VidPlaying)
                 {
-                    sw.WriteLine(item.FilePath);
+                    sw.WriteLine(item.Link_Video);
                 }
                 sw.Close();
             }

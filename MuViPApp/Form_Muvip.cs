@@ -116,7 +116,7 @@ namespace MuViPApp
         {
             OpenFileDialog ofd_music = new OpenFileDialog()
             {
-                InitialDirectory = @"C:\Users\Admin\Music\",
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic),
                 Title = "Add MP3 Files",
 
                 CheckFileExists = false,
@@ -192,7 +192,6 @@ namespace MuViPApp
             btn_Liked.selected = false;
             btn_NowPlaying.selected = false;
             btn_History.selected = false;
-            btn_Help.selected = false;
             btn_Exit.selected = false;
             if (btn_Music.selected == true)
             {
@@ -215,7 +214,6 @@ namespace MuViPApp
             btn_Playlist.selected = false;
             btn_NowPlaying.selected = false;
             btn_History.selected = false;
-            btn_Help.selected = false;
             btn_Exit.selected = false;
             openChildForm(new Form_My_Music(this));
         }
@@ -232,7 +230,6 @@ namespace MuViPApp
             btn_Playlist.selected = false;
             btn_NowPlaying.selected = false;
             btn_History.selected = false;
-            btn_Help.selected = false;
             btn_Exit.selected = false;
             openChildForm(new Form_My_Video(this));
         }

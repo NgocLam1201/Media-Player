@@ -34,6 +34,30 @@ namespace MuViPApp
             }
         }
 
+        private void cb_Sortby_onItemSelected(object sender, EventArgs e)
+        {
+            switch (cb_Sortby.selectedIndex)
+            {
+                case 0:
+                    List<PlayListInfoVideo> listInfos = PlaylistVideo.Instance.GetAllPlayListVideo().OrderBy(L => L.Name_PL).ToList();
+                    PlaylistVideo.Instance.Remove();
+                    foreach (PlayListInfoVideo item in listInfos)
+                    {
+                        PlaylistVideo.Instance.AddItems(item);
+                    }
+                    break;
+                case 1:
+                    List<PlayListInfoVideo> All_ListPl_Sortby_Date = PlaylistVideo.Instance.GetAllPlayListVideo().OrderBy(L => L.Date_Create).ToList();
+                    PlaylistVideo.Instance.Remove();
+                    foreach (PlayListInfoVideo item in All_ListPl_Sortby_Date)
+                    {
+                        PlaylistVideo.Instance.AddItems(item);
+                    }
+                    break;
+            }
+            PlaylistVideo.Instance.Export();
+            ShowPlayList();
+        }
 
     }
 }

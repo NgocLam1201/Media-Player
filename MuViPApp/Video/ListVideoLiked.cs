@@ -45,7 +45,7 @@ namespace MuViPApp.Video
             {
                 foreach (VideoInfo item in list_VidLiked)
                 {
-                    sw.WriteLine(item.FilePath);
+                    sw.WriteLine(item.Link_Video);
                 }
                 sw.Close();
             }
@@ -70,9 +70,24 @@ namespace MuViPApp.Video
             list_VidLiked.Clear();
         }
 
+        /*
         public void Remove(int index)
         {
             list_VidLiked.RemoveAt(index);
+        }
+        */
+
+        public void Remove(VideoInfo video)
+        {
+            for (int i = 0; i < list_VidLiked.Count; i++)
+            {
+                if (video.Link_Video == list_VidLiked[i].Link_Video)
+                {
+                    list_VidLiked.RemoveAt(i);
+                    break;
+                }
+            }
+            export();
         }
     }
 }

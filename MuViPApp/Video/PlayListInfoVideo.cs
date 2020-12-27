@@ -22,7 +22,7 @@ namespace MuViPApp
 
         public PlayListInfoVideo(DateTime date_create, string name_PL, List<VideoInfo> listvideo = null)
         {
-            this.Date_Create = date_Create;
+            this.Date_Create = date_create;
             Name_PL = name_PL;
             this.Listvideo = listvideo;
         }
@@ -75,7 +75,7 @@ namespace MuViPApp
             {
                 foreach (VideoInfo item in Listmusic)
                 {
-                    sw.WriteLine(item.FilePath);
+                    sw.WriteLine(item.Link_Video);
                 }
                 sw.Close();
             }

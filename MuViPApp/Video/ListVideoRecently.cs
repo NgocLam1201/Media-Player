@@ -47,13 +47,13 @@ namespace MuViPApp.Video
             item.Date = DateTime.Now.ToString();
             foreach (VideoInfo music_Song in ListVideo)
             {
-                if (music_Song.FilePath == item.FilePath)
+                if (music_Song.Link_Video == item.Link_Video)
                     ListVideo.Remove(item);
             }
             ListVideo.Add(item);
             using (StreamWriter sw = new StreamWriter(path, true))
             {
-                sw.WriteLine(item.FilePath);
+                sw.WriteLine(item.Link_Video);
                 sw.Close();
             }
         }

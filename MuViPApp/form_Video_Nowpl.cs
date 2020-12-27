@@ -38,7 +38,7 @@ namespace MuViPApp
 
             foreach (VideoInfo item in ListVideoPlaying.Instance.GetMusic())
             {
-                ListViewItem items = new ListViewItem(new[] {item.Name,item.Length,item.FilePath});
+                ListViewItem items = new ListViewItem(new[] {item.Name,item.Length,item.Link_Video});
                 listView_VideoPlaying.Items.Add(items);
             }
         }

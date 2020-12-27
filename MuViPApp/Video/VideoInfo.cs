@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WMPLib;
 using System.IO;
+using System.Drawing;
 
 namespace MuViPApp.Video
 {
@@ -15,7 +16,7 @@ namespace MuViPApp.Video
         public string Date;
         public string Size;
         public string Length;
-        public string FilePath;
+        public string link_Video;
 
         private static VideoInfo instance;
 
@@ -39,6 +40,13 @@ namespace MuViPApp.Video
 
         }
 
+        private Image picture_Song;
+        public Image Picture_Song
+        {
+            get { return picture_Song; }
+            set { picture_Song = value; }
+        }
+
         public VideoInfo() { } 
         public VideoInfo(string path)
         {
@@ -49,8 +57,26 @@ namespace MuViPApp.Video
                 this.Date = info.CreationTime.ToString();
                 this.Size = SizeFile(info);
                 this.Length = Duration(path);
-                this.FilePath = path;
+                this.Link_Video = path;
+                var fileTag = TagLib.File.Create(info.FullName);
+                Image temp = null;
+                if (fileTag.Tag.Pictures.Length >= 1)
+                {
+                    var bin = (byte[])(fileTag.Tag.Pictures[0].Data.Data);
+                    temp = Image.FromStream(new MemoryStream(bin)).GetThumbnailImage(100, 100, null, IntPtr.Zero);
+                }
+                else
+                {
+                    temp = new Bitmap(Properties.Resources.songImg);
+                }
+                this.Picture_Song = temp;
             }
+        }
+
+        public string Link_Video
+        {
+            get { return link_Video; }
+            set { link_Video = value; }
         }
     }
 }

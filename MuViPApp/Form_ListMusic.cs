@@ -279,6 +279,9 @@ namespace MuViPApp
             if (lv_My_Music.SelectedItems.Count > 0)
             {
                 ListMusicLiked.Instance.Remove(new Music_Song(lv_My_Music.SelectedItems[0].SubItems[6].Text));
+                
+                lv_My_Music.Items.Clear();
+                LoadMusic();
             }
         }
 

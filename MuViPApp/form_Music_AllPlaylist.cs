@@ -43,15 +43,15 @@ namespace MuViPApp
             switch (cb_Sortby.selectedIndex)
             {
                 case 0:
-                    var All_ListPl_Sortby_Name = Playlist.Instance.GetAllPlayListMusic().OrderBy(L => L.Name_PL);
+                    List<PlayListInfo> listInfos = Playlist.Instance.GetAllPlayListMusic().OrderBy(L => L.Name_PL).ToList();
                     Playlist.Instance.Remove();
-                    foreach (PlayListInfo item in All_ListPl_Sortby_Name)
+                    foreach (PlayListInfo item in listInfos)
                     {
                         Playlist.Instance.AddItems(item);
                     }
                     break;
                 case 1:
-                    var All_ListPl_Sortby_Date = Playlist.Instance.GetAllPlayListMusic().OrderBy(L => L.Date_Create);
+                    List<PlayListInfo> All_ListPl_Sortby_Date = Playlist.Instance.GetAllPlayListMusic().OrderBy(L => L.Date_Create).ToList();
                     Playlist.Instance.Remove();
                     foreach (PlayListInfo item in All_ListPl_Sortby_Date)
                     {
@@ -59,6 +59,7 @@ namespace MuViPApp
                     }
                     break;
             }
+            Playlist.Instance.Export();
             ShowPlayList();
         }
         #endregion

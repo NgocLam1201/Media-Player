@@ -76,8 +76,8 @@ namespace MuViPApp
             contextMenuStrip.Items.Add("Delete");
             contextMenuStrip.ItemClicked += (s, e) =>
             {
-                Playlist.Instance.Remove(Number_song);
-                Playlist.Instance.Export();
+                PlaylistVideo.Instance.Remove(Number_song);
+                PlaylistVideo.Instance.Export();
                 this.parent.openChildForm(new form_Music_AllPlaylist());
             };
             this.ContextMenuStrip = contextMenuStrip;

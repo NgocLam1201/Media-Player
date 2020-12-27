@@ -15,7 +15,7 @@ namespace MuViPApp
     public partial class ListVideo : Form
     {
         public Form_Muvip parent;
-        List<VideoInfo> ListVid = new List<VideoInfo>();
+        public List<VideoInfo> ListVid = new List<VideoInfo>();
         public SubPanelSelectVideo sp_Select;
         public Form_Delete form_Delete = new Form_Delete();
         ToolStripMenuItem toolStripMenuItem = new ToolStripMenuItem();
@@ -24,6 +24,7 @@ namespace MuViPApp
             this.parent = parent;
             this.ListVid = ListVid;
             InitializeComponent();
+            listView_myvideo.Sorting = SortOrder.None;
             ShowListVid();
             for (int i = 0; i < this.listView_myvideo.SelectedItems.Count; i++)
             {
@@ -51,11 +52,21 @@ namespace MuViPApp
         }
         public void ShowListVid()
         {
+            int i = 0;
+            ImageList listlargeimage = new ImageList();
+            ImageList listsmallimage = new ImageList();
             foreach (VideoInfo item in ListVid)
             {
-                ListViewItem items = new ListViewItem(new[] { item.Name, item.Date, item.Size, item.Length, item.Length, item.FilePath });
+                ListViewItem items = new ListViewItem(new[] { item.Name, item.Date, item.Size, item.Length, item.Length, item.Link_Video });
                 listView_myvideo.Items.Add(items);
+                items.ImageIndex = i++;
+                listlargeimage.ImageSize = new Size(100, 100);
+                listlargeimage.Images.Add(item.Picture_Song);
+                listsmallimage.ImageSize = new Size(30, 30);
+                listsmallimage.Images.Add(item.Picture_Song);
             }
+            listView_myvideo.LargeImageList = listlargeimage;
+            listView_myvideo.SmallImageList = listsmallimage;
         }
 
         public void Video_Click(object sender, EventArgs e)
@@ -78,6 +89,8 @@ namespace MuViPApp
                 {
                     ListVideoPlaying.Instance.AddItems(new VideoInfo(listView_myvideo.Items[i].SubItems[5].Text));
                 }
+            //ListVideoPlaying.Instance.export();
+            //this.parent.PlayMusic(0);
             this.parent.btn_NowPlaying.selected = true;
             this.parent.btn_My_Video.selected = false;
             this.parent.openChildForm(new form_Video_Nowpl());
@@ -165,30 +178,33 @@ namespace MuViPApp
 
         public void DeleteVideo()
         {
-            if (this.parent.btn_My_Video.selected == true)
+            if (listView_myvideo.SelectedItems.Count > 0)
             {
-                form_Delete.StartPosition = FormStartPosition.CenterParent;
-                form_Delete.title.Text += listView_myvideo.SelectedItems.Count+1 + " selected item(s).";
-                if (form_Delete.ShowDialog() == DialogResult.OK)
+                if(this.parent.btn_My_Video.selected == true)
                 {
-                    if (form_Delete.delete_on_this_PC == true)
+                    form_Delete.StartPosition = FormStartPosition.CenterParent;
+                    form_Delete.title.Text += listView_myvideo.SelectedItems.Count + 1 + " selected item(s).";
+                    if (form_Delete.ShowDialog() == DialogResult.OK)
                     {
-                        for (int i = 0; i < listView_myvideo.SelectedItems.Count; i++)
+                        if (form_Delete.delete_on_this_PC == true)
                         {
-                            File.Delete(listView_myvideo.SelectedItems[i].SubItems[6].Text);
-                            ListVid.Remove(new VideoInfo(listView_myvideo.SelectedItems[i].SubItems[6].Text));
+                            for (int i = 0; i < listView_myvideo.SelectedItems.Count; i++)
+                            {
+                                File.Delete(listView_myvideo.SelectedItems[i].SubItems[6].Text);
+                                ListVid.Remove(new VideoInfo(listView_myvideo.SelectedItems[i].SubItems[6].Text));
+                            }
                         }
                     }
                 }
+                for (int i = 0; i < listView_myvideo.SelectedItems.Count; i++)
+                {
+                    ListVid.Remove(new VideoInfo(listView_myvideo.SelectedItems[i].SubItems[6].Text));
+                }
+                ListVideoPlaying.Instance.export();
+                PlayListInfoVideo.Instance.Export();
+                ListVideoLiked.Instance.export();
+                ShowListVid();
             }
-            for (int i = 0; i < listView_myvideo.SelectedItems.Count; i++)
-            {
-                ListVid.Remove(new VideoInfo(listView_myvideo.SelectedItems[i].SubItems[6].Text));
-            }
-            ListVideoPlaying.Instance.export();
-            PlayListInfoVideo.Instance.Export();
-            ListVideoLiked.Instance.export();
-            ShowListVid();
         }
 
         public void SelectAll()
@@ -213,6 +229,8 @@ namespace MuViPApp
             {
                 P_list.AddItems(new VideoInfo(listView_myvideo.SelectedItems[i].SubItems[2].Text));
             }
+            ///////////////////////////////////////////////////////////
+            P_list.Export();
         }
 
         public void AddtoNowPlaying()
@@ -243,12 +261,19 @@ namespace MuViPApp
         }
         private void likeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (listView_myvideo.SelectedItems.Count > 0)
+            {
+                ListVideoLiked.Instance.AddItems(new VideoInfo(listView_myvideo.SelectedItems[0].SubItems[6].Text));
+                ListVideoLiked.Instance.export();
+            }
         }
 
         private void unlikeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (listView_myvideo.SelectedItems.Count > 0)
+            {
+                ListVideoLiked.Instance.Remove(new VideoInfo(listView_myvideo.SelectedItems[0].SubItems[6].Text));
+            }
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -258,7 +283,8 @@ namespace MuViPApp
 
         private void playToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Video_Click(this, new EventArgs());
+            if (listView_myvideo.SelectedItems.Count > 0)
+                Video_Click(this, new EventArgs());
         }
 
         private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
