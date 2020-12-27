@@ -13,9 +13,9 @@ namespace MuViPApp
 {
     public partial class Form_Video_Playlist : Form
     {
-        Video_Playlist parent;
+        public Video_Playlist parent;
         ListVideo lvideo;
-
+        ContextMenuStrip toolStrip = new ContextMenuStrip();
         public Form_Video_Playlist(Video_Playlist parent = null)
         {
             this.parent = parent;
@@ -23,6 +23,7 @@ namespace MuViPApp
             lb_NamePl.Text = this.parent.NamePlay;
             this.parent.parent.Is_Playing_NowPlaying = false;
             LoadListVideo();
+            toolStrip.ItemClicked += ClickItem;
         }
 
         private void LoadListVideo()
@@ -41,27 +42,60 @@ namespace MuViPApp
 
         private void btn_Rename_Click(object sender, EventArgs e)
         {
-            form_Rename_pl form_Rename = new form_Rename_pl();
-            if (form_Rename.ShowDialog(this) == DialogResult.OK)
-            {
-                this.lb_NamePl.Text = form_Rename.ReName;
-                Playlist.Instance.GetListMusic(this.parent.ID_Playlist).Name_PL = lb_NamePl.Text;
-            }
+            form_Rename_pl form_Rename = new form_Rename_pl(this);
+            form_Rename.StartPosition = FormStartPosition.CenterParent;
+            form_Rename.ShowDialog();
         }
 
         private void btn_Playall_Click(object sender, EventArgs e)
         {
-            //lvideo.PlayAllVideo();
+            lvideo.PlayAllVideo();
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            //FlistMusic.DeleteMusic();
+            lvideo.DeleteVideo();
+        }
+
+        private void ClickItem(object sender, ToolStripItemClickedEventArgs e)
+        {
+            switch (e.ClickedItem.Text)
+            {
+                case "Now playing":
+                    lvideo.AddtoNowPlaying();
+                    break;
+                case "New playlist":
+                    lvideo.AddToNewPlaylist();
+                    break;
+                default:
+                    foreach (PlayListInfoVideo item in PlaylistVideo.Instance.GetAllPlayListVideo())
+                    {
+                        if (item.Name_PL == e.ClickedItem.Text)
+                        {
+                            lvideo.AddToPlaylist(item);
+                            break;
+                        }
+                    }
+                    break;
+            }
+            toolStrip = null;
+            lvideo.AfterClick();
         }
 
         private void btn_Addto_Click(object sender, EventArgs e)
         {
-
+            toolStrip.Items.Add("Now playing");
+            toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
+            toolStrip.Items.Add("-");
+            toolStrip.Items.Add("New playlist");
+            foreach (PlayListInfoVideo item in PlaylistVideo.Instance.GetAllPlayListVideo())
+            {
+                toolStrip.Items.Add(item.Name_PL);
+            }
+            toolStrip.Show(MousePosition);
+            toolStrip.BringToFront();
+            toolStrip.GripStyle = ToolStripGripStyle.Hidden;
+            toolStrip.Dock = DockStyle.None;
         }
     }
 }

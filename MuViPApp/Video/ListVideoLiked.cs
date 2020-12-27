@@ -68,14 +68,14 @@ namespace MuViPApp.Video
         public void Remove()
         {
             list_VidLiked.Clear();
+            export();
         }
 
-        /*
         public void Remove(int index)
         {
             list_VidLiked.RemoveAt(index);
+            export();
         }
-        */
 
         public void Remove(VideoInfo video)
         {

@@ -53,7 +53,7 @@ namespace MuViPApp
             {
                 PlaylistVideo.Instance.Remove(Number_song);
                 PlaylistVideo.Instance.Export();
-                this.parent.openChildForm(new form_Music_AllPlaylist());
+                this.parent.openChildForm(new form_Video_AllPlaylist());
             };
             this.ContextMenuStrip = contextMenuStrip;
 
@@ -78,10 +78,9 @@ namespace MuViPApp
             {
                 PlaylistVideo.Instance.Remove(Number_song);
                 PlaylistVideo.Instance.Export();
-                this.parent.openChildForm(new form_Music_AllPlaylist());
+                this.parent.openChildForm(new form_Video_AllPlaylist());
             };
             this.ContextMenuStrip = contextMenuStrip;
-
         }
 
         

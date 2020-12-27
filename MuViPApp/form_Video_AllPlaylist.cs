@@ -14,7 +14,9 @@ namespace MuViPApp
     public partial class form_Video_AllPlaylist : Form
     {
         Form_Muvip parent;
-        public form_Video_AllPlaylist(Form_Muvip parent)
+        List<Video_Playlist> listpl = new List<Video_Playlist>();
+
+        public form_Video_AllPlaylist(Form_Muvip parent = null)
         {
             this.parent = parent;
             InitializeComponent();
@@ -24,7 +26,7 @@ namespace MuViPApp
         void ShowPlayList()
         {
             FLP_videoplaylist.Controls.Clear();
-            List<Video_Playlist> listpl = new List<Video_Playlist>();
+            listpl.Clear();
             for (int i = 0; i < PlaylistVideo.Instance.GetAllPlayListVideo().Count; i++)
             {
                 PlayListInfoVideo Playlistvideo = PlaylistVideo.Instance.GetListVideo(i);
@@ -36,24 +38,26 @@ namespace MuViPApp
 
         private void cb_Sortby_onItemSelected(object sender, EventArgs e)
         {
+            List<PlayListInfoVideo> listInfos = PlaylistVideo.Instance.GetAllPlayListVideo();
             switch (cb_Sortby.selectedIndex)
             {
-                case 0:
-                    List<PlayListInfoVideo> listInfos = PlaylistVideo.Instance.GetAllPlayListVideo().OrderBy(L => L.Name_PL).ToList();
-                    PlaylistVideo.Instance.Remove();
-                    foreach (PlayListInfoVideo item in listInfos)
-                    {
-                        PlaylistVideo.Instance.AddItems(item);
-                    }
-                    break;
                 case 1:
-                    List<PlayListInfoVideo> All_ListPl_Sortby_Date = PlaylistVideo.Instance.GetAllPlayListVideo().OrderBy(L => L.Date_Create).ToList();
-                    PlaylistVideo.Instance.Remove();
-                    foreach (PlayListInfoVideo item in All_ListPl_Sortby_Date)
-                    {
-                        PlaylistVideo.Instance.AddItems(item);
-                    }
+                    listInfos = listInfos.OrderBy(L => L.Name_PL).ToList();
                     break;
+                case 2:
+                    listInfos = listInfos.OrderByDescending(L => L.Name_PL).ToList();
+                    break;
+                case 3:
+                    listInfos = listInfos.OrderByDescending(L => L.Date_Create).ToList();
+                    break;
+                default:
+                    listInfos = listInfos.OrderBy(L => L.Date_Create).ToList();
+                    break;
+            }
+            PlaylistVideo.Instance.Remove();
+            foreach (PlayListInfoVideo item in listInfos)
+            {
+                PlaylistVideo.Instance.AddItems(item);
             }
             PlaylistVideo.Instance.Export();
             ShowPlayList();

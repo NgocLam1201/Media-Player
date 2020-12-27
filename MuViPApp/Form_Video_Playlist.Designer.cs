@@ -169,6 +169,7 @@
             this.btn_Rename.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Rename.Textcolor = System.Drawing.Color.White;
             this.btn_Rename.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Rename.Click += new System.EventHandler(this.btn_Rename_Click);
             // 
             // btn_Addto
             // 
@@ -206,6 +207,7 @@
             this.btn_Addto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Addto.Textcolor = System.Drawing.Color.White;
             this.btn_Addto.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Addto.Click += new System.EventHandler(this.btn_Addto_Click);
             // 
             // btn_Playall
             // 

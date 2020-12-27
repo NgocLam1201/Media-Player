@@ -63,5 +63,17 @@ namespace MuViPApp.Video
         {
             ListVideo.RemoveAt(index);
         }
+
+        public void Remove(VideoInfo video)
+        {
+            for (int i = 0; i < ListVideo.Count; i++)
+            {
+                if (video.Link_Video == ListVideo[i].Link_Video)
+                {
+                    ListVideo.RemoveAt(i);
+                    break;
+                }
+            }
+        }
     }
 }

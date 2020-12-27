@@ -35,7 +35,7 @@ namespace MuViPApp
             {
                 if (File.Exists(Name_PL + ".txt"))
                 {
-                    File.Move(Name_PL + ".txt", value);
+                    File.Move(Name_PL + ".txt", value + ".txt");
                     File.Delete(Name_PL + ".txt");
                 }
                 name_PL = value;
@@ -49,7 +49,6 @@ namespace MuViPApp
             set { date_Create = value; }
         }
 
-        private List<VideoInfo> Listmusic = new List<VideoInfo>();
         public void Import()
         {
             string path = this.Name_PL + ".txt";
@@ -61,7 +60,7 @@ namespace MuViPApp
                 while ((lines = sr.ReadLine()) != null)
                 {
                     if (File.Exists(lines))
-                        Listmusic.Add(new VideoInfo(lines));
+                        Listvideo.Add(new VideoInfo(lines));
                 }
                 sr.Close();
             }
@@ -73,7 +72,7 @@ namespace MuViPApp
                 File.Delete(this.Name_PL + ".txt");
             using (StreamWriter sw = new StreamWriter(this.Name_PL + ".txt", true))
             {
-                foreach (VideoInfo item in Listmusic)
+                foreach (VideoInfo item in Listvideo)
                 {
                     sw.WriteLine(item.Link_Video);
                 }
@@ -107,6 +106,19 @@ namespace MuViPApp
         public void Remove(int index)
         {
             Listvideo.RemoveAt(index);
+        }
+
+        public void Remove(VideoInfo video)
+        {
+            for (int i = 0; i < Listvideo.Count; i++)
+            {
+                if (video.Link_Video == Listvideo[i].Link_Video)
+                {
+                    Listvideo.RemoveAt(i);
+                    break;
+                }
+            }
+            Export();
         }
     }
 }

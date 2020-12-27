@@ -8,7 +8,7 @@ namespace MuViPApp
 {
     public partial class form_Music_Playlist : Form
     {
-        Music_Playlist parent;
+        public Music_Playlist parent;
         Form_ListMusic FlistMusic;
         ContextMenuStrip toolStrip = new ContextMenuStrip();
 
@@ -38,13 +38,9 @@ namespace MuViPApp
 
         private void btn_Rename_Click(object sender, EventArgs e)
         {
-            form_Rename_pl form_Rename = new form_Rename_pl();
-            if (form_Rename.ShowDialog(this) == DialogResult.OK)
-            {
-                this.lb_NamePl.Text = form_Rename.ReName;
-                Playlist.Instance.GetListMusic(this.parent.ID_Playlist).Name_PL = lb_NamePl.Text;
-                Playlist.Instance.Export();
-            }
+            form_Rename_pl form_Rename = new form_Rename_pl(this);
+            form_Rename.StartPosition = FormStartPosition.CenterParent;
+            form_Rename.ShowDialog();
         }
 
         private void btn_Playall_Click(object sender, EventArgs e)
@@ -54,7 +50,7 @@ namespace MuViPApp
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            FlistMusic.DeleteMusic();
+            FlistMusic.DeleteMusic(this.parent.ID_Playlist);
         }
 
         private void btn_Addto_Click(object sender, EventArgs e)

@@ -36,10 +36,10 @@ namespace MuViPApp.Music
             {
                 if (File.Exists(Name_PL + ".txt"))
                 {
-                    File.Move(Name_PL + ".txt", value); 
+                    File.Move(Name_PL + ".txt", value + ".txt"); 
                     File.Delete(Name_PL + ".txt");
                 }
-                    name_PL = value;
+                name_PL = value;
             }
         }
 
@@ -106,6 +106,18 @@ namespace MuViPApp.Music
         public void Remove(int index)
         {
             Listmusic.RemoveAt(index);
+        }
+
+        public void Remove(Music_Song music_Song)
+        {
+            for (int i = 0; i < Listmusic.Count; i++)
+            {
+                if (music_Song.Link_Music == Listmusic[i].Link_Music)
+                {
+                    Listmusic.RemoveAt(i);
+                    break;
+                }
+            }
         }
     }
 }

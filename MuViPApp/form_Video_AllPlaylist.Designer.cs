@@ -34,9 +34,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FLP_videoplaylist = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lb_AllPl_Title = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cb_Sortby = new Bunifu.Framework.UI.BunifuDropdown();
+            this.lb_AllPl_Title = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -82,17 +82,6 @@
             this.panel2.Size = new System.Drawing.Size(800, 100);
             this.panel2.TabIndex = 0;
             // 
-            // lb_AllPl_Title
-            // 
-            this.lb_AllPl_Title.AutoSize = true;
-            this.lb_AllPl_Title.Font = new System.Drawing.Font("Microsoft Tai Le", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_AllPl_Title.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_AllPl_Title.Location = new System.Drawing.Point(25, 8);
-            this.lb_AllPl_Title.Name = "lb_AllPl_Title";
-            this.lb_AllPl_Title.Size = new System.Drawing.Size(134, 47);
-            this.lb_AllPl_Title.TabIndex = 5;
-            this.lb_AllPl_Title.Text = "Playlist";
-            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -114,17 +103,30 @@
             this.cb_Sortby.Font = new System.Drawing.Font("Microsoft Tai Le", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_Sortby.ForeColor = System.Drawing.Color.MediumOrchid;
             this.cb_Sortby.Items = new string[] {
+        "Default",
         "A to Z",
+        "Z to A",
         "Date modified"};
             this.cb_Sortby.Location = new System.Drawing.Point(649, 64);
             this.cb_Sortby.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cb_Sortby.Name = "cb_Sortby";
             this.cb_Sortby.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
             this.cb_Sortby.onHoverColor = System.Drawing.Color.GhostWhite;
-            this.cb_Sortby.selectedIndex = 0;
+            this.cb_Sortby.selectedIndex = -1;
             this.cb_Sortby.Size = new System.Drawing.Size(125, 18);
             this.cb_Sortby.TabIndex = 6;
             this.cb_Sortby.onItemSelected += new System.EventHandler(this.cb_Sortby_onItemSelected);
+            // 
+            // lb_AllPl_Title
+            // 
+            this.lb_AllPl_Title.AutoSize = true;
+            this.lb_AllPl_Title.Font = new System.Drawing.Font("Microsoft Tai Le", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_AllPl_Title.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_AllPl_Title.Location = new System.Drawing.Point(25, 8);
+            this.lb_AllPl_Title.Name = "lb_AllPl_Title";
+            this.lb_AllPl_Title.Size = new System.Drawing.Size(134, 47);
+            this.lb_AllPl_Title.TabIndex = 5;
+            this.lb_AllPl_Title.Text = "Playlist";
             // 
             // form_Video_AllPlaylist
             // 

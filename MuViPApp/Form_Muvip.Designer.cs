@@ -959,11 +959,7 @@
         private System.Windows.Forms.TextBox title;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
-        private Bunifu.Framework.UI.BunifuFlatButton btn_Video;
-        private Bunifu.Framework.UI.BunifuFlatButton btn_Music;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Add;
-        private Bunifu.Framework.UI.BunifuFlatButton btn_Playlist;
-        private Bunifu.Framework.UI.BunifuFlatButton btn_History;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Exit;
         private System.Windows.Forms.Panel Menuside;
         private System.Windows.Forms.Panel panel2;
@@ -988,6 +984,10 @@
         public Bunifu.Framework.UI.BunifuFlatButton btn_NowPlaying;
         public Bunifu.Framework.UI.BunifuFlatButton btn_My_Video;
         public Bunifu.Framework.UI.BunifuFlatButton btn_Liked;
+        public Bunifu.Framework.UI.BunifuFlatButton btn_Video;
+        public Bunifu.Framework.UI.BunifuFlatButton btn_Music;
+        public Bunifu.Framework.UI.BunifuFlatButton btn_Playlist;
+        public Bunifu.Framework.UI.BunifuFlatButton btn_History;
     }
 }
 

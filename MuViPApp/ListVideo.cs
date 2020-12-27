@@ -174,11 +174,14 @@ namespace MuViPApp
 
         public void PlayAllVideo()
         {
-            listView_myvideo.Items[0].Selected = true;
-            Video_Click(this, new EventArgs());
+            if (listView_myvideo.Items.Count > 0)
+            {
+                listView_myvideo.Items[0].Selected = true;
+                Video_Click(this, new EventArgs());
+            }
         }
 
-        public void DeleteVideo()
+        public void DeleteVideo(int ind = 0)
         {
             if (listView_myvideo.SelectedItems.Count > 0)
             {
@@ -193,17 +196,29 @@ namespace MuViPApp
                             for (int i = 0; i < listView_myvideo.SelectedItems.Count; i++)
                             {
                                 File.Delete(listView_myvideo.SelectedItems[i].SubItems[6].Text);
-                                ListVid.Remove(new VideoInfo(listView_myvideo.SelectedItems[i].SubItems[6].Text));
+                                ListMyVideo.Instance.Remove(new VideoInfo(listView_myvideo.SelectedItems[i].SubItems[5].Text));
                             }
                         }
                     }
                 }
-                for (int i = 0; i < listView_myvideo.SelectedItems.Count; i++)
-                {
-                    ListVid.Remove(new VideoInfo(listView_myvideo.SelectedItems[i].SubItems[6].Text));
-                }
+                else
+                    for (int i = 0; i < listView_myvideo.SelectedItems.Count; i++)
+                    {
+                        if (this.parent.btn_Liked.selected == true)
+                            ListVideoLiked.Instance.Remove(new VideoInfo(listView_myvideo.SelectedItems[i].SubItems[4].Text));
+                        else
+                            if (this.parent.btn_History.selected == true)
+                            ListVideoRecently.Instance.Remove(new VideoInfo(listView_myvideo.SelectedItems[i].SubItems[5].Text));
+                        else
+                            if (this.parent.btn_NowPlaying.selected == true)
+                            ListVideoPlaying.Instance.Remove(new VideoInfo(listView_myvideo.SelectedItems[i].SubItems[5].Text));
+                        else
+                        {
+                            PlaylistVideo.Instance.GetListVideo(ind).Remove(new VideoInfo(listView_myvideo.SelectedItems[i].SubItems[5].Text));
+                        }
+                    }
                 ListVideoPlaying.Instance.export();
-                PlayListInfoVideo.Instance.Export();
+                PlaylistVideo.Instance.GetListVideo(ind).Export();
                 ListVideoLiked.Instance.export();
                 ShowListVid();
             }

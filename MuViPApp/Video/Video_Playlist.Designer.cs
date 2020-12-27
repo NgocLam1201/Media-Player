@@ -50,8 +50,9 @@
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(125, 96);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(123, 96);
             this.bunifuGradientPanel1.TabIndex = 6;
+            this.bunifuGradientPanel1.Click += new System.EventHandler(this.Video_Playlist_Click);
             // 
             // bunifuImageButton1
             // 
@@ -59,7 +60,7 @@
             this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
             this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(18, 21);
+            this.bunifuImageButton1.Location = new System.Drawing.Point(17, 21);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
             this.bunifuImageButton1.Size = new System.Drawing.Size(82, 60);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -74,11 +75,12 @@
             this.lb_Number_Of_Video.AutoSize = true;
             this.lb_Number_Of_Video.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Number_Of_Video.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_Number_Of_Video.Location = new System.Drawing.Point(15, 118);
+            this.lb_Number_Of_Video.Location = new System.Drawing.Point(14, 117);
             this.lb_Number_Of_Video.Name = "lb_Number_Of_Video";
             this.lb_Number_Of_Video.Size = new System.Drawing.Size(85, 14);
             this.lb_Number_Of_Video.TabIndex = 5;
             this.lb_Number_Of_Video.Text = "Number of videos";
+            this.lb_Number_Of_Video.Click += new System.EventHandler(this.Video_Playlist_Click);
             // 
             // lb_Playlist_Name
             // 
@@ -86,24 +88,27 @@
             this.lb_Playlist_Name.AutoSize = true;
             this.lb_Playlist_Name.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Playlist_Name.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_Playlist_Name.Location = new System.Drawing.Point(7, 99);
+            this.lb_Playlist_Name.Location = new System.Drawing.Point(6, 98);
             this.lb_Playlist_Name.Name = "lb_Playlist_Name";
             this.lb_Playlist_Name.Size = new System.Drawing.Size(108, 17);
             this.lb_Playlist_Name.TabIndex = 4;
             this.lb_Playlist_Name.Text = "Playlist\'s Name";
+            this.lb_Playlist_Name.Click += new System.EventHandler(this.Video_Playlist_Click);
             // 
             // Video_Playlist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.bunifuGradientPanel1);
             this.Controls.Add(this.lb_Number_Of_Video);
             this.Controls.Add(this.lb_Playlist_Name);
             this.MaximumSize = new System.Drawing.Size(125, 132);
             this.MinimumSize = new System.Drawing.Size(125, 132);
             this.Name = "Video_Playlist";
-            this.Size = new System.Drawing.Size(125, 132);
+            this.Size = new System.Drawing.Size(123, 130);
+            this.Click += new System.EventHandler(this.Video_Playlist_Click);
             this.bunifuGradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);

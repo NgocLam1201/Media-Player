@@ -71,11 +71,28 @@ namespace MuViPApp.Video
         public void Remove()
         {
             List_VidPlaying.Clear();
+            export();
+
         }
 
         public void Remove(int index)
         {
             List_VidPlaying.RemoveAt(index);
+            export();
+
+        }
+
+        public void Remove(VideoInfo video)
+        {
+            for (int i = 0; i < List_VidPlaying.Count; i++)
+            {
+                if (video.Link_Video == List_VidPlaying[i].Link_Video)
+                {
+                    List_VidPlaying.RemoveAt(i);
+                    break;
+                }
+            }
+            export();
         }
     }
 }

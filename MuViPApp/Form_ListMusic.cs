@@ -181,11 +181,14 @@ namespace MuViPApp
 
         public void PlayAllMusic()
         {
-            lv_My_Music.Items[0].Selected = true;
-            Music_Click(this, new EventArgs());
+            if (lv_My_Music.Items.Count > 0)
+            {
+                lv_My_Music.Items[0].Selected = true;
+                Music_Click(this, new EventArgs());
+            }
         }
 
-        public void DeleteMusic()
+        public void DeleteMusic(int ind = 0)
         {
             if (lv_My_Music.SelectedItems.Count > 0)
             {
@@ -199,17 +202,28 @@ namespace MuViPApp
                         for (int i = 0; i < lv_My_Music.SelectedItems.Count; i++)
                         {
                             File.Delete(lv_My_Music.SelectedItems[i].SubItems[6].Text);
-                            Listmusic.Remove(new Music_Song(lv_My_Music.SelectedItems[i].SubItems[6].Text));
+                            ListMyMusic.Instance.Remove(new Music_Song(lv_My_Music.SelectedItems[i].SubItems[6].Text));
                         }
                     }
                 }
                 else
                     for (int i = 0; i < lv_My_Music.SelectedItems.Count; i++)
                     {
-                        Listmusic.Remove(new Music_Song(lv_My_Music.SelectedItems[i].SubItems[6].Text));
+                        if (this.parent.btn_Liked.selected == true) 
+                            ListMusicLiked.Instance.Remove(new Music_Song(lv_My_Music.SelectedItems[i].SubItems[6].Text));
+                        else
+                        if (this.parent.btn_History.selected == true)
+                            ListMusicRecently.Instance.Remove(new Music_Song(lv_My_Music.SelectedItems[i].SubItems[6].Text));
+                        else
+                        if (this.parent.btn_NowPlaying.selected == true)
+                            ListMusicPlaying.Instance.Remove(new Music_Song(lv_My_Music.SelectedItems[i].SubItems[6].Text));
+                        else
+                        {
+                            Playlist.Instance.GetListMusic(ind).Remove(new Music_Song(lv_My_Music.SelectedItems[i].SubItems[6].Text));
+                        }    
                     }
                 ListMusicPlaying.Instance.export();
-                PlayListInfo.Instance.Export();
+                Playlist.Instance.GetListMusic(ind).Export();
                 ListMusicLiked.Instance.export();
                 lv_My_Music.Items.Clear();
                 LoadMusic();

@@ -75,7 +75,6 @@ namespace MuViPApp
                 this.parent.openChildForm(new form_Music_AllPlaylist());
             };
             this.ContextMenuStrip = contextMenuStrip;
-
         }
 
         private void Music_Playlist_Click(object sender, EventArgs e)

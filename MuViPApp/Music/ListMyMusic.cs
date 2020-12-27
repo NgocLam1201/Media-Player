@@ -27,7 +27,7 @@ namespace MuViPApp.Music
                     foreach (var child in Directory.GetFiles(item))
                     {
                         FileInfo info = new FileInfo(child);
-                        if (info.Extension == ".mp3")
+                        if (info.Extension == ".mp3" || info.Extension ==  "wav" || info.Extension == "aiff" || info.Extension == "acc")
                         {
                             Listmusic.Add(new Music_Song(info.FullName));
                         }
@@ -61,6 +61,18 @@ namespace MuViPApp.Music
         public void Remove(int index)
         {
             Listmusic.RemoveAt(index);
+        }
+
+        public void Remove(Music_Song music_Song)
+        {
+            for (int i = 0; i < Listmusic.Count; i++)
+            {
+                if (music_Song.Link_Music == Listmusic[i].Link_Music)
+                {
+                    Listmusic.RemoveAt(i);
+                    break;
+                }
+            }
         }
     }
 }
