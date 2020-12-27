@@ -32,7 +32,7 @@ namespace MuViPApp.Music
                     if (File.Exists(lines))
                         Listmusic.Add(new Music_Song(lines));
                 }
-                sr.Close()
+                sr.Close();
             }
             for (int i=0;i<Listmusic.Count/2;i++)
             {
