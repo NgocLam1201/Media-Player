@@ -33,7 +33,15 @@ namespace MuViPApp.Music
                 while ((lines = sr.ReadLine()) != null)
                 {
                     if (File.Exists(lines))
-                        Listmusic.Add(new Music_Song(lines));
+                        foreach (string  item in ListFolderLocalMusic.Instance.GetLink())
+                        {
+                            if (lines.Contains(item))
+                            {
+                                Listmusic.Add(new Music_Song(lines));
+                                break;
+                            }    
+                        }
+                        
                 }
                 sr.Close();
             }
@@ -42,6 +50,7 @@ namespace MuViPApp.Music
         public void AddItems(Music_Song item)
         {
             Listmusic.Add(item);
+            export();
         }
 
         public void export()

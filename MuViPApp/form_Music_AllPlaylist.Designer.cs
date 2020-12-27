@@ -57,7 +57,9 @@
             this.cb_Sortby.Font = new System.Drawing.Font("Microsoft Tai Le", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_Sortby.ForeColor = System.Drawing.Color.MediumOrchid;
             this.cb_Sortby.Items = new string[] {
+        "Default",
         "A to Z",
+        "Z to A",
         "Date modified"};
             this.cb_Sortby.Location = new System.Drawing.Point(642, 74);
             this.cb_Sortby.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);

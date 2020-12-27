@@ -999,7 +999,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_Video;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Music;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Add;
-        private Bunifu.Framework.UI.BunifuFlatButton btn_Liked;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Playlist;
         private Bunifu.Framework.UI.BunifuFlatButton btn_History;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Help;
@@ -1026,6 +1025,7 @@
         public Bunifu.Framework.UI.BunifuFlatButton btn_My_Music;
         public Bunifu.Framework.UI.BunifuFlatButton btn_NowPlaying;
         public Bunifu.Framework.UI.BunifuFlatButton btn_My_Video;
+        public Bunifu.Framework.UI.BunifuFlatButton btn_Liked;
     }
 }
 

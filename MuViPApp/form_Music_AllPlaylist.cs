@@ -15,7 +15,7 @@ namespace MuViPApp
     public partial class form_Music_AllPlaylist : Form
     {
         Form_Muvip parent;
-
+        List<Music_Playlist> listpl = new List<Music_Playlist>();
         public form_Music_AllPlaylist(Form_Muvip parent = null)
         {
             this.parent = parent;
@@ -26,12 +26,11 @@ namespace MuViPApp
         void ShowPlayList()
         {
             FLP_playlist.Controls.Clear();
-            List<Music_Playlist> listpl = new List<Music_Playlist>();
+            listpl.Clear();
             for (int i = 0; i < Playlist.Instance.GetAllPlayListMusic().Count; i++)
             {
                 PlayListInfo Playlistmusic = Playlist.Instance.GetListMusic(i);
                 Music_Playlist music_Playlist = new Music_Playlist(i,Playlistmusic.Name_PL, Playlistmusic.GetMusic().Count,this.parent);
-                music_Playlist.Dock = DockStyle.Top;
                 listpl.Add(music_Playlist);
                 FLP_playlist.Controls.Add(listpl[i]);
             }
@@ -40,25 +39,28 @@ namespace MuViPApp
         #region Events
         private void cb_Sortby_onItemSelected(object sender, EventArgs e)
         {
+            List<PlayListInfo> listInfos = Playlist.Instance.GetAllPlayListMusic();
             switch (cb_Sortby.selectedIndex)
             {
-                case 0:
-                    var All_ListPl_Sortby_Name = Playlist.Instance.GetAllPlayListMusic().OrderBy(L => L.Name_PL);
-                    Playlist.Instance.Remove();
-                    foreach (PlayListInfo item in All_ListPl_Sortby_Name)
-                    {
-                        Playlist.Instance.AddItems(item);
-                    }
-                    break;
                 case 1:
-                    var All_ListPl_Sortby_Date = Playlist.Instance.GetAllPlayListMusic().OrderBy(L => L.Date_Create);
-                    Playlist.Instance.Remove();
-                    foreach (PlayListInfo item in All_ListPl_Sortby_Date)
-                    {
-                        Playlist.Instance.AddItems(item);
-                    }
+                    listInfos = listInfos.OrderBy(L => L.Name_PL).ToList();
+                    break;
+                case 2:
+                    listInfos = listInfos.OrderByDescending(L => L.Name_PL).ToList();
+                    break;
+                case 3:
+                    listInfos = listInfos.OrderByDescending(L => L.Date_Create).ToList();
+                    break;
+                default:
+                    listInfos = listInfos.OrderBy(L => L.Date_Create).ToList();
                     break;
             }
+            Playlist.Instance.Remove();
+            foreach (PlayListInfo item in listInfos)
+            {
+                Playlist.Instance.AddItems(item);
+            }
+            Playlist.Instance.Export();
             ShowPlayList();
         }
         #endregion

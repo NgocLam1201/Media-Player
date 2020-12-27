@@ -20,9 +20,9 @@ namespace MuViPApp.Music
 
         public PlayListInfo() { }
 
-        public PlayListInfo(DateTime date_create,string name_PL, List<Music_Song> listmusic = null) 
+        public PlayListInfo(string date_create,string name_PL, List<Music_Song> listmusic = null) 
         {
-            this.Date_Create = date_Create;
+            this.Date_Create = date_create;
             Name_PL = name_PL;
             this.Listmusic = listmusic;
             Import();
@@ -43,8 +43,8 @@ namespace MuViPApp.Music
             }
         }
 
-        private DateTime date_Create;
-        public DateTime Date_Create
+        private string date_Create;
+        public string Date_Create
         {
             get { return date_Create; }
             set { date_Create = value; }

@@ -57,7 +57,7 @@ namespace MuViPApp
         public void openChildForm(Form childForm)
         {
             if (activeForm != null)
-                activeForm.Close();
+                pn_Childform.Controls.Remove(activeForm);
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -67,6 +67,7 @@ namespace MuViPApp
             childForm.BringToFront();
             childForm.Show();
         }
+
         public void SetActive_PanelPlayer()
         {
             if (btn_Music.selected == true)
@@ -132,13 +133,12 @@ namespace MuViPApp
             };
             using (ofd_music)
             {
-                
                 if (ofd_music.ShowDialog() == DialogResult.OK)
                 {
                     FileInfo fileInfo = new FileInfo(ofd_music.FileName);
                     ListFolderLocalMusic.Instance.Additem(fileInfo.FullName);
                     ListFolderLocalMusic.Instance.Export();
-                    this.openChildForm(new Form_My_Music(this));
+                    openChildForm(new Form_My_Music(this));
                 }
             }
         }

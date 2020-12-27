@@ -77,10 +77,10 @@ namespace MuViPApp
                 if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
                 {
                     ListFolderLocalMusic.Instance.Additem(fbd.SelectedPath);
+                    ListFolderLocalMusic.Instance.Export();
+                    ShowListMusic();
                 }
             }
-            ListFolderLocalMusic.Instance.Export();
-            ShowListMusic();
         }
 
         private void ClickItem(object sender, ToolStripItemClickedEventArgs e)

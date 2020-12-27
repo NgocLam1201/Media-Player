@@ -56,7 +56,7 @@ namespace MuViPApp
                 }
                 if (check == true)
                 {
-                    Playlist.Instance.AddItems(new PlayListInfo(DateTime.Now, tb_Name.Text, listMusic));
+                    Playlist.Instance.AddItems(new PlayListInfo(DateTime.Now.ToString(), tb_Name.Text, listMusic));
                     form_Music_Playlist NewForm = new form_Music_Playlist(new Music_Playlist(Playlist.Instance.GetAllPlayListMusic().Count - 1, this.tb_Name.Text, 0, this.parent));
                     this.parent.openChildForm(NewForm);
                     Playlist.Instance.Export();

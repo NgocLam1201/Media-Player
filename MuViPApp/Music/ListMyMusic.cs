@@ -33,8 +33,8 @@ namespace MuViPApp.Music
                         }
                     }
                 else
-                    if (File.Exists(item))
-                        Listmusic.Add(new Music_Song(item));
+                    if (File.Exists(item) && item.Contains(".mp3"))
+                    Listmusic.Add(new Music_Song(item));
             }
         }        
 

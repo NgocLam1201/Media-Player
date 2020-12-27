@@ -36,7 +36,7 @@ namespace MuViPApp
                 {
                     string[] words = lines.Split('\t');
                     playListInfo.Name_PL = words[0];
-                    playListInfo.Date_Create = Convert.ToDateTime(words[1]);
+                    playListInfo.Date_Create = words[1];
                     playListInfo.Import();
                     Listmusic.Add(playListInfo);
                 }
@@ -77,11 +77,14 @@ namespace MuViPApp
         public void Remove()
         {
             Listmusic.Clear();
+            Export();
         }
 
         public void Remove(int index)
         {
+            File.Delete(Listmusic[index].Name_PL + ".txt");
             Listmusic.RemoveAt(index);
+            Export();
         }
     }
 }

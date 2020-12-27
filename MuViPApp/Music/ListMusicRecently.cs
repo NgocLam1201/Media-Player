@@ -93,7 +93,14 @@ namespace MuViPApp.Music
 
         public void Remove(Music_Song music_Song)
         {
-            Listmusic.Remove(music_Song);
+            for (int i = 0; i < Listmusic.Count; i++)
+            {
+                if (music_Song.Link_Music == Listmusic[i].Link_Music)
+                {
+                    Listmusic.RemoveAt(i);
+                    break;
+                }
+            }
         }
     }
 }
