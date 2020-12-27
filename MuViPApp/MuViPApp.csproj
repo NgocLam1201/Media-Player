@@ -210,19 +210,6 @@
     <Compile Include="SubPanelSelect.Designer.cs">
       <DependentUpon>SubPanelSelect.cs</DependentUpon>
     </Compile>
-    <Compile Include="Video\Classes\ControlCentre.cs" />
-    <Compile Include="Video\Data\ListMyVideo.cs" />
-    <Compile Include="Video\Data\ListVideoLiked.cs" />
-    <Compile Include="Video\Data\ListVideoPlaying.cs" />
-    <Compile Include="Video\Data\PlayListInfoVideo.cs" />
-    <Compile Include="Video\Data\PlaylistVideo.cs" />
-    <Compile Include="Video\Data\VideoInfo.cs" />
-    <Compile Include="Video\Data\Video_Playlist.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Video\Data\Video_Playlist.Designer.cs">
-      <DependentUpon>Video_Playlist.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Form_Delete.resx">
       <DependentUpon>Form_Delete.cs</DependentUpon>
     </EmbeddedResource>
@@ -295,9 +282,6 @@
     </Compile>
     <EmbeddedResource Include="SubPanelSelect.resx">
       <DependentUpon>SubPanelSelect.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Video\Data\Video_Playlist.resx">
-      <DependentUpon>Video_Playlist.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
