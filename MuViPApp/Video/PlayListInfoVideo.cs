@@ -31,7 +31,15 @@ namespace MuViPApp
         public string Name_PL
         {
             get { return name_PL; }
-            set { File.Move(Name_PL + ".txt", value); File.Delete(Name_PL + ".txt"); name_PL = value; }
+            set
+            {
+                if (File.Exists(Name_PL + ".txt"))
+                {
+                    File.Move(Name_PL + ".txt", value);
+                    File.Delete(Name_PL + ".txt");
+                }
+                name_PL = value;
+            }
         }
 
         private DateTime date_Create;

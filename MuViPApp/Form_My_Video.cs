@@ -23,6 +23,7 @@ namespace MuViPApp
             InitializeComponent();
             this.parent = parent;
             ShowListVid();
+            toolStrip.ItemClicked += ClickItem;
         }
         public void ShowListVid()
         {

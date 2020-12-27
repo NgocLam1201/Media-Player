@@ -42,12 +42,28 @@ namespace MuViPApp
             set { number_video = value; }
         }
 
+        ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
+
 
         public Video_Playlist(Form_Muvip parent = null)
         {
             InitializeComponent();
-        }
+            contextMenuStrip.Items.Add("Delete");
+            contextMenuStrip.ItemClicked += (s, e) =>
+            {
+                PlaylistVideo.Instance.Remove(Number_song);
+                PlaylistVideo.Instance.Export();
+                this.parent.openChildForm(new form_Music_AllPlaylist());
+            };
+            this.ContextMenuStrip = contextMenuStrip;
 
+        }
+        private int number_song;
+        public int Number_song
+        {
+            get { return number_song; }
+            set { number_song = value; }
+        }
         public Video_Playlist(int ID_Playlist, string NamePlay, int total, Form_Muvip parent = null)
         {
             InitializeComponent();
@@ -55,10 +71,20 @@ namespace MuViPApp
             this.ID_Playlist = ID_Playlist;
             this.NamePlay = NamePlay;
             lb_Playlist_Name.Text = this.NamePlay;
-            this.Number_video = total;
-            lb_Number_Of_Video.Text += ": " + this.Number_video.ToString();
+            this.Number_song = total;
+            lb_Number_Of_Video.Text += ": " + this.Number_song.ToString();
+            contextMenuStrip.Items.Add("Delete");
+            contextMenuStrip.ItemClicked += (s, e) =>
+            {
+                Playlist.Instance.Remove(Number_song);
+                Playlist.Instance.Export();
+                this.parent.openChildForm(new form_Music_AllPlaylist());
+            };
+            this.ContextMenuStrip = contextMenuStrip;
+
         }
 
+        
         private void Video_Playlist_Click(object sender, EventArgs e)
         {
             this.parent.openChildForm(new Form_Video_Playlist(this));

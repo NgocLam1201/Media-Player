@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pn_List = new System.Windows.Forms.Panel();
             this.lb_My_Video = new System.Windows.Forms.Label();
             this.pn_Top = new System.Windows.Forms.Panel();
             this.pn_Top.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pn_List
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 88);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 362);
-            this.panel1.TabIndex = 4;
+            this.pn_List.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pn_List.Location = new System.Drawing.Point(0, 88);
+            this.pn_List.Name = "pn_List";
+            this.pn_List.Size = new System.Drawing.Size(800, 362);
+            this.pn_List.TabIndex = 4;
             // 
             // lb_My_Video
             // 
@@ -69,7 +69,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pn_List);
             this.Controls.Add(this.pn_Top);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_History_Video";
@@ -81,7 +81,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pn_List;
         private System.Windows.Forms.Label lb_My_Video;
         private System.Windows.Forms.Panel pn_Top;
     }

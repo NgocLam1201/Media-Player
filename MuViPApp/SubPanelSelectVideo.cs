@@ -13,8 +13,9 @@ namespace MuViPApp
 {
     public partial class SubPanelSelectVideo : UserControl
     {
+
         ListVideo parent;
-        ToolStrip toolStrip = new ToolStrip();
+        ContextMenuStrip toolStrip = new ContextMenuStrip();
         public SubPanelSelectVideo(ListVideo parent = null)
         {
             this.parent = parent;
@@ -54,66 +55,30 @@ namespace MuViPApp
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
+            this.parent.DeleteVideo();
             this.parent.AfterClick();
-
         }
 
         private void btn_Addto_Click(object sender, EventArgs e)
         {
-            if (toolStrip == null)
+            toolStrip.Items.Clear();
+            toolStrip.Items.Add("Now playing");
+            toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
+            toolStrip.Items.Add("-");
+            toolStrip.Items.Add("New playlist");
+            int Y = 400;
+            foreach (PlayListInfoVideo item in PlaylistVideo.Instance.GetAllPlayListVideo())
             {
-                toolStrip.Items.Add("Now playing");
-                toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
-                toolStrip.Items.Add("-");
-                toolStrip.Items.Add("New playlist");
-                int Y = 400;
-                foreach (PlayListInfoVideo item in PlaylistVideo.Instance.GetAllPlayListVideo())
-                {
-                    toolStrip.Items.Add(item.Name_PL);
-                    Y -= 22;
-                }
-                toolStrip.Location = new Point(btn_Addto.Location.X + 70, btn_Addto.Location.Y + Y);
-                this.parent.Controls.Add(toolStrip);
-                toolStrip.BringToFront();
-                toolStrip.GripStyle = ToolStripGripStyle.Hidden;
-                toolStrip.Dock = DockStyle.None;
+                toolStrip.Items.Add(item.Name_PL);
+                Y -= 22;
             }
+            toolStrip.Location = new Point(btn_Addto.Location.X + 70, btn_Addto.Location.Y + Y);
+            toolStrip.Show(MousePosition);
+            toolStrip.BringToFront();
+            toolStrip.GripStyle = ToolStripGripStyle.Hidden;
+            toolStrip.Dock = DockStyle.None;
         }
 
-        private void btn_PlayNext_Click(object sender, EventArgs e)
-        {
-            if (ListVideoPlaying.Instance.GetMusic().Count > 0)
-            {
-                List<VideoInfo> TempList = new List<VideoInfo>();
-                int i = 0;
-                foreach (VideoInfo item in ListVideoPlaying.Instance.GetMusic())
-                {
-                    TempList.Add(item);
-                    i++;
-                    if (item.Name == this.parent.parent.NameMedia.Text)
-                    {
-                        break;
-                    }
-                }
-                for (int j = 0; j < this.parent.listView_myvideo.SelectedItems.Count; j++)
-                {
-                    TempList.Add(new VideoInfo(this.parent.listView_myvideo.SelectedItems[j].SubItems[2].Text));
-                }
-
-                for (int j = i; j < ListVideoPlaying.Instance.GetMusic().Count; j++)
-                {
-                    TempList.Add(ListVideoPlaying.Instance.GetMusic(j));
-                }
-
-                ListVideoPlaying.Instance.Remove();
-                foreach (VideoInfo item in TempList)
-                {
-                    ListVideoPlaying.Instance.AddItems(item);
-                }
-                ListVideoPlaying.Instance.export();
-                this.parent.AfterClick();
-            }
-        }
 
         private void btn_Play_Click(object sender, EventArgs e)
         {
