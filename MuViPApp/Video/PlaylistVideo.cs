@@ -24,8 +24,8 @@ namespace MuViPApp
 
         public PlaylistVideo()
         {
-            if (!File.Exists(path))
-                File.Create(path);
+            using (StreamWriter sw = new StreamWriter(path, true))
+                sw.Close();
             using (StreamReader sr = new StreamReader(path))
             {
                 string lines;

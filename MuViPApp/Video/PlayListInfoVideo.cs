@@ -52,8 +52,9 @@ namespace MuViPApp
         private List<VideoInfo> Listmusic = new List<VideoInfo>();
         public void Import()
         {
-            if (!File.Exists(this.Name_PL + ".txt"))
-                File.Create(this.Name_PL + ".txt");
+            string path = this.Name_PL + ".txt";
+            using (StreamWriter sw = new StreamWriter(path, true))
+                sw.Close();
             using (StreamReader sr = new StreamReader(this.name_PL + ".txt"))
             {
                 string lines;

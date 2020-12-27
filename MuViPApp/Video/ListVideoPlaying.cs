@@ -23,6 +23,21 @@ namespace MuViPApp.Video
 
         string path = @"List_Video_Now_Playing_MuVipApp.txt";
 
+        public ListVideoPlaying()
+        {
+            using (StreamWriter sw = new StreamWriter(path, true))
+                sw.Close();
+            using (StreamReader sr = new StreamReader(path))
+            {
+                string lines;
+                while ((lines = sr.ReadLine()) != null)
+                {
+                    if (File.Exists(lines))
+                        List_VidPlaying.Add(new VideoInfo(lines));
+                }
+                sr.Close();
+            }
+        }
         
         public void export()
         {
