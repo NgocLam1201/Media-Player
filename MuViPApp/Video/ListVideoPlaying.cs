@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,24 @@ namespace MuViPApp.Video
         }
 
         private List<VideoInfo> List_VidPlaying = new List<VideoInfo>();
+
+
+        string path = @"List_Video_Now_Playing_MuVipApp.txt";
+
+        
+        public void export()
+        {
+            if (File.Exists(path))
+                File.Delete(path);
+            using (StreamWriter sw = new StreamWriter(path, true))
+            {
+                foreach (VideoInfo item in List_VidPlaying)
+                {
+                    sw.WriteLine(item.FilePath);
+                }
+                sw.Close();
+            }
+        }
 
         public void AddItems(VideoInfo item)
         {

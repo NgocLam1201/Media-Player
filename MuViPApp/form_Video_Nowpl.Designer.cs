@@ -40,6 +40,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.MediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Loop = new Bunifu.Framework.UI.BunifuImageButton();
+            this.Is_Loop = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lb_Endtime = new System.Windows.Forms.TextBox();
+            this.lb_currentTime = new System.Windows.Forms.TextBox();
+            this.Video_Slider = new Bunifu.Framework.UI.BunifuSlider();
+            this.max_Volume = new Bunifu.Framework.UI.BunifuImageButton();
+            this.medium_Volume = new Bunifu.Framework.UI.BunifuImageButton();
+            this.Volume_Slider = new Bunifu.Framework.UI.BunifuSlider();
+            this.Mute = new Bunifu.Framework.UI.BunifuImageButton();
             this.Is_Mix = new Bunifu.Framework.UI.BunifuImageButton();
             this.Mix_Media = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_Play = new Bunifu.Framework.UI.BunifuImageButton();
@@ -51,15 +60,6 @@
             this.vid_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.length = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.Is_Loop = new Bunifu.Framework.UI.BunifuImageButton();
-            this.Loop = new Bunifu.Framework.UI.BunifuImageButton();
-            this.max_Volume = new Bunifu.Framework.UI.BunifuImageButton();
-            this.medium_Volume = new Bunifu.Framework.UI.BunifuImageButton();
-            this.Volume_Slider = new Bunifu.Framework.UI.BunifuSlider();
-            this.Mute = new Bunifu.Framework.UI.BunifuImageButton();
-            this.lb_Endtime = new System.Windows.Forms.TextBox();
-            this.lb_currentTime = new System.Windows.Forms.TextBox();
-            this.Video_Slider = new Bunifu.Framework.UI.BunifuSlider();
             this.timer_Video = new System.Windows.Forms.Timer(this.components);
             fpath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,6 +68,11 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MediaPlayer)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Loop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Is_Loop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.max_Volume)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medium_Volume)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Is_Mix)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mix_Media)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Play)).BeginInit();
@@ -75,11 +80,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_pre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Next)).BeginInit();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Is_Loop)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Loop)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.max_Volume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medium_Volume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Mute)).BeginInit();
             this.SuspendLayout();
             // 
             // fpath
@@ -110,9 +110,8 @@
             this.lb_NameVid.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lb_NameVid.Location = new System.Drawing.Point(131, 9);
             this.lb_NameVid.Name = "lb_NameVid";
-            this.lb_NameVid.Size = new System.Drawing.Size(109, 18);
+            this.lb_NameVid.Size = new System.Drawing.Size(0, 18);
             this.lb_NameVid.TabIndex = 7;
-            this.lb_NameVid.Text = "Video\'s Name";
             // 
             // panel2
             // 
@@ -132,9 +131,8 @@
             this.lb_Length.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lb_Length.Location = new System.Drawing.Point(131, 27);
             this.lb_Length.Name = "lb_Length";
-            this.lb_Length.Size = new System.Drawing.Size(35, 13);
+            this.lb_Length.Size = new System.Drawing.Size(0, 13);
             this.lb_Length.TabIndex = 8;
-            this.lb_Length.Text = "label1";
             // 
             // panel3
             // 
@@ -189,6 +187,144 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(605, 64);
             this.panel4.TabIndex = 8;
+            // 
+            // Loop
+            // 
+            this.Loop.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Loop.BackColor = System.Drawing.Color.Transparent;
+            this.Loop.Image = ((System.Drawing.Image)(resources.GetObject("Loop.Image")));
+            this.Loop.ImageActive = null;
+            this.Loop.Location = new System.Drawing.Point(313, 34);
+            this.Loop.Name = "Loop";
+            this.Loop.Size = new System.Drawing.Size(34, 26);
+            this.Loop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Loop.TabIndex = 35;
+            this.Loop.TabStop = false;
+            this.Loop.Zoom = 10;
+            this.Loop.Click += new System.EventHandler(this.Loop_Click);
+            // 
+            // Is_Loop
+            // 
+            this.Is_Loop.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Is_Loop.BackColor = System.Drawing.Color.Transparent;
+            this.Is_Loop.Image = ((System.Drawing.Image)(resources.GetObject("Is_Loop.Image")));
+            this.Is_Loop.ImageActive = null;
+            this.Is_Loop.Location = new System.Drawing.Point(313, 33);
+            this.Is_Loop.Name = "Is_Loop";
+            this.Is_Loop.Size = new System.Drawing.Size(37, 25);
+            this.Is_Loop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Is_Loop.TabIndex = 36;
+            this.Is_Loop.TabStop = false;
+            this.Is_Loop.Zoom = 10;
+            this.Is_Loop.Click += new System.EventHandler(this.Is_Loop_Click);
+            // 
+            // lb_Endtime
+            // 
+            this.lb_Endtime.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lb_Endtime.BackColor = System.Drawing.Color.Gray;
+            this.lb_Endtime.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lb_Endtime.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lb_Endtime.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Endtime.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lb_Endtime.Location = new System.Drawing.Point(556, 17);
+            this.lb_Endtime.Name = "lb_Endtime";
+            this.lb_Endtime.ReadOnly = true;
+            this.lb_Endtime.Size = new System.Drawing.Size(49, 18);
+            this.lb_Endtime.TabIndex = 43;
+            this.lb_Endtime.Text = "00:00:00";
+            // 
+            // lb_currentTime
+            // 
+            this.lb_currentTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lb_currentTime.BackColor = System.Drawing.Color.Gray;
+            this.lb_currentTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lb_currentTime.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lb_currentTime.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_currentTime.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lb_currentTime.Location = new System.Drawing.Point(3, 17);
+            this.lb_currentTime.Name = "lb_currentTime";
+            this.lb_currentTime.ReadOnly = true;
+            this.lb_currentTime.Size = new System.Drawing.Size(51, 18);
+            this.lb_currentTime.TabIndex = 42;
+            this.lb_currentTime.Text = "00:00:00";
+            this.lb_currentTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // Video_Slider
+            // 
+            this.Video_Slider.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Video_Slider.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Video_Slider.BackColor = System.Drawing.Color.Transparent;
+            this.Video_Slider.BackgroudColor = System.Drawing.Color.DarkGray;
+            this.Video_Slider.BorderRadius = 30;
+            this.Video_Slider.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(42)))), ((int)(((byte)(254)))));
+            this.Video_Slider.Location = new System.Drawing.Point(2, -7);
+            this.Video_Slider.MaximumValue = 100;
+            this.Video_Slider.Name = "Video_Slider";
+            this.Video_Slider.Size = new System.Drawing.Size(602, 30);
+            this.Video_Slider.TabIndex = 41;
+            this.Video_Slider.Value = 0;
+            this.Video_Slider.ValueChanged += new System.EventHandler(this.Video_Slider_ValueChanged);
+            // 
+            // max_Volume
+            // 
+            this.max_Volume.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.max_Volume.BackColor = System.Drawing.Color.Transparent;
+            this.max_Volume.Image = ((System.Drawing.Image)(resources.GetObject("max_Volume.Image")));
+            this.max_Volume.ImageActive = null;
+            this.max_Volume.Location = new System.Drawing.Point(355, 29);
+            this.max_Volume.Name = "max_Volume";
+            this.max_Volume.Size = new System.Drawing.Size(28, 30);
+            this.max_Volume.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.max_Volume.TabIndex = 39;
+            this.max_Volume.TabStop = false;
+            this.max_Volume.Zoom = 10;
+            this.max_Volume.Click += new System.EventHandler(this.max_Volume_Click);
+            // 
+            // medium_Volume
+            // 
+            this.medium_Volume.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.medium_Volume.BackColor = System.Drawing.Color.Transparent;
+            this.medium_Volume.Image = ((System.Drawing.Image)(resources.GetObject("medium_Volume.Image")));
+            this.medium_Volume.ImageActive = null;
+            this.medium_Volume.Location = new System.Drawing.Point(360, 28);
+            this.medium_Volume.Name = "medium_Volume";
+            this.medium_Volume.Size = new System.Drawing.Size(23, 32);
+            this.medium_Volume.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.medium_Volume.TabIndex = 38;
+            this.medium_Volume.TabStop = false;
+            this.medium_Volume.Zoom = 10;
+            this.medium_Volume.Click += new System.EventHandler(this.max_Volume_Click);
+            // 
+            // Volume_Slider
+            // 
+            this.Volume_Slider.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Volume_Slider.BackColor = System.Drawing.Color.Transparent;
+            this.Volume_Slider.BackgroudColor = System.Drawing.Color.DarkGray;
+            this.Volume_Slider.BorderRadius = 20;
+            this.Volume_Slider.IndicatorColor = System.Drawing.Color.DarkOrchid;
+            this.Volume_Slider.Location = new System.Drawing.Point(388, 33);
+            this.Volume_Slider.MaximumValue = 100;
+            this.Volume_Slider.Name = "Volume_Slider";
+            this.Volume_Slider.Size = new System.Drawing.Size(93, 30);
+            this.Volume_Slider.TabIndex = 40;
+            this.Volume_Slider.Value = 0;
+            this.Volume_Slider.ValueChanged += new System.EventHandler(this.Volume_Slider_ValueChanged);
+            // 
+            // Mute
+            // 
+            this.Mute.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Mute.BackColor = System.Drawing.Color.Transparent;
+            this.Mute.Image = ((System.Drawing.Image)(resources.GetObject("Mute.Image")));
+            this.Mute.ImageActive = null;
+            this.Mute.Location = new System.Drawing.Point(360, 31);
+            this.Mute.Name = "Mute";
+            this.Mute.Size = new System.Drawing.Size(22, 27);
+            this.Mute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Mute.TabIndex = 37;
+            this.Mute.TabStop = false;
+            this.Mute.Zoom = 10;
+            this.Mute.Click += new System.EventHandler(this.Mute_Click);
             // 
             // Is_Mix
             // 
@@ -326,144 +462,6 @@
             this.bunifuElipse2.ElipseRadius = 5;
             this.bunifuElipse2.TargetControl = this;
             // 
-            // Is_Loop
-            // 
-            this.Is_Loop.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Is_Loop.BackColor = System.Drawing.Color.Transparent;
-            this.Is_Loop.Image = ((System.Drawing.Image)(resources.GetObject("Is_Loop.Image")));
-            this.Is_Loop.ImageActive = null;
-            this.Is_Loop.Location = new System.Drawing.Point(313, 33);
-            this.Is_Loop.Name = "Is_Loop";
-            this.Is_Loop.Size = new System.Drawing.Size(37, 25);
-            this.Is_Loop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Is_Loop.TabIndex = 36;
-            this.Is_Loop.TabStop = false;
-            this.Is_Loop.Zoom = 10;
-            this.Is_Loop.Click += new System.EventHandler(this.Is_Loop_Click);
-            // 
-            // Loop
-            // 
-            this.Loop.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Loop.BackColor = System.Drawing.Color.Transparent;
-            this.Loop.Image = ((System.Drawing.Image)(resources.GetObject("Loop.Image")));
-            this.Loop.ImageActive = null;
-            this.Loop.Location = new System.Drawing.Point(313, 34);
-            this.Loop.Name = "Loop";
-            this.Loop.Size = new System.Drawing.Size(34, 26);
-            this.Loop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Loop.TabIndex = 35;
-            this.Loop.TabStop = false;
-            this.Loop.Zoom = 10;
-            this.Loop.Click += new System.EventHandler(this.Loop_Click);
-            // 
-            // max_Volume
-            // 
-            this.max_Volume.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.max_Volume.BackColor = System.Drawing.Color.Transparent;
-            this.max_Volume.Image = ((System.Drawing.Image)(resources.GetObject("max_Volume.Image")));
-            this.max_Volume.ImageActive = null;
-            this.max_Volume.Location = new System.Drawing.Point(355, 29);
-            this.max_Volume.Name = "max_Volume";
-            this.max_Volume.Size = new System.Drawing.Size(28, 30);
-            this.max_Volume.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.max_Volume.TabIndex = 39;
-            this.max_Volume.TabStop = false;
-            this.max_Volume.Zoom = 10;
-            this.max_Volume.Click += new System.EventHandler(this.max_Volume_Click);
-            // 
-            // medium_Volume
-            // 
-            this.medium_Volume.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.medium_Volume.BackColor = System.Drawing.Color.Transparent;
-            this.medium_Volume.Image = ((System.Drawing.Image)(resources.GetObject("medium_Volume.Image")));
-            this.medium_Volume.ImageActive = null;
-            this.medium_Volume.Location = new System.Drawing.Point(360, 28);
-            this.medium_Volume.Name = "medium_Volume";
-            this.medium_Volume.Size = new System.Drawing.Size(23, 32);
-            this.medium_Volume.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.medium_Volume.TabIndex = 38;
-            this.medium_Volume.TabStop = false;
-            this.medium_Volume.Zoom = 10;
-            this.medium_Volume.Click += new System.EventHandler(this.max_Volume_Click);
-            // 
-            // Volume_Slider
-            // 
-            this.Volume_Slider.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Volume_Slider.BackColor = System.Drawing.Color.Transparent;
-            this.Volume_Slider.BackgroudColor = System.Drawing.Color.DarkGray;
-            this.Volume_Slider.BorderRadius = 20;
-            this.Volume_Slider.IndicatorColor = System.Drawing.Color.DarkOrchid;
-            this.Volume_Slider.Location = new System.Drawing.Point(388, 33);
-            this.Volume_Slider.MaximumValue = 100;
-            this.Volume_Slider.Name = "Volume_Slider";
-            this.Volume_Slider.Size = new System.Drawing.Size(93, 30);
-            this.Volume_Slider.TabIndex = 40;
-            this.Volume_Slider.Value = 0;
-            this.Volume_Slider.ValueChanged += new System.EventHandler(this.Volume_Slider_ValueChanged);
-            // 
-            // Mute
-            // 
-            this.Mute.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Mute.BackColor = System.Drawing.Color.Transparent;
-            this.Mute.Image = ((System.Drawing.Image)(resources.GetObject("Mute.Image")));
-            this.Mute.ImageActive = null;
-            this.Mute.Location = new System.Drawing.Point(360, 31);
-            this.Mute.Name = "Mute";
-            this.Mute.Size = new System.Drawing.Size(22, 27);
-            this.Mute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Mute.TabIndex = 37;
-            this.Mute.TabStop = false;
-            this.Mute.Zoom = 10;
-            this.Mute.Click += new System.EventHandler(this.Mute_Click);
-            // 
-            // lb_Endtime
-            // 
-            this.lb_Endtime.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lb_Endtime.BackColor = System.Drawing.Color.Gray;
-            this.lb_Endtime.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lb_Endtime.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lb_Endtime.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Endtime.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.lb_Endtime.Location = new System.Drawing.Point(556, 17);
-            this.lb_Endtime.Name = "lb_Endtime";
-            this.lb_Endtime.ReadOnly = true;
-            this.lb_Endtime.Size = new System.Drawing.Size(49, 18);
-            this.lb_Endtime.TabIndex = 43;
-            this.lb_Endtime.Text = "00:00:00";
-            // 
-            // lb_currentTime
-            // 
-            this.lb_currentTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lb_currentTime.BackColor = System.Drawing.Color.Gray;
-            this.lb_currentTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lb_currentTime.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lb_currentTime.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_currentTime.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.lb_currentTime.Location = new System.Drawing.Point(3, 17);
-            this.lb_currentTime.Name = "lb_currentTime";
-            this.lb_currentTime.ReadOnly = true;
-            this.lb_currentTime.Size = new System.Drawing.Size(51, 18);
-            this.lb_currentTime.TabIndex = 42;
-            this.lb_currentTime.Text = "00:00:00";
-            this.lb_currentTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // Video_Slider
-            // 
-            this.Video_Slider.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Video_Slider.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Video_Slider.BackColor = System.Drawing.Color.Transparent;
-            this.Video_Slider.BackgroudColor = System.Drawing.Color.DarkGray;
-            this.Video_Slider.BorderRadius = 30;
-            this.Video_Slider.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(42)))), ((int)(((byte)(254)))));
-            this.Video_Slider.Location = new System.Drawing.Point(2, -7);
-            this.Video_Slider.MaximumValue = 100;
-            this.Video_Slider.Name = "Video_Slider";
-            this.Video_Slider.Size = new System.Drawing.Size(602, 30);
-            this.Video_Slider.TabIndex = 41;
-            this.Video_Slider.Value = 0;
-            this.Video_Slider.ValueChanged += new System.EventHandler(this.Video_Slider_ValueChanged);
-            // 
             // timer_Video
             // 
             this.timer_Video.Tick += new System.EventHandler(this.timer_Video_Tick);
@@ -486,6 +484,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.MediaPlayer)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Loop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Is_Loop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.max_Volume)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medium_Volume)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mute)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Is_Mix)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mix_Media)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Play)).EndInit();
@@ -493,11 +496,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_pre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Next)).EndInit();
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Is_Loop)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Loop)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.max_Volume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medium_Volume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Mute)).EndInit();
             this.ResumeLayout(false);
 
         }

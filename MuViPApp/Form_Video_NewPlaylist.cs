@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MuViPApp.Video;
 
 namespace MuViPApp
 {
@@ -19,6 +20,13 @@ namespace MuViPApp
             InitializeComponent();
         }
 
+        List<VideoInfo> listVideo = new List<VideoInfo>();
+
+        public Form_Video_NewPlaylist(Form_Muvip parent, List<VideoInfo> listVideo)
+        {
+            this.parent = parent;
+            this.listVideo = listVideo;
+        }
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();

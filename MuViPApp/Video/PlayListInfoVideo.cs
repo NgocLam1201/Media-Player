@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MuViPApp.Video;
+using System.IO;
 
 namespace MuViPApp
 {
@@ -19,16 +20,18 @@ namespace MuViPApp
 
         public PlayListInfoVideo() { }
 
-        public PlayListInfoVideo(DateTime date_create, string name_PL)
+        public PlayListInfoVideo(DateTime date_create, string name_PL, List<VideoInfo> listvideo = null)
         {
+            this.Date_Create = date_Create;
             Name_PL = name_PL;
+            this.Listvideo = listvideo;
         }
 
         private string name_PL;
         public string Name_PL
         {
             get { return name_PL; }
-            set { name_PL = value; }
+            set { File.Move(Name_PL + ".txt", value); File.Delete(Name_PL + ".txt"); name_PL = value; }
         }
 
         private DateTime date_Create;
@@ -38,6 +41,36 @@ namespace MuViPApp
             set { date_Create = value; }
         }
 
+        private List<VideoInfo> Listmusic = new List<VideoInfo>();
+        public void Import()
+        {
+            if (!File.Exists(this.Name_PL + ".txt"))
+                File.Create(this.Name_PL + ".txt");
+            using (StreamReader sr = new StreamReader(this.name_PL + ".txt"))
+            {
+                string lines;
+                while ((lines = sr.ReadLine()) != null)
+                {
+                    if (File.Exists(lines))
+                        Listmusic.Add(new VideoInfo(lines));
+                }
+                sr.Close();
+            }
+        }
+
+        public void Export()
+        {
+            if (File.Exists(this.Name_PL + ".txt"))
+                File.Delete(this.Name_PL + ".txt");
+            using (StreamWriter sw = new StreamWriter(this.Name_PL + ".txt", true))
+            {
+                foreach (VideoInfo item in Listmusic)
+                {
+                    sw.WriteLine(item.FilePath);
+                }
+                sw.Close();
+            }
+        }
 
 
         private List<VideoInfo> Listvideo = new List<VideoInfo>();

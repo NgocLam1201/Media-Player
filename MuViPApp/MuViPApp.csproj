@@ -210,6 +210,7 @@
     <Compile Include="SubPanelSelect.Designer.cs">
       <DependentUpon>SubPanelSelect.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Video\ControlCentre.cs" />
     <Compile Include="Video\ListMyVideo.cs" />
     <Compile Include="Video\ListVideoLiked.cs" />
@@ -222,6 +223,26 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Video\Video_Playlist.designer.cs">
+=======
+    <Compile Include="SubPanelSelectVideo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SubPanelSelectVideo.Designer.cs">
+      <DependentUpon>SubPanelSelectVideo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Video\ControlCentre.cs" />
+    <Compile Include="Video\ListFolderLocalVideo.cs" />
+    <Compile Include="Video\ListMyVideo.cs" />
+    <Compile Include="Video\ListVideoLiked.cs" />
+    <Compile Include="Video\ListVideoPlayed.cs" />
+    <Compile Include="Video\ListVideoPlaying.cs" />
+    <Compile Include="Video\ListVideoRecently.cs" />
+    <Compile Include="Video\PlayListInfoVideo.cs" />
+    <Compile Include="Video\PlaylistVideo.cs" />
+    <Compile Include="Video\VideoInfo.cs" />
+    <Compile Include="Video\Video_Playlist.cs" />
+    <Compile Include="Video\Video_Playlist.Designer.cs">
+>>>>>>> Video_Update
       <DependentUpon>Video_Playlist.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form_Delete.resx">
@@ -297,6 +318,12 @@
     <EmbeddedResource Include="SubPanelSelect.resx">
       <DependentUpon>SubPanelSelect.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
+=======
+    <EmbeddedResource Include="SubPanelSelectVideo.resx">
+      <DependentUpon>SubPanelSelectVideo.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> Video_Update
     <EmbeddedResource Include="Video\Video_Playlist.resx">
       <DependentUpon>Video_Playlist.cs</DependentUpon>
     </EmbeddedResource>

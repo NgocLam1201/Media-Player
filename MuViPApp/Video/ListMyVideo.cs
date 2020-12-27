@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using MuViPApp.Video.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,17 +20,37 @@ namespace MuViPApp.Video
 
         private List<VideoInfo> ListVideo = new List<VideoInfo>();
 
+        public ListMyVideo()
+        {
+            foreach (var item in ListFolderLocalVideo.Instance.GetLink())
+            {
+                if (Directory.Exists(item))
+                    foreach (var child in Directory.GetFiles(item))
+                    {
+                        FileInfo info = new FileInfo(child);
+
+                        if (info.Extension == ".mp4"|| info.Extension == ".wmv")
+                        {
+                            ListVideo.Add(new VideoInfo(info.FullName));
+                        }
+                    }
+                else
+                    if (File.Exists(item))
+                    ListVideo.Add(new VideoInfo(item));
+            }
+        }
+
         public void AddItems(VideoInfo item)
         {
             ListVideo.Add(item);
         }
 
-        public List<VideoInfo> GetMusic()
+        public List<VideoInfo> GetVideo()
         {
             return ListVideo;
         }
 
-        public VideoInfo GetMusic(int index)
+        public VideoInfo GetVideo(int index)
         {
             return ListVideo[index];
         }

@@ -21,10 +21,12 @@ namespace MuViPApp
         public form_Video_Nowpl(Form_Muvip parent = null)
         {
             this.parent = parent;
-            
             InitializeComponent();
             ShowList();
-            PlayVideo(0);
+            if (listView_VideoPlaying.Items.Count > 0)
+            { 
+                PlayVideo(0); 
+            }
             setMixIcon();
             setLoopIcon();
             Volume_Slider.Value = ControlCentre.lastVolume;
@@ -33,15 +35,6 @@ namespace MuViPApp
         }
         public void ShowList()
         {
-            ListVideoPlaying.Instance.Remove();
-            foreach (var child in Directory.GetFiles(@"C:\Users\Admin\Videos\"))
-            {
-                FileInfo info = new FileInfo(child);
-                if (info.Extension == ".mp4" || info.Extension == ".wmv")
-                {
-                    ListVideoPlaying.Instance.AddItems(new VideoInfo(info.FullName));
-                }
-            }
 
             foreach (VideoInfo item in ListVideoPlaying.Instance.GetMusic())
             {
@@ -65,7 +58,7 @@ namespace MuViPApp
                 btn_Pause.Visible = true;
             }
         }
-        private void PlayVideo(int i)
+        public void PlayVideo(int i)
         {
             index = i;
             listView_VideoPlaying.Items[i].Selected = true;
