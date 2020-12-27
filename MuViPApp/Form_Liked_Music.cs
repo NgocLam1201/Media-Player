@@ -19,7 +19,7 @@ namespace MuViPApp
         {
             this.parent = parent;
             InitializeComponent();
-            
+            ShowListMusic();
         }
 
         public void ShowListMusic()

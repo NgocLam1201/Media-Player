@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MuViPApp
 {
@@ -25,8 +26,8 @@ namespace MuViPApp
 
         public Playlist()
         {
-            if (!File.Exists(path))
-                File.Create(path);
+            using (StreamWriter sw = new StreamWriter(path, true))
+                sw.Close();
             using (StreamReader sr = new StreamReader(path))
             {
                 string lines;
