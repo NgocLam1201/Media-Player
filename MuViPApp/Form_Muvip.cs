@@ -32,9 +32,6 @@ namespace MuViPApp
         public Form_Muvip()
         {
             InitializeComponent();
-            ListMusicLiked.Instance.export();
-            ListMusicPlaying.Instance.export();
-            Playlist.Instance.Export();
             btn_Music.selected = true;
             btn_Music_Play.Visible = false;
             btn_Music_Pause.Visible = true;

@@ -38,12 +38,6 @@ namespace MuViPApp
         }
 
         #region Events
-        private void btn_AllPl_Add_Click(object sender, EventArgs e)
-        {
-            this.parent.btn_AddPl_Click(this, new EventArgs());
-            
-        }
-
         private void cb_Sortby_onItemSelected(object sender, EventArgs e)
         {
             switch (cb_Sortby.selectedIndex)

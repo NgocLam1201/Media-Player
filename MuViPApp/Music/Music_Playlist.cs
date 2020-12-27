@@ -51,7 +51,7 @@ namespace MuViPApp
             contextMenuStrip.ItemClicked += (s, e) =>
              {
                  Playlist.Instance.Remove(Number_song);
-                 this.parent.openChildForm(new form_Music_AllPlaylist(this.parent));
+                 Playlist.Instance.Export();
              };
             this.ContextMenuStrip = contextMenuStrip;
 
