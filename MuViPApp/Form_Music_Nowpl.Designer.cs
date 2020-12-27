@@ -248,7 +248,7 @@
             this.play.BorderRadius = 15;
             this.play.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(42)))), ((int)(((byte)(254)))));
             this.play.Location = new System.Drawing.Point(11, 68);
-            this.play.MaximumValue = 100;
+            this.play.MaximumValue = 0;
             this.play.Name = "play";
             this.play.Size = new System.Drawing.Size(628, 30);
             this.play.TabIndex = 22;

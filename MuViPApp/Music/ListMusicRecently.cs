@@ -22,7 +22,8 @@ namespace MuViPApp.Music
 
         private ListMusicRecently()
         {
-            if (File.Exists(path))
+            using (StreamWriter sw = new StreamWriter(path, true))
+                sw.Close();
             using (StreamReader sr = new StreamReader(path))
             {
                 string lines;
@@ -32,6 +33,12 @@ namespace MuViPApp.Music
                         Listmusic.Add(new Music_Song(lines));
                 }
             }
+            for (int i=0;i<Listmusic.Count/2;i++)
+            {
+                Music_Song temp = Listmusic[i];
+                Listmusic[Listmusic.Count - i - 1] = Listmusic[i];
+                Listmusic[i] = temp;
+            }    
         }
 
         public void AddItems(Music_Song item)

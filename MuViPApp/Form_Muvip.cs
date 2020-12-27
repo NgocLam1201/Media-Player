@@ -43,7 +43,14 @@ namespace MuViPApp
             if (Volume_Slider.Value == 0)
                 Volume_Slider.Value = CalcVol / (ushort.MaxValue / 10);
             SetIconVolume();
-            panel_Player.Visible = false;
+            
+            if (play.Value > 0)
+            {
+                Is_Playing = true;
+            }
+            else
+                Is_Playing = false;
+            SetActive_PanelPlayer();
         }
 
         private Form activeForm = null;
@@ -125,8 +132,8 @@ namespace MuViPApp
                 if (ofd_music.ShowDialog() == DialogResult.OK)
                 {
                     FileInfo fileInfo = new FileInfo(ofd_music.FileName);
-                    var fileTag = TagLib.File.Create(fileInfo.FullName);
-                    
+                    ListFolderLocalMusic.Instance.Additem(fileInfo.FullName);
+                    ListFolderLocalMusic.Instance.Export();
                 }
             }
         }
@@ -162,7 +169,6 @@ namespace MuViPApp
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            
             btn_Playlist.selected = false;
             if (btn_Music.selected == true)
             {
@@ -227,9 +233,6 @@ namespace MuViPApp
 
         public void btn_AddPl_Click(object sender, EventArgs e)
         {
-            /*ToolStrip ListToolStrip = new ToolStrip();
-            ToolStripButton Addto_Pl = new ToolStripButton("Now playing");
-            ListToolStrip.Items.Add(Addto_Pl);*/
             if (btn_Music.selected == true)
             {
                 form_Music_NewPlaylist form_Playlist = new form_Music_NewPlaylist(this);
@@ -501,15 +504,17 @@ namespace MuViPApp
                 medium_Volume.Visible = false;
             }
         }
-
-        public void Volume_MouseLeave(object sender, EventArgs e)
+        private void Search_KeyDown(object sender, EventArgs e)
         {
-            Volume_Slider.Visible = false;
-        }
-
-        public void Volume_MouseMove(object sender, MouseEventArgs e)
-        {
-            Volume_Slider.Visible = true;
+            List<Music_Song> music_Songs = new List<Music_Song>();
+            foreach (Music_Song item in ListMyMusic.Instance.GetMusic())
+            {
+                if (Search.text == item.Name_Genre || Search.text == item.Singer || Search.text == item.Name_Song)
+                {
+                    music_Songs.Add(item);
+                }
+            }
+            openChildForm(new Form_ListMusic(this, music_Songs));
         }
 
         public void Mute_Click(object sender, EventArgs e)

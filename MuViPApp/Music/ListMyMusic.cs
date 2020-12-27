@@ -19,7 +19,6 @@ namespace MuViPApp.Music
 
         private List<Music_Song> Listmusic = new List<Music_Song>();
 
-
         public ListMyMusic()
         {
             foreach (var item in ListFolderLocalMusic.Instance.GetLink())

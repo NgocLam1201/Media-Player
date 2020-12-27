@@ -23,6 +23,14 @@ namespace MuViPApp.Music
 
         public ListFolderLocalMusic()
         {
+            if (!File.Exists(path))
+            {
+                using (StreamWriter sw = new StreamWriter(path,true))
+                {
+                    sw.WriteLine(Environment.GetFolderPath(Environment.SpecialFolder.MyMusic));
+                    sw.Close();
+                }
+            }
             using (StreamReader sr = new StreamReader(path))
             {
                 string lines;

@@ -16,7 +16,7 @@ namespace MuViPApp
     {
         Form_Muvip parent;
 
-        public form_Music_AllPlaylist(Form_Muvip parent)
+        public form_Music_AllPlaylist(Form_Muvip parent = null)
         {
             this.parent = parent;
             InitializeComponent();
@@ -31,17 +31,13 @@ namespace MuViPApp
             {
                 PlayListInfo Playlistmusic = Playlist.Instance.GetListMusic(i);
                 Music_Playlist music_Playlist = new Music_Playlist(i,Playlistmusic.Name_PL, Playlistmusic.GetMusic().Count,this.parent);
+                music_Playlist.Dock = DockStyle.Top;
                 listpl.Add(music_Playlist);
                 FLP_playlist.Controls.Add(listpl[i]);
             }
         }
 
         #region Events
-        private void btn_AllPl_Add_Click(object sender, EventArgs e)
-        {
-            this.parent.btn_AddPl_Click(this, new EventArgs());
-        }
-
         private void cb_Sortby_onItemSelected(object sender, EventArgs e)
         {
             switch (cb_Sortby.selectedIndex)

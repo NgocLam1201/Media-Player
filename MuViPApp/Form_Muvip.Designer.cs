@@ -190,7 +190,6 @@
             this.max_Volume.TabStop = false;
             this.max_Volume.Zoom = 10;
             this.max_Volume.Click += new System.EventHandler(this.max_Volume_Click);
-            this.max_Volume.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Volume_MouseMove);
             // 
             // medium_Volume
             // 
@@ -206,7 +205,6 @@
             this.medium_Volume.TabStop = false;
             this.medium_Volume.Zoom = 10;
             this.medium_Volume.Click += new System.EventHandler(this.max_Volume_Click);
-            this.medium_Volume.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Volume_MouseMove);
             // 
             // Volume_Slider
             // 
@@ -342,7 +340,6 @@
             this.Mute.TabStop = false;
             this.Mute.Zoom = 10;
             this.Mute.Click += new System.EventHandler(this.Mute_Click);
-            this.Mute.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Volume_MouseMove);
             // 
             // RestTime
             // 
@@ -614,7 +611,7 @@
             this.btn_Exit.IconVisible = true;
             this.btn_Exit.IconZoom = 60D;
             this.btn_Exit.IsTab = true;
-            this.btn_Exit.Location = new System.Drawing.Point(0, 443);
+            this.btn_Exit.Location = new System.Drawing.Point(0, 442);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Normalcolor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_Exit.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -650,7 +647,7 @@
             this.btn_Help.IconVisible = true;
             this.btn_Help.IconZoom = 60D;
             this.btn_Help.IsTab = true;
-            this.btn_Help.Location = new System.Drawing.Point(0, 400);
+            this.btn_Help.Location = new System.Drawing.Point(0, 399);
             this.btn_Help.Name = "btn_Help";
             this.btn_Help.Normalcolor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_Help.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -685,7 +682,7 @@
             this.btn_History.IconVisible = true;
             this.btn_History.IconZoom = 70D;
             this.btn_History.IsTab = true;
-            this.btn_History.Location = new System.Drawing.Point(0, 360);
+            this.btn_History.Location = new System.Drawing.Point(0, 359);
             this.btn_History.Name = "btn_History";
             this.btn_History.Normalcolor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_History.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -721,7 +718,7 @@
             this.btn_NowPlaying.IconVisible = true;
             this.btn_NowPlaying.IconZoom = 70D;
             this.btn_NowPlaying.IsTab = true;
-            this.btn_NowPlaying.Location = new System.Drawing.Point(0, 323);
+            this.btn_NowPlaying.Location = new System.Drawing.Point(0, 322);
             this.btn_NowPlaying.Name = "btn_NowPlaying";
             this.btn_NowPlaying.Normalcolor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_NowPlaying.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -742,7 +739,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 282);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(189, 41);
+            this.panel2.Size = new System.Drawing.Size(189, 40);
             this.panel2.TabIndex = 11;
             // 
             // btn_AddPl
@@ -772,7 +769,7 @@
             this.btn_AddPl.OnHovercolor = System.Drawing.Color.Silver;
             this.btn_AddPl.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_AddPl.selected = false;
-            this.btn_AddPl.Size = new System.Drawing.Size(35, 41);
+            this.btn_AddPl.Size = new System.Drawing.Size(35, 40);
             this.btn_AddPl.TabIndex = 11;
             this.btn_AddPl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_AddPl.Textcolor = System.Drawing.Color.White;
@@ -808,7 +805,7 @@
             this.btn_Playlist.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_Playlist.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
             this.btn_Playlist.selected = false;
-            this.btn_Playlist.Size = new System.Drawing.Size(154, 41);
+            this.btn_Playlist.Size = new System.Drawing.Size(154, 40);
             this.btn_Playlist.TabIndex = 5;
             this.btn_Playlist.Text = "Playlist";
             this.btn_Playlist.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1017,7 +1014,6 @@
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuTextbox Search;
         private Bunifu.Framework.UI.BunifuImageButton Loop;
         private Bunifu.Framework.UI.BunifuImageButton btn_Music_Pause;
         private Bunifu.Framework.UI.BunifuImageButton Pre_Play;
@@ -1032,11 +1028,8 @@
         private System.Windows.Forms.Panel panel3;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Video;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Music;
-        private Bunifu.Framework.UI.BunifuFlatButton btn_My_Music;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Add;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Liked;
-        private Bunifu.Framework.UI.BunifuFlatButton btn_Playlist;
-        private Bunifu.Framework.UI.BunifuFlatButton btn_NowPlaying;
         private Bunifu.Framework.UI.BunifuFlatButton btn_History;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Help;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Exit;
@@ -1059,6 +1052,10 @@
         public Bunifu.Framework.UI.BunifuSlider Volume_Slider;
         public System.Windows.Forms.PictureBox picturesong;
         public Bunifu.Framework.UI.BunifuFlatButton btn_AddPl;
+        public Bunifu.Framework.UI.BunifuFlatButton btn_My_Music;
+        public Bunifu.Framework.UI.BunifuFlatButton btn_Playlist;
+        public Bunifu.Framework.UI.BunifuFlatButton btn_NowPlaying;
+        public Bunifu.Framework.UI.BunifuTextbox Search;
         //>>>>>>> 04a2838c7725c5872faf9c85c73173baafd71e32
     }
 }
