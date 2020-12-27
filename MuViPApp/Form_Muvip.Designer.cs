@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Muvip));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.Search = new Bunifu.Framework.UI.BunifuTextbox();
             this.panel_Player = new System.Windows.Forms.Panel();
             this.Is_Loop = new Bunifu.Framework.UI.BunifuImageButton();
             this.Is_Mix = new Bunifu.Framework.UI.BunifuImageButton();
@@ -73,7 +71,6 @@
             this.btn_My_Video = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_My_Music = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Time_real = new System.Windows.Forms.Timer(this.components);
-            this.panel1.SuspendLayout();
             this.panel_Player.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Is_Loop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Is_Mix)).BeginInit();
@@ -95,30 +92,6 @@
             this.Menuside.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            this.panel1.Controls.Add(this.Search);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(189, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(722, 40);
-            this.panel1.TabIndex = 7;
-            // 
-            // Search
-            // 
-            this.Search.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
-            this.Search.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Search.BackgroundImage")));
-            this.Search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Search.ForeColor = System.Drawing.Color.White;
-            this.Search.Icon = ((System.Drawing.Image)(resources.GetObject("Search.Icon")));
-            this.Search.Location = new System.Drawing.Point(203, 9);
-            this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(349, 24);
-            this.Search.TabIndex = 3;
-            this.Search.text = "Search";
             // 
             // panel_Player
             // 
@@ -424,10 +397,10 @@
             this.pn_Childform.Cursor = System.Windows.Forms.Cursors.Default;
             this.pn_Childform.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn_Childform.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.pn_Childform.Location = new System.Drawing.Point(189, 40);
+            this.pn_Childform.Location = new System.Drawing.Point(189, 0);
             this.pn_Childform.Name = "pn_Childform";
             this.pn_Childform.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.pn_Childform.Size = new System.Drawing.Size(722, 463);
+            this.pn_Childform.Size = new System.Drawing.Size(722, 503);
             this.pn_Childform.TabIndex = 11;
             // 
             // flowLayoutPanel1
@@ -441,7 +414,7 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(178, 25);
+            this.pictureBox2.Location = new System.Drawing.Point(178, 45);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(400, 400);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -973,7 +946,6 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(911, 603);
             this.Controls.Add(this.pn_Childform);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_Player);
             this.Controls.Add(this.Menuside);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -984,7 +956,6 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "MuViP App";
             this.TransparencyKey = System.Drawing.Color.Black;
-            this.panel1.ResumeLayout(false);
             this.panel_Player.ResumeLayout(false);
             this.panel_Player.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Is_Loop)).EndInit();
@@ -1013,7 +984,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuImageButton Loop;
         private Bunifu.Framework.UI.BunifuImageButton btn_Music_Pause;
         private Bunifu.Framework.UI.BunifuImageButton Pre_Play;
@@ -1055,7 +1025,6 @@
 
         public Bunifu.Framework.UI.BunifuFlatButton btn_My_Music;
         public Bunifu.Framework.UI.BunifuFlatButton btn_NowPlaying;
-        public Bunifu.Framework.UI.BunifuTextbox Search;
         public Bunifu.Framework.UI.BunifuFlatButton btn_My_Video;
     }
 }

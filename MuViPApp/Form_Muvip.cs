@@ -508,18 +508,6 @@ namespace MuViPApp
                 medium_Volume.Visible = false;
             }
         }
-        private void Search_KeyDown(object sender, EventArgs e)
-        {
-            List<Music_Song> music_Songs = new List<Music_Song>();
-            foreach (Music_Song item in ListMyMusic.Instance.GetMusic())
-            {
-                if (Search.text == item.Name_Genre || Search.text == item.Singer || Search.text == item.Name_Song)
-                {
-                    music_Songs.Add(item);
-                }
-            }
-            openChildForm(new Form_ListMusic(this, music_Songs));
-        }
 
         public void Mute_Click(object sender, EventArgs e)
         {
