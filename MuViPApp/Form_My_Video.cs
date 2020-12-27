@@ -25,15 +25,10 @@ namespace MuViPApp
         {
             ListMyVideo.Instance.Remove();
 
-<<<<<<< HEAD
             //foreach (var child in Directory.GetFiles(@"C:\Users\Admin\Videos\"))
 
             foreach (var child in Directory.GetFiles(@"C:\Users\Admin\Videos\"))
 
-=======
-            foreach (var child in Directory.GetFiles(@"C:\Users\Admin\Videos\"))
-            //foreach (var child in Directory.GetFiles(@"C:\Users\ACER\Videos\"))
->>>>>>> Last_Update_Music
             {
                 FileInfo info = new FileInfo(child);
                 if (info.Extension == ".mp4"|| info.Extension == ".wmv")
