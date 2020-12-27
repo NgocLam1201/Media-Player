@@ -20,6 +20,7 @@ namespace MuViPApp
             this.parent = parent;
             InitializeComponent();
             ShowListMusic();
+            
         }
 
         public void ShowListMusic()
@@ -32,6 +33,11 @@ namespace MuViPApp
             this.pn_List.Tag = FlistMusic;
             FlistMusic.BringToFront();
             FlistMusic.Show();
+        }
+
+        private void btn_My_Music_Play_all_Click(object sender, EventArgs e)
+        {
+            FlistMusic.PlayAllMusic();
         }
     }
 }

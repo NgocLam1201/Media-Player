@@ -56,7 +56,7 @@ namespace MuViPApp
 
         private void btn_Play_all_Click(object sender, EventArgs e)
         {
-            FlistVideo.PlayAllMusic();
+            FlistVideo.PlayAllVideo();
         }
 
         private void Cb_View_onItemSelected_1(object sender, EventArgs e)

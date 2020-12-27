@@ -172,7 +172,7 @@ namespace MuViPApp
             }
         }
 
-        public void PlayAllMusic()
+        public void PlayAllVideo()
         {
             listView_myvideo.Items[0].Selected = true;
             Video_Click(this, new EventArgs());

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.pn_Top = new System.Windows.Forms.Panel();
-            this.count_liked_song = new System.Windows.Forms.Label();
             this.btn_My_Music_Play_all = new Bunifu.Framework.UI.BunifuFlatButton();
             this.lb_Liked_Music = new System.Windows.Forms.Label();
             this.pn_List = new System.Windows.Forms.Panel();
@@ -38,7 +37,6 @@
             // 
             // pn_Top
             // 
-            this.pn_Top.Controls.Add(this.count_liked_song);
             this.pn_Top.Controls.Add(this.btn_My_Music_Play_all);
             this.pn_Top.Controls.Add(this.lb_Liked_Music);
             this.pn_Top.Dock = System.Windows.Forms.DockStyle.Top;
@@ -47,16 +45,6 @@
             this.pn_Top.Name = "pn_Top";
             this.pn_Top.Size = new System.Drawing.Size(800, 133);
             this.pn_Top.TabIndex = 1;
-            // 
-            // count_liked_song
-            // 
-            this.count_liked_song.AutoSize = true;
-            this.count_liked_song.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.count_liked_song.Location = new System.Drawing.Point(260, 44);
-            this.count_liked_song.Name = "count_liked_song";
-            this.count_liked_song.Size = new System.Drawing.Size(29, 21);
-            this.count_liked_song.TabIndex = 7;
-            this.count_liked_song.Text = "(0)";
             // 
             // btn_My_Music_Play_all
             // 
@@ -94,6 +82,7 @@
             this.btn_My_Music_Play_all.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_My_Music_Play_all.Textcolor = System.Drawing.Color.White;
             this.btn_My_Music_Play_all.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_My_Music_Play_all.Click += new System.EventHandler(this.btn_My_Music_Play_all_Click);
             // 
             // lb_Liked_Music
             // 
@@ -137,6 +126,5 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_My_Music_Play_all;
         private System.Windows.Forms.Label lb_Liked_Music;
         private System.Windows.Forms.Panel pn_List;
-        private System.Windows.Forms.Label count_liked_song;
     }
 }

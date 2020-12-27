@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.pn_Top = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.lb_My_Video = new System.Windows.Forms.Label();
             this.pn_Liked_Video = new System.Windows.Forms.Panel();
             this.pn_Top.SuspendLayout();
@@ -37,7 +36,6 @@
             // 
             // pn_Top
             // 
-            this.pn_Top.Controls.Add(this.label1);
             this.pn_Top.Controls.Add(this.lb_My_Video);
             this.pn_Top.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn_Top.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -45,16 +43,6 @@
             this.pn_Top.Name = "pn_Top";
             this.pn_Top.Size = new System.Drawing.Size(800, 88);
             this.pn_Top.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(270, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 21);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "(1)";
             // 
             // lb_My_Video
             // 
@@ -97,6 +85,5 @@
         private System.Windows.Forms.Panel pn_Top;
         private System.Windows.Forms.Label lb_My_Video;
         private System.Windows.Forms.Panel pn_Liked_Video;
-        private System.Windows.Forms.Label label1;
     }
 }

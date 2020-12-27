@@ -21,7 +21,7 @@ namespace MuViPApp.Video
         private List<VideoInfo> list_VidLiked = new List<VideoInfo>();
 
 
-        string path = @"Liked_Music_MuVipApp.txt";
+        string path = @"Liked_Video_MuVipApp.txt";
 
         public ListVideoLiked()
         {
