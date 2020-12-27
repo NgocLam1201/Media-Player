@@ -49,10 +49,11 @@ namespace MuViPApp
             InitializeComponent();
             contextMenuStrip.Items.Add("Delete");
             contextMenuStrip.ItemClicked += (s, e) =>
-             {
-                 Playlist.Instance.Remove(Number_song);
-                 Playlist.Instance.Export();
-             };
+            {
+                Playlist.Instance.Remove(Number_song);
+                Playlist.Instance.Export();
+                this.parent.openChildForm(new form_Music_AllPlaylist());
+            };
             this.ContextMenuStrip = contextMenuStrip;
 
         }
@@ -66,6 +67,15 @@ namespace MuViPApp
             lb_Playlist_Name.Text = this.NamePlay;
             this.Number_song = total;
             lb_Number_Of_Song.Text += ": " + this.Number_song.ToString();
+            contextMenuStrip.Items.Add("Delete");
+            contextMenuStrip.ItemClicked += (s, e) =>
+            {
+                Playlist.Instance.Remove(Number_song);
+                Playlist.Instance.Export();
+                this.parent.openChildForm(new form_Music_AllPlaylist());
+            };
+            this.ContextMenuStrip = contextMenuStrip;
+
         }
 
         private void Music_Playlist_Click(object sender, EventArgs e)

@@ -42,7 +42,7 @@
             this.lb_AllPl_Title.AutoSize = true;
             this.lb_AllPl_Title.Font = new System.Drawing.Font("Microsoft Tai Le", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_AllPl_Title.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_AllPl_Title.Location = new System.Drawing.Point(41, 10);
+            this.lb_AllPl_Title.Location = new System.Drawing.Point(30, 28);
             this.lb_AllPl_Title.Name = "lb_AllPl_Title";
             this.lb_AllPl_Title.Size = new System.Drawing.Size(134, 47);
             this.lb_AllPl_Title.TabIndex = 1;
@@ -50,6 +50,7 @@
             // 
             // cb_Sortby
             // 
+            this.cb_Sortby.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cb_Sortby.BackColor = System.Drawing.Color.Transparent;
             this.cb_Sortby.BorderRadius = 3;
             this.cb_Sortby.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -70,6 +71,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
