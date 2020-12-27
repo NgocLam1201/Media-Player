@@ -57,7 +57,7 @@ namespace MuViPApp
             ImageList listsmallimage = new ImageList();
             foreach (VideoInfo item in ListVid)
             {
-                ListViewItem items = new ListViewItem(new[] { item.Name, item.Date, item.Size, item.Length, item.Length, item.Link_Video });
+                ListViewItem items = new ListViewItem(new[] { item.Name, item.Date, item.Size, item.Length, item.Length, item.link_Video });
                 listView_myvideo.Items.Add(items);
                 items.ImageIndex = i++;
                 listlargeimage.ImageSize = new Size(100, 100);
@@ -265,7 +265,7 @@ namespace MuViPApp
         {
             if (listView_myvideo.SelectedItems.Count > 0)
             {
-                ListVideoLiked.Instance.AddItems(new VideoInfo(listView_myvideo.SelectedItems[0].SubItems[6].Text));
+                ListVideoLiked.Instance.AddItems(new VideoInfo(listView_myvideo.SelectedItems[0].SubItems[5].Text));
                 ListVideoLiked.Instance.export();
             }
         }
@@ -274,7 +274,7 @@ namespace MuViPApp
         {
             if (listView_myvideo.SelectedItems.Count > 0)
             {
-                ListVideoLiked.Instance.Remove(new VideoInfo(listView_myvideo.SelectedItems[0].SubItems[6].Text));
+                ListVideoLiked.Instance.Remove(new VideoInfo(listView_myvideo.SelectedItems[0].SubItems[5].Text));
 
                 listView_myvideo.Items.Clear();
                 ShowListVid();
