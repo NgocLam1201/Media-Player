@@ -20,12 +20,20 @@ Bất kì ai và bất kì lứa tuổi nào đang sử dụng máy tính với 
 ### Tính năng 
 - Chơi được một số định dạng nhạc và video phổ biến (mp3, wav, mp4, etc.)
 - Một số chức năng chơi nhạc và video cơ bản như trộn, lặp, dừng, phát, tăng giảm âm lượng etc.
-- Hiển thị thông tin của bài nhạc và video (ca sĩ, album, cover, thể loại, lyrics …)
+- Hiển thị thông tin của bài nhạc và video (ca sĩ, thể loại, lyrics …)
 - Màn hình now-playing.
 - Thêm, xóa nhạc hoặc video
-- Tạo playlist
+- Tạo playlist, sửa tên
 - Phát nhạc và video trong một thư mục chỉ định và liệt kê các bài hát, video có trong thư mục đó.
 - Sắp xếp các bài nhạc, video (Theo tên, ca sĩ, album, năm phát hành …).
 - Hiển thị lịch sử phát.
-- Tạo tính liên thông giữa các thông tin của bài hát (Cùng ca sĩ, cùng album,…).
-> *Đang chờ cập nhật...*
+- Add nhạc vào playlist.
+### Lộ trình
+1. Báo cáo lần 1
+- Cơ bản hoàn thành giao diện, phát được nhạc trong PC, tạo playlist
+2. Báo cáo lần 2
+- Hoàn thành một vài thao tác với nhạc như: Next, loop, mix, tăng giảm âm lượng, phát nhạc ở vị trí bất kì của bài hát
+- Hoàn thiện hơn về mặt giao diện, màn hình now playing
+3. Báo cáo lần 3
+- Hoàn thành đồ án, báo cáo cuối kì
+> Ngày hoàn thành 28/12/2020
