@@ -19,7 +19,7 @@ namespace MuViPApp.Music
     {
         List<string> listPath = new List<string>();
 
-        string path = Application.StartupPath + "\\InPut\\MyMusic_MuVipApp.txt";
+        string path = @"MyMusic_MuVipApp.txt";
 
         private static ListFolderLocalMusic instance;
 
