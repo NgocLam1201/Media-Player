@@ -188,7 +188,7 @@ namespace MuViPApp
             }
         }
 
-        public void DeleteMusic(int ind = 0)
+        public void DeleteMusic(int ind = -1)
         {
             if (lv_My_Music.SelectedItems.Count > 0)
             {
@@ -201,8 +201,8 @@ namespace MuViPApp
                     {
                         for (int i = 0; i < lv_My_Music.SelectedItems.Count; i++)
                         {
-                            File.Delete(lv_My_Music.SelectedItems[i].SubItems[6].Text);
                             ListMyMusic.Instance.Remove(new Music_Song(lv_My_Music.SelectedItems[i].SubItems[6].Text));
+                            File.Delete(lv_My_Music.SelectedItems[i].SubItems[6].Text);
                         }
                     }
                 }
@@ -223,6 +223,7 @@ namespace MuViPApp
                         }    
                     }
                 ListMusicPlaying.Instance.export();
+                if (ind >=0 )
                 Playlist.Instance.GetListMusic(ind).Export();
                 ListMusicLiked.Instance.export();
                 lv_My_Music.Items.Clear();

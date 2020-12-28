@@ -25,6 +25,7 @@ namespace MuViPApp
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
+            delete_on_this_PC = false;
             this.Close();
         }
     }

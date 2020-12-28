@@ -1,9 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
+using System.Threading;
+using MuViPApp.Music;
+using MuViPApp.Video;
+using System.IO;
 
 namespace MuViPApp.Music
 {
@@ -11,7 +19,7 @@ namespace MuViPApp.Music
     {
         List<string> listPath = new List<string>();
 
-        string path = "MyMusic_MuVipApp.txt";
+        string path = Application.StartupPath + "\\InPut\\MyMusic_MuVipApp.txt";
 
         private static ListFolderLocalMusic instance;
 
@@ -23,6 +31,8 @@ namespace MuViPApp.Music
 
         public ListFolderLocalMusic()
         {
+            if (true)
+               
             if (!File.Exists(path))
             {
                 using (StreamWriter sw = new StreamWriter(path,true))
