@@ -78,5 +78,6 @@ namespace MuViPApp
         {
             Listvideo.RemoveAt(index);
         }
+       
     }
 }

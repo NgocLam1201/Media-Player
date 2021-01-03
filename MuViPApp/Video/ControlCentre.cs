@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AxWMPLib;
 
 namespace MuViPApp.Video
 {
@@ -14,6 +15,8 @@ namespace MuViPApp.Video
         public static bool Mix = false;
         public static bool Loop = false;
         public static bool Playing = false;
+        public static int lastPlayerValue = 0;
+        public static string lastURL = "";
         private static bool isMute = false;
 
 

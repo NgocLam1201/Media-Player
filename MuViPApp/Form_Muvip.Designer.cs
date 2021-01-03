@@ -118,6 +118,7 @@
             this.panel_Player.Name = "panel_Player";
             this.panel_Player.Size = new System.Drawing.Size(722, 100);
             this.panel_Player.TabIndex = 10;
+            this.panel_Player.Click += new System.EventHandler(this.panel_Player_Click);
             // 
             // Is_Loop
             // 
@@ -953,7 +954,6 @@
         private Bunifu.Framework.UI.BunifuImageButton Next_Play;
         private Bunifu.Framework.UI.BunifuImageButton Mix_Media;
         private Bunifu.Framework.UI.BunifuImageButton btn_Music_Play;
-        private System.Windows.Forms.Panel pn_Childform;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel Logo;
         private System.Windows.Forms.TextBox title;
@@ -988,6 +988,7 @@
         public Bunifu.Framework.UI.BunifuFlatButton btn_Music;
         public Bunifu.Framework.UI.BunifuFlatButton btn_Playlist;
         public Bunifu.Framework.UI.BunifuFlatButton btn_History;
+        public System.Windows.Forms.Panel pn_Childform;
     }
 }
 

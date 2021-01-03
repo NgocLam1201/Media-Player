@@ -38,7 +38,7 @@ namespace MuViPApp.Video
                 sr.Close();
             }
         }
-        
+
         public void export()
         {
             if (File.Exists(path))

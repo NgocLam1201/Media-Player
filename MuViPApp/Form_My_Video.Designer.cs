@@ -228,6 +228,7 @@
             this.pn_List.Name = "pn_List";
             this.pn_List.Size = new System.Drawing.Size(800, 344);
             this.pn_List.TabIndex = 3;
+        //    this.pn_List.Click += new System.EventHandler(this.pn_List_Click);
             // 
             // Form_My_Video
             // 

@@ -39,7 +39,7 @@ namespace MuViPApp
             count_items.Text = "(" + count + ")";
 
         }
-
+      
 
         private void ClickItem(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -48,10 +48,7 @@ namespace MuViPApp
             this.parent.Controls.Remove(toolStrip);
         }
 
-        private void FormClick(object s, EventArgs e)
-        {
-            this.parent.Controls.Remove(toolStrip);
-        }
+       
 
 
         private void btn_Play_all_Click(object sender, EventArgs e)
@@ -80,7 +77,10 @@ namespace MuViPApp
         }
 
 
-
+        private void FormClick(object s, EventArgs e)
+        {
+            this.Controls.Remove(toolStrip);
+        }
         private void DeleteFolderMusic_Click(object sender, EventArgs e)
         {
             this.parent.Controls.Remove(toolStrip);
@@ -96,5 +96,7 @@ namespace MuViPApp
             toolStrip.GripStyle = ToolStripGripStyle.Hidden;
             toolStrip.Dock = DockStyle.None;
         }
+
+       
     }
 }

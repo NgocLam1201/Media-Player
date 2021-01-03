@@ -94,6 +94,7 @@ namespace MuViPApp
             //this.parent.PlayMusic(0);
             this.parent.btn_NowPlaying.selected = true;
             this.parent.btn_My_Video.selected = false;
+            this.parent.activeForm = null;
             this.parent.openChildForm(new form_Video_Nowpl());
             listView_myvideo.Items.Clear();
 
@@ -103,8 +104,8 @@ namespace MuViPApp
         {
             if (sp_Select == null)
             {
-                this.parent.Is_Playing = false;
-                this.parent.SetActive_PanelPlayer();
+                //this.parent.Is_Playing = false;
+                //this.parent.SetActive_PanelPlayer();
                 sp_Select = new SubPanelSelectVideo(this);
                 this.Controls.Add(sp_Select);
                 sp_Select.Dock = DockStyle.Bottom;
@@ -115,6 +116,7 @@ namespace MuViPApp
         public void AfterClick()
         {
             this.Controls.Remove(sp_Select);
+            sp_Select = null;
             listView_myvideo.Items.Clear();
             ShowListVid();
         }
@@ -188,7 +190,7 @@ namespace MuViPApp
                 if(this.parent.btn_My_Video.selected == true)
                 {
                     form_Delete.StartPosition = FormStartPosition.CenterParent;
-                    form_Delete.title.Text += listView_myvideo.SelectedItems.Count + 1 + " selected item(s).";
+                    form_Delete.title.Text += listView_myvideo.SelectedItems.Count + " selected item(s).";
                     if (form_Delete.ShowDialog() == DialogResult.OK)
                     {
                         if (form_Delete.delete_on_this_PC == true)
@@ -244,7 +246,7 @@ namespace MuViPApp
                 SelectAll();
             for (int i = 0; i < listView_myvideo.SelectedItems.Count; i++)
             {
-                P_list.AddItems(new VideoInfo(listView_myvideo.SelectedItems[i].SubItems[2].Text));
+                P_list.AddItems(new VideoInfo(listView_myvideo.SelectedItems[i].SubItems[5].Text));
             }
             ///////////////////////////////////////////////////////////
             P_list.Export();
@@ -327,5 +329,7 @@ namespace MuViPApp
         {
             AddToNewPlaylist();
         }
+
+       
     }
 }

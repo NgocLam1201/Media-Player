@@ -120,5 +120,9 @@ namespace MuViPApp
             }
             Export();
         }
+        public int count()
+        {
+            return Listvideo.Count;
+        }
     }
 }

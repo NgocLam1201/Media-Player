@@ -45,10 +45,13 @@ namespace MuViPApp.Video
         public void AddItems(VideoInfo item)
         {
             item.Date = DateTime.Now.ToString();
-            foreach (VideoInfo music_Song in ListVideo)
+            foreach (VideoInfo video in ListVideo)
             {
-                if (music_Song.Link_Video == item.Link_Video)
+                if (video.Link_Video == item.Link_Video)
+                {
                     ListVideo.Remove(item);
+                    break;
+                }
             }
             ListVideo.Add(item);
             using (StreamWriter sw = new StreamWriter(path, true))

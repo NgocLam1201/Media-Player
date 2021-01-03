@@ -24,9 +24,9 @@ namespace MuViPApp
             InitializeComponent();
             ShowList();
             if (listView_VideoPlaying.Items.Count > 0)
-           { 
-                PlayVideo(0); 
-          }
+            {
+                PlayVideo(0);
+            }
             setMixIcon();
             setLoopIcon();
             Volume_Slider.Value = ControlCentre.lastVolume;
@@ -44,7 +44,6 @@ namespace MuViPApp
         }
 
         //Play Video
-
         private void setPlayIcon()
         {
             if (ControlCentre.Playing)
@@ -66,11 +65,12 @@ namespace MuViPApp
             lb_Length.Text = listView_VideoPlaying.Items[i].SubItems[1].Text;
             lb_NameVid.Text = listView_VideoPlaying.Items[i].SubItems[0].Text;
             ControlCentre.Playing = true;
+            ControlCentre.lastURL = MediaPlayer.URL;
             MediaPlayer.Ctlcontrols.play();
             setPlayIcon();
             timer_Video.Start();
             VideoInfo Video = ListVideoPlaying.Instance.GetVideo(index);
-            //parent.AddHistoryvideo(Video);
+            ListVideoRecently.Instance.AddItems(Video);
         }
 
 
@@ -271,9 +271,14 @@ namespace MuViPApp
 
         private void Video_Slider_ValueChanged(object sender, EventArgs e)
         {
+
+            Video_Slider_ValueChanged();
+        }
+        private void Video_Slider_ValueChanged()
+        {
             MediaPlayer.Ctlcontrols.currentPosition = Video_Slider.Value;
             Video_Slider.MaximumValue = (int)MediaPlayer.currentMedia.duration;
-           
         }
+
     }
 }

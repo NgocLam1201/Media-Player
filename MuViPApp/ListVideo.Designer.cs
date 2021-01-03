@@ -80,7 +80,6 @@
             this.listView_myvideo.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView_myvideo.TabIndex = 3;
             this.listView_myvideo.UseCompatibleStateImageBehavior = false;
-            this.listView_myvideo.View = System.Windows.Forms.View.Details;
             this.listView_myvideo.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView_myvideo_ColumnClick);
             // 
             // namevideo
@@ -220,6 +219,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ListVideo";
             this.Text = "ListVideo";
+       //     this.Load += new System.EventHandler(this.ListVideo_Load);
             this.MenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 

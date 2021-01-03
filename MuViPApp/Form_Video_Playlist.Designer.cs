@@ -30,35 +30,53 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Video_Playlist));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.Date_create = new System.Windows.Forms.Label();
             this.Number_song_video = new System.Windows.Forms.Label();
             this.lb_NamePl = new System.Windows.Forms.Label();
-            this.btn_Delete = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_Rename = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_Addto = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_Playall = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pn_List = new System.Windows.Forms.Panel();
+            this.btn_goto = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
+            this.pn_List.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
+            this.panel1.Controls.Add(this.bunifuImageButton2);
             this.panel1.Controls.Add(this.Date_create);
             this.panel1.Controls.Add(this.Number_song_video);
             this.panel1.Controls.Add(this.lb_NamePl);
-            this.panel1.Controls.Add(this.btn_Delete);
             this.panel1.Controls.Add(this.btn_Rename);
             this.panel1.Controls.Add(this.btn_Addto);
             this.panel1.Controls.Add(this.btn_Playall);
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(643, 99);
             this.panel1.TabIndex = 2;
+            // 
+            // bunifuImageButton2
+            // 
+            this.bunifuImageButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bunifuImageButton2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
+            this.bunifuImageButton2.ImageActive = null;
+            this.bunifuImageButton2.Location = new System.Drawing.Point(74, 12);
+            this.bunifuImageButton2.Name = "bunifuImageButton2";
+            this.bunifuImageButton2.Size = new System.Drawing.Size(82, 69);
+            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton2.TabIndex = 12;
+            this.bunifuImageButton2.TabStop = false;
+            this.bunifuImageButton2.Zoom = 10;
             // 
             // Date_create
             // 
@@ -95,43 +113,6 @@
             this.lb_NamePl.Size = new System.Drawing.Size(70, 25);
             this.lb_NamePl.TabIndex = 7;
             this.lb_NamePl.Text = "name";
-            // 
-            // btn_Delete
-            // 
-            this.btn_Delete.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btn_Delete.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
-            this.btn_Delete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Delete.BorderRadius = 0;
-            this.btn_Delete.ButtonText = "Delete";
-            this.btn_Delete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Delete.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Delete.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_Delete.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_Delete.Iconimage")));
-            this.btn_Delete.Iconimage_right = null;
-            this.btn_Delete.Iconimage_right_Selected = null;
-            this.btn_Delete.Iconimage_Selected = null;
-            this.btn_Delete.IconMarginLeft = 0;
-            this.btn_Delete.IconMarginRight = 0;
-            this.btn_Delete.IconRightVisible = true;
-            this.btn_Delete.IconRightZoom = 0D;
-            this.btn_Delete.IconVisible = true;
-            this.btn_Delete.IconZoom = 35D;
-            this.btn_Delete.IsTab = false;
-            this.btn_Delete.Location = new System.Drawing.Point(532, 70);
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
-            this.btn_Delete.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
-            this.btn_Delete.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_Delete.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btn_Delete.selected = false;
-            this.btn_Delete.Size = new System.Drawing.Size(70, 20);
-            this.btn_Delete.TabIndex = 6;
-            this.btn_Delete.Text = "Delete";
-            this.btn_Delete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Delete.Textcolor = System.Drawing.Color.White;
-            this.btn_Delete.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // btn_Rename
             // 
@@ -247,25 +228,91 @@
             this.btn_Playall.Textcolor = System.Drawing.Color.White;
             this.btn_Playall.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(59, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(89, 78);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // pn_List
             // 
             this.pn_List.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
+            this.pn_List.Controls.Add(this.btn_goto);
+            this.pn_List.Controls.Add(this.label1);
+            this.pn_List.Controls.Add(this.bunifuImageButton1);
+            this.pn_List.Controls.Add(this.label2);
             this.pn_List.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn_List.Location = new System.Drawing.Point(0, 99);
             this.pn_List.Name = "pn_List";
             this.pn_List.Size = new System.Drawing.Size(643, 312);
             this.pn_List.TabIndex = 3;
+            // 
+            // btn_goto
+            // 
+            this.btn_goto.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
+            this.btn_goto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
+            this.btn_goto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_goto.BorderRadius = 0;
+            this.btn_goto.ButtonText = "Go to my video";
+            this.btn_goto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_goto.DisabledColor = System.Drawing.Color.DarkOrchid;
+            this.btn_goto.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_goto.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_goto.Iconimage = null;
+            this.btn_goto.Iconimage_right = null;
+            this.btn_goto.Iconimage_right_Selected = null;
+            this.btn_goto.Iconimage_Selected = null;
+            this.btn_goto.IconMarginLeft = 0;
+            this.btn_goto.IconMarginRight = 0;
+            this.btn_goto.IconRightVisible = true;
+            this.btn_goto.IconRightZoom = 0D;
+            this.btn_goto.IconVisible = true;
+            this.btn_goto.IconZoom = 35D;
+            this.btn_goto.IsTab = false;
+            this.btn_goto.Location = new System.Drawing.Point(109, 119);
+            this.btn_goto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_goto.Name = "btn_goto";
+            this.btn_goto.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
+            this.btn_goto.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
+            this.btn_goto.OnHoverTextColor = System.Drawing.Color.MediumSeaGreen;
+            this.btn_goto.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.btn_goto.selected = false;
+            this.btn_goto.Size = new System.Drawing.Size(156, 20);
+            this.btn_goto.TabIndex = 14;
+            this.btn_goto.Text = "Go to my video";
+            this.btn_goto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_goto.Textcolor = System.Drawing.Color.DarkOrchid;
+            this.btn_goto.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_goto.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(109, 102);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 16);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Add song from my video";
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(59, 102);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(37, 34);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 11;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(55, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(275, 23);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "What\'s a playlist without video?";
             // 
             // Form_Video_Playlist
             // 
@@ -279,7 +326,10 @@
             this.Text = "Form_Video_Playlist";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
+            this.pn_List.ResumeLayout(false);
+            this.pn_List.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -290,11 +340,14 @@
         private System.Windows.Forms.Label Date_create;
         private System.Windows.Forms.Label Number_song_video;
         public System.Windows.Forms.Label lb_NamePl;
-        private Bunifu.Framework.UI.BunifuFlatButton btn_Delete;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Rename;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Addto;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Playall;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pn_List;
+        private System.Windows.Forms.Label label2;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private System.Windows.Forms.Label label1;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_goto;
     }
 }

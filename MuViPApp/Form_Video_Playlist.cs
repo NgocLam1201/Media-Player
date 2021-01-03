@@ -22,7 +22,8 @@ namespace MuViPApp
             InitializeComponent();
             lb_NamePl.Text = this.parent.NamePlay;
             this.parent.parent.Is_Playing_NowPlaying = false;
-            LoadListVideo();
+            if (PlaylistVideo.Instance.GetListVideo(this.parent.ID_Playlist).count()>0) 
+                LoadListVideo();
             toolStrip.ItemClicked += ClickItem;
         }
 
@@ -96,6 +97,13 @@ namespace MuViPApp
             toolStrip.BringToFront();
             toolStrip.GripStyle = ToolStripGripStyle.Hidden;
             toolStrip.Dock = DockStyle.None;
+        }
+
+      
+        private void label3_Click(object sender, EventArgs e)
+        {
+            this.parent.parent.activeForm = null;
+            this.parent.parent.openChildForm(new Form_My_Video());
         }
     }
 }

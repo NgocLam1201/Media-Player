@@ -54,11 +54,12 @@ namespace MuViPApp
             SetActive_PanelPlayer();
         }
 
-        private Form activeForm = null;
+        public Form activeForm = null;
         public void openChildForm(Form childForm)
         {
             if (activeForm != null)
-                pn_Childform.Controls.Remove(activeForm);
+                activeForm.Close();
+           // pn_Childform.Controls.Remove(activeForm);
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -190,6 +191,7 @@ namespace MuViPApp
         {
             SetActive_PanelPlayer();
             btn_My_Music.selected = false;
+            btn_My_Video.selected = false;
             btn_Liked.selected = false;
             btn_NowPlaying.selected = false;
             btn_History.selected = false;
@@ -263,7 +265,7 @@ namespace MuViPApp
             }
             if (btn_Video.selected == true)
             {
-                openChildForm(new form_Video_Nowpl());
+                openChildForm(new form_Video_Nowpl(this));
             }
         }
 
@@ -279,7 +281,7 @@ namespace MuViPApp
         {
             btn_Playlist.selected = false;
             if (btn_Video.selected == true)
-                openChildForm(new Form_My_Video(this));
+                openChildForm(new Form_My_Video());
         }
 
         private void btn_Liked_Click(object sender, EventArgs e)
@@ -408,10 +410,6 @@ namespace MuViPApp
             ListMusicRecently.Instance.AddItems(Music);
         }
 
-        public void AddHistoryvideo(VideoInfo Video)
-        {
-            ListVideoRecently.Instance.AddItems(Video);
-        }
 
         public void LoopMusic(object sender, EventArgs e)
         {
@@ -509,6 +507,13 @@ namespace MuViPApp
                 max_Volume.Visible = true;
                 medium_Volume.Visible = false;
             }
+        }
+
+        private void panel_Player_Click(object sender, EventArgs e)
+        {
+            btn_My_Music.selected = false;
+            btn_NowPlaying.selected = true;
+            btn_NowPlaying_Click(sender, e);
         }
 
         public void Mute_Click(object sender, EventArgs e)
