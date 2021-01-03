@@ -32,6 +32,7 @@ namespace MuViPApp
             }
             lv_My_Music.DoubleClick += Music_Click;
             lv_My_Music.MouseClick += SelectMusic;
+            lv_My_Music.ShowItemToolTips = true;
             foreach (PlayListInfo item in Playlist.Instance.GetAllPlayListMusic())
             {
                 toolStripMenuItem = new ToolStripMenuItem(item.Name_PL);
@@ -61,6 +62,7 @@ namespace MuViPApp
             {
                 ListViewItem items = new ListViewItem(new[] { item.Name_Song, item.Singer, item.Name_Genre, item.Date_Add, item.Length, " ", item.Link_Music });
                 items.ImageIndex = i++;
+                items.ToolTipText = item.Link_Music;
                 lv_My_Music.Items.Add(items);
                 listlargeimage.ImageSize = new Size(100, 100);
                 listlargeimage.Images.Add(item.Picture_Song);
