@@ -32,7 +32,6 @@
             System.Windows.Forms.ColumnHeader fpath;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_Video_Nowpl));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lb_NameVid = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lb_Length = new System.Windows.Forms.Label();
@@ -61,8 +60,8 @@
             this.length = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.timer_Video = new System.Windows.Forms.Timer(this.components);
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             fpath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -80,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_pre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Next)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
             // fpath
@@ -92,16 +92,6 @@
             // 
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(66, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(59, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // lb_NameVid
             // 
@@ -116,9 +106,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(42)))), ((int)(((byte)(56)))));
+            this.panel2.Controls.Add(this.bunifuImageButton1);
             this.panel2.Controls.Add(this.lb_Length);
             this.panel2.Controls.Add(this.lb_NameVid);
-            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -468,6 +458,19 @@
             // 
             this.timer_Video.Tick += new System.EventHandler(this.timer_Video_Tick);
             // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(73, 6);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(37, 34);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 12;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            // 
             // form_Video_Nowpl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -478,7 +481,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "form_Video_Nowpl";
             this.Text = "form_Video_Nowpl";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -498,6 +500,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_pre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Next)).EndInit();
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -516,7 +519,6 @@
         private AxWMPLib.AxWindowsMediaPlayer MediaPlayer;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lb_NameVid;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private System.Windows.Forms.ListView listView_VideoPlaying;
         private System.Windows.Forms.ColumnHeader vid_Name;
@@ -534,5 +536,6 @@
         public System.Windows.Forms.TextBox lb_currentTime;
         public Bunifu.Framework.UI.BunifuSlider Video_Slider;
         private System.Windows.Forms.Timer timer_Video;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
     }
 }

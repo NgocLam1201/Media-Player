@@ -24,6 +24,7 @@ namespace MuViPApp
 
         void LoadHistory()
         {
+            ListVideoRecently.Instance.Load();
             FlistMusic = new Form_ListVideo(this.parent, ListVideoRecently.Instance.GetVideo());
             FlistMusic.TopLevel = false;
             FlistMusic.FormBorderStyle = FormBorderStyle.None;

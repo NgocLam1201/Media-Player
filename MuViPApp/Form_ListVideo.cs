@@ -60,10 +60,10 @@ namespace MuViPApp
                 ListViewItem items = new ListViewItem(new[] { item.Name, item.Date, item.Size, item.Length, item.Length, item.link_Video });
                 listView_myvideo.Items.Add(items);
                 items.ImageIndex = i++;
-                listlargeimage.ImageSize = new Size(100, 100);
-                listlargeimage.Images.Add(item.Picture_Song);
-                listsmallimage.ImageSize = new Size(30, 30);
-                listsmallimage.Images.Add(item.Picture_Song);
+                listlargeimage.ImageSize = new Size(150,100);
+                listlargeimage.Images.Add(item.picture_Video);
+                listsmallimage.ImageSize = new Size(45, 30);
+                listsmallimage.Images.Add(item.picture_Video);
             }
             listView_myvideo.LargeImageList = listlargeimage;
             listView_myvideo.SmallImageList = listsmallimage;
@@ -94,6 +94,8 @@ namespace MuViPApp
             //this.parent.PlayMusic(0);
             this.parent.btn_NowPlaying.selected = true;
             this.parent.btn_My_Video.selected = false;
+            this.parent.btn_History.selected = false;
+            this.parent.btn_Liked.selected = false;
             this.parent.activeForm = null;
             this.parent.openChildForm(new form_Video_Nowpl());
             listView_myvideo.Items.Clear();
@@ -275,7 +277,7 @@ namespace MuViPApp
                 ListVideoPlaying.Instance.AddItems(new VideoInfo(listView_myvideo.SelectedItems[i].SubItems[5].Text));
             }
             ListVideoPlaying.Instance.export();
-            this.parent.openChildForm(new form_Video_Nowpl());
+         //   this.parent.openChildForm(new form_Video_Nowpl(this.parent));
         }
 
         public void AddToNewPlaylist()

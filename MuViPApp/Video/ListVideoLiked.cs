@@ -50,26 +50,30 @@ namespace MuViPApp.Video
                 sw.Close();
             }
         }
-
+        public void AddItems(VideoInfo item)
+        {
+            foreach (VideoInfo video in list_VidLiked)
+            {
+                if (video.Link_Video == item.Link_Video)
+                {
+                    list_VidLiked.Remove(video);
+                    break;
+                }
+            }
+            list_VidLiked.Add(item);
+            export();
+        }
         public bool IsExist(VideoInfo item)
         {
-            foreach (VideoInfo music_Song in list_VidLiked)
+            foreach (VideoInfo video in list_VidLiked)
             {
-                if (item.Link_Video == music_Song.Link_Video)
+                if (item.link_Video == video.link_Video)
                 {
                     return true;
                 }
             }
             return false;
         }
-
-        public void AddItems(VideoInfo item)
-        {
-            if (File.Exists(item.Link_Video))
-                if (!IsExist(item))
-                    list_VidLiked.Add(item);
-        }
-
         public List<VideoInfo> GetVideo()
         {
             return list_VidLiked;

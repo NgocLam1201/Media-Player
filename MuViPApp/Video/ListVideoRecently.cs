@@ -34,31 +34,31 @@ namespace MuViPApp.Video
                 }
                 sr.Close();
             }
+            
+        }
+        public void Load()
+        {
             for (int i = 0; i < ListVideo.Count / 2; i++)
             {
                 VideoInfo temp = ListVideo[i];
-                ListVideo[ListVideo.Count - i - 1] = ListVideo[i];
-                ListVideo[i] = temp;
+                ListVideo[i] = ListVideo[ListVideo.Count - i - 1];
+                ListVideo[ListVideo.Count - i - 1] = temp;
             }
         }
 
         public void AddItems(VideoInfo item)
         {
-            item.Date = DateTime.Now.ToString();
+            item.Date_Add = DateTime.Now.ToString();
             foreach (VideoInfo video in ListVideo)
             {
                 if (video.Link_Video == item.Link_Video)
                 {
-                    ListVideo.Remove(item);
+                    ListVideo.Remove(video);
                     break;
                 }
             }
             ListVideo.Add(item);
-            using (StreamWriter sw = new StreamWriter(path, true))
-            {
-                sw.WriteLine(item.Link_Video);
-                sw.Close();
-            }
+            Export();
         }
 
         public void Export()
@@ -69,7 +69,7 @@ namespace MuViPApp.Video
             {
                 foreach (VideoInfo item in ListVideo)
                 {
-                    sw.WriteLine(item.Link_Video + '\t' + item.Date_Add);
+                    sw.WriteLine(item.Link_Video);
                 }
                 sw.Close();
             }

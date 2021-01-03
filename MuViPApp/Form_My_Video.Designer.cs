@@ -158,7 +158,7 @@
             this.Cb_View.Name = "Cb_View";
             this.Cb_View.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
             this.Cb_View.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
-            this.Cb_View.selectedIndex = 0;
+            this.Cb_View.selectedIndex = 2;
             this.Cb_View.Size = new System.Drawing.Size(117, 25);
             this.Cb_View.TabIndex = 10;
             this.Cb_View.onItemSelected += new System.EventHandler(this.Cb_View_onItemSelected_1);
@@ -228,7 +228,6 @@
             this.pn_List.Name = "pn_List";
             this.pn_List.Size = new System.Drawing.Size(800, 344);
             this.pn_List.TabIndex = 3;
-        //    this.pn_List.Click += new System.EventHandler(this.pn_List_Click);
             // 
             // Form_My_Video
             // 
