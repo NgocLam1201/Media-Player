@@ -235,7 +235,8 @@ namespace MuViPApp
                         }
                     }
                 ListVideoPlaying.Instance.export();
-                PlaylistVideo.Instance.GetListVideo(ind).Export();
+                if (ind >= 0)
+                    Playlist.Instance.GetListMusic(ind).Export();
                 ListVideoLiked.Instance.export();
                 ShowListVid();
             }
@@ -276,7 +277,7 @@ namespace MuViPApp
                 ListVideoPlaying.Instance.AddItems(new VideoInfo(listView_myvideo.SelectedItems[i].SubItems[5].Text));
             }
             ListVideoPlaying.Instance.export();
-            this.parent.openChildForm(new form_Video_Nowpl());
+         //   this.parent.openChildForm(new form_Video_Nowpl(this.parent));
         }
 
         public void AddToNewPlaylist()

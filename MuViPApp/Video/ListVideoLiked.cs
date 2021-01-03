@@ -63,7 +63,17 @@ namespace MuViPApp.Video
             list_VidLiked.Add(item);
             export();
         }
-
+        public bool IsExist(VideoInfo item)
+        {
+            foreach (VideoInfo video in list_VidLiked)
+            {
+                if (item.link_Video == video.link_Video)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         public List<VideoInfo> GetVideo()
         {
             return list_VidLiked;
