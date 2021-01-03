@@ -197,11 +197,11 @@
     <Compile Include="Form_Video_Playlist.Designer.cs">
       <DependentUpon>Form_Video_Playlist.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_ListVideo.cs">
+    <Compile Include="ListVideo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_ListVideo.Designer.cs">
-      <DependentUpon>Form_ListVideo.cs</DependentUpon>
+    <Compile Include="ListVideo.Designer.cs">
+      <DependentUpon>ListVideo.cs</DependentUpon>
     </Compile>
     <Compile Include="Music\ListFolderLocalMusic.cs" />
     <Compile Include="Music\ListMusicLiked.cs" />
@@ -303,8 +303,8 @@
     <EmbeddedResource Include="Form_Video_Playlist.resx">
       <DependentUpon>Form_Video_Playlist.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_ListVideo.resx">
-      <DependentUpon>Form_ListVideo.cs</DependentUpon>
+    <EmbeddedResource Include="ListVideo.resx">
+      <DependentUpon>ListVideo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Music\Music_Playlist.resx">
       <DependentUpon>Music_Playlist.cs</DependentUpon>
