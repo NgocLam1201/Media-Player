@@ -32,6 +32,7 @@ namespace MuViPApp
             }
             listView_myvideo.DoubleClick += Video_Click;
             listView_myvideo.MouseClick += SelectVideo;
+            listView_myvideo.ShowItemToolTips = true;
             foreach (PlayListInfoVideo item in PlaylistVideo.Instance.GetAllPlayListVideo())
             {
                 toolStripMenuItem = new ToolStripMenuItem(item.Name_PL);
@@ -59,6 +60,7 @@ namespace MuViPApp
             {
                 ListViewItem items = new ListViewItem(new[] { item.Name, item.Date, item.Size, item.Length, item.Length, item.link_Video });
                 listView_myvideo.Items.Add(items);
+                items.ToolTipText = item.Link_Video;
                 items.ImageIndex = i++;
                 listlargeimage.ImageSize = new Size(150,100);
                 listlargeimage.Images.Add(item.picture_Video);
