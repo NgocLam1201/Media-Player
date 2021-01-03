@@ -27,6 +27,7 @@ namespace MuViPApp
         }
         public void ShowListVid()
         {
+            
             FlistVideo = new Form_ListVideo(this.parent, ListMyVideo.Instance.GetVideo());
             FlistVideo.TopLevel = false;
             FlistVideo.FormBorderStyle = FormBorderStyle.None;

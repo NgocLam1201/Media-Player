@@ -13,7 +13,7 @@ namespace MuViPApp.Video
 
         public static ListMyVideo Instance
         {
-            get { if (instance == null) instance = new ListMyVideo(); return instance; }
+            get {instance = new ListMyVideo(); return instance; }
             private set { instance = value; }
         }
 
@@ -28,13 +28,13 @@ namespace MuViPApp.Video
                     {
                         FileInfo info = new FileInfo(child);
 
-                        if (info.Extension == ".mp4"|| info.Extension == ".wmv")
+                        if (info.Extension == ".mp4"|| info.Extension == ".wmv"|| info.Extension == ".webm")
                         {
                             ListVideo.Add(new VideoInfo(info.FullName));
                         }
                     }
                 else
-                    if (File.Exists(item))
+                    if (File.Exists(item) && (item.Contains(".mp4")|| item.Contains(".wmv")|| item.Contains(".webm")))
                     ListVideo.Add(new VideoInfo(item));
             }
         }

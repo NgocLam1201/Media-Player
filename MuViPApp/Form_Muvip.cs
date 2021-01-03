@@ -12,6 +12,7 @@ using System.Threading;
 using MuViPApp.Music;
 using MuViPApp.Video;
 using System.IO;
+using MuViPApp.Video;
 
 namespace MuViPApp
 {
@@ -156,7 +157,7 @@ namespace MuViPApp
                 CheckPathExists = true,
 
                 DefaultExt = "mp4",
-                Filter = "Mp4 Files| *.mp4;  *.vid",
+                Filter = "Mp4 Files| *.mp4;  *.vid;*wmv;*webm",
                 FilterIndex = 2,
                 RestoreDirectory = true,
 
@@ -168,7 +169,10 @@ namespace MuViPApp
 
                 if (ofd_video.ShowDialog() == DialogResult.OK)
                 {
-                    Mp3Player.Instance.Open(ofd_video.FileName);
+                    FileInfo fileInfo = new FileInfo(ofd_video.FileName);
+                    ListFolderLocalVideo.Instance.Additem(fileInfo.FullName);
+                    ListFolderLocalVideo.Instance.Export();
+                    openChildForm(new Form_My_Video(this));
 
                 }
             }
