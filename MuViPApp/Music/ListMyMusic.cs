@@ -36,11 +36,25 @@ namespace MuViPApp.Music
                     if (File.Exists(item) && item.Contains(".mp3"))
                     Listmusic.Add(new Music_Song(item));
             }
-        }        
+        }
+
+        public bool IsExist(Music_Song item)
+        {
+            foreach (Music_Song music_Song in Listmusic)
+            {
+                if (item.Link_Music == music_Song.Link_Music)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
 
         public void AddItems(Music_Song item)
         {
-            Listmusic.Add(item);
+            if (File.Exists(item.Link_Music))
+                if (!IsExist(item))
+                    Listmusic.Add(item);
         }
 
         public List<Music_Song> GetMusic()
