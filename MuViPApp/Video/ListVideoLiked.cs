@@ -50,9 +50,24 @@ namespace MuViPApp.Video
                 sw.Close();
             }
         }
+
+        public bool IsExist(VideoInfo item)
+        {
+            foreach (VideoInfo music_Song in list_VidLiked)
+            {
+                if (item.Link_Video == music_Song.Link_Video)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public void AddItems(VideoInfo item)
         {
-            list_VidLiked.Add(item);
+            if (File.Exists(item.Link_Video))
+                if (!IsExist(item))
+                    list_VidLiked.Add(item);
         }
 
         public List<VideoInfo> GetVideo()

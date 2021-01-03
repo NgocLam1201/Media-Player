@@ -73,26 +73,33 @@ namespace MuViPApp
 
         public void Music_Click(object sender, EventArgs e)
         {
-            ListMusicPlaying.Instance.Remove();
-            if (lv_My_Music.SelectedItems.Count == 1)
+            int index = lv_My_Music.Items.IndexOf(lv_My_Music.SelectedItems[0]);
+            if (this.parent.btn_NowPlaying.selected == false)
             {
-                int index = lv_My_Music.Items.IndexOf(lv_My_Music.SelectedItems[0]);
-                for (int i = index; i < lv_My_Music.Items.Count; i++)
+                ListMusicPlaying.Instance.Remove();
+                if (lv_My_Music.SelectedItems.Count == 1)
                 {
-                    ListMusicPlaying.Instance.AddItems(new Music_Song(lv_My_Music.Items[i].SubItems[6].Text));
+                    for (int i = index; i < lv_My_Music.Items.Count; i++)
+                    {
+                        ListMusicPlaying.Instance.AddItems(new Music_Song(lv_My_Music.Items[i].SubItems[6].Text));
+                    }
+                    for (int i = 0; i < index; i++)
+                    {
+                        ListMusicPlaying.Instance.AddItems(new Music_Song(lv_My_Music.Items[i].SubItems[6].Text));
+                    }
                 }
-                for (int i = 0; i < index; i++)
-                {
-                    ListMusicPlaying.Instance.AddItems(new Music_Song(lv_My_Music.Items[i].SubItems[6].Text));
-                }
+                else
+                    for (int i = 0; i < lv_My_Music.SelectedItems.Count; i++)
+                    {
+                        ListMusicPlaying.Instance.AddItems(new Music_Song(lv_My_Music.Items[i].SubItems[6].Text));
+                    }
+                ListMusicPlaying.Instance.export();
+                this.parent.PlayMusic(0);
             }
             else
-                for (int i = 0; i < lv_My_Music.SelectedItems.Count; i++)
-                {
-                    ListMusicPlaying.Instance.AddItems(new Music_Song(lv_My_Music.Items[i].SubItems[6].Text));
-                }
-            ListMusicPlaying.Instance.export();
-            this.parent.PlayMusic(0);
+            {
+                this.parent.PlayMusic(index);
+            }
             this.Controls.Remove(sp_SelectMusic);
             sp_SelectMusic = null;
             this.parent.Is_Playing = true;
@@ -115,7 +122,19 @@ namespace MuViPApp
                 sp_SelectMusic.Dock = DockStyle.Bottom;
                 sp_SelectMusic.BringToFront();
             }
-            
+            else
+            {
+                if (ListMusicLiked.Instance.IsExist(new Music_Song(lv_My_Music.SelectedItems[0].SubItems[6].Text)))
+                {
+                    MenuStrip.Items[0].Enabled = false;
+                    MenuStrip.Items[1].Enabled = true;
+                }    
+                else
+                {
+                    MenuStrip.Items[0].Enabled = true;
+                    MenuStrip.Items[1].Enabled = false;
+                }                    
+            }                
         }
 
         public void AfterClick()

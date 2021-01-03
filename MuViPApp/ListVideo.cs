@@ -102,7 +102,7 @@ namespace MuViPApp
 
         public void SelectVideo(object sender, MouseEventArgs e)
         {
-            if (sp_Select == null)
+            if (e.Button == MouseButtons.Left)
             {
                 //this.parent.Is_Playing = false;
                 //this.parent.SetActive_PanelPlayer();
@@ -111,6 +111,19 @@ namespace MuViPApp
                 sp_Select.Dock = DockStyle.Bottom;
                 sp_Select.BringToFront();
             }
+            else
+            {
+                if (ListVideoLiked.Instance.IsExist(new VideoInfo(listView_myvideo.SelectedItems[0].SubItems[5].Text)))
+                {
+                    MenuStrip.Items[0].Enabled = false;
+                    MenuStrip.Items[1].Enabled = true;
+                }    
+                else
+                {
+                    MenuStrip.Items[0].Enabled = true;
+                    MenuStrip.Items[1].Enabled = false;
+                }                    
+            }  
         }
 
         public void AfterClick()
