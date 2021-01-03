@@ -52,7 +52,16 @@ namespace MuViPApp.Video
         }
         public void AddItems(VideoInfo item)
         {
+            foreach (VideoInfo video in list_VidLiked)
+            {
+                if (video.Link_Video == item.Link_Video)
+                {
+                    list_VidLiked.Remove(video);
+                    break;
+                }
+            }
             list_VidLiked.Add(item);
+            export();
         }
 
         public List<VideoInfo> GetVideo()

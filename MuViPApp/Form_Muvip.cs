@@ -225,6 +225,7 @@ namespace MuViPApp
         {
             btn_Music_Play_Click(sender, e);
             btn_Video.selected = true;
+            SetActive_PanelPlayer();
             btn_My_Video.Visible = true;
             btn_My_Music.Visible = false;
             btn_My_Video.selected = true;
@@ -281,7 +282,7 @@ namespace MuViPApp
         {
             btn_Playlist.selected = false;
             if (btn_Video.selected == true)
-                openChildForm(new Form_My_Video());
+                openChildForm(new Form_My_Video(this));
         }
 
         private void btn_Liked_Click(object sender, EventArgs e)

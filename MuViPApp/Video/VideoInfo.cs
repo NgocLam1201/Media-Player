@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using WMPLib;
 using System.IO;
 using System.Drawing;
+using Accord.Video.FFMPEG;
 
 namespace MuViPApp.Video
 {
@@ -17,6 +18,7 @@ namespace MuViPApp.Video
         public string Size;
         public string Length;
         public string link_Video;
+        public Image picture_Video;
 
         private static VideoInfo instance;
 
@@ -47,12 +49,7 @@ namespace MuViPApp.Video
             set { date_Add = value; }
         }
 
-        private Image picture_Song;
-        public Image Picture_Song
-        {
-            get { return picture_Song; }
-            set { picture_Song = value; }
-        }
+    
 
         public VideoInfo() { } 
         public VideoInfo(string path)
@@ -65,21 +62,19 @@ namespace MuViPApp.Video
                 this.Size = SizeFile(info);
                 this.Length = Duration(path);
                 this.Link_Video = path;
-                var fileTag = TagLib.File.Create(info.FullName);
-                Image temp = null;
-                if (fileTag.Tag.Pictures.Length >= 1)
-                {
-                    var bin = (byte[])(fileTag.Tag.Pictures[0].Data.Data);
-                    temp = Image.FromStream(new MemoryStream(bin)).GetThumbnailImage(100, 100, null, IntPtr.Zero);
-                }
-                else
-                {
-                    temp = new Bitmap(Properties.Resources.songImg);
-                }
-                this.Picture_Song = temp;
+                this.picture_Video = GetThumbnail(path);
+            
             }
         }
 
+        private Bitmap GetThumbnail(string fpath)
+        {
+
+            VideoFileReader reader = new VideoFileReader();
+            // open video file
+            reader.Open(fpath);
+            return reader.ReadVideoFrame();
+        }
         public string Link_Video
         {
             get { return link_Video; }
