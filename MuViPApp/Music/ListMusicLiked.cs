@@ -50,19 +50,22 @@ namespace MuViPApp.Music
             }
         }
 
-        public void AddItems(Music_Song item)
+        public bool IsExist(Music_Song item)
         {
-            bool check = true;
             foreach (Music_Song music_Song in Listmusic)
             {
                 if (item.Link_Music == music_Song.Link_Music)
                 {
-                    check = false;
-                    break;
+                    return true;
                 }
             }
-            if (check)
-                Listmusic.Add(item);
+            return false;
+        }
+        public void AddItems(Music_Song item)
+        {
+            if (File.Exists(item.Link_Music))
+                if (!IsExist(item))
+                    Listmusic.Add(item);
         }
 
         public List<Music_Song> GetMusic()

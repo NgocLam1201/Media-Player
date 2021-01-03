@@ -55,6 +55,7 @@ namespace MuViPApp
 
         private void btn_Addto_Click(object sender, EventArgs e)
         {
+            toolStrip.Items.Clear();
             toolStrip.Items.Add("Now playing");
             toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             toolStrip.Items.Add("-");

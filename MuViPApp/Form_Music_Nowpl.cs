@@ -35,6 +35,7 @@ namespace MuViPApp
             SetPlay();
             setMixIcon();
             setLoopIcon();
+            FlistMusic.lv_My_Music.MultiSelect = false;
         }
 
         public void LoadMusic()
@@ -58,6 +59,7 @@ namespace MuViPApp
             }
             else
             {
+                FlistMusic.lv_My_Music.Items[this.parent.index].Selected = true;
                 this.lb_NamePl.Visible = true;
                 this.lb_Info_Music.Visible = true;
                 this.picturesong.Image = this.parent.picturesong.Image;
