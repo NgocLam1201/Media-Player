@@ -13,7 +13,7 @@ namespace MuViPApp.Music
 
         public static ListMyMusic Instance
         {
-            get { if (instance == null) instance = new ListMyMusic(); return instance; }
+            get {instance = new ListMyMusic(); return instance; }
             private set { instance = value; }
         }
 

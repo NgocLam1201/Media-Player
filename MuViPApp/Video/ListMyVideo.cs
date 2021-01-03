@@ -38,10 +38,23 @@ namespace MuViPApp.Video
                     ListVideo.Add(new VideoInfo(item));
             }
         }
-
+        public bool IsExist(VideoInfo item)
+        {
+            foreach (VideoInfo video in ListVideo)
+            {
+                if (item.link_Video == video.link_Video)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         public void AddItems(VideoInfo item)
         {
-            ListVideo.Add(item);
+
+            if (File.Exists(item.link_Video))
+                if (!IsExist(item))
+                    ListVideo.Add(item);
         }
 
         public List<VideoInfo> GetVideo()

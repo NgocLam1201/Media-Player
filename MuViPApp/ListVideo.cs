@@ -106,7 +106,7 @@ namespace MuViPApp
 
         public void SelectVideo(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if ((sp_Select == null) &&( e.Button == MouseButtons.Left))
             {
                 //this.parent.Is_Playing = false;
                 //this.parent.SetActive_PanelPlayer();
