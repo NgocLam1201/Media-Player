@@ -243,7 +243,7 @@ namespace MuViPApp
                     }
                 ListMusicPlaying.Instance.export();
                 if (ind >=0 )
-                Playlist.Instance.GetListMusic(ind).Export();
+                    Playlist.Instance.GetListMusic(ind).Export();
                 ListMusicLiked.Instance.export();
                 lv_My_Music.Items.Clear();
                 LoadMusic();

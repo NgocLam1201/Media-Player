@@ -14,7 +14,7 @@ namespace MuViPApp
     public partial class Form_Video_Playlist : Form
     {
         public Video_Playlist parent;
-        ListVideo lvideo;
+        Form_ListVideo lvideo;
         ContextMenuStrip toolStrip = new ContextMenuStrip();
         public Form_Video_Playlist(Video_Playlist parent = null)
         {
@@ -30,7 +30,7 @@ namespace MuViPApp
         private void LoadListVideo()
         {
 
-            lvideo = new ListVideo(this.parent.parent, PlaylistVideo.Instance.GetListVideo(this.parent.ID_Playlist).GetVideo());
+            lvideo = new Form_ListVideo(this.parent.parent, PlaylistVideo.Instance.GetListVideo(this.parent.ID_Playlist).GetVideo());
             lvideo.TopLevel = false;
             lvideo.Dock = DockStyle.Fill;
             this.pn_List.Controls.Add(lvideo);

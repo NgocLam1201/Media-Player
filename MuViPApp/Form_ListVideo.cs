@@ -12,14 +12,14 @@ using MuViPApp.Video;
 
 namespace MuViPApp
 {
-    public partial class ListVideo : Form
+    public partial class Form_ListVideo : Form
     {
         public Form_Muvip parent;
         public List<VideoInfo> ListVid = new List<VideoInfo>();
         public SubPanelSelectVideo sp_Select;
         public Form_Delete form_Delete = new Form_Delete();
         ToolStripMenuItem toolStripMenuItem = new ToolStripMenuItem();
-        public ListVideo(Form_Muvip parent = null, List<VideoInfo> ListVid = null)
+        public Form_ListVideo(Form_Muvip parent = null, List<VideoInfo> ListVid = null)
         {
             this.parent = parent;
             this.ListVid = ListVid;
@@ -196,7 +196,7 @@ namespace MuViPApp
             }
         }
 
-        public void DeleteVideo(int ind = 0)
+        public void DeleteVideo(int ind = -1)
         {
             if (listView_myvideo.SelectedItems.Count > 0)
             {
@@ -233,8 +233,10 @@ namespace MuViPApp
                         }
                     }
                 ListVideoPlaying.Instance.export();
-                PlaylistVideo.Instance.GetListVideo(ind).Export();
+                if (ind >= 0)
+                    PlaylistVideo.Instance.GetListVideo(ind).Export();
                 ListVideoLiked.Instance.export();
+                listView_myvideo.Items.Clear();
                 ShowListVid();
             }
         }
@@ -261,7 +263,6 @@ namespace MuViPApp
             {
                 P_list.AddItems(new VideoInfo(listView_myvideo.SelectedItems[i].SubItems[5].Text));
             }
-            ///////////////////////////////////////////////////////////
             P_list.Export();
         }
 

@@ -14,7 +14,7 @@ namespace MuViPApp
     public partial class Form_History_Video : Form
     {
         Form_Muvip parent;
-        ListVideo FlistMusic;
+        Form_ListVideo FlistMusic;
         public Form_History_Video(Form_Muvip parent = null)
         {
             this.parent = parent;
@@ -24,7 +24,7 @@ namespace MuViPApp
 
         void LoadHistory()
         {
-            FlistMusic = new ListVideo(this.parent, ListVideoRecently.Instance.GetVideo());
+            FlistMusic = new Form_ListVideo(this.parent, ListVideoRecently.Instance.GetVideo());
             FlistMusic.TopLevel = false;
             FlistMusic.FormBorderStyle = FormBorderStyle.None;
             FlistMusic.Dock = DockStyle.Fill;

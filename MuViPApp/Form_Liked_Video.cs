@@ -13,7 +13,7 @@ namespace MuViPApp
 {
     public partial class Form_Liked_Video : Form
     {
-        ListVideo FlistVideo;
+        Form_ListVideo FlistVideo;
         Form_Muvip parent;
         public Form_Liked_Video(Form_Muvip parent = null)
         {
@@ -24,7 +24,7 @@ namespace MuViPApp
 
         public void ShowListVideo()
         {
-            FlistVideo = new ListVideo(this.parent, ListVideoLiked.Instance.GetVideo());
+            FlistVideo = new Form_ListVideo(this.parent, ListVideoLiked.Instance.GetVideo());
             FlistVideo.TopLevel = false;
             FlistVideo.FormBorderStyle = FormBorderStyle.None;
             FlistVideo.Dock = DockStyle.Fill;

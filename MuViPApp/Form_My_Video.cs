@@ -16,7 +16,7 @@ namespace MuViPApp
     {
         Form_Muvip parent = new Form_Muvip();
         public int count;
-        ListVideo FlistVideo;
+        Form_ListVideo FlistVideo;
         ToolStrip toolStrip = new ToolStrip();
         public Form_My_Video(Form_Muvip parent=null)
         {
@@ -27,7 +27,7 @@ namespace MuViPApp
         }
         public void ShowListVid()
         {
-            FlistVideo = new ListVideo(this.parent, ListMyVideo.Instance.GetVideo());
+            FlistVideo = new Form_ListVideo(this.parent, ListMyVideo.Instance.GetVideo());
             FlistVideo.TopLevel = false;
             FlistVideo.FormBorderStyle = FormBorderStyle.None;
             FlistVideo.Dock = DockStyle.Fill;

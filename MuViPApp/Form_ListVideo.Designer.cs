@@ -1,6 +1,6 @@
 ﻿namespace MuViPApp
 {
-    partial class ListVideo
+    partial class Form_ListVideo
     {
         /// <summary>
         /// Required designer variable.

@@ -14,9 +14,9 @@ namespace MuViPApp
     public partial class SubPanelSelectVideo : UserControl
     {
 
-        ListVideo parent;
+        Form_ListVideo parent;
         ContextMenuStrip toolStrip = new ContextMenuStrip();
-        public SubPanelSelectVideo(ListVideo parent = null)
+        public SubPanelSelectVideo(Form_ListVideo parent = null)
         {
             this.parent = parent;
             InitializeComponent();
