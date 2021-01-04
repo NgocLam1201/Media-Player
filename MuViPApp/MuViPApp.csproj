@@ -55,7 +55,7 @@
       <HintPath>packages\Accord.Video.FFMPEG.3.8.0\lib\net462\Accord.Video.FFMPEG.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>D:\Study\Năm 2\HK1\Lập trình trực quan\Đồ án\packages\Bunifu\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.Compatibility" />
@@ -95,111 +95,75 @@
     <Compile Include="Form_Delete.Designer.cs">
       <DependentUpon>Form_Delete.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_ListMusic.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form_ListMusic.cs" />
     <Compile Include="Form_ListMusic.Designer.cs">
       <DependentUpon>Form_ListMusic.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_History_Music.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form_History_Music.cs" />
     <Compile Include="Form_History_Music.Designer.cs">
       <DependentUpon>Form_History_Music.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_History_Video.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form_History_Video.cs" />
     <Compile Include="Form_History_Video.Designer.cs">
       <DependentUpon>Form_History_Video.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Liked_Music.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form_Liked_Music.cs" />
     <Compile Include="Form_Liked_Music.Designer.cs">
       <DependentUpon>Form_Liked_Music.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Liked_Video.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form_Liked_Video.cs" />
     <Compile Include="Form_Liked_Video.Designer.cs">
       <DependentUpon>Form_Liked_Video.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_Music_AllPlaylist.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="form_Music_AllPlaylist.cs" />
     <Compile Include="form_Music_AllPlaylist.Designer.cs">
       <DependentUpon>form_Music_AllPlaylist.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_Music_NewPlaylist.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="form_Music_NewPlaylist.cs" />
     <Compile Include="form_Music_NewPlaylist.Designer.cs">
       <DependentUpon>form_Music_NewPlaylist.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Music_Nowpl.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form_Music_Nowpl.cs" />
     <Compile Include="Form_Music_Nowpl.Designer.cs">
       <DependentUpon>Form_Music_Nowpl.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_Music_Playlist.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="form_Music_Playlist.cs" />
     <Compile Include="form_Music_Playlist.Designer.cs">
       <DependentUpon>form_Music_Playlist.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Muvip.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form_Muvip.cs" />
     <Compile Include="Form_Muvip.Designer.cs">
       <DependentUpon>Form_Muvip.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_My_Music.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form_My_Music.cs" />
     <Compile Include="Form_My_Music.Designer.cs">
       <DependentUpon>Form_My_Music.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_My_Video.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form_My_Video.cs" />
     <Compile Include="Form_My_Video.Designer.cs">
       <DependentUpon>Form_My_Video.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_Rename_pl.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="form_Rename_pl.cs" />
     <Compile Include="form_Rename_pl.Designer.cs">
       <DependentUpon>form_Rename_pl.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_Video_AllPlaylist.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="form_Video_AllPlaylist.cs" />
     <Compile Include="form_Video_AllPlaylist.Designer.cs">
       <DependentUpon>form_Video_AllPlaylist.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Video_NewPlaylist.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form_Video_NewPlaylist.cs" />
     <Compile Include="Form_Video_NewPlaylist.Designer.cs">
       <DependentUpon>Form_Video_NewPlaylist.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_Video_Nowpl.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="form_Video_Nowpl.cs" />
     <Compile Include="form_Video_Nowpl.Designer.cs">
       <DependentUpon>form_Video_Nowpl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Video_Playlist.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form_Video_Playlist.cs" />
     <Compile Include="Form_Video_Playlist.Designer.cs">
       <DependentUpon>Form_Video_Playlist.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListVideo.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="ListVideo.cs" />
     <Compile Include="ListVideo.Designer.cs">
       <DependentUpon>ListVideo.cs</DependentUpon>
     </Compile>
@@ -210,9 +174,7 @@
     <Compile Include="Music\Mp3Player.cs" />
     <Compile Include="Music\ListMusicPlaying.cs" />
     <Compile Include="Music\ListMusicRecently.cs" />
-    <Compile Include="Music\Music_Playlist.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Music\Music_Playlist.cs" />
     <Compile Include="Music\Music_Playlist.Designer.cs">
       <DependentUpon>Music_Playlist.cs</DependentUpon>
     </Compile>
@@ -221,15 +183,11 @@
     <Compile Include="Music\Playlist.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SubPanelSelect.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="SubPanelSelect.cs" />
     <Compile Include="SubPanelSelect.Designer.cs">
       <DependentUpon>SubPanelSelect.cs</DependentUpon>
     </Compile>
-    <Compile Include="SubPanelSelectVideo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="SubPanelSelectVideo.cs" />
     <Compile Include="SubPanelSelectVideo.Designer.cs">
       <DependentUpon>SubPanelSelectVideo.cs</DependentUpon>
     </Compile>
@@ -243,9 +201,7 @@
     <Compile Include="Video\PlayListInfoVideo.cs" />
     <Compile Include="Video\PlaylistVideo.cs" />
     <Compile Include="Video\VideoInfo.cs" />
-    <Compile Include="Video\Video_Playlist.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Video\Video_Playlist.cs" />
     <Compile Include="Video\Video_Playlist.Designer.cs">
       <DependentUpon>Video_Playlist.cs</DependentUpon>
     </Compile>
